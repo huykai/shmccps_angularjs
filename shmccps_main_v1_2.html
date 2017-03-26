@@ -68,18 +68,18 @@
 					
 							<div style="margin:5px;" ng-controller="mainSubmitCtrl">
 								<span>统计时间区间：</span>
-								<wi-datepicker style="margin:5px;top:10px;" ng-model="begin_datetime" isShowClear="false" isShowToday="true" dateFmt="yyyy/MM/dd HH:mm:ss"
+								<wi-datepicker style="margin:5px;top:10px;" ng-model="begin_datetime" isShowClear="true" isShowToday="true" dateFmt="yyyy/MM/dd HH:mm:ss"
 									id="d1"	maxDate="#F{$dp.$D(\'d2\')||\'%y-%M-%d\'}">
 								</wi-datepicker>
 								~
 								<wi-datepicker style="margin:5px;top:10px;"
-                                 ng-model="end_datetime" isShowClear="false" isShowToday="true" dateFmt="yyyy/MM/dd HH:mm:ss" id="d2" minDate="#F{$dp.$D(\'d1\')}" maxDate="%y-%M-%d">
+                                 ng-model="end_datetime" isShowClear="true" isShowToday="true" dateFmt="yyyy/MM/dd HH:mm:ss" id="d2" minDate="#F{$dp.$D(\'d1\')}" maxDate="%y-%M-%d">
 								</wi-datepicker>
 								
 								<br />
 								<span>统计间隔：</span>
 								<wi-comboBox dataProvider="mydata"
-									selectedItem="selected"
+									selectedItem="statis_period"
 									itemChange="itemChangeHandler"
 									width="145"
 									rowCount="8"
@@ -89,7 +89,7 @@
 								
 								<span style="margin:5px;top:10px;">统计粒度</span>
 								<wi-comboBox dataProvider="mydata2"
-									selectedItem="selected2"
+									selectedItem="statis_unit"
 									itemChange="itemChangeHandler2"
 									width="145"
 									rowCount="8"

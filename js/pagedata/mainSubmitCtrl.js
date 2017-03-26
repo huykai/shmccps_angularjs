@@ -14,10 +14,25 @@ var mainSubmitCtrl = ["$rootScope","$scope","$document","choosedataService","$ht
 	var currdate = new Date();
 	var predate = new Date(currdate.valueOf() + (-1 * 3600000));
 	//console.log(predate);
-    vm.end_date = currdate.getFullYear()+"/"+(currdate.getMonth()+1)+"/"+currdate.getDate();
-	vm.end_time = currdate.getHours()+":"+currdate.getMinutes()+":"+currdate.getSeconds();
-	vm.begin_date = predate.getFullYear()+"/"+(predate.getMonth()+1)+"/"+predate.getDate();	
-	vm.begin_time = predate.getHours()+":"+predate.getMinutes()+":"+predate.getSeconds();
+	end_date_year = currdate.getFullYear(); 
+    end_date_month = ((currdate.getMonth()+1)<10)?("0"+(currdate.getMonth()+1)):(currdate.getMonth()+1);
+	end_date_day = ((currdate.getDate()+1)<10)?("0"+(currdate.getDate())):(currdate.getDate());
+    end_time_hour = ((currdate.getHours())<10)?("0"+(currdate.getHours())):(currdate.getHours()); 
+    end_time_min = ((currdate.getMinutes())<10)?("0"+(currdate.getMinutes())):(currdate.getMinutes());
+	end_time_sec = ((currdate.getSeconds())<10)?("0"+(currdate.getSeconds())):(currdate.getSeconds());
+
+	pre_date_year = predate.getFullYear(); 
+    pre_date_month = ((predate.getMonth()+1)<10)?("0"+(predate.getMonth()+1)):(predate.getMonth()+1);
+	pre_date_day = ((predate.getDate())<10)?("0"+(predate.getDate())):(predate.getDate());
+    pre_time_hour = ((predate.getHours())<10)?("0"+(predate.getHours())):(predate.getHours()); 
+    pre_time_min = ((predate.getMinutes())<10)?("0"+(predate.getMinutes())):(predate.getMinutes());
+	pre_time_sec = ((predate.getSeconds())<10)?("0"+(predate.getSeconds())):(predate.getSeconds());
+    
+
+	vm.end_date = end_date_year +"/"+ end_date_month + "/" + end_date_day;
+	vm.end_time = end_time_hour +"/"+ end_time_min + "/" + end_time_sec;
+	vm.begin_date = pre_date_year +"/"+ pre_date_month + "/" + pre_date_day;
+	vm.begin_time = pre_time_hour +"/"+ pre_time_min + "/" + pre_time_sec;
 	vm.begin_datetime = vm.begin_date + " " + vm.begin_time;
 	vm.end_datetime = vm.end_date + " " + vm.end_time;
 	
@@ -39,24 +54,24 @@ var mainSubmitCtrl = ["$rootScope","$scope","$document","choosedataService","$ht
 		{id:2,name:'Session'},
 		{id:3,name:'SAEGW'}
 	];
-	vm.selected = vm.mydata[0];
-	vm.selected2 = vm.mydata2[0];
+	vm.statis_period = vm.mydata[0];
+	vm.statis_unit = vm.mydata2[0];
     vm.itemChangeHandler = function (data){
         console.log(data);
-        vm.selected = data;
+        vm.statis_period = data;
     };
 			
 	vm.itemChangeHandler2 = function (data){
         console.log(data);
-        vm.selected2 = data;
+        vm.statis_unit = data;
     };	
     
-    vm.queryStatis = function() {
+    vm.queryStatis = function(param_config) {
 		var config = {
 			transformResponse: function (data,headers) {
-				console.log(angular.element(data.trim()));
-				console.log(headers);
-				console.log('Content-type:' + headers("Content-type"));
+				//console.log(angular.element(data.trim()));
+				//console.log(headers);
+				//console.log('Content-type:' + headers("Content-type"));
 				if (headers("Content-type").indexOf("text/xml") >= 0 
 					&& angular.isString(data)) {
 					//var StatsData = [];
@@ -98,13 +113,22 @@ var mainSubmitCtrl = ["$rootScope","$scope","$document","choosedataService","$ht
 		};
 		
 		//$http.get("scripts/PM_statis_report.py",config).success(function(data){
+		config.params = param_config ;
+		console.log(config);
         $http.get("/api/mme_query",config).success(function(data){
 			console.log(data);
-			var newcolumns = $rootScope.addcolumns(data.response.Title);
-			var newdatas = $rootScope.adddatas(data.response.Item);
-			var newtabname = data.response.TabName.name;
-			var newtab = $rootScope.addtab(newtabname, newdatas, newcolumns);
-			$rootScope.tabs.push(newtab);
+			for (var tableid in data.response){
+				var newcolumns = $rootScope.addcolumns(data.response[tableid].Title);
+				var newdatas = $rootScope.adddatas(data.response[tableid].Item);
+				var newtabname = data.response[tableid].TabName.name;
+				//console.log(newcolumns)
+				//console.log(newdatas)
+				//console.log(newtabname)
+				var newtab = $rootScope.addtab(newtabname, newdatas, newcolumns);
+				$rootScope.tabs.push(newtab);
+			}
+			//var newtab = $rootScope.addtab(newtabname, newdatas, newcolumns);
+			//$rootScope.tabs.push(newtab);
 		}).error(function(data, header, config, status){
 			console.log(status);
 		});
@@ -224,11 +248,15 @@ var mainSubmitCtrl = ["$rootScope","$scope","$document","choosedataService","$ht
 	};
 
 	vm.submitQuery = function(){
-		var queryParameter={'startdate':'2016/12/20'};
+		var queryParameter={};
 		//console.log(queryParameter);
-		queryParameter['startDate'] = vm.begin_datetime;
-		queryParameter['stopDate'] = vm.end_datetime;
-		//console.log(queryParameter);
+		var startdatetime = vm.begin_datetime.split(' ');
+		queryParameter['startDate'] = startdatetime[0]; 
+		queryParameter['startTime'] = startdatetime[1]; 
+		var stopdatetime = vm.end_datetime.split(' ');
+		queryParameter['stopDate'] = stopdatetime[0];
+		queryParameter['stopTime'] = stopdatetime[1];
+		console.log(queryParameter);
 		//console.log(this.rootscope);
         //var rootscope=$scope.parent;
         //console.log($scope.parent);
@@ -244,7 +272,16 @@ var mainSubmitCtrl = ["$rootScope","$scope","$document","choosedataService","$ht
 		}
 		//console.log(select_element);
 		//console.log(select_kpi);
-		this.queryStatis(select_element,select_kpi);
+		var config = {};
+		config.elementlist = select_element.toString();
+		config.kpilist = select_kpi.toString();
+		config.startdate = queryParameter['startDate'];
+		config.starttime = queryParameter['startTime'];
+		config.stopdate = queryParameter['stopDate'];
+		config.stoptime = queryParameter['stopTime'];
+		config.period = this.statis_period.name;
+		config.unit = this.statis_unit.name;
+		this.queryStatis(config);
 	};
 
 

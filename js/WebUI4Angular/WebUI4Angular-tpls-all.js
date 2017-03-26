@@ -2912,9 +2912,11 @@ angular.module('ui.wisoft.datagrid',['ui.wisoft.bindHtml', 'ui.wisoft.resizelist
 
                     // 方法二
                     if(navigator.userAgent.indexOf("MSIE")>0) {
+                        console.log('export use MSIE');
                         dgService.table2excelByIE(rowdata, colwidths);
                     } else {
                         var uri = 'data:application/vnd.ms-excel;base64,';
+                        console.log('export use other ');
                         event.currentTarget.href = uri + dgService.base64(dgService.table2excel(rowdata, colwidths));
                     }
                 };
