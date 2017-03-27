@@ -30,9 +30,9 @@ var mainSubmitCtrl = ["$rootScope","$scope","$document","choosedataService","$ht
     
 
 	vm.end_date = end_date_year +"/"+ end_date_month + "/" + end_date_day;
-	vm.end_time = end_time_hour +"/"+ end_time_min + "/" + end_time_sec;
+	vm.end_time = end_time_hour +":"+ end_time_min + ":" + end_time_sec;
 	vm.begin_date = pre_date_year +"/"+ pre_date_month + "/" + pre_date_day;
-	vm.begin_time = pre_time_hour +"/"+ pre_time_min + "/" + pre_time_sec;
+	vm.begin_time = pre_time_hour +":"+ pre_time_min + ":" + pre_time_sec;
 	vm.begin_datetime = vm.begin_date + " " + vm.begin_time;
 	vm.end_datetime = vm.end_date + " " + vm.end_time;
 	
@@ -67,6 +67,7 @@ var mainSubmitCtrl = ["$rootScope","$scope","$document","choosedataService","$ht
     };	
     
     vm.queryStatis = function(param_config) {
+		$rootScope.tabs = [];
 		var config = {
 			transformResponse: function (data,headers) {
 				//console.log(angular.element(data.trim()));
@@ -92,8 +93,8 @@ var mainSubmitCtrl = ["$rootScope","$scope","$document","choosedataService","$ht
 
 		var postconfig = {
 			method:'post',  
-   			url:'scripts/PM_statis_report.py',  
-   			data:{startdate:"2017/02/11",starttime:"12:00",stopdate:"2017/02/11",stoptime:"13:00"},  
+   			//url:'scripts/PM_statis_report.py',  
+   			//data:{startdate:"2017/02/11",starttime:"12:00",stopdate:"2017/02/11",stoptime:"13:00"},  
    			//data : "startdate='2017/02/11'",
 			headers:{'Content-Type': 'application/x-www-form-urlencoded'},  
    			
@@ -106,16 +107,58 @@ var mainSubmitCtrl = ["$rootScope","$scope","$document","choosedataService","$ht
      			for(var p in data){  
        				str.push(encodeURIComponent(p) + "=" + encodeURIComponent(data[p]));  
      			}  
-     			return str.join("&");
+     			console.log(str);
+				return str.join("&");
+				
 				// console.log('postconfig:' + $.param(data));
 				// return $.param(data);  
-   			}	  
+   			},
+			transformResponse: function (data,headers) {
+				//console.log(angular.element(data.trim()));
+				//console.log(headers);
+				//console.log('Content-type:' + headers("Content-type"));
+				if (headers("Content-type").indexOf("text/xml") >= 0 
+					&& angular.isString(data)) {
+					//var StatsData = [];
+					//var titleElems = angular.element(data.trim()).find("name");
+					//console.log(titleElems);
+					//for (var i = 0; i < titleElems.length; i++) {
+					//	var title = titleElems.eq(i);
+					//	console.log(title);
+					//}
+					//console.log('Response Data:' + data); 
+					var x2js = new X2JS(); 
+      				var aftCnv = x2js.xml_str2json(data);
+      				//console.log('aftCnv ' + aftCnv); 
+      				return aftCnv; 
+				}
+			}	  
 		};
 		
+		config.params = param_config;
 		//$http.get("scripts/PM_statis_report.py",config).success(function(data){
-		config.params = param_config ;
+		//this.getapi('/api/mme_query',config);
+		postconfig.data = param_config;
+		this.postapi('/api/mme_query',config);
+		//config.params = param_config ;
 		console.log(config);
-        $http.get("/api/mme_query",config).success(function(data){
+		// get mode : need config.params , 
+		//            as api?xxxxxxx
+		// post mode : need config.data as post data, 
+		//             and need modify the config.headers and config.transformRequest
+		//            in server part, need add:
+		//     var urlencodedParser = bodyParser.urlencoded({ extended: false })
+		//     app.all('/api/*', urlencodedParser, routers);
+		// ps: in app.js if add:
+		//     app.use(bodyParser());  (deprecated)
+		//     can evade the problem above, the bodyParser will handle json and urlencoded automatically
+        //     but as bodyparser's advise, better "use individual json/urlencoded middlewares"
+		
+	};
+
+	vm.getapi = function(api_string,config) {
+		//$http.get("/api/mme_query",config).success(function(data){
+		$http.get(api_string,config).success(function(data){
 			console.log(data);
 			for (var tableid in data.response){
 				var newcolumns = $rootScope.addcolumns(data.response[tableid].Title);
@@ -127,12 +170,31 @@ var mainSubmitCtrl = ["$rootScope","$scope","$document","choosedataService","$ht
 				var newtab = $rootScope.addtab(newtabname, newdatas, newcolumns);
 				$rootScope.tabs.push(newtab);
 			}
-			//var newtab = $rootScope.addtab(newtabname, newdatas, newcolumns);
-			//$rootScope.tabs.push(newtab);
+			
 		}).error(function(data, header, config, status){
 			console.log(status);
 		});
-		
+	};
+
+	vm.postapi = function(api_string,config) {
+		//$http.get("/api/mme_query",config).success(function(data){
+		config.headers = {'Content-Type': 'application/x-www-form-urlencoded'};
+		$http.post(api_string, config.data ,config).success(function(data){
+			console.log(data);
+			for (var tableid in data.response){
+				var newcolumns = $rootScope.addcolumns(data.response[tableid].Title);
+				var newdatas = $rootScope.adddatas(data.response[tableid].Item);
+				var newtabname = data.response[tableid].TabName.name;
+				//console.log(newcolumns)
+				//console.log(newdatas)
+				//console.log(newtabname)
+				var newtab = $rootScope.addtab(newtabname, newdatas, newcolumns);
+				$rootScope.tabs.push(newtab);
+			}
+			
+		}).error(function(data, header, config, status){
+			console.log(status);
+		});
 	};
 
 	$rootScope.addtab = function(name, datas, columns){
