@@ -1,0 +1,19 @@
+{
+  "name": "shmccps_angularjs",
+  "description": "Shmcc_PS APP by AngularJS",
+  "version": "0.1.0",
+  "homepage": "https://github.com/huykai/shmccps_angularjs",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "^1.5.0",
+    "angular-route": "^1.5.0",
+    "angular-loader": "^1.5.0",
+    "angular-mocks": "^1.5.0",
+    "html5-boilerplate": "^5.3.0",
+    "angular-bootstrap": "^2.5.0",
+    "angular-chart.js": "^1.1.1",
+    "angular-ui-router": "^0.4.2",
+    "angular-resource": "^1.6.4"
+  }
+}

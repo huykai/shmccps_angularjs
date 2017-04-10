@@ -1,0 +1,364 @@
+mninfo,data:datas[4]},
+		{id:5,name:"tab6",col:columninfo,data:datas[5]}
+	];
+	
+    $scope.dg={};
+
+    $scope.datagridhtml='<wi-tabset width="100%" height="600px" > \
+				<wi-tab ng-repeat="tab in tabs" heading="{{tab.name}}" active="true" width="100%" \
+										 height="100%" ng-init="tabindex = $index"> \
+									<unfillcolumn id="button_submit" columns="4"></unfillcolumn> \									<wi-tab ng-repeat="tab in tabs" heading="{{tab.name}}" active="true" width="100%" \
+										 height="100%" ng-init="tabindex = $index"> \
+										<wi-datagrid dataprovider="datas[$index]" wid="dg" width="100%" \ height="100%" pagemode="client" showno="true" 			showexcel="true"> \
+										<wi-datagrid-column headtext="n1" datafield="n1" width="150px"></wi-datagrid-column> \
+										<wi-datagrid-column headtext="n2" datafield="n2" width="150px"></wi-datagrid-column> \
+										<wi-datagrid-column headtext="n3" datafield="n3" width="150px"></wi-datagrid-column> \
+										<wi-datagrid-column headtext="n4" datafield="n4" width="150px"></wi-datagrid-column> \
+										<wi-datagrid-column headtext="n5" datafield="n5" width="150px"></wi-datagrid-column> \
+										</wi-datagrid> \
+									</wi-tab> \
+								</wi-tabset>'
+
+
+    function pad(num, n) {
+        return (Array(n).join(0) + num).slice(-n);
+    }
+
+    var dgData=[];
+
+    for(var i=0;i<50;i++){
+        var obj={};
+        obj.username='username'+i;
+        obj.address='address'+i;
+        obj.date='2014-07-'+pad((i+1),2);
+        obj.num = (i+1)*100;
+
+        dgData.push(obj);
+    }
+    $scope.dgData = dgData;
+}];
+angular.module('ui.wisoft').controller('DataGridDemoExcelCtrl',DataGridDemoExcelCtrl);
+
+function submitQuery() {
+	//var btn = document.getElementById('button_submit');
+	//alert(btn.getAttribute("columns"));
+	//btn.setAttribute("columns","3");
+};
+
+/*
+angular.module('ui.wisoft').directive("compile",function(){
+	var compileObject = { 
+  
+		priority: 0, 
+  
+		link: function($scope,element,attr){
+			var el=$compile(scope.datagridhtml)(scope); 
+			element.append(el);
+		},
+  
+ 　　replace: false, 
+  
+ 　　transclude: false, 
+  
+ 　　restrict: 'EA', 
+  
+ 　　scope: false, 
+  
+ 　　
+	}; 
+	return compileObject; 
+  
+}); 
+*/
+
+angular.module('ui.wisoft').directive("unfillcolumn",function(){
+
+	var unfillcolumnnObject = { 
+  
+		priority: 0, 
+
+		template: function(element,attr){
+			//var data = $scope.columns;
+			var data=attr['unfillcolumn'];
+			console.log(data);
+			
+			//<wi-tabset width="100%" height="600px" >
+			//<wi-tab ng-repeat="tab in tabs" heading="{{tab.name}}" active="true" width="100%"
+			//<wi-datagrid dataProvider="datas[$index]" wid="dg" width="100%"
+			//								 height="100%"
+			//									pagemode="client" showno="true"
+			//									showexcel="true">
+			//var witab='<wi-tab heading="{{tab.name}}" active="true" width="100%" height="100%">';
+			var witabset = '<wi-tabset width="100%" height="600px" >';
+			var witable = '<wi-tab heading="tab" active="true" width="100%">';
+			var widatagrid='<wi-datagrid  dataProvider="currdata" wid="dg" width="100%" \
+				height="100%"	pagemode="client" showno="true" \
+				showexcel="true">';
+			var wicolumn = "";
+			//if(angular.isArray(data)) {
+				
+				for (var i=0; i<data;i++){
+					wicolumn = wicolumn + '<wi-datagrid-column headtext={{columns['+i+'].name}} \
+					datafield={{columns['+i+'].name}} \
+					width=150px > </wi-datagrid-column>';
+					
+				}
+				
+			//}
+			widatagrid = widatagrid + wicolumn + "</wi-datagrid>"
+			witabset = witabset + witab + widatagrid + '</wi-tab>' + '</wi-tabset>';
+			console.log(witabset);
+			return witabset;
+			
+			//scope.$apply()
+		},
+
+		replace: false, 
+  		transclude: false, 
+  		restrict: 'EA', 
+  		scope: false, 
+  
+ 　　
+	}; 
+	return unfillcolumnnObject; 
+});
+
+/*
+angular.module('ui.wisoft').directive("unfillcolumn",function(){
+
+	var unfillcolumnnObject = { 
+  
+		priority: 0, 
+
+		template: function(element,attr){
+			//var data = $scope.columns;
+			var data=5;
+			console.log(data);
+			//<wi-datagrid dataProvider="datas[$index]" wid="dg" width="100%"
+			//								 height="100%"
+			//									pagemode="client" showno="true"
+			//									showexcel="true">
+			var widatagrid=angular.element("<wi-datagrid>");
+			widatagrid.attr('dataProvider',"datas[$index]");
+			widatagrid.attr('wid','dg');
+			widatagrid.attr('width',"100%");
+			widatagrid.attr('height',"100%");
+			widatagrid.attr('pagemode',"client");
+			widatagrid.attr('showno',"true");
+			widatagrid.attr('showexcel',"true");
+			//if(angular.isArray(data)) {
+				
+				for (var i=0; i<5;i++){
+					var wicolumn = angular.element("<wi-datagrid-column>");
+					wicolumn.attr('headtext',data[i].name);
+					wicolumn.attr('datafield',data[i].name);
+					wicolumn.attr('width',"150px");
+					widatagrid.append(wicolumn);
+				}
+				
+			//}
+			console.log(widatagrid.html());
+			return widatagrid.html();
+			
+			//scope.$apply()
+		},
+
+		replace: false, 
+  		transclude: false, 
+  		restrict: 'EA', 
+  		scope: false, 
+  
+ 　　
+	}; 
+	return unfillcolumnnObject; 
+});
+*/
+/*
+angular.module('ui.wisoft').directive("unfillcolumn",function(){
+
+	var unfillcolumnnObject = { 
+  
+		priority: 0, 
+
+		link: function(scope,element,attr){
+			var tabdata = scope.tabs;
+			var columndata = scope.columns;
+			//var data=5;
+			//console.log(data);
+			//<wi-tab ng-repeat="tab in tabs" heading="{{tab.name}}" active="true" width="100%"
+			//							 height="100%" ng-init="tabindex = $index">
+			//<wi-datagrid dataProvider="datas[$index]" wid="dg" width="100%"
+			//								 height="100%"
+			//									pagemode="client" showno="true"
+			//
+												
+			for (var i=0; i<5;i++){
+				var witab=angular.element("<wi-tab>");
+				var widatagrid=angular.element("<wi-datagrid>");
+				widatagrid.attr('dataProvider',"datas[$index]");
+				widatagrid.attr('wid','dg');
+				widatagrid.attr('width',"100%");
+				widatagrid.attr('height',"100%");
+				widatagrid.attr('pagemode',"client");
+				widatagrid.attr('showno',"true");
+				widatagrid.attr('showexcel',"true");
+				
+				for (var i=0; i<5;i++){
+					var wicolumn = angular.element("<wi-datagrid-column>");
+					wicolumn.attr('headtext',columndata[i].name);
+					wicolumn.attr('datafield',columndata[i].name);
+					wicolumn.attr('width',"150px");
+					widatagrid.append(wicolumn);
+				}
+				witab.append(widatagrid);
+				element.append(witab);
+			}
+			
+			//if(angular.isArray(data)) {
+				
+				
+				
+			//}
+			//element.append(widatagrid);
+			//return element.;
+			//console.log(widatagrid.length);
+			//scope.$apply()
+		},
+
+		replace: false, 
+  		transclude: false, 
+  		restrict: 'EA', 
+  		scope: false, 
+  
+ 　　
+	}; 
+	return unfillcolumnnObject; 
+});
+*/
+
+</script>
+
+<script src="js/pagedata/MenuData.js"></script>
+<!--<script src="js/pagedata/HttpGetData.js"></script>  -->
+
+</head>
+<body ng-app="shmcc_app" style="height: 100%;">
+<p align="center">
+<img src="images/Title.jpg" alt="SHMCC诺西PS网元管理系统" >
+</p>
+
+<div >
+	<ng-include src="'js/pagedata/MenuData.html'">
+	</ng-include>
+</div>
+
+<div>
+    <div style=" margin:10px; width:98%; height: 800px; background-color: #fff;">
+        <wi-hdividedbox style="border: solid 1px #ccc;">
+            <wi-hdividedbox-group collapseto="left" collapsed="true" width="250px">
+				
+				<div ng-controller="TreeDemoSelectCtrl as sc">
+				<div class="wi-clearf">
+					<div style="margin:2px;width:98%; float:left;">
+						<p style=" height:50px;">选择查询网元及指标</p>
+						<div ng-show="isMME" style="height:400px;overflow: auto;border: solid 1px #ccc;">
+							<wi-tree dataProvider="sc.cascadeData1"
+							multiselect="true"
+							cascade="true"></wi-tree>
+						</div>
+						<div ng-show="!isMME" style="height:400px;overflow: auto;border: solid 1px #ccc;">
+							<wi-tree dataProvider="sc.cascadeData2"
+							multiselect="true"
+							cascade="true"></wi-tree>
+						</div>
+					</div>
+				</div>
+				</div>
+			
+			</wi-hdividedbox-group>
+            
+			<wi-hdividedbox-group collapsed="false">
+				<div style=" margin:2px; width:100%; height:100%; background-color: #fff;">
+					<wi-vdividedbox style="border: solid 1px #ccc;height:100%;">
+						<wi-vdividedbox-group  
+						collapseto="down" collapsed="false" height="100px">
+					
+							<div style="margin:5px;" ng-controller="mainSubmitCtrl">
+								<span>统计时间区间：</span>
+								<wi-datepicker style="margin:5px;top:10px;" ng-model="begin_datetime" isShowClear="false" isShowToday="true" dateFmt="yyyy/MM/dd HH:mm:ss"
+									id="d1"	maxDate="#F{$dp.$D(\'d2\')||\'%y-%M-%d\'}">
+								</wi-datepicker>
+								~
+								<wi-datepicker style="margin:5px;top:10px;"
+                                 ng-model="end_datetime" isShowClear="false" isShowToday="true" dateFmt="yyyy/MM/dd HH:mm:ss" id="d2" minDate="#F{$dp.$D(\'d1\')}" maxDate="%y-%M-%d">
+								</wi-datepicker>
+								
+								<br />
+								<span>统计间隔：</span>
+								<wi-comboBox dataProvider="mydata"
+									selectedItem="selected"
+									itemChange="itemChangeHandler"
+									width="145"
+									rowCount="8"
+									
+								>
+								</wi-comboBox>
+								
+								<span style="margin:5px;top:10px;">统计粒度</span>
+								<wi-comboBox dataProvider="mydata2"
+									selectedItem="selected2"
+									itemChange="itemChangeHandler2"
+									width="145"
+									rowCount="8"
+									
+								>
+								</wi-comboBox>
+								<wi-button style="margin:5px;top:10px;" label="提交查询" ng-click="submitQuery();"></wi-button>
+							</div>
+						</wi-vdividedbox-group>
+						<wi-vdividedbox-group >
+							<div  ng-controller="DataGridDemoExcelCtrl" width="100%" height="100%">
+								<div unfillcolumn="4"></div>
+								<!--<p ng-repeat="(key,value) in datas[0][1]">{{key}}={{value}}</p> -->   
+								
+								<!--
+								<wi-tabset width="100%" height="600px" >
+								
+									<wi-tab ng-repeat="tab in tabs" heading="{{tab.name}}" active="true" width="100%"
+										 height="100%" ng-init="tabindex = $index">
+									<unfillcolumn id="button_submit" columns="4"></unfillcolumn> 
+									
+									<wi-tab ng-repeat="tab in tabs" heading="{{tab.name}}" active="true" width="100%"
+										 height="100%" ng-init="tabindex = $index">
+										
+										<wi-datagrid dataprovider="datas[$index]" wid="dg" width="100%" height="100%" pagemode="client" showno="true" showexcel="true"><wi-datagrid-column headtext="n1" datafield="n1" width="150px"></wi-datagrid-column><wi-datagrid-column headtext="n2" datafield="n2" width="150px"></wi-datagrid-column><wi-datagrid-column headtext="n3" datafield="n3" width="150px"></wi-datagrid-column><wi-datagrid-column headtext="n4" datafield="n4" width="150px"></wi-datagrid-column><wi-datagrid-column headtext="n5" datafield="n5" width="150px"></wi-datagrid-column></wi-datagrid>
+										
+										 <wi-datagrid dataProvider="datas[$index]" wid="dg" width="100%"
+										 height="100%"
+											pagemode="client" showno="true"
+											showexcel="true">
+											
+											
+											<wi-datagrid-column  headtext='n1' datafield='n1' width="150"></wi-datagrid-column>
+											
+											<wi-datagrid-column headtext="姓名" datafield="n1" width="150"></wi-datagrid-column>
+											<wi-datagrid-column headtext="住址" datafield="n2" width="90"></wi-datagrid-column>
+											<wi-datagrid-column headtext="日期" datafield="date" align='center'></wi-datagrid-column>
+											<wi-datagrid-column headtext="数字" datafield="num"></wi-datagrid-column>
+											
+										</wi-datagrid>
+									</wi-tab>
+									
+								</wi-tabset>
+								-->
+							</div>
+						</wi-vdividedbox-group>
+					</wi-vdividedbox>
+				</div>
+			</wi-hdividedbox-group>
+		</wi-hdividedbox>
+	</div>
+</div>
+
+</body>
+</html>                                                                                                                  

@@ -1,0 +1,10 @@
+
+<!--<div ng-controller="View2Ctrl">-->
+<div ng-if="currentUser.username">Welcome, {{ currentUser.username }}</div>
+<div ng-if="isAuthorized(userRoles.admin)">You're admin {{userRoles.admin}}.</div>
+<div ng-switch on="currentUser.Role"> {{currentUser.Role}}
+  <div ng-switch-when="admin">You're admin.</div>
+  <div ng-switch-when="userRoles.editor">You're editor.</div>
+  <div ng-switch-default>You're something else.</div>
+</div>
+<!--</div>-->

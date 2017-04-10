@@ -1,0 +1,452 @@
+<html >
+<head lang="en">
+<meta charset="UTF-8"> 
+<title>上海移动PS业务查询系统</title>
+
+<!--
+<link rel="stylesheet" href="js/themes/default/theme.css"/>
+<link rel="stylesheet" href="js/themes/default/menu.css"/>
+-->
+<link href="js/bootstrap/bootstrap.css" rel="stylesheet" />
+<link href="js/bootstrap/bootstrap-theme.css" rel="stylesheet" />
+<link rel="stylesheet" href="js/WebUI4Angular/themes/default/wi-all.css" />
+
+	
+
+
+</head>
+<body ng-app="shmcc_app" style="height: 100%;">
+<p align="center">
+<img src="images/Title.jpg" alt="SHMCC诺西PS网元管理系统" >
+</p>
+
+<!-- just for angular study
+<div ng-controller="MyController">
+<h5>MyController</h5><h5>{{ clock }}</h5>
+</div>
+<div ng-controller="MyController2">
+<h5>MyController2</h5><h5>{{ clock.now }}</h5>
+</div>
+<div ng-controller="MyController3">
+	<input ng-model="expr" type="text" placeholder="Your expr">
+	<h5>{{ parsedValue }}</h5>
+<h5>MyController3</h5>
+	<input ng-model="to" type="email" placeholder="Recipient" />
+	<textarea ng-model="emailBody"></textarea>
+	<pre>{{ previewText }}</pre>
+</div>
+<div ng-controller="SomeController">
+{{ someModel.someValue }}
+<button ng-click="someAction()">Communicate to child</button>
+<div ng-controller="ChildController">
+{{ someModel.someValue }}
+<button ng-click="childAction()">Communicate to parent</button>
+</div>
+</div>
+
+<input ng-model="name" type="text" placeholder="Your name">
+<h1>Hello {{ name }}</h1>
+-->
+
+<div >
+	<ng-include src="'js/pagedata/MenuData.html'">
+	</ng-include>
+</div>
+
+
+<div>
+    <div style=" margin:10px; width:98%; height: 800px; background-color: #fff;">
+        <wi-hdividedbox style="border: solid 1px #ccc;">
+            <wi-hdividedbox-group collapseto="left" collapsed="false" width="200px">
+				
+				<div ng-controller="TreeDemoSelectCtrl as sc">
+				<div class="wi-clearf">
+					<div style="margin:2px;width:98%; float:left;">
+						<p style=" height:50px;">选择查询网元及指标</p>
+						<div ng-show="isMME" style="overflow: auto;border: solid 1px #ccc;">
+							<wi-tree dataProvider="sc.cascadeData_mme_element"
+							multiselect="true"
+							onselect="sc.onselect"
+							oncancelselect="sc.oncancelselect"
+							cascade="true"></wi-tree>
+						</div>
+						<div ng-show="isMME" style="overflow: auto;border: solid 1px #ccc;">
+							<wi-tree dataProvider="sc.cascadeData_mme_kpi"
+							multiselect="true"
+							onselect="sc.onselect"
+							oncancelselect="sc.oncancelselect"
+							cascade="true"></wi-tree>
+						</div>
+						<div ng-show="!isMME" style="height:200px;overflow: auto;border: solid 1px #ccc;">
+							<wi-tree dataProvider="sc.cascadeData_saegw_element"
+							multiselect="true"
+							onselect="sc.onselect"
+							oncancelselect="sc.oncancelselect"
+							cascade="true"></wi-tree>
+						</div>
+						<div ng-show="!isMME" style="height:400px;overflow: auto;border: solid 1px #ccc;">
+							<wi-tree dataProvider="sc.cascadeData_saegw_kpi"
+							multiselect="true"
+							onselect="sc.onselect"
+							oncancelselect="sc.oncancelselect"
+							cascade="true"></wi-tree>
+						</div>
+					</div>
+				</div>
+				</div>
+			
+			</wi-hdividedbox-group>
+            
+			<wi-hdividedbox-group collapsed="false">
+				<div style=" margin:2px; width:100%; height:100%; background-color: #fff;">
+					<wi-vdividedbox style="border: solid 1px #ccc;height:100%;">
+						<wi-vdividedbox-group  
+						collapseto="down" collapsed="false" height="130px">
+					
+							<div style="margin:5px;" ng-controller="mainSubmitCtrl as mc">
+								<span>统计时间区间：</span>
+								<wi-datepicker style="margin:5px;top:10px;" ng-model="begin_datetime" isShowClear="true" isShowToday="true" dateFmt="yyyy/MM/dd HH:mm:ss"
+									id="d1"	maxDate="#F{$dp.$D(\'d2\')||\'%y-%M-%d\'}"
+									onPicked="onStartPickedHandler" >
+								</wi-datepicker>
+								~
+								<wi-datepicker style="margin:5px;top:10px;"
+                                 ng-model="end_datetime" isShowClear="true" isShowToday="true" dateFmt="yyyy/MM/dd HH:mm:ss" id="d2" minDate="#F{$dp.$D(\'d1\')}" maxDate="%y-%M-%d"
+								 onPicked="onStopPickedHandler" >
+								</wi-datepicker>
+								<span>统计间隔：</span>
+								<wi-comboBox dataProvider="mydata"
+									selectedItem="statis_period"
+									width="145"
+									rowCount="8"
+									itemChange="itemPeriodChangeHandler"
+								>
+								</wi-comboBox>
+								
+								<span style="margin:5px;top:10px;">统计粒度</span>
+								<wi-comboBox dataProvider="mydata2"
+									selectedItem="statis_unit"
+									width="145"
+									rowCount="8"
+									itemChange="itemUnitChangeHandler"
+								>
+								</wi-comboBox>
+								<br />
+								<textarea style="display:inline" rows="3" cols="100" style="overflow:scroll;overflow-x:hidden;resize:none;">{{QueryDetailDesc}}</textarea>
+								<!--<wi-button style="margin:5px;top:10px;" label="提交查询" ng-click="submitQuery();"></wi-button>-->
+								<div style="display:inline">
+									<button type="button" class="btn btn-default" ng-click="submitQuery();">Apply Query</button>
+									 
+									<div style="display:inline" ng-controller="ModalDemoCtrl as $ctrl" class="modal-demo">
+										<script type="text/ng-template" id="myModalContent.html">
+											<div class="modal-header">
+												<h3 class="modal-title" id="modal-title">{{ChartName}} Chart!</h3>
+											</div>
+											<div class="modal-body" id="modal-body">
+												<div>
+												</div>
+												<div ng-controller="LineCtrl">
+													<canvas id="line" class="chart chart-line" 
+													chart-data="chart_data" chart-labels="chart_labels" 
+													chart-series="chart_series" chart-options="options" 
+													chart-dataset-override="datasetOverride" 
+													chart-click="onClick">
+													</canvas>
+												</div>
+												<!--
+												<ul>
+
+													<li ng-repeat="item in $ctrl.items">
+														<a href="#" ng-click="$event.preventDefault(); $ctrl.selected.item = item">{{ item }}</a>
+													</li>
+												</ul>
+												-->
+												<!--Selected: <b>{{ $ctrl.selected.item }}</b>-->
+											</div>
+											<div class="modal-footer">
+												<button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>
+												<button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">Cancel</button>
+											</div>
+										</script>
+										<button type="button" class="btn btn-default" ng-click="$ctrl.open()">Generate Chart</button>
+										<!--<button type="button" class="btn btn-default" ng-click="$ctrl.open('lg')">Generate Chart</button>
+										<div ng-show="$ctrl.selected">Selection from a modal: {{ $ctrl.selected }}</div>-->
+										<div class="modal-parent">
+										</div>
+									</div>
+								</div>
+								
+								
+
+							</div>
+						</wi-vdividedbox-group>
+						<wi-vdividedbox-group >
+							<div id="button_submit_p" ng-controller="DataGridDemoExcelCtrl" width="100%" height="100%">
+								
+								<div id="button_submit" un_fillcolumn="4" modecolumn="4"></div>
+								<!--<p ng-repeat="(key,value) in datas[0][1]">{{key}}={{value}}</p> -->   
+								
+								<!--
+								<wi-tabset width="100%" height="600px" >
+								
+									<wi-tab ng-repeat="tab in tabs" heading="{{tab.name}}" active="true" width="100%"
+										 height="100%" ng-init="tabindex = $index">
+									<unfillcolumn id="button_submit" columns="4"></unfillcolumn> 
+									
+									<wi-tab ng-repeat="tab in tabs" heading="{{tab.name}}" active="true" width="100%"
+										 height="100%" ng-init="tabindex = $index">
+										
+										<wi-datagrid dataprovider="datas[$index]" wid="dg" width="100%" height="100%" pagemode="client" showno="true" showexcel="true"><wi-datagrid-column headtext="n1" datafield="n1" width="150px"></wi-datagrid-column><wi-datagrid-column headtext="n2" datafield="n2" width="150px"></wi-datagrid-column><wi-datagrid-column headtext="n3" datafield="n3" width="150px"></wi-datagrid-column><wi-datagrid-column headtext="n4" datafield="n4" width="150px"></wi-datagrid-column><wi-datagrid-column headtext="n5" datafield="n5" width="150px"></wi-datagrid-column></wi-datagrid>
+										
+										 <wi-datagrid dataProvider="datas[$index]" wid="dg" width="100%"
+										 height="100%"
+											pagemode="client" showno="true"
+											showexcel="true">
+											
+											
+											<wi-datagrid-column  headtext='n1' datafield='n1' width="150"></wi-datagrid-column>
+											
+											<wi-datagrid-column headtext="姓名" datafield="n1" width="150"></wi-datagrid-column>
+											<wi-datagrid-column headtext="住址" datafield="n2" width="90"></wi-datagrid-column>
+											<wi-datagrid-column headtext="日期" datafield="date" align='center'></wi-datagrid-column>
+											<wi-datagrid-column headtext="数字" datafield="num"></wi-datagrid-column>
+											
+										</wi-datagrid>
+									</wi-tab>
+									
+								</wi-tabset>
+								-->
+							</div>
+						</wi-vdividedbox-group>
+					</wi-vdividedbox>
+				</div>
+			</wi-hdividedbox-group>
+		</wi-hdividedbox>
+	</div>
+</div>
+
+<!--<script src="js/Angular/angular.js"></script> -->
+<!--
+<script src="js/Angular/angular-1.6.3/angular.js"></script>
+<script src="js/Angular/angular-1.6.3/angular-animate.min.js"></script>
+<script src="js/Angular/angular-1.6.3/angular-touch.min.js"></script>
+-->
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular-loader/angular-loader.min.js"></script>
+<script src="bower_components/angular-route/angular-route.min.js"></script>
+
+
+<script src="js/WebUI4Angular/WebUI4Angular-tpls-all.js"></script>
+
+<script src="js/My97DatePicker/WdatePicker.js"></script>
+<script src="js/scripts/xml2json.js"></script> 
+
+<script src="js/pagedata/mainSubmitCtrl.js"></script>
+<script src="js/pagedata/DataGridDemoExcelCtrl.js"></script>
+<script src="js/pagedata/choosedataService.js"></script>
+<script src="js/pagedata/MenuData.js"></script>
+<script src="js/pagedata/TreeData.js"></script>
+
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="js/pagedata/modal_chart.js"></script>
+<script src="js/pagedata/Line_chart.js"></script>
+
+<script src="bower_components/chart.js/dist/Chart.min.js"></script>
+<script src="bower_components/angular-chart.js/dist/angular-chart.min.js"></script>
+
+<!-- just for angular study
+<script type="text/javascript">
+	function MyController($scope,$timeout){
+		var updateClock = function() {
+			$scope.clock = new Date();
+			$timeout(function() {
+				updateClock();
+			}, 1000)
+		};
+		updateClock();
+	}
+	angular.module('shmcc_app').controller('MyController',MyController);
+
+	function MyController2($scope) {
+		$scope.clock = {
+			now: new Date()
+		};
+		var updateClock = function() {
+			$scope.clock.now = new Date();
+		};
+		setInterval(function(){
+			$scope.$apply(updateClock);
+		},1000);
+		updateClock();
+	};
+	angular.module('shmcc_app').controller('MyController2',MyController2);
+
+	angular.module('shmcc_app').controller('MyController3',function($scope,$parse,$interpolate){
+		$scope.$watch('expr',function(newVal, oldVal, scope){
+			if (newVal !== oldVal) {
+				var parseFun = $parse(newVal);
+				$scope.parsedValue = parseFun();
+			}
+		});
+		$scope.to = 'ari@fullstack.io';
+      $scope.emailBody = 'Hello {{ to }},\n\nMy name is Ari too!';
+      
+		$scope.$watch('emailBody', function(newVal) {
+		if (newVal) {
+			var template = $interpolate(newVal);
+			$scope.previewText =
+			template({to: $scope.to});
+			}
+		});
+	});
+
+	angular.module('shmcc_app').controller('SomeController', function($scope) {
+// 最佳实践，永远使用一个模式
+$scope.someModel = {
+someValue: 'hello computer'
+}
+$scope.someAction = function() {
+$scope.someModel.someValue = 'hello human, from parent';
+};
+})
+.controller('ChildController', function($scope) {
+$scope.childAction = function() {
+$scope.someModel.someValue = 'hello human, from child';
+};
+});
+
+</script>
+
+
+
+<script type="text/javascript">
+	angular.module('shmcc_app').controller('ModalDemoCtrl', function ($uibModal, $log, $document) {
+	var $ctrl = this;
+	$ctrl.items = ['item1', 'item2', 'item3'];
+
+	$ctrl.animationsEnabled = true;
+
+	$ctrl.open = function (size, parentSelector) {
+		var parentElem = parentSelector ? 
+		angular.element($document[0].querySelector('.modal-demo ' + parentSelector)) : undefined;
+		var modalInstance = $uibModal.open({
+		animation: $ctrl.animationsEnabled,
+		ariaLabelledBy: 'modal-title',
+		ariaDescribedBy: 'modal-body',
+		templateUrl: 'myModalContent.html',
+		controller: 'ModalInstanceCtrl',
+		controllerAs: '$ctrl',
+		size: size,
+		appendTo: parentElem,
+		resolve: {
+			items: function () {
+			return $ctrl.items;
+			}
+		}
+		});
+
+		modalInstance.result.then(function (selectedItem) {
+		$ctrl.selected = selectedItem;
+		}, function () {
+		$log.info('Modal dismissed at: ' + new Date());
+		});
+	};
+
+	$ctrl.openComponentModal = function () {
+		var modalInstance = $uibModal.open({
+		animation: $ctrl.animationsEnabled,
+		component: 'modalComponent',
+		resolve: {
+			items: function () {
+			return $ctrl.items;
+			}
+		}
+		});
+
+		modalInstance.result.then(function (selectedItem) {
+		$ctrl.selected = selectedItem;
+		}, function () {
+		$log.info('modal-component dismissed at: ' + new Date());
+		});
+	};
+
+	$ctrl.openMultipleModals = function () {
+		$uibModal.open({
+		animation: $ctrl.animationsEnabled,
+		ariaLabelledBy: 'modal-title-bottom',
+		ariaDescribedBy: 'modal-body-bottom',
+		templateUrl: 'stackedModal.html',
+		size: 'sm',
+		controller: function($scope) {
+			$scope.name = 'bottom';  
+		}
+		});
+
+		$uibModal.open({
+		animation: $ctrl.animationsEnabled,
+		ariaLabelledBy: 'modal-title-top',
+		ariaDescribedBy: 'modal-body-top',
+		templateUrl: 'stackedModal.html',
+		size: 'sm',
+		controller: function($scope) {
+			$scope.name = 'top';  
+		}
+		});
+	};
+
+	$ctrl.toggleAnimation = function () {
+		$ctrl.animationsEnabled = !$ctrl.animationsEnabled;
+	};
+	});
+
+	// Please note that $uibModalInstance represents a modal window (instance) dependency.
+	// It is not the same as the $uibModal service used above.
+
+	angular.module('shmcc_app').controller('ModalInstanceCtrl', function ($uibModalInstance, items) {
+	var $ctrl = this;
+	$ctrl.items = items;
+	$ctrl.selected = {
+		item: $ctrl.items[0]
+	};
+
+	$ctrl.ok = function () {
+		$uibModalInstance.close($ctrl.selected.item);
+	};
+
+	$ctrl.cancel = function () {
+		$uibModalInstance.dismiss('cancel');
+	};
+	});
+
+	// Please note that the close and dismiss bindings are from $uibModalInstance.
+
+	angular.module('shmcc_app').component('modalComponent', {
+	templateUrl: 'myModalContent.html',
+	bindings: {
+		resolve: '<',
+		close: '&',
+		dismiss: '&'
+	},
+	controller: function () {
+		var $ctrl = this;
+
+		$ctrl.$onInit = function () {
+		$ctrl.items = $ctrl.resolve.items;
+		$ctrl.selected = {
+			item: $ctrl.items[0]
+		};
+		};
+
+		$ctrl.ok = function () {
+		$ctrl.close({$value: $ctrl.selected.item});
+		};
+
+		$ctrl.cancel = function () {
+		$ctrl.dismiss({$value: 'cancel'});
+		};
+	}
+	});
+</script>
+-->
+</body>
+</html>

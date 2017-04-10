@@ -1,0 +1,25 @@
+<div align="center" margin="10px" ng-controller="MenuCtrl" > 
+		
+		<wi-menu  adaptable="true"
+			position="bottom-right"
+			filterable="false"
+			dataprovider="menudatas[0].menuitems"
+			onselect="vm.selectFn"
+		>
+		<!--<p>Menu label {{menudata.label}}</p> --> 
+			<input style=" margin:10px;" type="button" class="wi-btn " value="告警查询" />
+		</wi-menu>
+		
+		
+		
+		<wi-menu  adaptable="true"
+			position="bottom-right"
+			filterable="false"
+			dataprovider="menudatas[1].menuitems"
+			onselect="vm.selectFn"
+		>
+		<!--<p>Menu label {{menudata.label}}</p> --> 
+			<input type="button" class="wi-btn " value="指标查询" />
+		</wi-menu>
+		
+</div>

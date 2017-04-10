@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog about personal projects written mostly in JavaScript with AngularJS and Node.js. MongoDB is a guest too.">
+    <meta name="author" content="Kevin Delemme">
+    <meta name="fragment" content="!">
+
+    <title>上海移动PS业务查询系统</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="lib/wysiwyg/css/bootstrap3-wysiwyg5.css" rel="stylesheet">
+    <link href="js/WebUI4Angular/themes/default/wi-all.css" rel="stylesheet" >
+  </head>
+  
+    <body ng-app="shmcc_app">
+        <p align="center">
+            <img src="./images/Title.jpg" alt="SHMCC诺西PS网元管理系统" >
+        </p>
+        <div ng-controller="AdminUserCtrl" align="center">
+            <p ng-if="isAuthenticated">Hi,{{currentUser}}!
+            <button   class="btn btn-default" ng-click="logOut()">
+                Logout
+            </button>
+            </p>
+        </div>
+        <div class="container col-sm-12">
+            
+            <div ng-view></div>
+            
+        </div>
+
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script src="bower_components/angular-route/angular-route.min.js"></script>
+        <script src="lib/jquery/jquery-2.0.3.min.js"></script>
+        <script src="lib/bootstrap/bootstrap.min.js"></script>
+        <!--<script src="dist/js/blog.js"></script>-->
+        <script src="lib/wysiwyg/js/wysihtml5-0.3.0.min.js"></script>
+        <script src="lib/wysiwyg/js/bootstrap3-wysihtml5.js"></script>
+
+        <script src="js/WebUI4Angular/WebUI4Angular-tpls-all.js"></script>
+
+        <script src="js/My97DatePicker/WdatePicker.js"></script>
+        <script src="js/scripts/xml2json.js"></script> 
+
+        <script src="js/route_pagedata/mainSubmitCtrl.js"></script>
+        <script src="js/route_pagedata/DataGridDemoExcelCtrl.js"></script>
+        <script src="js/route_pagedata/choosedataService.js"></script>
+        <script src="js/route_pagedata/MenuData.js"></script>
+        <script src="js/route_pagedata/TreeData.js"></script>
+        <script src="js/route_pagedata/admin_controllers.js"></script>
+        <script src="js/route_pagedata/admin_services.js"></script>
+
+        <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+        <script src="js/route_pagedata/modal_chart.js"></script>
+        <script src="js/route_pagedata/Line_chart.js"></script>
+
+        <script src="bower_components/chart.js/dist/Chart.min.js"></script>
+        <script src="bower_components/angular-chart.js/dist/angular-chart.min.js"></script>
+
+
+
+        <!--
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-46674011-1', 'kdelemme.com');
+            ga('send', 'pageview');
+        </script>
+        -->
+    </body>
+</html>
