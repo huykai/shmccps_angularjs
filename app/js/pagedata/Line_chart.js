@@ -7,9 +7,9 @@ angular.module("shmcc_app").controller("LineCtrl", function ($scope,$rootScope) 
   $scope.chart_labels = $rootScope.chart_labels;
   $scope.chart_series = $rootScope.chart_series;
   
-  console.log($scope.chart_data);
-  console.log($scope.chart_labels);
-  console.log($scope.chart_series);
+  //console.log($scope.chart_data);
+  //console.log($scope.chart_labels);
+  //console.log($scope.chart_series);
   //$scope.chart_labels = ["January", "February", "March", "April", "May", "June", "July"];
   //var activetab = $rootScope.activetab; 
   //$scope.labels = activetab.

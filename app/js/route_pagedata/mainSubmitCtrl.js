@@ -1,7 +1,7 @@
 'use strict';
 //var shmcc_app =  angular.module('shmcc_app',['ui.wisoft','ui.wisoft.tpls']);
 
-var shmcc_app =  angular.module('shmcc_app',['appDirectives','appControllers','appServices','ngRoute','ui.wisoft','ui.wisoft.tpls','ui.bootstrap','chart.js']);
+var shmcc_app =  angular.module('shmcc_app',['ngCookies', 'appDirectives','appControllers','appServices','ngRoute','ui.wisoft','ui.wisoft.tpls','ui.bootstrap','chart.js']);
 
 var appServices = angular.module('appServices', []);
 var appControllers = angular.module('appControllers', []);
@@ -9,13 +9,15 @@ var appDirectives = angular.module('appDirectives', []);
 
 var options = {};
 options.api = {};
-options.api.base_url = "http://localhost:3000";
+options.api.base_url = "http://192.168.1.126:3000";
+
 
 shmcc_app.config(['$qProvider', function ($qProvider) {
     $qProvider.errorOnUnhandledRejections(false);
 }]);
 
 shmcc_app.config(function ($httpProvider) {
+	$httpProvider.defaults.withCredentials = true;
     $httpProvider.interceptors.push('TokenInterceptor');
 });
 
@@ -31,7 +33,7 @@ shmcc_app.service('getTreeData',function($q){
 				element_typeid = eo.id;
 				if (eo.__selected == true && eo.__semi == false) {
 					elements.push('all');
-					console.log(elements);
+					//console.log(elements);
 					deffer.notify(elements);
 					//return deffer.promise;
 					//return elements;
@@ -66,13 +68,10 @@ shmcc_app.service('getTreeData',function($q){
 	}
 });
 
-
-
-
-
 var mainSubmitCtrl = ["getTreeData","$rootScope", "$interpolate", "$scope","$document","choosedataService","$http",function(getTreeData,$rootScope,$interpolate,$scope,$document,choosedataService,$http) {
     var vm = $scope;
 
+	
 	$rootScope.queryoptionchanged = false;
 	var queryDetailtemplatedesc = "The Query detail is : \n Elemens: {{ elementlist }} \t KPIs: {{kpilist}} \n Time Period : {{querystarttime}} .. {{querystoptime}} \t Statistics Time Unit: {{queryperiod}} \t Statistics Unit Type: {{queryunit}}";
     $rootScope.QueryDetailtemplate = $interpolate(queryDetailtemplatedesc);
@@ -108,9 +107,12 @@ var mainSubmitCtrl = ["getTreeData","$rootScope", "$interpolate", "$scope","$doc
 	vm.end_time = end_time_hour +":"+ end_time_min + ":" + end_time_sec;
 	vm.begin_date = pre_date_year +"/"+ pre_date_month + "/" + pre_date_day;
 	vm.begin_time = pre_time_hour +":"+ pre_time_min + ":" + pre_time_sec;
+	
 	$rootScope.begin_datetime = vm.begin_date + " " + vm.begin_time;
 	$rootScope.end_datetime = vm.end_date + " " + vm.end_time;
-	
+	$rootScope.select_element = [];
+	$rootScope.select_kpi = [];
+		
 	vm.onPickedHandler = function (data) {
         alert(data)
     };
@@ -134,32 +136,37 @@ var mainSubmitCtrl = ["getTreeData","$rootScope", "$interpolate", "$scope","$doc
         $rootScope.queryoptionchanged = !$rootScope.queryoptionchanged;
     };
 	vm.itemUnitChangeHandler =  function(data) {
-		$rootScope.statis_unit = data;
+		//console.log('itemUnitChangeHandler: ' ,data)
+		if ($rootScope.isMME) {
+			$rootScope.mme_statis_unit = data;
+		} else {
+			$rootScope.saegw_statis_unit = data;
+		}
         $rootScope.queryoptionchanged = !$rootScope.queryoptionchanged;
     };
-
+	
 	$rootScope.$watch('queryoptionchanged', function(newVal,oldVal){
-		var select_element = [];
+		//console.log('queryoptionchange: ', vm);
 		if($rootScope.isMME == true) {
 			//var select_element = getTreeData.getTreeData_elements($rootScope.treedata_mme_element);
 			getTreeData.getTreeData_elements($rootScope.treedata_mme_element)
 			.then(function(data){
-				select_element = data;
-				console.log('succ: ');
-				console.log(data.toString());
-				console.log(select_element);
+				$rootScope.select_element = data;
+				//console.log('succ: ');
+				//console.log(data.toString());
+				//console.log(select_element);
 				genQueryDetail();
 			}, function(data){
-				select_element = ['Error'];
+				$rootScope.select_element = ['Error'];
 				//console.log('err: ' + data.toString());
 				genQueryDetail();
 			}, function( data ) {
-				select_element = ['All'];
+				$rootScope.select_element = ['All'];
 				//console.log('notice: ' + data.toString());
 				genQueryDetail();
 			});
-			console.log(select_element);
-			var select_kpi = getTreeData.getTreeData_kpis($rootScope.treedata_mme_kpi);
+			//console.log(select_element);
+			$rootScope.select_kpi = getTreeData.getTreeData_kpis($rootScope.treedata_mme_kpi);
 			//var select_element = $rootScope.getelement($rootScope.treedata_mme_element);
 			//var select_kpi = $rootScope.getkpi($rootScope.treedata_mme_kpi);
 		} else {
@@ -168,13 +175,13 @@ var mainSubmitCtrl = ["getTreeData","$rootScope", "$interpolate", "$scope","$doc
 			//var select_element = getTreeData.getTreeData_elements($rootScope.treedata_saegw_element);
 			getTreeData.getTreeData_elements($rootScope.treedata_saegw_element)
 			.then(function(data){
-				select_element = data;
+				$rootScope.select_element = data;
 			}, function(data){
-				select_element = ['Error'];
+				$rootScope.select_element = ['Error'];
 			}, function( data ) {
-				select_element = ['All'];
+				$rootScope.select_element = ['All'];
 			});
-			var select_kpi = getTreeData.getTreeData_kpis($rootScope.treedata_saegw_kpi);
+			$rootScope.select_kpi = getTreeData.getTreeData_kpis($rootScope.treedata_saegw_kpi);
 		}
 
 		var treedata_elementdemo = [];
@@ -210,39 +217,59 @@ var mainSubmitCtrl = ["getTreeData","$rootScope", "$interpolate", "$scope","$doc
 		//console.log(angular.toJson($rootScope.treedata_mme_kpi[0]));
 		
 		var genQueryDetail = function(){
+			//console.log('genQueryDetail: ',select_element);
+				
+			if ($rootScope.isMME) {
+					var queryunit_info = $rootScope.mme_statis_unit.name;
+			} else {
+					var queryunit_info = $rootScope.saegw_statis_unit.name;
+			}
+			//console.log('queryunit_info: ' , queryunit_info);
 			$rootScope.QueryDetailDesc = $rootScope.QueryDetailtemplate(
 			{
-				elementlist: select_element,
-			 	kpilist: select_kpi,
+				elementlist: $rootScope.select_element,
+			 	kpilist: $rootScope.select_kpi,
 				querystarttime: $rootScope.begin_datetime,
 				querystoptime: $rootScope.end_datetime,
 				queryperiod: $rootScope.statis_period.name,
-				queryunit: $rootScope.statis_unit.name
+				queryunit: queryunit_info
 			});
-		}
+	};
+		
 	});
+
+	
     
 	vm.mydata = [
 		{id:0,name:'15'},
 		{id:1,name:'60'}
 	];
-    vm.mydata2 = [
-		{id:0,name:'TAC'},
-		{id:1,name:'MME'},
-		{id:2,name:'Session'},
-		{id:3,name:'SAEGW'}
+    vm.mydata_mme = [
+		{id:0,name:'MME'},
+		{id:1,name:'TAC'},
 	];
+	vm.mydata_saegw = [
+		{id:0,name:'SAEGW'},
+		{id:1,name:'Sesssion'}
+	];
+	
+	vm.apistring = {
+		'MME_query'		:	'/api/mme_query',
+		'SAEGW_query'	:	'/api/saegw_kpiquery'
+	}
+
 	$rootScope.statis_period = vm.mydata[0];
-	$rootScope.statis_unit = vm.mydata2[0];
-    vm.itemChangeHandler = function (data){
-        console.log(data);
-        vm.statis_period = data;
+	if ($rootScope.isMME) {
+		$rootScope.mme_statis_unit = vm.mydata_mme[0];
+	}else{
+		$rootScope.saegw_statis_unit = vm.mydata_saegw[0];
+	}
+	vm.itemChangeHandler = function (data){
+        //console.log(data);
+        vm.mme_statis_period = data;
     };
 			
-	vm.itemChangeHandler2 = function (data){
-        console.log(data);
-        vm.statis_unit = data;
-    };	
+	
     
     vm.queryStatis = function(param_config) {
 		$rootScope.tabs = [];
@@ -285,16 +312,16 @@ var mainSubmitCtrl = ["getTreeData","$rootScope", "$interpolate", "$scope","$doc
      			for(var p in data){  
        				str.push(encodeURIComponent(p) + "=" + encodeURIComponent(data[p]));  
      			}  
-     			console.log(str);
+     			//console.log('transformRequest: ' , str.join("&"));
 				return str.join("&");
 				
 				// console.log('postconfig:' + $.param(data));
 				// return $.param(data);  
    			},
 			transformResponse: function (data,headers) {
-				console.log(angular.element(data.trim()));
-				console.log(headers);
-				console.log('Content-type:' + headers("Content-type"));
+				//console.log(angular.element(data.trim()));
+				//console.log(headers);
+				//console.log('Content-type:' + headers("Content-type"));
 				if (headers("Content-type").indexOf("text/xml") >= 0 
 					&& angular.isString(data)) {
 					//var StatsData = [];
@@ -317,9 +344,16 @@ var mainSubmitCtrl = ["getTreeData","$rootScope", "$interpolate", "$scope","$doc
 		//$http.get("scripts/PM_statis_report.py",config).success(function(data){
 		//this.getapi('/api/mme_query',config);
 		postconfig.data = param_config;
-		this.postapi('/api/mme_query',postconfig);
+		console.log('param_config=', angular.toJson(param_config));
+		if($rootScope.isMME == true) {
+			//console.log('api_string: ',this.apistring['MME_query']);
+			this.postapi(this.apistring['MME_query'],postconfig);
+		} else {
+			//console.log('api_string: ',this.apistring['SAEGW_query']);
+			this.postapi(this.apistring['SAEGW_query'],postconfig);
+		}
 		//config.params = param_config ;
-		console.log(config);
+		//console.log(config);
 		// get mode : need config.params , 
 		//            as api?xxxxxxx
 		// post mode : need config.data as post data, 
@@ -337,7 +371,7 @@ var mainSubmitCtrl = ["getTreeData","$rootScope", "$interpolate", "$scope","$doc
 	vm.getapi = function(api_string,config) {
 		//$http.get("/api/mme_query",config).success(function(data){
 		$http.get(api_string,config).success(function(data){
-			console.log(data);
+			//console.log(data);
 			for (var tableid in data.response){
 				var newcolumns = $rootScope.addcolumns(data.response[tableid].Title);
 				var newdatas = $rootScope.adddatas(data.response[tableid].Item);
@@ -362,7 +396,7 @@ var mainSubmitCtrl = ["getTreeData","$rootScope", "$interpolate", "$scope","$doc
 		// after angular 1.5 we should use then
 		$http.post(api_string, config.data ,config)
 		.then(function(data){
-			console.log(data);
+			//console.log(data);
 			for (var tableid in data.data.response){
 				var newcolumns = $rootScope.addcolumns(data.data.response[tableid].Title);
 				var newdatas = $rootScope.adddatas(data.data.response[tableid].Item);
@@ -396,6 +430,7 @@ var mainSubmitCtrl = ["getTreeData","$rootScope", "$interpolate", "$scope","$doc
 		return newtab;
 	};
 	$rootScope.addcolumns = function(titles){
+		console.log('addcolumns: ', titles);
 		var newcolumns = [];
 		//{id:0,children:0,headtext:'mme1',datafield:"n1",name:"111"},
 		//console.log(titles);
@@ -408,6 +443,7 @@ var mainSubmitCtrl = ["getTreeData","$rootScope", "$interpolate", "$scope","$doc
 			newcolumn.name = titles.name[titleid]
 			newcolumns.push(newcolumn);
 		}
+		console.log('addcolumns: ', newcolumns);
 		return newcolumns;	
 	};
 	$rootScope.adddatas = function(datas){
@@ -448,7 +484,7 @@ var mainSubmitCtrl = ["getTreeData","$rootScope", "$interpolate", "$scope","$doc
 	$rootScope.changedatas = function(datas){
 		//$rootScope.datas[0]
 		for (var i = 0; i < 5; i++){
-			console.log(datas[i].ItemCol[i].value);
+			//console.log(datas[i].ItemCol[i].value);
 			$rootScope.datas[3][i].n1 = datas[i].ItemCol[0].value;
 			$rootScope.datas[3][i].n2 = datas[i].ItemCol[1].value;
 			$rootScope.datas[3][i].n3 = datas[i].ItemCol[2].value;
@@ -469,7 +505,7 @@ var mainSubmitCtrl = ["getTreeData","$rootScope", "$interpolate", "$scope","$doc
 				element_typeid = eo.id;
 				if (eo.__selected == true && eo.__semi == false) {
 					elements.push('all');
-					console.log(elements);
+					//console.log(elements);
 					return elements;
 				} else if (eo.__selected == false && eo.__semi == false) {
 					elements.push('none');
@@ -477,10 +513,11 @@ var mainSubmitCtrl = ["getTreeData","$rootScope", "$interpolate", "$scope","$doc
 					return elements;
 				} 
 			} else if (eo.__selected == true && eo.pid == element_typeid ) {
+				//console.log('eo.text: ',eo_text);
 				elements.push(eo.text);
 			}
 		};
-		console.log('return elements' + elements.toString());
+		//console.log('return elements' + elements.toString());
 		return elements;
 	};
 
@@ -504,35 +541,31 @@ var mainSubmitCtrl = ["getTreeData","$rootScope", "$interpolate", "$scope","$doc
 		var stopdatetime = vm.end_datetime.split(' ');
 		queryParameter['stopDate'] = stopdatetime[0];
 		queryParameter['stopTime'] = stopdatetime[1];
-		console.log(queryParameter);
+		//console.log(queryParameter);
 		//console.log(this.rootscope);
         //var rootscope=$scope.parent;
         //console.log($scope.parent);
-        console.log($rootScope.treedata_mme_element);
-		console.log($rootScope.treedata_mme_kpi);
+        //console.log($rootScope.treedata_mme_element);
+		//console.log($rootScope.treedata_mme_kpi);
 
-		if($rootScope.isMME == true) {
-			var select_element = getTreeData.getTreeData_elements($rootScope.treedata_mme_element);
-			var select_kpi = getTreeData.getTreeData_kpis($rootScope.treedata_mme_kpi);
-			//var select_element = getTreeData_elements.getelement($rootScope.treedata_mme_element);
-			//var select_kpi = $rootScope.getkpi($rootScope.treedata_mme_kpi);
-		} else {
-			var select_element = getTreeData.getTreeData_elements($rootScope.treedata_saegw_element);
-			var select_kpi = getTreeData.getTreeData_kpis($rootScope.treedata_saegw_kpi);
-			//var select_element = $rootScope.getelement($rootScope.treedata_mme_element);
-			//var select_kpi = $rootScope.getkpi($rootScope.treedata_mme_kpi);
-		}
-		//console.log(select_element);
-		//console.log(select_kpi);
+		//console.log('select_element: ', $rootScope.select_element);
+		//console.log('select_kpi: ', $rootScope.select_kpi);
 		var config = {};
-		config.elementlist = select_element.toString();
-		config.kpilist = select_kpi.toString();
+		if ($rootScope.isMME) {
+			config.selectmmesgsn = $rootScope.select_element;	
+		} else {
+			config.selectsaegwggsn = $rootScope.select_element;
+		}
+		config.kpilist = $rootScope.select_kpi;
 		config.startdate = queryParameter['startDate'];
 		config.starttime = queryParameter['startTime'];
 		config.stopdate = queryParameter['stopDate'];
 		config.stoptime = queryParameter['stopTime'];
-		config.period = this.statis_period.name;
-		config.unit = this.statis_unit.name;
+		config.selectperiod = this.statis_period.name;
+		config.selectmmeelement = this.mme_statis_unit.name;
+		config.selectsaegwelement = this.saegw_statis_unit.name;
+		config.isMME = $rootScope.isMME;
+		//console.log('config: ',config);
 		this.queryStatis(config);
 	};
 
@@ -564,17 +597,26 @@ shmcc_app.config(['$locationProvider', '$routeProvider',
             controller: 'AdminUserCtrl',
             access: { requiredAuthentication: true }
         }).
+		when('/alarm/query', { 
+            templateUrl: 'partials/vueindex.html'
+            //access: { requiredAuthentication: true }
+        }).
         otherwise({
             redirectTo: '/'
         });
 }]);
 
-shmcc_app.run(function($rootScope, $location, $window, AuthenticationService) {
-	
+shmcc_app.run(function($rootScope, $cookies, $http, $location, $window, AuthenticationService) {
+	//$rootScope.csrftoken = $cookies.get('XSRF-TOKEN');
     $rootScope.$on("$routeChangeStart", function(event, nextRoute, currentRoute) {
+		//$rootScope.csrftoken = $cookies.get('XSRF-TOKEN');
+		//$http.defaults.headers.common['x-csrf-Token']  = $cookies.get('XSRF-TOKEN');
 		$rootScope.isAuthenticated = AuthenticationService.isAuthenticated;
 		$rootScope.currentUser = AuthenticationService.currentUser;
-
+		if (!$rootScope.isAuthenticated) {
+			$rootScope.isAuthenticated = $window.sessionStorage.isAuthenticated;
+			$rootScope.currentUser = $window.sessionStorage.currentUser;
+		};
         //redirect only if both isAuthenticated is false and no token is set
         if (nextRoute != null && nextRoute.access != null && nextRoute.access.requiredAuthentication 
             && !AuthenticationService.isAuthenticated && !$window.sessionStorage.token) {
@@ -593,7 +635,13 @@ shmcc_app.run(function($rootScope, $location, $window, AuthenticationService) {
             $location.path("/admin/login");
         }
     });
-
+	//$http.defaults.headers.common['x-csrf-Token']  = $cookies.get('XSRF-TOKEN');
+	//$http.defaults.headers.common['x-csrf-Token']  = 'CwXEY6AG3_I5k_zVeI34Z3QF';
+	//console.log($cookies['csrftoken']);
 });
+
+var click = function(){
+	console.log("hello");
+}
 
 angular.module('shmcc_app').controller('mainSubmitCtrl',mainSubmitCtrl);

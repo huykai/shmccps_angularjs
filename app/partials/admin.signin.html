@@ -9,6 +9,7 @@
 			<label for="inputUsername" class="col-sm-4 control-label">Username</label>
 			<div class="col-sm-4">
 				<input type="text" class="form-control" id="inputUsername" placeholder="Username" ng-model="user.username">
+				<input type="hidden" name="_csrf" value="{{csrftoken}}">
 			</div>
 		</div>
 		<div class="form-group">
@@ -19,7 +20,7 @@
 		</div>
 		<div class="form-group">
 			<div class="col-sm-offset-4 col-sm-10">
-				<button type="submit" class="btn btn-default" ng-click="signIn(user.username, user.password)">Sign In</button>
+				<button type="submit" id='signin' class="btn btn-default" ng-click="signIn(user.username, user.password)">Sign In</button>
 				<button type="submit" class="btn btn-default" ng-click="toRegister()">Register</button>
 			</div>
 		</div>

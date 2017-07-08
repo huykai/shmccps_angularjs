@@ -1,0 +1,572 @@
+
+[4mapp\js\route_pagedata_v2\admin_controllers.js[24m
+  [90mline 36[39m   [90mcol 10[39m      [94mMissing semicolon.[39m
+  [90mline 58[39m   [90mcol 10[39m      [94mMissing semicolon.[39m
+  [90mline 62[39m   [90mcol 10[39m      [94mMissing semicolon.[39m
+  [90mline 68[39m   [90mcol 10[39m      [94mMissing semicolon.[39m
+  [90mline 96[39m   [90mcol 10[39m      [94mMissing semicolon.[39m
+
+[4mapp\js\route_pagedata_v2\admin_services.js[24m
+  [90mline 5[39m    [90mcol 6[39m       [94mMissing semicolon.[39m
+  [90mline 26[39m   [90mcol 55[39m      [94mExpected '===' and instead saw '=='.[39m
+  [90mline 110[39m  [90mcol 6[39m       [94mMissing semicolon.[39m
+  [90mline 126[39m  [90mcol 40[39m      [94mExpected '===' and instead saw '=='.[39m
+  [90mline 147[39m  [90mcol 40[39m      [94mExpected '===' and instead saw '=='.[39m
+  [90mline 156[39m  [90mcol 6[39m       [94mMissing semicolon.[39m
+
+[4mapp\js\route_pagedata_v2\choosedataService.js[24m
+  [90mline 15[39m   [90mcol 6[39m       [94mMissing semicolon.[39m
+  [90mline 29[39m   [90mcol 2[39m       [94mUnnecessary semicolon.[39m
+  [90mline 42[39m   [90mcol 26[39m      [94m['modecolumn'] is better written in dot notation.[39m
+  [90mline 59[39m   [90mcol 92[39m      [94mBad escaping of EOL. Use option multistr if needed.[39m
+  [90mline 60[39m   [90mcol 99[39m      [94mBad escaping of EOL. Use option multistr if needed.[39m
+  [90mline 79[39m   [90mcol 66[39m      [94mMissing semicolon.[39m
+
+[4mapp\js\route_pagedata_v2\DataGridDemoExcelCtrl.js[24m
+  [90mline 43[39m   [90mcol 45[39m      [94mExpected '===' and instead saw '=='.[39m
+  [90mline 51[39m   [90mcol 69[39m      [94mBad escaping of EOL. Use option multistr if needed.[39m
+  [90mline 52[39m   [90mcol 101[39m     [94mBad escaping of EOL. Use option multistr if needed.[39m
+  [90mline 53[39m   [90mcol 87[39m      [94mBad escaping of EOL. Use option multistr if needed.[39m
+  [90mline 54[39m   [90mcol 100[39m     [94mBad escaping of EOL. Use option multistr if needed.[39m
+  [90mline 55[39m   [90mcol 121[39m     [94mBad escaping of EOL. Use option multistr if needed.[39m
+  [90mline 56[39m   [90mcol 87[39m      [94mBad escaping of EOL. Use option multistr if needed.[39m
+  [90mline 57[39m   [90mcol 107[39m     [94mBad escaping of EOL. Use option multistr if needed.[39m
+  [90mline 58[39m   [90mcol 117[39m     [94mBad escaping of EOL. Use option multistr if needed.[39m
+  [90mline 59[39m   [90mcol 128[39m     [94mBad escaping of EOL. Use option multistr if needed.[39m
+  [90mline 60[39m   [90mcol 128[39m     [94mBad escaping of EOL. Use option multistr if needed.[39m
+  [90mline 61[39m   [90mcol 128[39m     [94mBad escaping of EOL. Use option multistr if needed.[39m
+  [90mline 62[39m   [90mcol 128[39m     [94mBad escaping of EOL. Use option multistr if needed.[39m
+  [90mline 63[39m   [90mcol 128[39m     [94mBad escaping of EOL. Use option multistr if needed.[39m
+  [90mline 64[39m   [90mcol 58[39m      [94mBad escaping of EOL. Use option multistr if needed.[39m
+  [90mline 65[39m   [90mcol 49[39m      [94mBad escaping of EOL. Use option multistr if needed.[39m
+  [90mline 66[39m   [90mcol 46[39m      [94mMissing semicolon.[39m
+
+[4mapp\js\route_pagedata_v2\HttpGetData.js[24m
+  [90mline 22[39m   [90mcol 70[39m      [94mExpected ')' and instead saw '{'.[39m
+  [90mline 22[39m   [90mcol 71[39m      [94mMissing semicolon.[39m
+  [90mline 25[39m   [90mcol 56[39m      [31mExpected '}' to match '{' from line 24 and instead saw '{'.[39m
+  [90mline 25[39m   [90mcol 57[39m      [94mMissing semicolon.[39m
+  [90mline 26[39m   [90mcol 47[39m      [94mExpected '===' and instead saw '=='.[39m
+  [90mline 27[39m   [90mcol 21[39m      [94mMisleading line break before '&&'; readers may interpret this as an expression boundary.[39m
+  [90mline 35[39m   [90mcol 14[39m      [94mMissing semicolon.[39m
+  [90mline 35[39m   [90mcol 13[39m      [31mUnrecoverable syntax error. (83% scanned).[39m
+
+[4mapp\js\route_pagedata_v2\Line_chart_demo.js[24m
+  [90mline 1[39m    [90mcol 1[39m       [94mUse the function form of "use strict".[39m
+  [90mline 3[39m    [90mcol 1[39m       [94m'angular' is not defined.[39m
+  [90mline 12[39m   [90mcol 5[39m       [94m'console' is not defined.[39m
+
+[4mapp\js\route_pagedata_v2\Line_chart.js[24m
+  [90mline 1[39m    [90mcol 1[39m       [94mUse the function form of "use strict".[39m
+  [90mline 3[39m    [90mcol 1[39m       [94m'angular' is not defined.[39m
+
+[4mapp\js\route_pagedata_v2\mainSubmitCtrl.js[24m
+  [90mline 1[39m    [90mcol 1[39m       [94mUse the function form of "use strict".[39m
+  [90mline 33[39m   [90mcol 26[39m      [94mExpected '===' and instead saw '=='.[39m
+  [90mline 33[39m   [90mcol 47[39m      [94mExpected '===' and instead saw '=='.[39m
+  [90mline 35[39m   [90mcol 37[39m      [94mExpected '===' and instead saw '=='.[39m
+  [90mline 35[39m   [90mcol 58[39m      [94mExpected '===' and instead saw '=='.[39m
+  [90mline 42[39m   [90mcol 44[39m      [94mExpected '===' and instead saw '=='.[39m
+  [90mline 42[39m   [90mcol 66[39m      [94mExpected '===' and instead saw '=='.[39m
+  [90mline 50[39m   [90mcol 40[39m      [94mExpected '===' and instead saw '=='.[39m
+  [90mline 50[39m   [90mcol 58[39m      [94mExpected '===' and instead saw '=='.[39m
+  [90mline 53[39m   [90mcol 10[39m      [94mUnnecessary semicolon.[39m
+  [90mline 63[39m   [90mcol 30[39m      [94mExpected '===' and instead saw '=='.[39m
+  [90mline 63[39m   [90mcol 52[39m      [94mExpected '===' and instead saw '=='.[39m
+  [90mline 66[39m   [90mcol 10[39m      [94mUnnecessary semicolon.[39m
+  [90mline 69[39m   [90mcol 6[39m       [94mMissing semicolon.[39m
+  [90mline 85[39m   [90mcol 6[39m       [94mUnnecessary semicolon.[39m
+  [90mline 117[39m  [90mcol 20[39m      [94mMissing semicolon.[39m
+  [90mline 121[39m  [90mcol 23[39m      [94mMissing semicolon.[39m
+  [90mline 150[39m  [90mcol 31[39m      [94mExpected '===' and instead saw '=='.[39m
+  [90mline 189[39m  [90mcol 34[39m      [94mMissing semicolon.[39m
+  [90mline 197[39m  [90mcol 10[39m      [94mUnnecessary semicolon.[39m
+  [90mline 200[39m  [90mcol 18[39m      [94m'dataid' is already defined.[39m
+  [90mline 201[39m  [90mcol 17[39m      [94m'treedataitem' is already defined.[39m
+  [90mline 201[39m  [90mcol 34[39m      [94mMissing semicolon.[39m
+  [90mline 209[39m  [90mcol 10[39m      [94mUnnecessary semicolon.[39m
+  [90mline 225[39m  [90mcol 25[39m      [94m'queryunit_info' is already defined.[39m
+  [90mline 235[39m  [90mcol 28[39m      [94m'queryunit_info' used out of scope.[39m
+  [90mline 259[39m  [90mcol 6[39m       [94mMissing semicolon.[39m
+  [90mline 282[39m  [90mcol 21[39m      [94mMisleading line break before '&&'; readers may interpret this as an expression boundary.[39m
+  [90mline 297[39m  [90mcol 10[39m      [94mMissing semicolon.[39m
+  [90mline 326[39m  [90mcol 21[39m      [94mMisleading line break before '&&'; readers may interpret this as an expression boundary.[39m
+  [90mline 348[39m  [90mcol 31[39m      [94mExpected '===' and instead saw '=='.[39m
+  [90mline 350[39m  [90mcol 40[39m      [94m['MME_query'] is better written in dot notation.[39m
+  [90mline 353[39m  [90mcol 40[39m      [94m['SAEGW_query'] is better written in dot notation.[39m
+  [90mline 445[39m  [90mcol 50[39m      [94mMissing semicolon.[39m
+  [90mline 465[39m  [90mcol 17[39m      [94mExpected '{' and instead saw 'data'.[39m
+  [90mline 506[39m  [90mcol 26[39m      [94mExpected '===' and instead saw '=='.[39m
+  [90mline 506[39m  [90mcol 47[39m      [94mExpected '===' and instead saw '=='.[39m
+  [90mline 508[39m  [90mcol 37[39m      [94mExpected '===' and instead saw '=='.[39m
+  [90mline 508[39m  [90mcol 58[39m      [94mExpected '===' and instead saw '=='.[39m
+  [90mline 512[39m  [90mcol 44[39m      [94mExpected '===' and instead saw '=='.[39m
+  [90mline 512[39m  [90mcol 66[39m      [94mExpected '===' and instead saw '=='.[39m
+  [90mline 517[39m  [90mcol 40[39m      [94mExpected '===' and instead saw '=='.[39m
+  [90mline 517[39m  [90mcol 58[39m      [94mExpected '===' and instead saw '=='.[39m
+  [90mline 521[39m  [90mcol 10[39m      [94mUnnecessary semicolon.[39m
+  [90mline 530[39m  [90mcol 30[39m      [94mExpected '===' and instead saw '=='.[39m
+  [90mline 530[39m  [90mcol 52[39m      [94mExpected '===' and instead saw '=='.[39m
+  [90mline 533[39m  [90mcol 10[39m      [94mUnnecessary semicolon.[39m
+  [90mline 541[39m  [90mcol 23[39m      [94m['startDate'] is better written in dot notation.[39m
+  [90mline 542[39m  [90mcol 23[39m      [94m['startTime'] is better written in dot notation.[39m
+  [90mline 544[39m  [90mcol 23[39m      [94m['stopDate'] is better written in dot notation.[39m
+  [90mline 544[39m  [90mcol 23[39m      [31mToo many errors. (83% scanned).[39m
+
+[4mapp\js\route_pagedata_v2\MenuData.js[24m
+  [90mline 4[39m    [90mcol 24[39m      [94mExpected '===' and instead saw '=='.[39m
+  [90mline 8[39m    [90mcol 24[39m      [94mExpected '===' and instead saw '=='.[39m
+  [90mline 12[39m   [90mcol 24[39m      [94mExpected '===' and instead saw '=='.[39m
+
+[4mapp\js\route_pagedata_v2\modal_chart.js[24m
+  [90mline 1[39m    [90mcol 1[39m       [94mUse the function form of "use strict".[39m
+  [90mline 19[39m   [90mcol 6[39m       [94mUnnecessary semicolon.[39m
+  [90mline 20[39m   [90mcol 14[39m      [94m'id' is already defined.[39m
+  [90mline 40[39m   [90mcol 36[39m      [94mExpected '===' and instead saw '=='.[39m
+  [90mline 40[39m   [90mcol 77[39m      [94mExpected '===' and instead saw '=='.[39m
+  [90mline 47[39m   [90mcol 46[39m      [94mExpected '===' and instead saw '=='.[39m
+  [90mline 71[39m   [90mcol 44[39m      [94mMissing semicolon.[39m
+  [90mline 5[39m    [90mcol 1[39m       [94m'angular' is not defined.[39m
+  [90mline 82[39m   [90mcol 7[39m       [94m'angular' is not defined.[39m
+  [90mline 157[39m  [90mcol 1[39m       [94m'angular' is not defined.[39m
+  [90mline 196[39m  [90mcol 1[39m       [94m'angular' is not defined.[39m
+  [90mline 172[39m  [90mcol 5[39m       [94m'console' is not defined.[39m
+  [90mline 179[39m  [90mcol 5[39m       [94m'console' is not defined.[39m
+  [90mline 186[39m  [90mcol 5[39m       [94m'console' is not defined.[39m
+
+[4mapp\js\route_pagedata_v2\view1.js[24m
+  [90mline 167[39m  [90mcol 56[39m      [94mMissing semicolon.[39m
+
+[4mapp\js\route_pagedata_v2\view2.js[24m
+  [90mline 1[39m    [90mcol 1[39m       [94mUse the function form of "use strict".[39m
+  [90mline 3[39m    [90mcol 28[39m      [31mUnexpected ')'.[39m
+  [90mline 3[39m    [90mcol 28[39m      [31mExpected an identifier and instead saw ')'.[39m
+  [90mline 5[39m    [90mcol 1[39m       [31mExpected an operator and instead saw '.'.[39m
+  [90mline 5[39m    [90mcol 2[39m       [94mExpected ')' and instead saw 'config'.[39m
+  [90mline 3[39m    [90mcol 1[39m       [94m'angular' is not defined.[39m
+
+[4mapp\reactjs\App_form.js[24m
+  [90mline 1[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 3[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 8[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 9[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 10[39m   [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 12[39m   [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 15[39m   [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 16[39m   [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 17[39m   [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 17[39m   [90mcol 19[39m      [94mMissing semicolon.[39m
+  [90mline 23[39m   [90mcol 1[39m       [94m'const' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).[39m
+  [90mline 29[39m   [90mcol 1[39m       [94m'const' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).[39m
+  [90mline 35[39m   [90mcol 1[39m       [94m'const' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).[39m
+  [90mline 41[39m   [90mcol 1[39m       [94m'const' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).[39m
+  [90mline 47[39m   [90mcol 1[39m       [94m'let' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).[39m
+  [90mline 52[39m   [90mcol 2[39m       [94mMissing semicolon.[39m
+  [90mline 55[39m   [90mcol 1[39m       [94m'export' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 55[39m   [90mcol 16[39m      [94m'class' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).[39m
+  [90mline 113[39m  [90mcol 7[39m       [94m'let' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).[39m
+  [90mline 119[39m  [90mcol 51[39m      [94mMissing semicolon.[39m
+  [90mline 153[39m  [90mcol 43[39m      [94m'default parameters' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 196[39m  [90mcol 55[39m      [94mMissing semicolon.[39m
+  [90mline 204[39m  [90mcol 51[39m      [31mUnclosed regular expression.[39m
+  [90mline 204[39m  [90mcol 51[39m      [31mUnrecoverable syntax error. (94% scanned).[39m
+
+[4mapp\reactjs\App.js[24m
+  [90mline 1[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 2[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 3[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 4[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 7[39m    [90mcol 12[39m      [31mUnclosed regular expression.[39m
+  [90mline 7[39m    [90mcol 12[39m      [31mUnrecoverable syntax error. (2% scanned).[39m
+
+[4mapp\reactjs\App.test.js[24m
+  [90mline 1[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 2[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 3[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 5[39m    [90mcol 33[39m      [94m'arrow function syntax (=>)' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 6[39m    [90mcol 3[39m       [94m'const' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).[39m
+  [90mline 7[39m    [90mcol 19[39m      [31mExpected an identifier and instead saw '<'.[39m
+  [90mline 7[39m    [90mcol 20[39m      [94mExpected ')' and instead saw 'App'.[39m
+  [90mline 7[39m    [90mcol 25[39m      [31mExpected an identifier and instead saw '>'.[39m
+  [90mline 7[39m    [90mcol 28[39m      [94mExpected an assignment or function call and instead saw an expression.[39m
+  [90mline 7[39m    [90mcol 31[39m      [31mMissing semicolon.[39m
+  [90mline 7[39m    [90mcol 31[39m      [31mExpected an identifier and instead saw ')'.[39m
+  [90mline 7[39m    [90mcol 31[39m      [94mExpected an assignment or function call and instead saw an expression.[39m
+
+[4mapp\reactjs\build.1\service-worker.js[24m
+  [90mline 1[39m    [90mcol 1[39m       [94mUse the function form of "use strict".[39m
+  [90mline 1[39m    [90mcol 112[39m     [94mMissing semicolon.[39m
+  [90mline 1[39m    [90mcol 114[39m     [94mMissing semicolon.[39m
+  [90mline 1[39m    [90mcol 151[39m     [94mMissing semicolon.[39m
+  [90mline 1[39m    [90mcol 153[39m     [94mMissing semicolon.[39m
+  [90mline 1[39m    [90mcol 680[39m     [94mMissing semicolon.[39m
+  [90mline 1[39m    [90mcol 873[39m     [94mMissing semicolon.[39m
+  [90mline 1[39m    [90mcol 894[39m     [94mMissing semicolon.[39m
+  [90mline 1[39m    [90mcol 1067[39m    [94mMissing semicolon.[39m
+  [90mline 1[39m    [90mcol 1117[39m    [94mExpected '{' and instead saw 'return'.[39m
+  [90mline 1[39m    [90mcol 1195[39m    [94mMissing semicolon.[39m
+  [90mline 1[39m    [90mcol 1197[39m    [94mMissing semicolon.[39m
+  [90mline 1[39m    [90mcol 1346[39m    [94mMissing semicolon.[39m
+  [90mline 1[39m    [90mcol 1414[39m    [94mMissing semicolon.[39m
+  [90mline 1[39m    [90mcol 1416[39m    [94mMissing semicolon.[39m
+  [90mline 1[39m    [90mcol 1453[39m    [94mMissing semicolon.[39m
+  [90mline 1[39m    [90mcol 1478[39m    [94mMissing semicolon.[39m
+  [90mline 1[39m    [90mcol 1679[39m    [94mMissing semicolon.[39m
+  [90mline 1[39m    [90mcol 1999[39m    [94mExpected '{' and instead saw 'throw'.[39m
+  [90mline 1[39m    [90mcol 2136[39m    [94mMissing semicolon.[39m
+  [90mline 1[39m    [90mcol 2138[39m    [94mMissing semicolon.[39m
+  [90mline 1[39m    [90mcol 2140[39m    [94mMissing semicolon.[39m
+  [90mline 1[39m    [90mcol 2144[39m    [94mMissing semicolon.[39m
+  [90mline 1[39m    [90mcol 2146[39m    [94mMissing semicolon.[39m
+  [90mline 1[39m    [90mcol 2190[39m    [94mMissing semicolon.[39m
+  [90mline 1[39m    [90mcol 2193[39m    [94mMissing semicolon.[39m
+  [90mline 1[39m    [90mcol 2420[39m    [94mExpected '{' and instead saw 'return'.[39m
+  [90mline 1[39m    [90mcol 2438[39m    [94mMissing semicolon.[39m
+  [90mline 1[39m    [90mcol 2441[39m    [94mMissing semicolon.[39m
+  [90mline 1[39m    [90mcol 2443[39m    [94mMissing semicolon.[39m
+  [90mline 1[39m    [90mcol 2489[39m    [94mMissing semicolon.[39m
+  [90mline 1[39m    [90mcol 2492[39m    [94mMissing semicolon.[39m
+  [90mline 1[39m    [90mcol 2732[39m    [94mExpected an assignment or function call and instead saw an expression.[39m
+  [90mline 1[39m    [90mcol 3013[39m    [94mExpected '{' and instead saw 'return'.[39m
+  [90mline 1[39m    [90mcol 3086[39m    [94mMissing semicolon.[39m
+  [90mline 1[39m    [90mcol 3088[39m    [94mMissing semicolon.[39m
+  [90mline 1[39m    [90mcol 3213[39m    [94mMissing semicolon.[39m
+  [90mline 1[39m    [90mcol 3215[39m    [94mExpected an assignment or function call and instead saw an expression.[39m
+  [90mline 1[39m    [90mcol 3216[39m    [94mMissing semicolon.[39m
+  [90mline 1[39m    [90mcol 3218[39m    [94mExpected an assignment or function call and instead saw an expression.[39m
+  [90mline 1[39m    [90mcol 145[39m     [94m'Set' is not defined.[39m
+  [90mline 1[39m    [90mcol 2251[39m    [94m'Set' is not defined.[39m
+  [90mline 1[39m    [90mcol 485[39m     [94m'self' is not defined.[39m
+  [90mline 1[39m    [90mcol 503[39m     [94m'self' is not defined.[39m
+  [90mline 1[39m    [90mcol 1594[39m    [94m'self' is not defined.[39m
+  [90mline 1[39m    [90mcol 1683[39m    [94m'self' is not defined.[39m
+  [90mline 1[39m    [90mcol 2172[39m    [94m'self' is not defined.[39m
+  [90mline 1[39m    [90mcol 2196[39m    [94m'self' is not defined.[39m
+  [90mline 1[39m    [90mcol 2469[39m    [94m'self' is not defined.[39m
+  [90mline 1[39m    [90mcol 2495[39m    [94m'self' is not defined.[39m
+  [90mline 1[39m    [90mcol 2495[39m    [31mToo many errors. (100% scanned).[39m
+
+[4mapp\reactjs\build.1\static\js\main.a7d56167.js[24m
+  [90mline 1[39m    [90mcol 89085[39m   [94mThis character may get silently deleted by one or more browsers.[39m
+  [90mline 1[39m    [90mcol 36[39m      [94mExpected '{' and instead saw 'return'.[39m
+  [90mline 1[39m    [90mcol 147[39m     [94mMissing semicolon.[39m
+  [90mline 1[39m    [90mcol 193[39m     [94mMissing semicolon.[39m
+  [90mline 1[39m    [90mcol 288[39m     [94mExpected an assignment or function call and instead saw an expression.[39m
+  [90mline 1[39m    [90mcol 289[39m     [94mMissing semicolon.[39m
+  [90mline 1[39m    [90mcol 356[39m     [94mMissing semicolon.[39m
+  [90mline 1[39m    [90mcol 377[39m     [94mMissing semicolon.[39m
+  [90mline 1[39m    [90mcol 400[39m     [94mMissing semicolon.[39m
+  [90mline 1[39m    [90mcol 468[39m     [94mMissing semicolon.[39m
+  [90mline 1[39m    [90mcol 487[39m     [94mExpected an assignment or function call and instead saw an expression.[39m
+  [90mline 1[39m    [90mcol 488[39m     [94mMissing semicolon.[39m
+  [90mline 1[39m    [90mcol 86805[39m   [94mA leading decimal point can be confused with a dot: '.1'.[39m
+  [90mline 1[39m    [90mcol 128750[39m  [94mA leading decimal point can be confused with a dot: '.5'.[39m
+  [90mline 1[39m    [90mcol 580[39m     [94mExpected '{' and instead saw 'l'.[39m
+  [90mline 1[39m    [90mcol 802[39m     [94mMissing semicolon.[39m
+  [90mline 1[39m    [90mcol 813[39m     [94mExpected an assignment or function call and instead saw an expression.[39m
+  [90mline 1[39m    [90mcol 834[39m     [94mMissing semicolon.[39m
+  [90mline 1[39m    [90mcol 854[39m     [31mMissing semicolon.[39m
+  [90mline 1[39m    [90mcol 854[39m     [31mExpected an identifier and instead saw '='.[39m
+  [90mline 1[39m    [90mcol 854[39m     [94mExpected an assignment or function call and instead saw an expression.[39m
+  [90mline 1[39m    [90mcol 855[39m     [31mMissing semicolon.[39m
+  [90mline 1[39m    [90mcol 857[39m     [94mExpected an assignment or function call and instead saw an expression.[39m
+  [90mline 1[39m    [90mcol 858[39m     [94mMissing semicolon.[39m
+  [90mline 1[39m    [90mcol 891[39m     [94mMissing semicolon.[39m
+  [90mline 1[39m    [90mcol 948[39m     [94mMissing semicolon.[39m
+  [90mline 1[39m    [90mcol 1142[39m    [94mExpected '{' and instead saw 'n'.[39m
+  [90mline 1[39m    [90mcol 1338[39m    [31mMissing semicolon.[39m
+  [90mline 1[39m    [90mcol 1338[39m    [31mExpected an identifier and instead saw '='.[39m
+  [90mline 1[39m    [90mcol 1338[39m    [94mExpected an assignment or function call and instead saw an expression.[39m
+  [90mline 1[39m    [90mcol 1339[39m    [31mMissing semicolon.[39m
+  [90mline 1[39m    [90mcol 1377[39m    [94mExpected an assignment or function call and instead saw an expression.[39m
+  [90mline 1[39m    [90mcol 1378[39m    [94mMissing semicolon.[39m
+  [90mline 1[39m    [90mcol 1390[39m    [94mMissing semicolon.[39m
+  [90mline 1[39m    [90mcol 1459[39m    [94mExpected '{' and instead saw 'throw'.[39m
+  [90mline 1[39m    [90mcol 1552[39m    [94mMissing semicolon.[39m
+  [90mline 1[39m    [90mcol 1588[39m    [94mExpected '{' and instead saw 'return'.[39m
+  [90mline 1[39m    [90mcol 1603[39m    [94mDo not use String as a constructor.[39m
+  [90mline 1[39m    [90mcol 1673[39m    [94mExpected '{' and instead saw 'return'.[39m
+  [90mline 1[39m    [90mcol 1708[39m    [94mExpected '{' and instead saw 't'.[39m
+  [90mline 1[39m    [90mcol 1815[39m    [94mMissing semicolon.[39m
+  [90mline 1[39m    [90mcol 1827[39m    [94mExpected '{' and instead saw 'return'.[39m
+  [90mline 1[39m    [90mcol 1910[39m    [94mMissing semicolon.[39m
+  [90mline 1[39m    [90mcol 1979[39m    [94mMissing semicolon.[39m
+  [90mline 1[39m    [90mcol 1987[39m    [94mValue of 'e' may be overwritten in IE 8 and earlier.[39m
+  [90mline 1[39m    [90mcol 1997[39m    [94mMissing semicolon.[39m
+  [90mline 1[39m    [90mcol 2204[39m    [94mExpected '{' and instead saw 'i'.[39m
+  [90mline 1[39m    [90mcol 2227[39m    [94mExpected an assignment or function call and instead saw an expression.[39m
+  [90mline 1[39m    [90mcol 2323[39m    [94mExpected '{' and instead saw 'a'.[39m
+  [90mline 1[39m    [90mcol 2355[39m    [94mExpected an assignment or function call and instead saw an expression.[39m
+  [90mline 1[39m    [90mcol 2355[39m    [31mToo many errors. (50% scanned).[39m
+
+[4mapp\reactjs\build\main_bundle.js[24m
+  [90mline 5[39m    [90mcol 48[39m      [94m['webpackHotUpdate'] is better written in dot notation.[39m
+  [90mline 6[39m    [90mcol 18[39m      [94m['webpackHotUpdate'] is better written in dot notation.[39m
+  [90mline 9[39m    [90mcol 46[39m      [94mExpected '{' and instead saw 'parentHotUpdateCallback'.[39m
+  [90mline 24[39m   [90mcol 26[39m      [94mExpected '{' and instead saw 'return'.[39m
+  [90mline 35[39m   [90mcol 55[39m      [94mExpected '{' and instead saw 'return'.[39m
+  [90mline 53[39m   [90mcol 38[39m      [94m'update' used out of scope.[39m
+  [90mline 34[39m   [90mcol 22[39m      [94m'request' used out of scope.[39m
+  [90mline 70[39m   [90mcol 26[39m      [94mExpected '{' and instead saw 'return'.[39m
+  [90mline 75[39m   [90mcol 34[39m      [94mExpected '{' and instead saw 'installedModules'.[39m
+  [90mline 81[39m   [90mcol 30[39m      [94mExpected '{' and instead saw 'me'.[39m
+  [90mline 107[39m  [90mcol 26[39m      [94mExpected '{' and instead saw 'hotSetStatus'.[39m
+  [90mline 143[39m  [90mcol 30[39m      [94mExpected '{' and instead saw 'hot'.[39m
+  [90mline 145[39m  [90mcol 30[39m      [94mExpected '{' and instead saw 'hot'.[39m
+  [90mline 147[39m  [90mcol 30[39m      [94mExpected '{' and instead saw 'for'.[39m
+  [90mline 148[39m  [90mcol 34[39m      [94mExpected '{' and instead saw 'hot'.[39m
+  [90mline 150[39m  [90mcol 30[39m      [94mExpected '{' and instead saw 'hot'.[39m
+  [90mline 154[39m  [90mcol 30[39m      [94mExpected '{' and instead saw 'hot'.[39m
+  [90mline 156[39m  [90mcol 30[39m      [94mExpected '{' and instead saw 'for'.[39m
+  [90mline 157[39m  [90mcol 34[39m      [94mExpected '{' and instead saw 'hot'.[39m
+  [90mline 159[39m  [90mcol 30[39m      [94mExpected '{' and instead saw 'hot'.[39m
+  [90mline 169[39m  [90mcol 39[39m      [94mExpected '{' and instead saw 'hot'.[39m
+  [90mline 176[39m  [90mcol 33[39m      [94mExpected '{' and instead saw 'return'.[39m
+  [90mline 184[39m  [90mcol 39[39m      [94mExpected '{' and instead saw 'hotStatusHandlers'.[39m
+  [90mline 200[39m  [90mcol 22[39m      [94mExpected '{' and instead saw 'hotStatusHandlers'.[39m
+  [90mline 220[39m  [90mcol 43[39m      [94mExpected '{' and instead saw 'throw'.[39m
+  [90mline 255[39m  [90mcol 22[39m      [94mExpected '{' and instead saw 'return'.[39m
+  [90mline 281[39m  [90mcol 32[39m      [94mExpected '{' and instead saw 'return'.[39m
+  [90mline 300[39m  [90mcol 44[39m      [94mExpected '{' and instead saw 'throw'.[39m
+  [90mline 325[39m  [90mcol 30[39m      [94mExpected '{' and instead saw 'continue'.[39m
+  [90mline 343[39m  [90mcol 42[39m      [94mExpected '{' and instead saw 'continue'.[39m
+  [90mline 352[39m  [90mcol 73[39m      [94mExpected '{' and instead saw 'continue'.[39m
+  [90mline 355[39m  [90mcol 38[39m      [94mExpected '{' and instead saw 'outdatedDependencies'.[39m
+  [90mline 380[39m  [90mcol 30[39m      [94mExpected '{' and instead saw 'a'.[39m
+  [90mline 416[39m  [90mcol 38[39m      [94mExpected '{' and instead saw 'options'.[39m
+  [90mline 418[39m  [90mcol 38[39m      [94mExpected '{' and instead saw 'abortError'.[39m
+  [90mline 422[39m  [90mcol 38[39m      [94mExpected '{' and instead saw 'options'.[39m
+  [90mline 424[39m  [90mcol 38[39m      [94mExpected '{' and instead saw 'abortError'.[39m
+  [90mline 428[39m  [90mcol 38[39m      [94mExpected '{' and instead saw 'options'.[39m
+  [90mline 430[39m  [90mcol 38[39m      [94mExpected '{' and instead saw 'abortError'.[39m
+  [90mline 434[39m  [90mcol 38[39m      [94mExpected '{' and instead saw 'options'.[39m
+  [90mline 439[39m  [90mcol 38[39m      [94mExpected '{' and instead saw 'options'.[39m
+  [90mline 455[39m  [90mcol 42[39m      [94mExpected '{' and instead saw 'outdatedDependencies'.[39m
+  [90mline 472[39m  [90mcol 26[39m      [94mExpected '{' and instead saw 'outdatedSelfAcceptedModules'.[39m
+  [90mline 491[39m  [90mcol 34[39m      [94mExpected '{' and instead saw 'continue'.[39m
+  [90mline 512[39m  [90mcol 37[39m      [94mExpected '{' and instead saw 'continue'.[39m
+  [90mline 531[39m  [90mcol 47[39m      [94mExpected '{' and instead saw 'module'.[39m
+  [90mline 559[39m  [90mcol 61[39m      [94mExpected '{' and instead saw 'continue'.[39m
+  [90mline 577[39m  [90mcol 42[39m      [94mExpected '{' and instead saw 'error'.[39m
+  [90mline 606[39m  [90mcol 42[39m      [94mExpected '{' and instead saw 'error'.[39m
+  [90mline 609[39m  [90mcol 38[39m      [94mExpected '{' and instead saw 'error'.[39m
+  [90mline 609[39m  [90mcol 38[39m      [31mToo many errors. (1% scanned).[39m
+
+[4mapp\reactjs\index.js[24m
+  [90mline 1[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 3[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 6[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 7[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 11[39m   [90mcol 3[39m       [31mExpected an identifier and instead saw '<'.[39m
+  [90mline 11[39m   [90mcol 4[39m       [94mExpected ')' and instead saw 'App_form'.[39m
+  [90mline 11[39m   [90mcol 14[39m      [31mExpected an identifier and instead saw '>'.[39m
+  [90mline 12[39m   [90mcol 33[39m      [94mExpected an assignment or function call and instead saw an expression.[39m
+  [90mline 12[39m   [90mcol 34[39m      [94mMissing semicolon.[39m
+  [90mline 13[39m   [90mcol 1[39m       [31mExpected an identifier and instead saw ')'.[39m
+  [90mline 13[39m   [90mcol 1[39m       [94mExpected an assignment or function call and instead saw an expression.[39m
+
+[4mapp\reactjs\lib\traffica_func.js[24m
+  [90mline 1[39m    [90mcol 1[39m       [94mUse the function form of "use strict".[39m
+  [90mline 7[39m    [90mcol 25[39m      [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 7[39m    [90mcol 30[39m      [94mExpected '{' and instead saw 's'.[39m
+  [90mline 66[39m   [90mcol 2[39m       [94mMissing semicolon.[39m
+  [90mline 4[39m    [90mcol 25[39m      [94m'$' is not defined.[39m
+  [90mline 36[39m   [90mcol 9[39m       [94m'$' is not defined.[39m
+  [90mline 38[39m   [90mcol 9[39m       [94m'$' is not defined.[39m
+  [90mline 52[39m   [90mcol 9[39m       [94m'$' is not defined.[39m
+  [90mline 68[39m   [90mcol 1[39m       [94m'$' is not defined.[39m
+  [90mline 72[39m   [90mcol 24[39m      [94m'$' is not defined.[39m
+  [90mline 73[39m   [90mcol 24[39m      [94m'$' is not defined.[39m
+  [90mline 77[39m   [90mcol 20[39m      [94m'$' is not defined.[39m
+  [90mline 80[39m   [90mcol 5[39m       [94m'$' is not defined.[39m
+  [90mline 89[39m   [90mcol 9[39m       [94m'$' is not defined.[39m
+  [90mline 90[39m   [90mcol 9[39m       [94m'$' is not defined.[39m
+  [90mline 91[39m   [90mcol 9[39m       [94m'$' is not defined.[39m
+  [90mline 96[39m   [90mcol 9[39m       [94m'$' is not defined.[39m
+  [90mline 10[39m   [90mcol 13[39m      [94m'alert' is not defined.[39m
+  [90mline 70[39m   [90mcol 5[39m       [94m'console' is not defined.[39m
+  [90mline 79[39m   [90mcol 5[39m       [94m'console' is not defined.[39m
+  [90mline 85[39m   [90mcol 9[39m       [94m'console' is not defined.[39m
+  [90mline 87[39m   [90mcol 9[39m       [94m'console' is not defined.[39m
+  [90mline 88[39m   [90mcol 9[39m       [94m'console' is not defined.[39m
+  [90mline 95[39m   [90mcol 9[39m       [94m'console' is not defined.[39m
+  [90mline 99[39m   [90mcol 9[39m       [94m'console' is not defined.[39m
+  [90mline 103[39m  [90mcol 5[39m       [94m'console' is not defined.[39m
+
+[4mapp\reactjs\RegionCenter.js[24m
+  [90mline 1[39m    [90mcol 1[39m       [94mUse the function form of "use strict".[39m
+  [90mline 3[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 4[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 5[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 8[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 9[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 12[39m   [90mcol 1[39m       [94m'const' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).[39m
+  [90mline 20[39m   [90mcol 1[39m       [94m'export' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 20[39m   [90mcol 16[39m      [94m'class' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).[39m
+  [90mline 25[39m   [90mcol 14[39m      [94mMissing semicolon.[39m
+  [90mline 103[39m  [90mcol 37[39m      [94m'for of' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).[39m
+  [90mline 103[39m  [90mcol 22[39m      [94m'let' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).[39m
+  [90mline 104[39m  [90mcol 21[39m      [94m'let' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).[39m
+  [90mline 105[39m  [90mcol 98[39m      [31mUnclosed regular expression.[39m
+  [90mline 105[39m  [90mcol 98[39m      [31mUnrecoverable syntax error. (55% scanned).[39m
+
+[4mapp\reactjs\RegionEast.js[24m
+  [90mline 1[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 2[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 3[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 6[39m    [90mcol 1[39m       [94m'export' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 6[39m    [90mcol 16[39m      [94m'class' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).[39m
+  [90mline 14[39m   [90mcol 110[39m     [31mUnclosed regular expression.[39m
+  [90mline 14[39m   [90mcol 110[39m     [31mUnrecoverable syntax error. (77% scanned).[39m
+
+[4mapp\reactjs\RegionNorth.js[24m
+  [90mline 1[39m    [90mcol 1[39m       [94mUse the function form of "use strict".[39m
+  [90mline 3[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 4[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 5[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 6[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 7[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 9[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 10[39m   [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 11[39m   [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 12[39m   [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 14[39m   [90mcol 1[39m       [94m'const' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).[39m
+  [90mline 20[39m   [90mcol 1[39m       [94m'const' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).[39m
+  [90mline 25[39m   [90mcol 1[39m       [94m'const' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).[39m
+  [90mline 30[39m   [90mcol 1[39m       [94m'const' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).[39m
+  [90mline 34[39m   [90mcol 1[39m       [94m'const' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).[39m
+  [90mline 35[39m   [90mcol 1[39m       [94m'const' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).[39m
+  [90mline 39[39m   [90mcol 1[39m       [94m'const' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).[39m
+  [90mline 45[39m   [90mcol 21[39m      [94m'arrow function syntax (=>)' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 47[39m   [90mcol 28[39m      [94mExpected '===' and instead saw '=='.[39m
+  [90mline 48[39m   [90mcol 49[39m      [94mMissing semicolon.[39m
+  [90mline 55[39m   [90mcol 28[39m      [94mExpected '===' and instead saw '=='.[39m
+  [90mline 56[39m   [90mcol 42[39m      [94mMissing semicolon.[39m
+  [90mline 61[39m   [90mcol 5[39m       [94m'destructuring assignment' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).[39m
+  [90mline 67[39m   [90mcol 2[39m       [94mMissing semicolon.[39m
+  [90mline 71[39m   [90mcol 27[39m      [94mExpected '===' and instead saw '=='.[39m
+  [90mline 72[39m   [90mcol 41[39m      [94mMissing semicolon.[39m
+  [90mline 76[39m   [90mcol 5[39m       [94m'destructuring assignment' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).[39m
+  [90mline 80[39m   [90mcol 2[39m       [94mMissing semicolon.[39m
+  [90mline 84[39m   [90mcol 21[39m      [94m'arrow function syntax (=>)' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 86[39m   [90mcol 33[39m      [94mExpected '===' and instead saw '=='.[39m
+  [90mline 87[39m   [90mcol 41[39m      [94mMissing semicolon.[39m
+  [90mline 90[39m   [90mcol 2[39m       [94mMissing semicolon.[39m
+  [90mline 104[39m  [90mcol 6[39m       [94mMissing semicolon.[39m
+  [90mline 106[39m  [90mcol 2[39m       [94mMissing semicolon.[39m
+  [90mline 120[39m  [90mcol 6[39m       [94mMissing semicolon.[39m
+  [90mline 122[39m  [90mcol 2[39m       [94mMissing semicolon.[39m
+  [90mline 129[39m  [90mcol 41[39m      [94mExpected '===' and instead saw '=='.[39m
+  [90mline 137[39m  [90mcol 6[39m       [94mMissing semicolon.[39m
+  [90mline 139[39m  [90mcol 2[39m       [94mMissing semicolon.[39m
+  [90mline 146[39m  [90mcol 41[39m      [94mExpected '===' and instead saw '=='.[39m
+  [90mline 154[39m  [90mcol 6[39m       [94mMissing semicolon.[39m
+  [90mline 156[39m  [90mcol 2[39m       [94mMissing semicolon.[39m
+  [90mline 158[39m  [90mcol 1[39m       [94m'export' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 158[39m  [90mcol 16[39m      [94m'class' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).[39m
+  [90mline 163[39m  [90mcol 7[39m       [94m'let' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).[39m
+  [90mline 164[39m  [90mcol 7[39m       [94m'let' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).[39m
+  [90mline 189[39m  [90mcol 69[39m      [94mMissing semicolon.[39m
+  [90mline 199[39m  [90mcol 32[39m      [94m['MMELIST'] is better written in dot notation.[39m
+  [90mline 200[39m  [90mcol 32[39m      [94m['STARTDATETIME'] is better written in dot notation.[39m
+  [90mline 201[39m  [90mcol 32[39m      [94m['STOPDATETIME'] is better written in dot notation.[39m
+  [90mline 201[39m  [90mcol 32[39m      [31mToo many errors. (65% scanned).[39m
+
+[4mapp\reactjs\RegionSouth.js[24m
+  [90mline 1[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 2[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 3[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 6[39m    [90mcol 1[39m       [94m'export' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 6[39m    [90mcol 16[39m      [94m'class' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).[39m
+  [90mline 15[39m   [90mcol 10[39m      [31mUnclosed regular expression.[39m
+  [90mline 15[39m   [90mcol 10[39m      [31mUnrecoverable syntax error. (83% scanned).[39m
+
+[4mapp\reactjs\RegionWest.js[24m
+  [90mline 1[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 2[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 3[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 5[39m    [90mcol 1[39m       [94m'const' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).[39m
+  [90mline 11[39m   [90mcol 1[39m       [94m'const' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).[39m
+  [90mline 17[39m   [90mcol 1[39m       [94m'export' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 17[39m   [90mcol 16[39m      [94m'class' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).[39m
+  [90mline 39[39m   [90mcol 59[39m      [94mMissing semicolon.[39m
+  [90mline 49[39m   [90mcol 202[39m     [31mUnclosed regular expression.[39m
+  [90mline 49[39m   [90mcol 202[39m     [31mUnrecoverable syntax error. (79% scanned).[39m
+
+[4mapp\reactjs\src\App_form.js[24m
+  [90mline 1[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 2[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 3[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 4[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 9[39m    [90mcol 100[39m     [31mUnclosed regular expression.[39m
+  [90mline 9[39m    [90mcol 100[39m     [31mUnrecoverable syntax error. (12% scanned).[39m
+
+[4mapp\reactjs\src\App.js[24m
+  [90mline 1[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 2[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 3[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 4[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 7[39m    [90mcol 12[39m      [31mUnclosed regular expression.[39m
+  [90mline 7[39m    [90mcol 12[39m      [31mUnrecoverable syntax error. (2% scanned).[39m
+
+[4mapp\reactjs\src\App.test.js[24m
+  [90mline 1[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 2[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 3[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 5[39m    [90mcol 33[39m      [94m'arrow function syntax (=>)' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 6[39m    [90mcol 3[39m       [94m'const' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).[39m
+  [90mline 7[39m    [90mcol 19[39m      [31mExpected an identifier and instead saw '<'.[39m
+  [90mline 7[39m    [90mcol 20[39m      [94mExpected ')' and instead saw 'App'.[39m
+  [90mline 7[39m    [90mcol 25[39m      [31mExpected an identifier and instead saw '>'.[39m
+  [90mline 7[39m    [90mcol 28[39m      [94mExpected an assignment or function call and instead saw an expression.[39m
+  [90mline 7[39m    [90mcol 31[39m      [31mMissing semicolon.[39m
+  [90mline 7[39m    [90mcol 31[39m      [31mExpected an identifier and instead saw ')'.[39m
+  [90mline 7[39m    [90mcol 31[39m      [94mExpected an assignment or function call and instead saw an expression.[39m
+
+[4mapp\reactjs\src\index.js[24m
+  [90mline 1[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 2[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 3[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 4[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 5[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 6[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 7[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 8[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 11[39m   [90mcol 3[39m       [31mExpected an identifier and instead saw '<'.[39m
+  [90mline 11[39m   [90mcol 4[39m       [94mExpected ')' and instead saw 'App_form'.[39m
+  [90mline 11[39m   [90mcol 14[39m      [31mExpected an identifier and instead saw '>'.[39m
+  [90mline 12[39m   [90mcol 33[39m      [94mExpected an assignment or function call and instead saw an expression.[39m
+  [90mline 12[39m   [90mcol 34[39m      [94mMissing semicolon.[39m
+  [90mline 13[39m   [90mcol 1[39m       [31mExpected an identifier and instead saw ')'.[39m
+  [90mline 13[39m   [90mcol 1[39m       [94mExpected an assignment or function call and instead saw an expression.[39m
+
+[4mapp\reactjs\src\ItemSelect.js[24m
+  [90mline 1[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 2[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 3[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 4[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 5[39m    [90mcol 1[39m       [94m'import' is only available in ES6 (use 'esversion: 6').[39m
+  [90mline 5[39m    [90mcol 19[39m      [94mMissing semicolon.[39m
+  [90mline 8[39m    [90mcol 1[39m       [94m'class' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).[39m
+  [90mline 14[39m   [90mcol 6[39m       [94mMissing semicolon.[39m
+  [90mline 15[39m   [90mcol 4[39m       [94mUnnecessary semicolon.[39m
+  [90mline 26[39m   [90mcol 4[39m       [94mUnnecessary semicolon.[39m
+  [90mline 35[39m   [90mcol 46[39m      [31mUnexpected '：'.[39m
+  [90mline 36[39m   [90mcol 67[39m      [31mUnclosed regular expression.[39m
+  [90mline 36[39m   [90mcol 67[39m      [31mUnrecoverable syntax error. (46% scanned).[39m
+
+[4mapp\reactjs\tmp\bundle.js[24m
+  [90mline 73[39m   [90mcol 1[39m       [94mdocument.write can be a form of eval.[39m
+
+[4mapp\reactjs\tmp\entry.js[24m
+  [90mline 1[39m    [90mcol 1[39m       [94mdocument.write can be a form of eval.[39m
+
+[4mapp\reactjs\webpack.config.js[24m
+  [90mline 1[39m    [90mcol 1[39m       [94m'const' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).[39m
+  [90mline 2[39m    [90mcol 1[39m       [94m'const' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).[39m
+  [90mline 3[39m    [90mcol 1[39m       [94m'const' is available in ES6 (use 'esversion: 6') or Mozilla JS extensions (use moz).[39m
+  [90mline 81[39m   [90mcol 2[39m       [94mMissing semicolon.[39m
+
+  [31m×[39m  49 errors
+  [33m‼[39m  453 warnings
+

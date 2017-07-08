@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/bootstrap.min.css" >
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="lib/jquery-easyui-1.5.2/themes/default/easyui.css">
+    <link rel="stylesheet" href="lib/jquery-easyui-1.5.2/themes/icon.css">
+    
+    <title><%= htmlWebpackPlugin.options.title %></title>
+    
+  </head>
+   
+  
+  <body>
+    <p align="center">
+            <img src="./images/Title.jpg" alt="SHMCC诺西PS网元管理系统" >
+    </p>
+    <div align="center" id="div_loginresult"></div>
+    <div id="login" style="display:block">
+      <div class="container">
+
+        <section >
+          <ol class="breadcrumb">
+                <li><a href="#/">SHMCC_PS</a></li>
+                <li class="active">Sign In</li>
+          </ol>
+
+          <div class="row" style="margin-bottom:15px">
+                <div style="text-align:right" class="col-sm-4 ">
+                  <label  for="inputUsername" class="control-label">Username</label>
+                </div>
+                <div class="col-sm-4">
+                  <input type="text" class="form-control" id="inputUsername" placeholder="Username" > </input>
+                  <!--<input type="hidden" name="_csrf" value="{{csrftoken}}">-->
+                </div>
+          </div>
+            
+          <div class="row" style="margin-bottom:15px">
+            
+              <div style="text-align:right" class="col-sm-4 ">
+                <label  for="inputPassword" class="control-label">Password</label>
+              </div>
+              <div class="col-sm-4">
+                <input type="password" class="form-control" id="inputPassword" placeholder="Password" ></input>
+              </div>
+            
+          </div>
+          <div class="row" style="margin-bottom:15px">
+            <div class="">
+              <div class="col-sm-offset-4 col-sm-10">
+                <button type="submit" id='signin' class="btn btn-default"  >Sign In</button>
+              </div>
+            </div>
+          </div>
+          <div class="row" style="margin-bottom:15px">
+              <div style="text-align:center" class="col-sm-offset-4 col-sm-4 ">
+                <label id="login_errorinfo" class="control-label"></label>
+              </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+    
+    <div id="root"  class="col-lg-10 col-lg-offset-1" style="display:none;">
+    </div><!-- /container -->
+
+    <script src="lib/jquery/jquery.js"></script>
+    <script src="lib/jquery-easyui-1.5.2/jquery.easyui.min.js"></script>
+    <script src="lib/jquery/jquery.cookie.js"></script>
+    <script src="lib/bootstrap/bootstrap.min.js"></script>
+    <script src="lib/jquery-easyui-1.5.2/jquery.easyui.min.js"></script>
+    
+    <!--<script src="lib/jquery.cookie/jquery.cookie.js"> </script>
+    <script src="lib/js-storage/js-storage.js"> </script>
+    -->
+    <script src="reactjs/lib/traffica_func.js"></script>
+  
+  </body>
+</html>

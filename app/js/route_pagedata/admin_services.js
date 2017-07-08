@@ -86,9 +86,15 @@ appServices.factory('PostService', function($http) {
     };
 });
 
-appServices.factory('UserService', function ($http) {
+appServices.factory('UserService', function ($http,$cookies) {
+    //$http.defaults.headers.common['x-csrf-token']  = $cookies.get('XSRF-TOKEN');
+    //console.log('UserService:', $cookies.get('XSRF-TOKEN'));
     return {
         signIn: function(username, password) {
+            //console.log('SignIn: ', $cookies.get('XSRF-TOKEN'));
+            //var config = {};
+            //config.headers = {'x-csrf-token': $cookies.get('XSRF-TOKEN')};
+            //$http.defaults.headers.common['x-csrf-token']  = $cookies.get('XSRF-TOKEN');
             return $http.post(options.api.base_url + '/user/signin', {username: username, password: password});
         },
 

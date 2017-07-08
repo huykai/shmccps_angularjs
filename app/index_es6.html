@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SHMCC PS Web</title>
+<script>
+    class obj {
+        constructor () {
+            this.name = "1234";
+            this.age = 23;
+        }
+        getName(){
+            return this.name;
+        }
+    }
+    var getobjname = function(){
+        var obj1 = new obj();
+        console.log(obj1.getName());
+        return obj1.getName();
+    }
+    
+</script>
+</head>
+<button onclick="alert(getobjname());">点击确认是否支持ES6</button>
+</body>
+</html>

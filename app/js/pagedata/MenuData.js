@@ -18,10 +18,13 @@ var MenuCtrl = ['$rootScope', function($rootScope) {
     };
     
 	var ctrl = this;
+	ctrl.click = function(){
+		alert('hello');
+	};
 	$rootScope.menudatas = [
 	{	label: '告警查询',
 		menuitems: [
-			{id: '0', label: 'MME/SGSN告警查询', event: 'alert(\'MME/SGSN告警查询\')'},
+			{id: '0', label: 'MME/SGSN告警查询', event: 'alert(\'ddd\');ctrl.click()'},
 			{id: '1', label: 'MME/SGSN告警统计', event: 'alert(\'MME/SGSN告警统计\')'},
 			{id: '2', label: 'SAEGW/GGSN告警查询', event: 'alert(\'SAEGW/GGSN告警查询\')'},
 			{id: '3', label: 'SAEGW/GGSN告警统计', event: 'alert(\'SAEGW/GGSN告警统计\')'}

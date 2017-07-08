@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<testsuite name="Chrome 59.0.3071 (Windows 10 0.0.0)" package="" timestamp="2017-07-07T02:00:12" id="0" hostname="SC-201703210009" tests="9" errors="0" failures="0" time="0.223">
+  <properties>
+    <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.104 Safari/537.36"/>
+  </properties>
+  <testcase name="shmcc_app mainSubmitCtrl mainSubmitCtrl should change queryoptionchanged" time="0.113" classname="Chrome_59_0_3071_(Windows_10_0_0_0).shmcc_app mainSubmitCtrl"/>
+  <testcase name="shmcc_app mainSubmitCtrl mainSubmitCtrl should service getTreedata work" time="0.018" classname="Chrome_59_0_3071_(Windows_10_0_0_0).shmcc_app mainSubmitCtrl"/>
+  <testcase name="shmcc_app mainSubmitCtrl mainSubmitCtrl should Controller mainSubmitCtrl work" time="0.014" classname="Chrome_59_0_3071_(Windows_10_0_0_0).shmcc_app mainSubmitCtrl"/>
+  <testcase name="shmcc_app mainSubmitCtrl mainSubmitCtrl should Controller mainSubmitCtrl tabs " time="0.015" classname="Chrome_59_0_3071_(Windows_10_0_0_0).shmcc_app mainSubmitCtrl"/>
+  <testcase name="shmcc_app mainSubmitCtrl mainSubmitCtrl should Controller mainSubmitCtrl http post" time="0.027" classname="Chrome_59_0_3071_(Windows_10_0_0_0).shmcc_app mainSubmitCtrl"/>
+  <testcase name="shmcc_app mainSubmitCtrl mainSubmitCtrl should app module config " time="0.009" classname="Chrome_59_0_3071_(Windows_10_0_0_0).shmcc_app mainSubmitCtrl"/>
+  <testcase name="TreeDemoSelectCtrl TreeData TreeDemoSelectCtrl should change queryoptionchanged" time="0.013" classname="Chrome_59_0_3071_(Windows_10_0_0_0).TreeDemoSelectCtrl TreeData"/>
+  <testcase name="TreeDemoSelectCtrl TreeData TreeDemoSelectCtrl should define onselect" time="0.008" classname="Chrome_59_0_3071_(Windows_10_0_0_0).TreeDemoSelectCtrl TreeData"/>
+  <testcase name="TreeDemoSelectCtrl TreeData TreeDemoSelectCtrl should define onunselect" time="0.006" classname="Chrome_59_0_3071_(Windows_10_0_0_0).TreeDemoSelectCtrl TreeData"/>
+  <system-out>
+    <![CDATA[Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'beforeEach'
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'beforeEach mainSubmitCtrl'
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'beforeEach'
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'beforeEach mainSubmitCtrl'
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'beforeEach'
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'beforeEach mainSubmitCtrl'
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'itemUnitChangeHandler: ', Object{id: 1, name: 'TAC', $$hashKey: 'object:39'}
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'beforeEach'
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'beforeEach mainSubmitCtrl'
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'beforeEach'
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'beforeEach mainSubmitCtrl'
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'api_string: ', '/api/mme_query'
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'post response data:', '<?xml version="1.0" encoding="GB2312"?><response><GSM-PAGING><TabName><name>GSM-PAGING</name></TabName><Title><name>设备名称</name><name>日期</name><name>时间</name><name>Paging尝试次数2G</name><name>Paging成功次数2G</name><name>Paging成功率2G</name></Title><Item><ItemCol><value>SHMME07BNK</value></ItemCol><ItemCol><value>2017-07-03</value></ItemCol><ItemCol><value>21:45</value></ItemCol><ItemCol><value>67084</value></ItemCol><ItemCol><value>56844</value></ItemCol><ItemCol><value>84.74</value></ItemCol></Item><Item><ItemCol><value>SHMME07BNK</value></ItemCol><ItemCol><value>2017-07-03</value></ItemCol><ItemCol><value>22:00</value></ItemCol><ItemCol><value>61255</value></ItemCol><ItemCol><value>51345</value></ItemCol><ItemCol><value>83.82</value></ItemCol></Item><Item><ItemCol><value>SHMME07BNK</value></ItemCol><ItemCol><value>2017-07-03</value></ItemCol><ItemCol><value>22:15</value></ItemCol><ItemCol><value>57830</value></ItemCol><ItemCol><value>48853</value></ItemCol><ItemCol><value>84.48</value></ItemCol></Item><Item><ItemCol><value>SHMME07BNK</value></ItemCol><ItemCol><value>2017-07-03</value></ItemCol><ItemCol><value>22:30</value></ItemCol><ItemCol><value>52568</value></ItemCol><ItemCol><value>44430</value></ItemCol><ItemCol><value>84.52</value></ItemCol></Item></GSM-PAGING></response>'
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'x2js:', {parseXmlString: function (xmlDocStr) { ... }, asArray: function (prop) { ... }, toXmlDateTime: function (dt) { ... }, asDateTime: function (prop) { ... }, xml2json: function (xmlDoc) { ... }, xml_str2json: function (xmlDocStr) { ... }, json2xml_str: function (jsonObj) { ... }, json2xml: function (jsonObj) { ... }, getVersion: function () { ... }}
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'Response Data after transform:[object Object]'
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'post data return: ', '{"data":{"response":{"GSM-PAGING":{"TabName":{"name":"GSM-PAGING"},"Title":{"name":["设备名称","日期","时间","Paging尝试次数2G","Paging成功次数2G","Paging成功率2G"]},"Item":[{"ItemCol":[{"value":"SHMME07BNK"},{"value":"2017-07-03"},{"value":"21:45"},{"value":"67084"},{"value":"56844"},{"value":"84.74"}]},{"ItemCol":[{"value":"SHMME07BNK"},{"value":"2017-07-03"},{"value":"22:00"},{"value":"61255"},{"value":"51345"},{"value":"83.82"}]},{"ItemCol":[{"value":"SHMME07BNK"},{"value":"2017-07-03"},{"value":"22:15"},{"value":"57830"},{"value":"48853"},{"value":"84.48"}]},{"ItemCol":[{"value":"SHMME07BNK"},{"value":"2017-07-03"},{"value":"22:30"},{"value":"52568"},{"value":"44430"},{"value":"84.52"}]}]}}},"status":200,"config":{"method":"POST","jsonpCallbackParam":"callback","headers":{"Content-Type":"application/x-www-form-urlencoded","Accept":"application/json, text/plain, */*"},"data":{"data":{}},"url":"/api/mme_query","withCredentials":true},"statusText":""}'
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'addcolumns: ', Object{name: ['设备名称', '日期', '时间', 'Paging尝试次数2G', 'Paging成功次数2G', 'Paging成功率2G']}
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'addcolumns: ', [Object{id: '0', children: 0, headtext: '设备名称', datafield: 'col0', name: '设备名称'}, Object{id: '1', children: 0, headtext: '日期', datafield: 'col1', name: '日期'}, Object{id: '2', children: 0, headtext: '时间', datafield: 'col2', name: '时间'}, Object{id: '3', children: 0, headtext: 'Paging尝试次数2G', datafield: 'col3', name: 'Paging尝试次数2G'}, Object{id: '4', children: 0, headtext: 'Paging成功次数2G', datafield: 'col4', name: 'Paging成功次数2G'}, Object{id: '5', children: 0, headtext: 'Paging成功率2G', datafield: 'col5', name: 'Paging成功率2G'}]
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'beforeEach'
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'beforeEach mainSubmitCtrl'
+
+]]>
+  </system-out>
+  <system-err/>
+</testsuite>

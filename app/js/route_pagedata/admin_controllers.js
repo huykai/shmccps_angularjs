@@ -1,5 +1,5 @@
-appControllers.controller('AdminUserCtrl', ['$scope', '$location', '$window', 'UserService', 'AuthenticationService',  
-    function AdminUserCtrl($scope, $location, $window, UserService, AuthenticationService) {
+appControllers.controller('AdminUserCtrl', ['$rootScope', '$scope', '$location', '$window', 'UserService', 'AuthenticationService',  
+    function AdminUserCtrl($rootScope, $scope, $location, $window, UserService, AuthenticationService) {
         //Admin User Controller (signIn, logOut)
         $scope.signIn = function signIn(username, password) {
             if (username != null && password != null) {
@@ -12,15 +12,18 @@ appControllers.controller('AdminUserCtrl', ['$scope', '$location', '$window', 'U
                 //    console.log(status);
                 //    console.log(data);
                 //});
-                UserService.signIn(username, password).then(function(data) {
+                UserService.signIn(username, password).then(function(status,data) {
                     AuthenticationService.isAuthenticated = true;
                     AuthenticationService.currentUser = username;
                     //$scope.isAuthenticated = AuthenticationService.isAuthenticated;
-                    $window.sessionStorage.token = data.data.token;
+                    $window.sessionStorage.token = status.data.token;
+                    $window.sessionStorage.currentUser = username;
+                    $window.sessionStorage.isAuthenticated = true;
+                    console.log("signIn return data:",data);
                     $location.path("/");
                 },function(status, data) {
-                    console.log(status);
-                    console.log(data);
+                    console.log("signIn return status:",status);
+                    console.log("signIn return data:",data);
                 });
                 
             }
@@ -33,6 +36,9 @@ appControllers.controller('AdminUserCtrl', ['$scope', '$location', '$window', 'U
                     AuthenticationService.isAuthenticated = false;
                     AuthenticationService.currentUser = null;
                     delete $window.sessionStorage.token;
+                    delete $window.sessionStorage.currentUser;
+                    delete $window.sessionStorage.isAuthenticated;
+                    $rootScope.isAuthenticated = false;
                     $location.path("/admin/login");
                 },function(status, data) {
                     console.log(status);
@@ -43,6 +49,11 @@ appControllers.controller('AdminUserCtrl', ['$scope', '$location', '$window', 'U
                 $location.path("/admin/login");
             }
         }
+
+        $scope.logIn = function logIn() {
+            $location.path("/admin/login");
+        }
+
 
         $scope.toRegister = function toregister() {
             $location.path("/admin/register");

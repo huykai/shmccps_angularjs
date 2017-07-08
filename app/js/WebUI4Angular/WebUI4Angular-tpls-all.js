@@ -8953,18 +8953,18 @@ angular.module('template/datagrid/datagridTemplate.html', []).run(['$templateCac
     '                条&nbsp;,&nbsp;共{{dataCount}}条\n' +
     '            </span>\n' +
     '            <span>\n' +
-    '                <a href="#" ng-click="pageNum===1?null:doPage(1)" title="首页"><span class="icon-step-backward"></span></a>\n' +
-    '                <a href="#" ng-click="pageNum===1?null:doPage(pageNum-1)" title="上一页"><span class="icon-backward"></span></a>\n' +
+    '                <a ng-click="pageNum===1?null:doPage(1)" title="首页"><span class="icon-step-backward"></span></a>\n' +
+    '                <a ng-click="pageNum===1?null:doPage(pageNum-1)" title="上一页"><span class="icon-backward"></span></a>\n' +
     '                &nbsp;&nbsp;{{pageNum}}/{{pageCount}}&nbsp;&nbsp;\n' +
-    '                <a href="#" ng-click="pageNum===pageCount?null:doPage(pageNum+1)" title="下一页"><span class="icon-forward"></span></a>\n' +
-    '                <a href="#" ng-click="pageNum===pageCount?null:doPage(pageCount)" title="尾页"><span class="icon-step-forward"></span></a>\n' +
+    '                <a ng-click="pageNum===pageCount?null:doPage(pageNum+1)" title="下一页"><span class="icon-forward"></span></a>\n' +
+    '                <a ng-click="pageNum===pageCount?null:doPage(pageCount)" title="尾页"><span class="icon-step-forward"></span></a>\n' +
     '                <input type="text" class="wi-datagrid-page-num" onclick="javascript:this.select()" ng-keydown="gotoPage($event)" />\n' +
     '            </span>\n' +
     '        </div>\n' +
     '        <div class="wi-datagrid-page-right">\n' +
     '            <span ng-if="pagebarrenderer" ng-include src="pagebarrenderer"/>\n' +
     '            <span ng-if="!(showrefresh==\'false\')">\n' +
-    '                <a href="#" ng-click="dorefresh()"><span class="icon-refresh"></span> 刷新</a>\n' +
+    '                <a ng-click="dorefresh()"><span class="icon-refresh"></span> 刷新</a>\n' +
     '            </span>\n' +
     '            <span ng-if="showexcel">\n' +
     '                <a href="#" download="导出文件.xls" ng-click="export2excel($event)"><span class="icon-share-alt"></span> 导出excel</a>\n' +

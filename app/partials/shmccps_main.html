@@ -1,59 +1,65 @@
 <div >
-	<ng-include src="'js/pagedata/MenuData.html'">
-	</ng-include>
-</div>
+	<div >
+		<ng-include src="'js/route_pagedata/MenuData.html'">
+		</ng-include>
+	</div>
 
-
-<div>
-    <div style=" margin:10px; width:98%; height: 800px; background-color: #fff;">
-        <wi-hdividedbox style="border: solid 1px #ccc;">
-            <wi-hdividedbox-group collapseto="left" collapsed="false" width="200px">
-				
-				<div ng-controller="TreeDemoSelectCtrl as sc">
-				<div class="wi-clearf">
-					<div style="margin:2px;width:98%; float:left;">
-						<p style=" height:50px;">选择查询网元及指标</p>
-						<div ng-show="isMME" style="overflow: auto;border: solid 1px #ccc;">
-							<wi-tree dataProvider="sc.cascadeData_mme_element"
-							multiselect="true"
-							onselect="sc.onselect"
-							oncancelselect="sc.oncancelselect"
-							cascade="true"></wi-tree>
-						</div>
-						<div ng-show="isMME" style="overflow: auto;border: solid 1px #ccc;">
-							<wi-tree dataProvider="sc.cascadeData_mme_kpi"
-							multiselect="true"
-							onselect="sc.onselect"
-							oncancelselect="sc.oncancelselect"
-							cascade="true"></wi-tree>
-						</div>
-						<div ng-show="!isMME" style="height:200px;overflow: auto;border: solid 1px #ccc;">
-							<wi-tree dataProvider="sc.cascadeData_saegw_element"
-							multiselect="true"
-							onselect="sc.onselect"
-							oncancelselect="sc.oncancelselect"
-							cascade="true"></wi-tree>
-						</div>
-						<div ng-show="!isMME" style="height:400px;overflow: auto;border: solid 1px #ccc;">
-							<wi-tree dataProvider="sc.cascadeData_saegw_kpi"
-							multiselect="true"
-							onselect="sc.onselect"
-							oncancelselect="sc.oncancelselect"
-							cascade="true"></wi-tree>
+	<!--
+	<ul>
+	<li><a href="default.asp">Home</a></li>
+	<li><a href="news.asp">News</a></li>
+	<li><a href="contact.asp">Contact</a></li>
+	<li><a href="about.asp">About</a></li>
+	</ul>
+	-->
+	<div>
+		<div style=" margin:10px; width:100%; height: 800px; background-color: #fff;">
+			<wi-hdividedbox style="border: solid 1px #ccc;">
+				<wi-hdividedbox-group collapseto="left" collapsed="false" width="250px">
+					
+					<div ng-controller="TreeDemoSelectCtrl as sc">
+					<div class="wi-clearf">
+						<div style="margin:2px;width:98%; float:left;">
+							<p style=" height:50px;">选择查询网元及指标</p>
+							<div ng-show="isMME" style="overflow: auto;border: solid 1px #ccc;">
+								<wi-tree dataProvider="sc.cascadeData_mme_element"
+								multiselect="true"
+								onselect="sc.onselect"
+								oncancelselect="sc.oncancelselect"
+								cascade="true"></wi-tree>
+							</div>
+							<div ng-show="isMME" style="overflow: auto;border: solid 1px #ccc;">
+								<wi-tree dataProvider="sc.cascadeData_mme_kpi"
+								multiselect="true"
+								onselect="sc.onselect"
+								oncancelselect="sc.oncancelselect"
+								cascade="true"></wi-tree>
+							</div>
+							<div ng-show="!isMME" style="height:200px;overflow: auto;border: solid 1px #ccc;">
+								<wi-tree dataProvider="sc.cascadeData_saegw_element"
+								multiselect="true"
+								onselect="sc.onselect"
+								oncancelselect="sc.oncancelselect"
+								cascade="true"></wi-tree>
+							</div>
+							<div ng-show="!isMME" style="height:400px;overflow: auto;border: solid 1px #ccc;">
+								<wi-tree dataProvider="sc.cascadeData_saegw_kpi"
+								multiselect="true"
+								onselect="sc.onselect"
+								oncancelselect="sc.oncancelselect"
+								cascade="true"></wi-tree>
+							</div>
 						</div>
 					</div>
-				</div>
-				</div>
-			
-			</wi-hdividedbox-group>
-            
-			<wi-hdividedbox-group collapsed="false">
-				<div style=" margin:2px; width:100%; height:100%; background-color: #fff;">
-					<wi-vdividedbox style="border: solid 1px #ccc;height:100%;">
-						<wi-vdividedbox-group  
-						collapseto="down" collapsed="false" height="130px">
-					
-							<div style="margin:5px;" ng-controller="mainSubmitCtrl as mc">
+					</div>
+				
+				</wi-hdividedbox-group>
+				
+				<wi-hdividedbox-group collapsed="false">
+					<div style=" margin:2px; width:100%; height:100%; background-color: #fff;">
+						<wi-vdividedbox style="border: solid 1px #ccc;height:100%;">
+							<wi-vdividedbox-group collapsed="false" height="150px">
+							  <div style="margin:5px;" ng-controller="mainSubmitCtrl as mc">
 								<span>统计时间区间：</span>
 								<wi-datepicker style="margin:5px;top:10px;" ng-model="begin_datetime" isShowClear="true" isShowToday="true" dateFmt="yyyy/MM/dd HH:mm:ss"
 									id="d1"	maxDate="#F{$dp.$D(\'d2\')||\'%y-%M-%d\'}"
@@ -74,23 +80,36 @@
 								</wi-comboBox>
 								
 								<span style="margin:5px;top:10px;">统计粒度</span>
-								<wi-comboBox dataProvider="mydata2"
-									selectedItem="statis_unit"
+								<wi-comboBox ng-show="isMME" dataProvider="mydata_mme"
+									selectedItem="mme_statis_unit"
+									width="145"
+									rowCount="8"
+									itemChange="itemUnitChangeHandler"
+								>
+								</wi-comboBox>
+								<wi-comboBox ng-show="!isMME" dataProvider="mydata_saegw"
+									selectedItem="saegw_statis_unit"
 									width="145"
 									rowCount="8"
 									itemChange="itemUnitChangeHandler"
 								>
 								</wi-comboBox>
 								<br />
-								<textarea style="display:inline" rows="3" cols="100" style="overflow:scroll;overflow-x:hidden;resize:none;">{{QueryDetailDesc}}</textarea>
-								<!--<wi-button style="margin:5px;top:10px;" label="提交查询" ng-click="submitQuery();"></wi-button>-->
-								<div style="display:inline">
-									<button type="button" class="btn btn-default" ng-click="submitQuery();">Apply Query</button>
+								<div style="top:10px;display:inline">
+									<button type="button" style="top:10px;" class="btn btn-default" ng-click="submitQuery();">Apply Query</button>
 									 
 									<div style="display:inline" ng-controller="ModalDemoCtrl as $ctrl" class="modal-demo">
 										<script type="text/ng-template" id="myModalContent.html">
+											<style>
+											.modal-dialog {
+												width: 800px;
+												hight: 600px;
+												padding-top: 30px;
+												padding-bottom: 30px;
+  											}
+											</style>
 											<div class="modal-header">
-												<h3 class="modal-title" id="modal-title">{{ChartName}} Chart!</h3>
+												<h3 class="modal-title" id="modal-title" style="text-align:center" >{{activetab.name}} {{active_chart_data}}</h3>
 											</div>
 											<div class="modal-body" id="modal-body">
 												<div>
@@ -103,75 +122,71 @@
 													chart-click="onClick">
 													</canvas>
 												</div>
-												<!--
-												<ul>
-
-													<li ng-repeat="item in $ctrl.items">
-														<a href="#" ng-click="$event.preventDefault(); $ctrl.selected.item = item">{{ item }}</a>
-													</li>
-												</ul>
-												-->
-												<!--Selected: <b>{{ $ctrl.selected.item }}</b>-->
 											</div>
 											<div class="modal-footer">
-												<button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>
-												<button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">Cancel</button>
+											  <div style="text-align:left">
+												<div class="btn-group">
+													<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+														选择图表的Serial 
+														<span class="caret"></span>
+													</button>
+													<ul class="dropdown-menu" role="menu">
+														<li ng-repeat="col in activetab.col track by $index"> <a style="text-align:center" ng-click="$ctrl.changechartseries('col'+$index)">{{col.name}}</a></li>
+													</ul>
+												</div>
+												<div class="btn-group">
+													<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+														选择图表的Label 
+														<span class="caret"></span>
+													</button>
+													<ul class="dropdown-menu" role="menu" >
+														<li ng-repeat="col in activetab.col track by $index"> <a style="text-align:center" ng-click="$ctrl.changechartlabels('col'+$index)">{{col.name}}</a></li>
+													</ul>
+												</div>
+												<div class="btn-group">
+													<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+														选择图表的Data
+														<span class="caret"></span>
+													</button>
+													<ul class="dropdown-menu" role="menu" >
+														<li ng-repeat="col in activetab.col track by $index"> <a style="text-align:center" ng-click="$ctrl.changechartdatas('col'+$index)">{{col.name}}</a></li>
+													</ul>
+												</div>
+											  </div>
+											  <div style="text-align:right">
+												<div class="btn-group">
+													<button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>
+												</div>
+											  </div>
+												<!--<button class="col-lg-1 btn btn-warning" type="button" ng-click="$ctrl.cancel()">Cancel</button>-->
+											  
 											</div>
 										</script>
 										<button type="button" class="btn btn-default" ng-click="$ctrl.open()">Generate Chart</button>
-										<!--<button type="button" class="btn btn-default" ng-click="$ctrl.open('lg')">Generate Chart</button>
-										<div ng-show="$ctrl.selected">Selection from a modal: {{ $ctrl.selected }}</div>-->
-										<div class="modal-parent">
-										</div>
+										
 									</div>
 								</div>
+								<div class="modal-parent">
+								</div>
+								<textarea style="display:inline" rows="5" cols="100" style="overflow:scroll;overflow-x:hidden;resize:none;">{{QueryDetailDesc}}</textarea>
 								
-								
-
-							</div>
-						</wi-vdividedbox-group>
-						<wi-vdividedbox-group >
-							<div id="button_submit_p" ng-controller="DataGridDemoExcelCtrl" width="100%" height="100%">
-								
-								<div id="button_submit" un_fillcolumn="4" modecolumn="4"></div>
-								<!--<p ng-repeat="(key,value) in datas[0][1]">{{key}}={{value}}</p> -->   
-								
-								<!--
-								<wi-tabset width="100%" height="600px" >
-								
-									<wi-tab ng-repeat="tab in tabs" heading="{{tab.name}}" active="true" width="100%"
-										 height="100%" ng-init="tabindex = $index">
-									<unfillcolumn id="button_submit" columns="4"></unfillcolumn> 
+							  </div>
+							
+							</wi-vdividedbox-group>
+							<wi-vdividedbox-group>
+								<div id="button_submit_p" ng-controller="DataGridDemoExcelCtrl" width="100%" height="100%">
 									
-									<wi-tab ng-repeat="tab in tabs" heading="{{tab.name}}" active="true" width="100%"
-										 height="100%" ng-init="tabindex = $index">
-										
-										<wi-datagrid dataprovider="datas[$index]" wid="dg" width="100%" height="100%" pagemode="client" showno="true" showexcel="true"><wi-datagrid-column headtext="n1" datafield="n1" width="150px"></wi-datagrid-column><wi-datagrid-column headtext="n2" datafield="n2" width="150px"></wi-datagrid-column><wi-datagrid-column headtext="n3" datafield="n3" width="150px"></wi-datagrid-column><wi-datagrid-column headtext="n4" datafield="n4" width="150px"></wi-datagrid-column><wi-datagrid-column headtext="n5" datafield="n5" width="150px"></wi-datagrid-column></wi-datagrid>
-										
-										 <wi-datagrid dataProvider="datas[$index]" wid="dg" width="100%"
-										 height="100%"
-											pagemode="client" showno="true"
-											showexcel="true">
-											
-											
-											<wi-datagrid-column  headtext='n1' datafield='n1' width="150"></wi-datagrid-column>
-											
-											<wi-datagrid-column headtext="姓名" datafield="n1" width="150"></wi-datagrid-column>
-											<wi-datagrid-column headtext="住址" datafield="n2" width="90"></wi-datagrid-column>
-											<wi-datagrid-column headtext="日期" datafield="date" align='center'></wi-datagrid-column>
-											<wi-datagrid-column headtext="数字" datafield="num"></wi-datagrid-column>
-											
-										</wi-datagrid>
-									</wi-tab>
+									<div id="button_submit" un_fillcolumn="4" modecolumn="4"></div>
 									
-								</wi-tabset>
-								-->
-							</div>
-						</wi-vdividedbox-group>
-					</wi-vdividedbox>
-				</div>
-			</wi-hdividedbox-group>
-		</wi-hdividedbox>
+								</div>
+							</wi-vdividedbox-group>
+							
+							
+						</wi-vdividedbox>
+					</div>
+				</wi-hdividedbox-group>
+			</wi-hdividedbox>
+		</div>
 	</div>
 </div>
 

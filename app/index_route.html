@@ -16,6 +16,22 @@
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="lib/wysiwyg/css/bootstrap3-wysiwyg5.css" rel="stylesheet">
     <link href="js/WebUI4Angular/themes/default/wi-all.css" rel="stylesheet" >
+
+    
+  <style>
+    div
+        {
+            border:1px;
+            border-radius:12px;
+            /*-moz-border-radius:25px;  Old Firefox */
+        }
+    #greeting
+    {
+        color:#404046;
+        margin: 20px
+    }
+  </style>
+  
   </head>
   
     <body ng-app="shmcc_app">
@@ -23,20 +39,29 @@
             <img src="./images/Title.jpg" alt="SHMCC诺西PS网元管理系统" >
         </p>
         <div ng-controller="AdminUserCtrl" align="center">
-            <p ng-if="isAuthenticated">Hi,{{currentUser}}!
+            <p id='greeting' ng-if="isAuthenticated">Welcome, {{currentUser}}!
             <button   class="btn btn-default" ng-click="logOut()">
                 Logout
             </button>
             </p>
+            <p id='greeting' ng-if="!isAuthenticated">Hi, please login first. 
+            <button   class="btn btn-default" ng-click="logIn()">
+                LogIn
+            </button>
+            </p>
+            </p>
         </div>
-        <div class="container col-sm-12">
-            
-            <div ng-view></div>
-            
+        <!--<div class="container col-sm-12" >-->
+        
+        <div class="container col-lg-12" >
+            <div class="row">    
+                    <div class="col-lg-10 col-lg-offset-1" ng-view></div>
+            </div>
         </div>
 
         <script src="bower_components/angular/angular.min.js"></script>
         <script src="bower_components/angular-route/angular-route.min.js"></script>
+        <script src="bower_components/angular-cookies/angular-cookies.min.js"></script>
         <script src="lib/jquery/jquery-2.0.3.min.js"></script>
         <script src="lib/bootstrap/bootstrap.min.js"></script>
         <!--<script src="dist/js/blog.js"></script>-->
@@ -63,9 +88,7 @@
         <script src="bower_components/chart.js/dist/Chart.min.js"></script>
         <script src="bower_components/angular-chart.js/dist/angular-chart.min.js"></script>
 
-
-
-        <!--
+         <!--
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
