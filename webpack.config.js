@@ -12,7 +12,7 @@ var autoprefixer = require('autoprefixer');
 
 module.exports = {
   devtool: 'source-map',
-  entry:  __dirname + "/app/reactjs/index.js",//已多次提及的唯一入口文件
+  entry:  __dirname + "/app/reactjs/src/index.js",//已多次提及的唯一入口文件
   output: {
     path: __dirname + "/app/reactjs/build",//打包后的文件存放的地方
     filename: '[name]' + '_bundle.js' //打包后输出文件的文件名
@@ -118,7 +118,7 @@ module.exports = {
         new HtmlWebpackPlugin({
           template: 'app/reactjs/public/index.html',
           title: 'Traffica trace log',
-          filename: '../../index_traffica.html',
+          filename: '../../index_traffica_v2.html',
           inject: 'body'
         })
   ],

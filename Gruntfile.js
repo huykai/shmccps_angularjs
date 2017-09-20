@@ -2,6 +2,21 @@ module.exports = function(grunt) {
 
   // Project configuration.
   grunt.initConfig({
+    shell: {
+      vuebuild: {
+          command: 'node build/build.js',
+          options: {
+            async: false,
+            stdout: true,
+            stderr: true,
+            failOnError: true,
+            execOptions: {
+                  cwd: './app/vuejs/'
+            }
+          }     
+        }  
+    },
+
     pkg: grunt.file.readJSON('package.json'),
     //uglify: {
     //  options: {
@@ -44,6 +59,11 @@ module.exports = function(grunt) {
 
   });
 
+  // A very basic default task.
+  grunt.registerTask('vuebuild', 'Build Vue part webapp.', function() {
+    
+    grunt.log.write('').ok();
+  });
   // Load the plugin that provides the "uglify" task.
   //grunt.loadNpmTasks('grunt-contrib-uglify');
 
@@ -54,4 +74,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-karma');
   // Load for JSHint
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-shell-spawn');
 };

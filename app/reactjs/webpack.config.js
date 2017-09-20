@@ -5,7 +5,7 @@ const webpack = require('webpack');  //加载webpack依赖包
 
 module.exports = {
   devtool: 'source-map',
-  entry:  __dirname + "/index.js",//已多次提及的唯一入口文件
+  entry:  __dirname + "/src/index.js",//已多次提及的唯一入口文件
   output: {
     path: __dirname + "/build",//打包后的文件存放的地方
     filename: '[name]' + '_bundle.js' //打包后输出文件的文件名
@@ -77,5 +77,11 @@ module.exports = {
         extensions: ['.js', '.json', '.scss', '.ts'],
         modules: ["/e/PersonalProject/Code_Projects/Javascripts/AngularJS_Demo/shmcc/node_modules"]
   },
-  
+  externals: {
+    cheerio: 'window',
+    'react/addons': 'react',
+    'react/lib/ExecutionEnvironment': 'react',
+    'react/lib/ReactContext': 'react',
+    'react-addons-test-utils': 'react-dom',
+  },
 }

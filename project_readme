@@ -1,0 +1,5 @@
+compile reactjs:
+run in home directory: 
+webpack
+run test(will watch the file change):
+cd test; karma start karma_reactjs.conf.js

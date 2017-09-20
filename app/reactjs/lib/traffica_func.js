@@ -24,15 +24,9 @@ function adjust(obj){
 //  window.onresize = adjust;  
 //  adjust();  
 //}  
-
+/*
 var updateGrid = function(filename, columninfo) {
-    //console.log('easyui-dg:', $('#easyui-dg'));
-    //console.log('easyui-dg datagrid:', $('#easyui-dg').children());
-    //var columninfo = [
-    //            {field:'itemid',title:'Item ID',width:100},
-    //            {field:'productid',title:'List Price',width:100},
-    //            {field:'unitcost',title:'Unit Cost',width:100,align:'right'}
-    //            ];
+     
     if ($('#easyui-dg').children().length > 0) {
         //$('#easyui-dg').empty();
         $('#easyui-dg').datagrid({
@@ -40,11 +34,6 @@ var updateGrid = function(filename, columninfo) {
             method: 'get',
             columns:[
                 columninfo
-                //[
-                //{field:'itemid',title:'Item ID',width:100},
-                //{field:'productid',title:'List Price',width:100},
-                //{field:'unitcost',title:'Unit Cost',width:100,align:'right'}
-                //]
             ]
         });
     } else {
@@ -64,6 +53,42 @@ var updateGrid = function(filename, columninfo) {
 
     }
 }
+*/
+
+var updateGrid = function(filename, columninfo) {
+    console.log('updateGrid: MME_TRAFFICA = ', filename['MME_TRAFFICA']);
+    console.log('updateGrid: SGSN_TRAFFICA = ', filename['SGSN_TRAFFICA']);
+    console.log('updateGrid: #easyui-mme length = ', $('#easyui-mme').length);
+    console.log('updateGrid: #easyui-sgsn length = ', $('#easyui-sgsn').length);
+    
+    //if ($('#easyui-mme').children().length > 0) {
+    if ($('#easyui-mme').length > 0) {
+        //$('#easyui-dg').empty();
+        $('#easyui-mme').empty();
+        console.log('begin $.datagrid');
+        $('#easyui-mme').datagrid({
+            url:filename['MME_TRAFFICA'],
+            method: 'get',
+            columns:[
+                columninfo['MME_TRAFFICA']
+            ]
+        });
+        console.log('end $.datagrid');
+    //} else if ($('#easyui-sgsn').children().length > 0){
+    //    } else if ($('#easyui-sgsn').length > 0){
+
+        //$('#easyui-dg').empty();
+    //    $('#easyui-sgsn').datagrid({
+    //        url:filename['SGSN_TRAFFICA'],
+    //        method: 'get',
+    //        columns:[
+    //            columninfo['SGSN_TRAFFICA']
+    //        ]
+    //    });
+
+    }
+}
+
 
 $("#signin").click(function(){
 //var signin = function(){

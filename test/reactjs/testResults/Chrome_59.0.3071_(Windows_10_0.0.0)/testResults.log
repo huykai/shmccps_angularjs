@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<testsuite name="Chrome 59.0.3071 (Windows 10 0.0.0)" package="" timestamp="2017-07-26T02:44:01" id="0" hostname="SC-201703210009" tests="6" errors="0" failures="0" time="0.293">
+  <properties>
+    <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.104 Safari/537.36"/>
+  </properties>
+  <testcase name="App App Component should be render" time="0.011" classname="Chrome_59_0_3071_(Windows_10_0_0_0).App"/>
+  <testcase name="App_form Component App_form Component should be render" time="0.132" classname="Chrome_59_0_3071_(Windows_10_0_0_0).App_form Component"/>
+  <testcase name="App_form Component App_form Component should be have Props" time="0.053" classname="Chrome_59_0_3071_(Windows_10_0_0_0).App_form Component"/>
+  <testcase name="App_form Component Props App_form Component should be have handler in props" time="0.031" classname="Chrome_59_0_3071_(Windows_10_0_0_0).App_form Component Props"/>
+  <testcase name="App_form Component Static App_form Component should be have Static parameters" time="0.037" classname="Chrome_59_0_3071_(Windows_10_0_0_0).App_form Component Static"/>
+  <testcase name="App_form Component state App_form Component should be have state parameters" time="0.029" classname="Chrome_59_0_3071_(Windows_10_0_0_0).App_form Component state"/>
+  <system-out>
+    <![CDATA[Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'root innerWidth:', undefined
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'ParentWidth:', NaN
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'App_form layoutStyle = ', Object{width: '1200px', height: '800px'}
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'before setInterval: state=', Object{count: 0, minwidth: 1200, info: Object{}, renderDataGrid: false, westwidth: 200, northwidth: 1200, centerwidth: undefined}
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'RegionNorth props = ', Object{width: 1200, height: undefined, submitQuery: function () { ... }}
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'RegionNorth props = ', Object{width: 1200, height: undefined, submitQuery: function () { ... }}
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'RegionNorth ParentWidth = ', 1200
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'RegionNorth ParentHeight = ', undefined
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'ReginNorth layoutPanelStyle = ', Object{width: '1200px', height: '200px'}
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'mapStateToProps: state=', Object{querynumber: Object{}, queryelement: Object{}}
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'getDesc: ', undefined, undefined, undefined
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'FDesc: value=', 'The Query Parameter: IMSI = undefined MSISDN = undefinedMME = undefined'
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'RegionWest props = ', Object{width: 200, height: undefined}
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'RegionWest layoutStyle = ', Object{width: '200px'}
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'render:', './reactjs/data/datagrid_data1.json'
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'render:', 'url:'./reactjs/data/datagrid_data1.json',method:'get',singleSelect:true,fit:true,fitColumns:true'
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'root innerWidth:', undefined
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'ParentWidth:', NaN
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'App_form layoutStyle = ', Object{width: '1200px', height: '800px'}
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'before setInterval: state=', Object{count: 0, minwidth: 1200, info: Object{}, renderDataGrid: false, westwidth: 200, northwidth: 1200, centerwidth: undefined}
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'RegionNorth props = ', Object{width: 1200, height: undefined, submitQuery: function () { ... }}
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'RegionNorth props = ', Object{width: 1200, height: undefined, submitQuery: function () { ... }}
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'RegionNorth ParentWidth = ', 1200
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'RegionNorth ParentHeight = ', undefined
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'ReginNorth layoutPanelStyle = ', Object{width: '1200px', height: '200px'}
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'mapStateToProps: state=', Object{querynumber: Object{}, queryelement: Object{}}
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'getDesc: ', undefined, undefined, undefined
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'FDesc: value=', 'The Query Parameter: IMSI = undefined MSISDN = undefinedMME = undefined'
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'RegionWest props = ', Object{width: 200, height: undefined}
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'RegionWest layoutStyle = ', Object{width: '200px'}
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'render:', './reactjs/data/datagrid_data1.json'
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'render:', 'url:'./reactjs/data/datagrid_data1.json',method:'get',singleSelect:true,fit:true,fitColumns:true'
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'root innerWidth:', undefined
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'ParentWidth:', NaN
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'App_form layoutStyle = ', Object{width: '1200px', height: '800px'}
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'before setInterval: state=', Object{count: 0, minwidth: 1200, info: Object{}, renderDataGrid: false, westwidth: 200, northwidth: 1200, centerwidth: undefined}
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'RegionNorth props = ', Object{width: 1200, height: undefined, submitQuery: function () { ... }}
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'RegionNorth props = ', Object{width: 1200, height: undefined, submitQuery: function () { ... }}
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'RegionNorth ParentWidth = ', 1200
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'RegionNorth ParentHeight = ', undefined
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'ReginNorth layoutPanelStyle = ', Object{width: '1200px', height: '200px'}
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'mapStateToProps: state=', Object{querynumber: Object{}, queryelement: Object{}}
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'getDesc: ', undefined, undefined, undefined
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'FDesc: value=', 'The Query Parameter: IMSI = undefined MSISDN = undefinedMME = undefined'
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'RegionWest props = ', Object{width: 200, height: undefined}
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'RegionWest layoutStyle = ', Object{width: '200px'}
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'render:', './reactjs/data/datagrid_data1.json'
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'render:', 'url:'./reactjs/data/datagrid_data1.json',method:'get',singleSelect:true,fit:true,fitColumns:true'
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'root innerWidth:', undefined
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'ParentWidth:', NaN
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'App_form layoutStyle = ', Object{width: '1200px', height: '800px'}
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'before setInterval: state=', Object{count: 0, minwidth: 1200, info: Object{}, renderDataGrid: false, westwidth: 200, northwidth: 1200, centerwidth: undefined}
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'RegionNorth props = ', Object{width: 1200, height: undefined, submitQuery: function () { ... }}
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'RegionNorth props = ', Object{width: 1200, height: undefined, submitQuery: function () { ... }}
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'RegionNorth ParentWidth = ', 1200
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'RegionNorth ParentHeight = ', undefined
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'ReginNorth layoutPanelStyle = ', Object{width: '1200px', height: '200px'}
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'mapStateToProps: state=', Object{querynumber: Object{}, queryelement: Object{}}
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'getDesc: ', undefined, undefined, undefined
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'FDesc: value=', 'The Query Parameter: IMSI = undefined MSISDN = undefinedMME = undefined'
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'RegionWest props = ', Object{width: 200, height: undefined}
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'RegionWest layoutStyle = ', Object{width: '200px'}
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'render:', './reactjs/data/datagrid_data1.json'
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'render:', 'url:'./reactjs/data/datagrid_data1.json',method:'get',singleSelect:true,fit:true,fitColumns:true'
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'root innerWidth:', undefined
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'ParentWidth:', NaN
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'App_form layoutStyle = ', Object{width: '1200px', height: '800px'}
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'before setInterval: state=', Object{count: 0, minwidth: 1200, info: Object{}, renderDataGrid: false, westwidth: 200, northwidth: 1200, centerwidth: undefined}
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'RegionNorth props = ', Object{width: 1200, height: undefined, submitQuery: function () { ... }}
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'RegionNorth props = ', Object{width: 1200, height: undefined, submitQuery: function () { ... }}
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'RegionNorth ParentWidth = ', 1200
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'RegionNorth ParentHeight = ', undefined
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'ReginNorth layoutPanelStyle = ', Object{width: '1200px', height: '200px'}
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'mapStateToProps: state=', Object{querynumber: Object{}, queryelement: Object{}}
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'getDesc: ', undefined, undefined, undefined
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'FDesc: value=', 'The Query Parameter: IMSI = undefined MSISDN = undefinedMME = undefined'
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'RegionWest props = ', Object{width: 200, height: undefined}
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'RegionWest layoutStyle = ', Object{width: '200px'}
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'render:', './reactjs/data/datagrid_data1.json'
+,Chrome 59.0.3071 (Windows 10 0.0.0) LOG: 'render:', 'url:'./reactjs/data/datagrid_data1.json',method:'get',singleSelect:true,fit:true,fitColumns:true'
+
+]]>
+  </system-out>
+  <system-err/>
+</testsuite>

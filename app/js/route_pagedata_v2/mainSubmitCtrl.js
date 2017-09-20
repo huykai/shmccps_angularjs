@@ -9,7 +9,8 @@ var appDirectives = angular.module('appDirectives', []);
 
 var options = {};
 options.api = {};
-options.api.base_url = "http://192.168.1.126:3000";
+//options.api.base_url = "http://192.168.1.126:3000";
+options.api.base_url = "http://127.0.0.1:3000";
 
 
 shmcc_app.config(['$qProvider', function ($qProvider) {
@@ -323,7 +324,7 @@ var mainSubmitCtrl = ["getTreeData","$rootScope", "$interpolate", "$scope","$doc
 				//console.log(angular.element(data.trim()));
 				//console.log(headers);
 				//console.log('Content-type:' + headers("Content-type"));
-				console.log('post response data:', data);
+				//console.log('post response data:', data);
 				//console.log('post response header:', headers);
 				if (headers("Content-type").indexOf("text/xml") >= 0 
 					&& angular.isString(data)) {
@@ -402,7 +403,7 @@ var mainSubmitCtrl = ["getTreeData","$rootScope", "$interpolate", "$scope","$doc
 		//console.log('postapi config',config);
 		$http.post(api_string, config.data ,config)
 		.then(function(data){
-			console.log('post data return: ',angular.toJson(data));
+			//console.log('post data return: ',angular.toJson(data));
 			for (var tableid in data.data.response){
 				var newcolumns = $rootScope.addcolumns(data.data.response[tableid].Title);
 				var newdatas = $rootScope.adddatas(data.data.response[tableid].Item);

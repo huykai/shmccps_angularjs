@@ -13,7 +13,7 @@ export default new Router({
       component: Hello
     },
     {
-      path: '/1',
+      path: '/:id',
       name: 'vhtml',
       component: vhtml
     }
