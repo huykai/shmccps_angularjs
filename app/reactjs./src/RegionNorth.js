@@ -186,6 +186,7 @@ export default class RegionNorth extends Component {
           parentwidth: ParentWidth, parentheight: ParentHeight,
           pagewidth: ParentWidth - parentWidthdelta, pageheight: pageHeight,
           queryOptions : {
+            'QUERYTYPE' : '',
             'IMSI' : '' ,
             'MSISDN' : '' ,
             'LTECAUSEPROC' : '',
@@ -207,13 +208,21 @@ export default class RegionNorth extends Component {
       console.log('ReginNorth layoutPanelStyle = ',layoutPanelStyle)
       querystate = true;
       this.submitQuery = this.submitQuery.bind(this);
+      this.submitQueryDetail = this.submitQueryDetail.bind(this);
+      this.submitQuerySummary = this.submitQuerySummary.bind(this);
       this.handleIMSIchange =  this.handleIMSIchange.bind(this);
       this.handleMSISDNchange =  this.handleMSISDNchange.bind(this);
       //this.handleCAUSEPROCchange =  this.handleCAUSEPROCchange.bind(this);
     }
-
-    submitQuery() {
+    submitQueryDetail(){
+        this.submitQuery('QueryDetail');
+    }
+    submitQuerySummary(){
+        this.submitQuery('QuerySummary');
+    }
+    submitQuery(QueryType) {
         //console.log('submitQuery: ', this.state.queryOptions.IMSI);
+        this.state.queryOptions['QUERYTYPE'] = QueryType;
         this.state.queryOptions['MMELIST'] = get_MME_Select();
         [this.state.queryOptions['STARTDATE'], this.state.queryOptions['STARTTIME']] = get_StartTime_Select();
         //this.state.queryOptions['STARTTIME'] = get_StartTime_Select();
@@ -325,7 +334,8 @@ export default class RegionNorth extends Component {
                         </table>
                     </form>
                     <div>
-                        <button onClick={this.submitQuery}  >Apply Query</button>                        
+                        <button onClick={this.submitQueryDetail}  >Apply Detail Query</button>
+                        <button onClick={this.submitQuerySummary}  >Apply Summary Query</button>                        
                     </div>
                     <Provider store={store}>
                         <FootDesc ></FootDesc>

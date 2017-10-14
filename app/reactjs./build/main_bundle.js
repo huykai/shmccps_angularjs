@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "2b1ae1fa13a6fddb4de4"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "bc27f01f150856b7132a"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -26677,6 +26677,7 @@ var App_form = function (_Component) {
         info['datagrid'] = result;
         this.setState({ info: info, renderDataGrid: true });
         console.log('returntostate:', this.state);
+        info['datagrid'] = null;
       }
     }
     //handleGrid(filenames, info){
@@ -26720,7 +26721,8 @@ var App_form = function (_Component) {
           },
           complete: function complete(xhr, status) {
             console.log('completed');
-          }
+          },
+          timeout: 600000
         });
 
         //this.state.info = {url:'./reactjs/data/datagrid_data1.json',column:};
@@ -27053,7 +27055,9 @@ var RegionCenter = function (_Component) {
 				for (var _iterator3 = Object.keys(propsFileName)[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
 					var file = _step3.value;
 
-					columnInfo[file] = this.generateColumn(propsInfo[file]);
+					//columnInfo[file] = this.generateColumn(propsInfo[file])
+					//console.log('filename:',file);
+					if (file === "MME_TRAFFICA" || file === "SGSN_TRAFFICA") columnInfo[file] = this.generateColumn(propsInfo['datagrid'][file + '_COLUMNINFO']);
 				}
 			} catch (err) {
 				_didIteratorError3 = true;
@@ -27174,7 +27178,11 @@ var RegionCenter = function (_Component) {
 						{ id: 'easyui-mme', className: 'easyui-datagrid', 'data-options': table_data_options },
 						columnNodes_all
 					);
-					var table_node_sgsn = _react2.default.createElement('table', { id: 'easyui-sgsn', className: 'easyui-datagrid' });
+					var table_node_sgsn = _react2.default.createElement(
+						'table',
+						{ id: 'easyui-sgsn', className: 'easyui-datagrid', 'data-options': table_data_options },
+						columnNodes_all
+					);
 
 					return _react2.default.createElement(
 						'div',
@@ -27187,7 +27195,11 @@ var RegionCenter = function (_Component) {
 								{ title: 'DataGrid_MME', 'data-options': '', style: layoutCustomStyle },
 								table_node_mme
 							),
-							_react2.default.createElement('div', { title: 'DataGrid_SGSN', style: layoutCustomStyle })
+							_react2.default.createElement(
+								'div',
+								{ title: 'DataGrid_SGSN', style: layoutCustomStyle },
+								table_node_sgsn
+							)
 						)
 					);
 				}
@@ -27510,6 +27522,7 @@ var RegionNorth = function (_Component) {
             parentwidth: ParentWidth, parentheight: ParentHeight,
             pagewidth: ParentWidth - parentWidthdelta, pageheight: pageHeight,
             queryOptions: {
+                'QUERYTYPE': '',
                 'IMSI': '',
                 'MSISDN': '',
                 'LTECAUSEPROC': '',
@@ -27531,6 +27544,8 @@ var RegionNorth = function (_Component) {
         console.log('ReginNorth layoutPanelStyle = ', layoutPanelStyle);
         querystate = true;
         _this.submitQuery = _this.submitQuery.bind(_this);
+        _this.submitQueryDetail = _this.submitQueryDetail.bind(_this);
+        _this.submitQuerySummary = _this.submitQuerySummary.bind(_this);
         _this.handleIMSIchange = _this.handleIMSIchange.bind(_this);
         _this.handleMSISDNchange = _this.handleMSISDNchange.bind(_this);
         //this.handleCAUSEPROCchange =  this.handleCAUSEPROCchange.bind(this);
@@ -27538,9 +27553,20 @@ var RegionNorth = function (_Component) {
     }
 
     _createClass(RegionNorth, [{
+        key: 'submitQueryDetail',
+        value: function submitQueryDetail() {
+            this.submitQuery('QueryDetail');
+        }
+    }, {
+        key: 'submitQuerySummary',
+        value: function submitQuerySummary() {
+            this.submitQuery('QuerySummary');
+        }
+    }, {
         key: 'submitQuery',
-        value: function submitQuery() {
+        value: function submitQuery(QueryType) {
             //console.log('submitQuery: ', this.state.queryOptions.IMSI);
+            this.state.queryOptions['QUERYTYPE'] = QueryType;
             this.state.queryOptions['MMELIST'] = get_MME_Select();
 
             //this.state.queryOptions['STARTTIME'] = get_StartTime_Select();
@@ -27763,8 +27789,13 @@ var RegionNorth = function (_Component) {
                             null,
                             _react2.default.createElement(
                                 'button',
-                                { onClick: this.submitQuery },
-                                'Apply Query'
+                                { onClick: this.submitQueryDetail },
+                                'Apply Detail Query'
+                            ),
+                            _react2.default.createElement(
+                                'button',
+                                { onClick: this.submitQuerySummary },
+                                'Apply Summary Query'
                             )
                         ),
                         _react2.default.createElement(

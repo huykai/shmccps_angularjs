@@ -179,6 +179,7 @@ export default class App_form extends Component {
         info['datagrid'] = result;
         this.setState({info: info, renderDataGrid : true});
         console.log('returntostate:', this.state);
+        info['datagrid'] = null;
       }
     }
     //handleGrid(filenames, info){
@@ -212,12 +213,13 @@ export default class App_form extends Component {
             },
             error: function(jqXHR, textStatus, errorThrown) {
                 console.log("error in post getTrafficaRecord: ",textStatus);
-                console.log("error in post jqXHR: ",jqXHR);
+                console.log("error in post jqXHR: ",jqXHR.statusText);
                 console.log("error in post errorThrown: ",errorThrown);
             },
             complete: function(xhr,status){
                 console.log('completed');
-            }
+            },
+            timeout: 600000
         });
         
         

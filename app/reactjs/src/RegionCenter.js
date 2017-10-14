@@ -106,7 +106,10 @@ export default class RegionCenter extends Component {
 	generateColumnInfo(propsFileName, propsInfo){
 		let columnInfo = {};
 		for (let file of Object.keys(propsFileName)) {
-			columnInfo[file] = this.generateColumn(propsInfo[file])
+			//columnInfo[file] = this.generateColumn(propsInfo[file])
+			//console.log('filename:',file);
+			if (file === "MME_TRAFFICA" || file === "SGSN_TRAFFICA")
+				columnInfo[file] = this.generateColumn(propsInfo['datagrid'][file+'_COLUMNINFO'])
 		}
 		return columnInfo;
 	}
@@ -174,7 +177,9 @@ export default class RegionCenter extends Component {
 					</table>
 				)
 				var table_node_sgsn = (
-					<table id="easyui-sgsn" className="easyui-datagrid"></table>
+					<table id="easyui-sgsn" className="easyui-datagrid" data-options={table_data_options}>
+						 {columnNodes_all} 
+					</table>
 				)
 		
 
@@ -185,7 +190,7 @@ export default class RegionCenter extends Component {
 								{table_node_mme}
 							</div>
 							<div title="DataGrid_SGSN" style={layoutCustomStyle}>
-								
+								{table_node_sgsn}
 							</div>
 						</div>
 					</div>		

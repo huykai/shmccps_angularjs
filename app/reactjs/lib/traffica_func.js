@@ -56,24 +56,45 @@ var updateGrid = function(filename, columninfo) {
 */
 
 var updateGrid = function(filename, columninfo) {
-    console.log('updateGrid: MME_TRAFFICA = ', filename['MME_TRAFFICA']);
-    console.log('updateGrid: SGSN_TRAFFICA = ', filename['SGSN_TRAFFICA']);
-    console.log('updateGrid: #easyui-mme length = ', $('#easyui-mme').length);
-    console.log('updateGrid: #easyui-sgsn length = ', $('#easyui-sgsn').length);
+    //console.log('updateGrid: MME_TRAFFICA = ', filename['MME_TRAFFICA']);
+    //console.log('updateGrid: SGSN_TRAFFICA = ', filename['SGSN_TRAFFICA']);
+    //console.log('updateGrid: #easyui-mme length = ', $('#easyui-mme').length);
+    //console.log('updateGrid: #easyui-sgsn length = ', $('#easyui-sgsn').length);
     
     //if ($('#easyui-mme').children().length > 0) {
-    if ($('#easyui-mme').length > 0) {
+    if ($('#easyui-mme').length > 0 ) {
         //$('#easyui-dg').empty();
         $('#easyui-mme').empty();
-        console.log('begin $.datagrid');
-        $('#easyui-mme').datagrid({
-            url:filename['MME_TRAFFICA'],
-            method: 'get',
-            columns:[
-                columninfo['MME_TRAFFICA']
-            ]
-        });
-        console.log('end $.datagrid');
+
+        if (filename['MME_TRAFFICA'] != undefined) {
+            //console.log('begin $.datagrid');
+            $('#easyui-mme').datagrid({
+                url:filename['MME_TRAFFICA'],
+                method: 'get',
+                columns:[
+                    columninfo['MME_TRAFFICA']
+                ]
+            });
+        }
+        
+    }
+
+    if ($('#easyui-sgsn').length > 0 ) {
+        //$('#easyui-dg').empty();
+        $('#easyui-sgsn').empty();
+
+        if (filename['SGSN_TRAFFICA'] != undefined) {
+            //console.log('begin $.datagrid');
+            $('#easyui-sgsn').datagrid({
+                url:filename['SGSN_TRAFFICA'],
+                method: 'get',
+                columns:[
+                    columninfo['SGSN_TRAFFICA']
+                ]
+            });
+        }
+    }
+        //console.log('end $.datagrid');
     //} else if ($('#easyui-sgsn').children().length > 0){
     //    } else if ($('#easyui-sgsn').length > 0){
 
@@ -86,7 +107,7 @@ var updateGrid = function(filename, columninfo) {
     //        ]
     //    });
 
-    }
+    
 }
 
 
