@@ -97,7 +97,7 @@ export default class RegionCenter extends Component {
 			let columnsinfo = {};
 			columnsinfo.field = key;
 			columnsinfo.title = String(key);
-			//columnsinfo.width = 50;
+			columnsinfo.sortable = true;
 			columnsinfos.push(columnsinfo);
 		}
 		return columnsinfos;
@@ -142,14 +142,49 @@ export default class RegionCenter extends Component {
 		//				status: 'Status'
 		//			};
 		//}
+		var table_mmetrafficarecord_info = (
+			<div title="DataGrid_MME_Record_Info" data-options="" style={layoutCustomStyle}>
+				<table id="easyui-mme-info" className="easyui-datagrid" 
+					data-options="url:'./reactjs/data/ccd_fns.json',method:'get',singleSelect:true,fit:true, remoteSort:false,multiSort:true,fitColumns:true, rownumbers:true, pagination:true, pageSize:10">
+					<thead> 
+						<tr> 
+							<th key = "0"  data-options="field:'ParameterName', sortable:true"> Parameter Name </th>
+							<th key = "1"  data-options="field:'ParameterValue', sortable:true"> Parameter Value </th>
+							<th key = "2"  data-options="field:'ParameterDescription', sortable:true"> Parameter Description </th>
+						</tr> 
+					</thead>)
+				</table>
+			</div>
+		)
+		var table_sgsntrafficarecord_info = (
+			<div title="DataGrid_SGSN_Record_Info" style={layoutCustomStyle}>
+				<table id="easyui-sgsn-info" className="easyui-datagrid" 
+					data-options="url:'./reactjs/data/ccd_sgsn.json',method:'get',singleSelect:true,fit:true,fitColumns:true, remoteSort:false,multiSort:true, rownumbers:true, pagination:true">
+					<thead> 
+						<tr> 
+							<th key = "0"  data-options="field:'ParameterName', sortable:true"> Parameter Name </th>
+							<th key = "1"  data-options="field:'ParameterValue', sortable:true"> Parameter Value </th>
+							<th key = "2"  data-options="field:'ParameterDescription', sortable:true"> Parameter Description </th>
+						</tr> 
+					</thead>)
+				</table>
+			</div>
+		)
+
+		
+		//{columnNodes_all} 
 		var table_node_mme = (
-			<table id="easyui-mme" className="easyui-datagrid" data-options={table_data_options}>
-					{columnNodes_all} 
+			<table id="easyui-mme" className="easyui-datagrid" data-options=" remoteSort:false,multiSort:true">
+				
 			</table>
 		)
 		var table_node_sgsn = (
-			<table id="easyui-sgsn" className="easyui-datagrid"></table>
+			<table id="easyui-sgsn" className="easyui-datagrid" data-options=" remoteSort:false,multiSort:true">
+				
+			</table>
 		)
+		
+		
 		if (this.state.datagridinfo.filename) {
 			console.log('render:',this.state.datagridinfo.filename);
 			if(this.state.datagridinfo.columninfo) {
@@ -159,26 +194,26 @@ export default class RegionCenter extends Component {
 				var columnNodes = [];
 				var i = 0;
 				for (let columnNode of Object.keys(columndata)) {
-					let column_field = "field:'" + columnNode + "'";
+					let column_field = "field:'" + columnNode + "', sortable:true ";
 					columnNodes[i] = (<th key={i} data-options={column_field}> {columndata[columnNode]} </th>);
 					i = i + 1;
 				} 
 				var columnNodes_all = (<thead> <tr> {columnNodes} </tr> </thead>);
 		//		var tableNode = (<table className="easyui-datagrid" data-options="url:{{this.state.datagridinfo.filename}},method:'get',singleSelect:true,fit:true,fitColumns:true"> {columnNodes_all} </table>);
 		//
-				var table_data_options = "url:'" + this.state.datagridinfo.filename + "',method:'get',singleSelect:true,fit:true,fitColumns:true";
-				console.log('render:',table_data_options);
 				//var table_data_options="url:'./reactjs/data/datagrid_data1.json',method:'get',singleSelect:true,fit:true,fitColumns:true";
 				//data-options = "url:'./reactjs/data/datagrid_data1.json',method:'get',singleSelect:true,fit:true,fitColumns:true">
-				
+				var table_data_options = "url:'" + this.state.datagridinfo.filename + "',method:'get',singleSelect:true,fit:true,fitColumns:true, rownumbers:true, pagination:true, remoteSort:false,multiSort:true";
+				console.log('render:',table_data_options);
+		
 				var table_node_mme = (
 					<table id="easyui-mme" className="easyui-datagrid" data-options={table_data_options}>
-						 {columnNodes_all} 
+						 
 					</table>
 				)
 				var table_node_sgsn = (
 					<table id="easyui-sgsn" className="easyui-datagrid" data-options={table_data_options}>
-						 {columnNodes_all} 
+						  
 					</table>
 				)
 		
@@ -188,12 +223,17 @@ export default class RegionCenter extends Component {
 						<div className="easyui-tabs" data-options="fit:true,border:false,plain:true">
 							<div title="DataGrid_MME" data-options="" style={layoutCustomStyle}>
 								{table_node_mme}
+								
 							</div>
 							<div title="DataGrid_SGSN" style={layoutCustomStyle}>
 								{table_node_sgsn}
+								
 							</div>
+							{table_mmetrafficarecord_info}
+							{table_sgsntrafficarecord_info}
 						</div>
-					</div>		
+					</div>	
+						
 				)
 			} 
 		} else {
@@ -202,10 +242,14 @@ export default class RegionCenter extends Component {
 					<div className="easyui-tabs" data-options="fit:true,border:false,plain:true">
 							<div title="DataGrid_MME" data-options="" style={layoutCustomStyle}>
 								{table_node_mme}
+								
 							</div>
 							<div title="DataGrid_SGSN" style={layoutCustomStyle}>
 								{table_node_sgsn}
+								
 							</div>
+							{table_mmetrafficarecord_info}
+							{table_sgsntrafficarecord_info}
 						</div>
 				</div>
 			);

@@ -55,6 +55,7 @@ var updateGrid = function(filename, columninfo) {
 }
 */
 
+
 var updateGrid = function(filename, columninfo) {
     //console.log('updateGrid: MME_TRAFFICA = ', filename['MME_TRAFFICA']);
     //console.log('updateGrid: SGSN_TRAFFICA = ', filename['SGSN_TRAFFICA']);
@@ -62,15 +63,36 @@ var updateGrid = function(filename, columninfo) {
     //console.log('updateGrid: #easyui-sgsn length = ', $('#easyui-sgsn').length);
     
     //if ($('#easyui-mme').children().length > 0) {
+    		
+    
+
     if ($('#easyui-mme').length > 0 ) {
         //$('#easyui-dg').empty();
+        var toolbar_mme = [{
+            text:'Save',
+            iconCls:'icon-save',
+            handler:function(){
+                var a = document.createElement('a');
+                //var url = window.URL.createObjectURL(blob);
+                var url = filename['MME_TRAFFICA'];
+                //var filename = 'myfile.zip';
+                a.href = url;
+                a.download = filename['MME_TRAFFICA'];
+                a.click();
+                //window.URL.revokeObjectURL(url);
+            }
+        }];	
         $('#easyui-mme').empty();
 
         if (filename['MME_TRAFFICA'] != undefined) {
             //console.log('begin $.datagrid');
+            
             $('#easyui-mme').datagrid({
                 url:filename['MME_TRAFFICA'],
+                toolbar:toolbar_mme,
                 method: 'get',
+                remoteSort:false,
+                multiSort:true,
                 columns:[
                     columninfo['MME_TRAFFICA']
                 ]
@@ -88,6 +110,8 @@ var updateGrid = function(filename, columninfo) {
             $('#easyui-sgsn').datagrid({
                 url:filename['SGSN_TRAFFICA'],
                 method: 'get',
+                remoteSort:false,
+                multiSort:true,
                 columns:[
                     columninfo['SGSN_TRAFFICA']
                 ]

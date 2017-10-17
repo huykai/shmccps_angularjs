@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "bc27f01f150856b7132a"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "4ec0375a1691f91a0d60"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -26716,7 +26716,7 @@ var App_form = function (_Component) {
           },
           error: function error(jqXHR, textStatus, errorThrown) {
             console.log("error in post getTrafficaRecord: ", textStatus);
-            console.log("error in post jqXHR: ", jqXHR);
+            console.log("error in post jqXHR: ", jqXHR.statusText);
             console.log("error in post errorThrown: ", errorThrown);
           },
           complete: function complete(xhr, status) {
@@ -27023,7 +27023,7 @@ var RegionCenter = function (_Component) {
 					var columnsinfo = {};
 					columnsinfo.field = key;
 					columnsinfo.title = String(key);
-					//columnsinfo.width = 50;
+					columnsinfo.sortable = true;
 					columnsinfos.push(columnsinfo);
 				}
 			} catch (err) {
@@ -27106,12 +27106,77 @@ var RegionCenter = function (_Component) {
 			//				status: 'Status'
 			//			};
 			//}
-			var table_node_mme = _react2.default.createElement(
-				'table',
-				{ id: 'easyui-mme', className: 'easyui-datagrid', 'data-options': table_data_options },
-				columnNodes_all
+			var table_mmetrafficarecord_info = _react2.default.createElement(
+				'div',
+				{ title: 'DataGrid_MME_Record_Info', 'data-options': '', style: layoutCustomStyle },
+				_react2.default.createElement(
+					'table',
+					{ id: 'easyui-mme-info', className: 'easyui-datagrid',
+						'data-options': 'url:\'./reactjs/data/ccd_fns.json\',method:\'get\',singleSelect:true,fit:true, remoteSort:false,multiSort:true,fitColumns:true, rownumbers:true, pagination:true, pageSize:10' },
+					_react2.default.createElement(
+						'thead',
+						null,
+						_react2.default.createElement(
+							'tr',
+							null,
+							_react2.default.createElement(
+								'th',
+								{ key: '0', 'data-options': 'field:\'ParameterName\', sortable:true' },
+								' Parameter Name '
+							),
+							_react2.default.createElement(
+								'th',
+								{ key: '1', 'data-options': 'field:\'ParameterValue\', sortable:true' },
+								' Parameter Value '
+							),
+							_react2.default.createElement(
+								'th',
+								{ key: '2', 'data-options': 'field:\'ParameterDescription\', sortable:true' },
+								' Parameter Description '
+							)
+						)
+					),
+					')'
+				)
 			);
-			var table_node_sgsn = _react2.default.createElement('table', { id: 'easyui-sgsn', className: 'easyui-datagrid' });
+			var table_sgsntrafficarecord_info = _react2.default.createElement(
+				'div',
+				{ title: 'DataGrid_SGSN_Record_Info', style: layoutCustomStyle },
+				_react2.default.createElement(
+					'table',
+					{ id: 'easyui-sgsn-info', className: 'easyui-datagrid',
+						'data-options': 'url:\'./reactjs/data/ccd_sgsn.json\',method:\'get\',singleSelect:true,fit:true,fitColumns:true, remoteSort:false,multiSort:true, rownumbers:true, pagination:true' },
+					_react2.default.createElement(
+						'thead',
+						null,
+						_react2.default.createElement(
+							'tr',
+							null,
+							_react2.default.createElement(
+								'th',
+								{ key: '0', 'data-options': 'field:\'ParameterName\', sortable:true' },
+								' Parameter Name '
+							),
+							_react2.default.createElement(
+								'th',
+								{ key: '1', 'data-options': 'field:\'ParameterValue\', sortable:true' },
+								' Parameter Value '
+							),
+							_react2.default.createElement(
+								'th',
+								{ key: '2', 'data-options': 'field:\'ParameterDescription\', sortable:true' },
+								' Parameter Description '
+							)
+						)
+					),
+					')'
+				)
+			);
+
+			//{columnNodes_all} 
+			var table_node_mme = _react2.default.createElement('table', { id: 'easyui-mme', className: 'easyui-datagrid', 'data-options': ' remoteSort:false,multiSort:true' });
+			var table_node_sgsn = _react2.default.createElement('table', { id: 'easyui-sgsn', className: 'easyui-datagrid', 'data-options': ' remoteSort:false,multiSort:true' });
+
 			if (this.state.datagridinfo.filename) {
 				console.log('render:', this.state.datagridinfo.filename);
 				if (this.state.datagridinfo.columninfo) {
@@ -27128,7 +27193,7 @@ var RegionCenter = function (_Component) {
 						for (var _iterator4 = Object.keys(columndata)[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
 							var columnNode = _step4.value;
 
-							var column_field = "field:'" + columnNode + "'";
+							var column_field = "field:'" + columnNode + "', sortable:true ";
 							columnNodes[i] = _react2.default.createElement(
 								'th',
 								{ key: i, 'data-options': column_field },
@@ -27168,21 +27233,13 @@ var RegionCenter = function (_Component) {
 					);
 					//		var tableNode = (<table className="easyui-datagrid" data-options="url:{{this.state.datagridinfo.filename}},method:'get',singleSelect:true,fit:true,fitColumns:true"> {columnNodes_all} </table>);
 					//
-					var table_data_options = "url:'" + this.state.datagridinfo.filename + "',method:'get',singleSelect:true,fit:true,fitColumns:true";
-					console.log('render:', table_data_options);
 					//var table_data_options="url:'./reactjs/data/datagrid_data1.json',method:'get',singleSelect:true,fit:true,fitColumns:true";
 					//data-options = "url:'./reactjs/data/datagrid_data1.json',method:'get',singleSelect:true,fit:true,fitColumns:true">
+					var table_data_options = "url:'" + this.state.datagridinfo.filename + "',method:'get',singleSelect:true,fit:true,fitColumns:true, rownumbers:true, pagination:true, remoteSort:false,multiSort:true";
+					console.log('render:', table_data_options);
 
-					var table_node_mme = _react2.default.createElement(
-						'table',
-						{ id: 'easyui-mme', className: 'easyui-datagrid', 'data-options': table_data_options },
-						columnNodes_all
-					);
-					var table_node_sgsn = _react2.default.createElement(
-						'table',
-						{ id: 'easyui-sgsn', className: 'easyui-datagrid', 'data-options': table_data_options },
-						columnNodes_all
-					);
+					var table_node_mme = _react2.default.createElement('table', { id: 'easyui-mme', className: 'easyui-datagrid', 'data-options': table_data_options });
+					var table_node_sgsn = _react2.default.createElement('table', { id: 'easyui-sgsn', className: 'easyui-datagrid', 'data-options': table_data_options });
 
 					return _react2.default.createElement(
 						'div',
@@ -27199,7 +27256,9 @@ var RegionCenter = function (_Component) {
 								'div',
 								{ title: 'DataGrid_SGSN', style: layoutCustomStyle },
 								table_node_sgsn
-							)
+							),
+							table_mmetrafficarecord_info,
+							table_sgsntrafficarecord_info
 						)
 					);
 				}
@@ -27219,7 +27278,9 @@ var RegionCenter = function (_Component) {
 							'div',
 							{ title: 'DataGrid_SGSN', style: layoutCustomStyle },
 							table_node_sgsn
-						)
+						),
+						table_mmetrafficarecord_info,
+						table_sgsntrafficarecord_info
 					)
 				);
 			}
