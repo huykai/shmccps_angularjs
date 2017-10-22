@@ -1,17 +1,39 @@
 var MenuCtrl = ['$rootScope',  '$location', function($rootScope,$location) {
+	$rootScope.isAlarmQuery = false;	//ctrl.click();
+	$rootScope.isAlarmDetail = true;
+	$rootScope.isMME = true;
     $rootScope.vm = {
         selectFn: function(f){
             if (f.id == '10') {
 				$rootScope.isMME=true;
-				
+				$rootScope.isAlarmQuery = false;
 			}
 			if (f.id == '11') {
 				$rootScope.isMME=false;
-				
+				$rootScope.isAlarmQuery = false;
+				//console.log('f.id:',f.id);
 			}
 			if (f.id == '0') {
-				//ctrl.click();
+				$rootScope.isAlarmQuery = true;	//ctrl.click();
+				$rootScope.isAlarmDetail = true;
+				$rootScope.isMME = true;
 			}
+			if (f.id == '1') {
+				$rootScope.isAlarmQuery = true;	//ctrl.click();
+				$rootScope.isAlarmDetail = false;
+				$rootScope.isMME = true;
+			}
+			if (f.id == '2') {
+				$rootScope.isAlarmQuery = true;	//ctrl.click();
+				$rootScope.isAlarmDetail = true;
+				$rootScope.isMME = false;
+			}
+			if (f.id == '3') {
+				$rootScope.isAlarmQuery = true;	//ctrl.click();
+				$rootScope.isAlarmDetail = false;
+				$rootScope.isMME = false;
+			}
+			$rootScope.queryoptionchanged = !$rootScope.queryoptionchanged;
 			//console.log("MENU id: " + f.id);
         }
     };

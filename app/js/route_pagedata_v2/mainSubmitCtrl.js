@@ -146,9 +146,13 @@ var mainSubmitCtrl = ["getTreeData","$rootScope", "$interpolate", "$scope","$doc
 		}
         $rootScope.queryoptionchanged = !$rootScope.queryoptionchanged;
     };
-	
+	vm.itemAlarmLevelChangeHandler = function(data){
+		$rootScope.alarm_level = data;
+		//console.log(data);
+	}
 	$rootScope.$watch('queryoptionchanged', function(newVal,oldVal){
-		//console.log('queryoptionchange: ', vm);
+		console.log('queryoptionchanged :', newVal, oldVal );
+		console.log('isMME :', $rootScope.isMME );
 		if($rootScope.isMME == true) {
 			//var select_element = getTreeData.getTreeData_elements($rootScope.treedata_mme_element);
 			getTreeData.getTreeData_elements($rootScope.treedata_mme_element)
@@ -178,10 +182,13 @@ var mainSubmitCtrl = ["getTreeData","$rootScope", "$interpolate", "$scope","$doc
 			getTreeData.getTreeData_elements($rootScope.treedata_saegw_element)
 			.then(function(data){
 				$rootScope.select_element = data;
+				genQueryDetail();
 			}, function(data){
 				$rootScope.select_element = ['Error'];
+				genQueryDetail();
 			}, function( data ) {
 				$rootScope.select_element = ['All'];
+				genQueryDetail();
 			});
 			$rootScope.select_kpi = getTreeData.getTreeData_kpis($rootScope.treedata_saegw_kpi);
 		}
@@ -226,7 +233,7 @@ var mainSubmitCtrl = ["getTreeData","$rootScope", "$interpolate", "$scope","$doc
 			} else {
 					var queryunit_info = $rootScope.saegw_statis_unit.name;
 			}
-			//console.log('queryunit_info: ' , queryunit_info);
+			console.log('queryunit_info: ' , queryunit_info);
 			$rootScope.QueryDetailDesc = $rootScope.QueryDetailtemplate(
 			{
 				elementlist: $rootScope.select_element,
@@ -252,20 +259,31 @@ var mainSubmitCtrl = ["getTreeData","$rootScope", "$interpolate", "$scope","$doc
 	];
 	vm.mydata_saegw = [
 		{id:0,name:'SAEGW'},
-		{id:1,name:'Sesssion'}
+		{id:1,name:'SESSION'}
 	];
-	
+	vm.mydata_alarm_level = [
+		{id:0,name:'All'},
+		{id:1,name:'Critical'},
+		{id:2,name:'Major'},
+		{id:3,name:'Minor'},
+		{id:4,name:'Info'}
+	];
+	vm.alarm_number = "All";
 	vm.apistring = {
 		'MME_query'		:	'/api/mme_query',
-		'SAEGW_query'	:	'/api/saegw_query'
+		'SAEGW_query'	:	'/api/saegw_query',
+		'MME_query_alarm'		:	'/api/mme_query_alarm',
+		'SAEGW_query_alarm'	:	'/api/saegw_query_alarm'
 	}
 
 	$rootScope.statis_period = vm.mydata[0];
-	if ($rootScope.isMME) {
-		$rootScope.mme_statis_unit = vm.mydata_mme[0];
-	}else{
-		$rootScope.saegw_statis_unit = vm.mydata_saegw[0];
-	}
+
+	$rootScope.mme_statis_unit = vm.mydata_mme[0];
+	$rootScope.saegw_statis_unit = vm.mydata_saegw[0];
+	
+	$rootScope.alarm_level = vm.mydata_alarm_level[0];
+	$rootScope.alarm_number = vm.alarm_number;
+
 	vm.itemChangeHandler = function (data){
         //console.log(data);
         vm.mme_statis_period = data;
@@ -351,13 +369,26 @@ var mainSubmitCtrl = ["getTreeData","$rootScope", "$interpolate", "$scope","$doc
 		//this.getapi('/api/mme_query',config);
 		postconfig.data = param_config;
 		//console.log('param_config=', angular.toJson(param_config));
-		if($rootScope.isMME == true) {
-			console.log('api_string: ',this.apistring['MME_query']);
-			this.postapi(this.apistring['MME_query'],postconfig);
+		if ($rootScope.isAlarmQuery) {
+			if($rootScope.isMME == true) {
+				console.log('api_string: ',this.apistring['MME_query_alarm']);
+				this.postapi(this.apistring['MME_query_alarm'],postconfig);
+			} else {
+				console.log('saegw alarm_string: ',this.apistring['SAEGW_query_alarm']);
+				console.log('saegw postconfig: ',postconfig);
+				this.postapi(this.apistring['SAEGW_query_alarm'],postconfig);
+			}
 		} else {
-			//console.log('api_string: ',this.apistring['SAEGW_query']);
-			this.postapi(this.apistring['SAEGW_query'],postconfig);
+			if($rootScope.isMME == true) {
+				console.log('api_string: ',this.apistring['MME_query']);
+				this.postapi(this.apistring['MME_query'],postconfig);
+			} else {
+				console.log('saegw api_string: ',this.apistring['SAEGW_query']);
+				console.log('saegw postconfig: ',postconfig);
+				this.postapi(this.apistring['SAEGW_query'],postconfig);
+			}
 		}
+		
 		//config.params = param_config ;
 		//console.log(config);
 		// get mode : need config.params , 
@@ -533,14 +564,21 @@ var mainSubmitCtrl = ["getTreeData","$rootScope", "$interpolate", "$scope","$doc
 		} else {
 			config.selectsaegwggsn = $rootScope.select_element;
 		}
-		config.kpilist = $rootScope.select_kpi;
+		
 		config.startdate = queryParameter['startDate'];
 		config.starttime = queryParameter['startTime'];
 		config.stopdate = queryParameter['stopDate'];
 		config.stoptime = queryParameter['stopTime'];
-		config.selectperiod = this.statis_period.name;
-		config.selectmmeelement = this.mme_statis_unit.name;
-		//config.selectsaegwelement = this.saegw_statis_unit.name;
+		if (!$rootScope.isAlarmQuery) {
+			config.kpilist = $rootScope.select_kpi;
+			config.selectperiod = this.statis_period.name;
+			config.selectmmeelement = this.mme_statis_unit.name;
+			config.selectsaegwelement = this.saegw_statis_unit.name;
+		} else {
+			config.alarm_level = $rootScope.alarm_level.id;
+			config.alarm_number = $rootScope.alarm_number;
+			config.isAlarmDetail = $rootScope.isAlarmDetail;	
+		}
 		config.isMME = $rootScope.isMME;
 		//console.log('config: ',config);
 		this.queryStatis(config);

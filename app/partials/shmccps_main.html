@@ -70,24 +70,34 @@
                                  ng-model="end_datetime" isShowClear="true" isShowToday="true" dateFmt="yyyy/MM/dd HH:mm:ss" id="d2" minDate="#F{$dp.$D(\'d1\')}" maxDate="%y-%M-%d"
 								 onPicked="onStopPickedHandler" >
 								</wi-datepicker>
-								<span>统计间隔：</span>
-								<wi-comboBox dataProvider="mydata"
+								<span ng-show="!isAlarmQuery" >统计间隔：</span>
+								<wi-comboBox ng-show="!isAlarmQuery" dataProvider="mydata"
 									selectedItem="statis_period"
 									width="145"
 									rowCount="8"
 									itemChange="itemPeriodChangeHandler"
 								>
 								</wi-comboBox>
+								<span ng-show="isAlarmQuery" >告警级别：</span>
+								<wi-comboBox ng-show="isAlarmQuery" dataProvider="mydata_alarm_level"
+									selectedItem="alarm_level"
+									width="145"
+									rowCount="8"
+									itemChange="itemAlarmLevelChangeHandler"
+								>
+								</wi-comboBox>
+								<span ng-show="isAlarmQuery" >告警号：</span>
+								<input ng-show="isAlarmQuery" type=text ng-model="alarm_number" value="All" />
 								
-								<span style="margin:5px;top:10px;">统计粒度</span>
-								<wi-comboBox ng-show="isMME" dataProvider="mydata_mme"
+								<span ng-show="!isAlarmQuery" style="margin:5px;top:10px;">统计粒度</span>
+								<wi-comboBox ng-show="!isAlarmQuery && isMME" dataProvider="mydata_mme"
 									selectedItem="mme_statis_unit"
 									width="145"
 									rowCount="8"
 									itemChange="itemUnitChangeHandler"
 								>
 								</wi-comboBox>
-								<wi-comboBox ng-show="!isMME" dataProvider="mydata_saegw"
+								<wi-comboBox ng-show="!isAlarmQuery && !isMME" dataProvider="mydata_saegw"
 									selectedItem="saegw_statis_unit"
 									width="145"
 									rowCount="8"
@@ -162,13 +172,13 @@
 											  
 											</div>
 										</script>
-										<button type="button" class="btn btn-default" ng-click="$ctrl.open()">Generate Chart</button>
+										<button ng-show="!isAlarmQuery" type="button" class="btn btn-default" ng-click="$ctrl.open()">Generate Chart</button>
 										
 									</div>
 								</div>
 								<div class="modal-parent">
 								</div>
-								<textarea style="display:inline" rows="5" cols="100" style="overflow:scroll;overflow-x:hidden;resize:none;">{{QueryDetailDesc}}</textarea>
+								<textarea ng-show="!isAlarmQuery" style="display:inline" rows="5" cols="100" style="overflow:scroll;overflow-x:hidden;resize:none;">{{QueryDetailDesc}}</textarea>
 								
 							  </div>
 							

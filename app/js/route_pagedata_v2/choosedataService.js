@@ -56,8 +56,14 @@ angular.module('ui.wisoft').directive("unFillcolumn",["$compile",function($compi
 			//var widatagrid='<wi-datagrid  dataProvider="datas[0]" wid="dg" width="100%" \
 			//	height="100%"	pagemode="client" showno="true" \
 			//	showexcel="true">';
+			
+			//var widatagrid='<wi-datagrid  dataProvider="tab.datas" wid="dg" width="100%" \
+			//	height="100%" columns="tab.col" pagemode="client" showno="true" wordwrap="true" lockcolumns="3" \
+			//	showexcel="true">';
+			//var wicolumn = "";
+			
 			var widatagrid='<wi-datagrid  dataProvider="tab.datas" wid="dg" width="100%" \
-				height="100%" columns="tab.col" pagemode="client" showno="true" lockcolumns="3" \
+				height="100%" columns="tab.col" pagemode="client" showno="true" wordwrap="true" \
 				showexcel="true">';
 			var wicolumn = "";
 			//if(angular.isArray(data)) {

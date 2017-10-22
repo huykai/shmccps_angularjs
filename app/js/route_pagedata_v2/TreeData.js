@@ -60,7 +60,7 @@ var TreeDemoSelectCtrl = ['$rootScope',function($rootScope) {
         {id:'213',text:'LTE-CDR-RADIUS',pid:'21'},
         {id:'214',text:'LTE-SGW-THROUGH',pid:'21'},
         {id:'215',text:'LTE-GTPU-THROUGH',pid:'21'},
-        {id:'216',text:'LTE-S1U-TRHONGH',pid:'21'},
+        {id:'216',text:'LTE-S1U-THROUGH',pid:'21'},
         {id:'217',text:'LTE-SESSION',pid:'21'},
         {id:'218',text:'LTE-SGI-THROUGH',pid:'21'},
         {id:'219',text:'LTE-IPPOOL',pid:'21'}
