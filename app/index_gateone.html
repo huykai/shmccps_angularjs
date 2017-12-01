@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SHMCC PS Web</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Deliccio Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script src="../lib/gateone.js"></script>
+<script src="../lib/hmacsha1.js"></script>
+
+<!-- Decide where you want to put Gate One -->
+<div id="gateone_container" style="position: relative; width: 60em; height: 30em;">
+    <div id="gateone"></div>
+</div>
+
+<!-- Call GateOne.init() at some point after the page is done loading -->
+<script>
+window.onload = function() {
+    // Initialize Gate One:
+    var auth = {
+            'api_key': 'ZjRkN2RhNGQ1MmExNDA1NmIxZjA0Nzc0ZTdmZTcxOGU1N',
+            'secret': 'OTQ1YWY3NmNhOTlkNDAzMTkzM2E3NmY4NGI0Njk5MmJhM',
+            'upn': 'ANONYMOUS',
+            'timestamp': '',
+            'signature': '',
+            'signature_method': 'HMAC-SHA1',
+            'api_version': '1.0'    
+        };
+    auth.timestamp = Date.now() + "";
+    let body = auth.api_key + auth.upn + auth.timestamp
+    auth.signature = b64_hmac_sha1(auth.secret,body);
+    GateOne.init({
+        //auth: auth, 
+        theme: 'solarized',
+        goDiv: '#gateone',
+        autoConnectURL:'ssh://root@10.20.0.231',
+        showToolbar: true,
+        url: 'https://10.20.0.231:8000/'
+    });
+    //GateOne.Net.autoConnect(); 
+}
+</script>
+</body>
+</html>

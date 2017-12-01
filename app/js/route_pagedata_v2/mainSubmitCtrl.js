@@ -435,6 +435,7 @@ var mainSubmitCtrl = ["getTreeData","$rootScope", "$interpolate", "$scope","$doc
 		$http.post(api_string, config.data ,config)
 		.then(function(data){
 			//console.log('post data return: ',angular.toJson(data));
+			var tabs = [];
 			for (var tableid in data.data.response){
 				var newcolumns = $rootScope.addcolumns(data.data.response[tableid].Title);
 				var newdatas = $rootScope.adddatas(data.data.response[tableid].Item);
@@ -443,10 +444,12 @@ var mainSubmitCtrl = ["getTreeData","$rootScope", "$interpolate", "$scope","$doc
 				//console.log(newdatas)
 				//console.log(newtabname)
 				var newtab = $rootScope.addtab(newtabname, newdatas, newcolumns);
-				$rootScope.tabs.push(newtab);
-				$rootScope.activetab = newtab;
+				tabs.push(newtab);
+				//$rootScope.activetab = newtab;
 			}
-		// before angular 1.5 can use error()
+			$rootScope.tabs = tabs;
+			//$rootScope.activetab = $rootScope.tabs[$rootScope.tabs.length];
+		// before angular 1.5 can use er ror()
 		//}).error(function(data, header, config, status){
 		// after it , should use then	
 		},function(data, header, config, status){
@@ -471,7 +474,7 @@ var mainSubmitCtrl = ["getTreeData","$rootScope", "$interpolate", "$scope","$doc
 		return newtab;
 	};
 	$rootScope.addcolumns = function(titles){
-		console.log('addcolumns: ', titles);
+		//console.log('addcolumns: ', titles);
 		var newcolumns = [];
 		//{id:0,children:0,headtext:'mme1',datafield:"n1",name:"111"},
 		//console.log(titles);
@@ -484,19 +487,30 @@ var mainSubmitCtrl = ["getTreeData","$rootScope", "$interpolate", "$scope","$doc
 			newcolumn.name = titles.name[titleid]
 			newcolumns.push(newcolumn);
 		}
-		console.log('addcolumns: ', newcolumns);
+		//console.log('addcolumns: ', newcolumns);
 		return newcolumns;	
 	};
 	$rootScope.adddatas = function(datas){
 		var newdatas = []; 
-		//console.log(datas);
-		for (var dataid in datas) {
+		//console.log('adddatas:',datas);
+		if (datas instanceof(Array)) {
+			//console.log('adddatas: Array');
+			for (var dataid in datas) {
+				var data = {};
+				for (var datacolid in datas[dataid].ItemCol)
+					//console.log(datas[dataid].ItemCol[datacolid]);
+					data['col'+String(datacolid)] = datas[dataid].ItemCol[datacolid].value;
+				newdatas.push(data);
+			}
+		} else {
 			var data = {};
-			for (var datacolid in datas[dataid].ItemCol)
+			//console.log('adddatas: Object ');
+			for (var datacolid in datas.ItemCol)
 				//console.log(datas[dataid].ItemCol[datacolid]);
-				data['col'+String(datacolid)] = datas[dataid].ItemCol[datacolid].value;
+				data['col'+String(datacolid)] = datas.ItemCol[datacolid].value;
 			newdatas.push(data);
 		}
+		
 		//console.log(newdatas);
 		return newdatas;
 	};

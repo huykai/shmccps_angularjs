@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "4ec0375a1691f91a0d60"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "a542db20021d8915595f"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -26692,7 +26692,7 @@ var App_form = function (_Component) {
       //info = JSON.stringify(info);
       if (api_url) {
         console.log('handleQuery：', api_url);
-
+        //beginLoading();
         var headers = {
           //"x-csrf-Token":$.cookie('XSRF-TOKEN'),
           //"host": "192.168.1.126:3000",
@@ -26721,6 +26721,7 @@ var App_form = function (_Component) {
           },
           complete: function complete(xhr, status) {
             console.log('completed');
+            //endLoading();
           },
           timeout: 600000
         });
@@ -27112,7 +27113,7 @@ var RegionCenter = function (_Component) {
 				_react2.default.createElement(
 					'table',
 					{ id: 'easyui-mme-info', className: 'easyui-datagrid',
-						'data-options': 'url:\'./reactjs/data/ccd_fns.json\',method:\'get\',singleSelect:true,fit:true, remoteSort:false,multiSort:true,fitColumns:true, rownumbers:true, pagination:true, pageSize:10' },
+						'data-options': 'url:\'/api/getResultSubInfo?&resultFile=./reactjs/data/ccd_fns.json\', method:\'get\', fit:true, rownumbers:true, pagination:true, pageSize:50,singleSelect:true' },
 					_react2.default.createElement(
 						'thead',
 						null,
@@ -27121,17 +27122,22 @@ var RegionCenter = function (_Component) {
 							null,
 							_react2.default.createElement(
 								'th',
-								{ key: '0', 'data-options': 'field:\'ParameterName\', sortable:true' },
+								{ key: '0', 'data-options': 'field:\'ParameterName\'' },
 								' Parameter Name '
 							),
 							_react2.default.createElement(
 								'th',
-								{ key: '1', 'data-options': 'field:\'ParameterValue\', sortable:true' },
+								{ key: '1', 'data-options': 'field:\'ParameterValueHEX\'' },
 								' Parameter Value '
 							),
 							_react2.default.createElement(
 								'th',
-								{ key: '2', 'data-options': 'field:\'ParameterDescription\', sortable:true' },
+								{ key: '2', 'data-options': 'field:\'ParameterValueDEC\'' },
+								' Parameter Value DEC '
+							),
+							_react2.default.createElement(
+								'th',
+								{ key: '3', 'data-options': 'field:\'ParameterDescription\'' },
 								' Parameter Description '
 							)
 						)
@@ -27141,11 +27147,11 @@ var RegionCenter = function (_Component) {
 			);
 			var table_sgsntrafficarecord_info = _react2.default.createElement(
 				'div',
-				{ title: 'DataGrid_SGSN_Record_Info', style: layoutCustomStyle },
+				{ title: 'DataGrid_SGSN_Record_Info', 'data-options': '', style: layoutCustomStyle },
 				_react2.default.createElement(
 					'table',
 					{ id: 'easyui-sgsn-info', className: 'easyui-datagrid',
-						'data-options': 'url:\'./reactjs/data/ccd_sgsn.json\',method:\'get\',singleSelect:true,fit:true,fitColumns:true, remoteSort:false,multiSort:true, rownumbers:true, pagination:true' },
+						'data-options': 'url:\'/api/getResultSubInfo?&resultFile=./reactjs/data/ccd_sgsn.json\', method:\'get\', fit:true, rownumbers:true, pagination:true, pageSize:50,singleSelect:true' },
 					_react2.default.createElement(
 						'thead',
 						null,
@@ -27154,17 +27160,22 @@ var RegionCenter = function (_Component) {
 							null,
 							_react2.default.createElement(
 								'th',
-								{ key: '0', 'data-options': 'field:\'ParameterName\', sortable:true' },
+								{ key: '0', 'data-options': 'field:\'ParameterName\'' },
 								' Parameter Name '
 							),
 							_react2.default.createElement(
 								'th',
-								{ key: '1', 'data-options': 'field:\'ParameterValue\', sortable:true' },
-								' Parameter Value '
+								{ key: '1', 'data-options': 'field:\'ParameterValueHEX\'' },
+								' Parameter Value HEX '
 							),
 							_react2.default.createElement(
 								'th',
-								{ key: '2', 'data-options': 'field:\'ParameterDescription\', sortable:true' },
+								{ key: '2', 'data-options': 'field:\'ParameterValueDEC\'' },
+								' Parameter Value DEC '
+							),
+							_react2.default.createElement(
+								'th',
+								{ key: '3', 'data-options': 'field:\'ParameterDescription\'' },
 								' Parameter Description '
 							)
 						)
@@ -27235,9 +27246,10 @@ var RegionCenter = function (_Component) {
 					//
 					//var table_data_options="url:'./reactjs/data/datagrid_data1.json',method:'get',singleSelect:true,fit:true,fitColumns:true";
 					//data-options = "url:'./reactjs/data/datagrid_data1.json',method:'get',singleSelect:true,fit:true,fitColumns:true">
-					var table_data_options = "url:'" + this.state.datagridinfo.filename + "',method:'get',singleSelect:true,fit:true,fitColumns:true, rownumbers:true, pagination:true, remoteSort:false,multiSort:true";
+					//var table_data_options = "url:'" + this.state.datagridinfo.filename + "',method:'get',singleSelect:true,fit:true,fitColumns:true, rownumbers:true, pagination:true, remoteSort:false,multiSort:true";
+					var table_data_options = "url:'/api/getResultSubInfo?&resultFile=" + this.state.datagridinfo.filename + "',method:'get',singleSelect:true,fit:true,fitColumns:true, rownumbers:true, pagination:true, remoteSort:false,multiSort:true";
 					console.log('render:', table_data_options);
-
+					console.log('url:', "getResultSubInfo?&resultFile=" + this.state.datagridinfo.filename);
 					var table_node_mme = _react2.default.createElement('table', { id: 'easyui-mme', className: 'easyui-datagrid', 'data-options': table_data_options });
 					var table_node_sgsn = _react2.default.createElement('table', { id: 'easyui-sgsn', className: 'easyui-datagrid', 'data-options': table_data_options });
 
@@ -27246,7 +27258,7 @@ var RegionCenter = function (_Component) {
 						{ 'data-options': 'region:\'center\',title:\'Main Title\',iconCls:\'icon-ok\'' },
 						_react2.default.createElement(
 							'div',
-							{ className: 'easyui-tabs', 'data-options': 'fit:true,border:false,plain:true' },
+							{ className: 'easyui-tabs', 'data-options': 'fit:true,border:false,plain:true,rownumbers:true, pageSize:50, pagination:true,' },
 							_react2.default.createElement(
 								'div',
 								{ title: 'DataGrid_MME', 'data-options': '', style: layoutCustomStyle },

@@ -55,15 +55,22 @@ var updateGrid = function(filename, columninfo) {
 }
 */
 
+var beginLoading = function() {
+    $("#loading").css("display","block");
+}
 
-var updateGrid = function(filename, columninfo) {
+var endLoading = function() {
+    $('#loading').css('display','none');
+}
+
+var updateGrid = function(filename, columninfo, page) {
     //console.log('updateGrid: MME_TRAFFICA = ', filename['MME_TRAFFICA']);
     //console.log('updateGrid: SGSN_TRAFFICA = ', filename['SGSN_TRAFFICA']);
     //console.log('updateGrid: #easyui-mme length = ', $('#easyui-mme').length);
     //console.log('updateGrid: #easyui-sgsn length = ', $('#easyui-sgsn').length);
     
     //if ($('#easyui-mme').children().length > 0) {
-    		
+    console.log('updateGrid begin');
     
 
     if ($('#easyui-mme').length > 0 ) {
@@ -74,7 +81,7 @@ var updateGrid = function(filename, columninfo) {
             handler:function(){
                 var a = document.createElement('a');
                 //var url = window.URL.createObjectURL(blob);
-                var url = filename['MME_TRAFFICA'];
+                var url = "loadResultSub?&resultFile=" + filename['MME_TRAFFICA'];
                 //var filename = 'myfile.zip';
                 a.href = url;
                 a.download = filename['MME_TRAFFICA'];
@@ -88,11 +95,14 @@ var updateGrid = function(filename, columninfo) {
             //console.log('begin $.datagrid');
             
             $('#easyui-mme').datagrid({
-                url:filename['MME_TRAFFICA'],
+                url:"/api/getResultSubInfo?&resultFile=" + filename['MME_TRAFFICA'],
                 toolbar:toolbar_mme,
                 method: 'get',
                 remoteSort:false,
-                multiSort:true,
+                multiSort:true,  
+                rownumbers:true, 
+                pagination:true,
+                pageSize:50,
                 columns:[
                     columninfo['MME_TRAFFICA']
                 ]
@@ -108,16 +118,22 @@ var updateGrid = function(filename, columninfo) {
         if (filename['SGSN_TRAFFICA'] != undefined) {
             //console.log('begin $.datagrid');
             $('#easyui-sgsn').datagrid({
-                url:filename['SGSN_TRAFFICA'],
+                url:"/api/getResultSubInfo?&resultFile=" + filename['SGSN_TRAFFICA'],
                 method: 'get',
                 remoteSort:false,
-                multiSort:true,
+                multiSort:true,  
+                rownumbers:true, 
+                pagination:true,
+                pageSize:50,
                 columns:[
                     columninfo['SGSN_TRAFFICA']
                 ]
             });
         }
     }
+    //console.log('updateGrid end');
+    
+    
         //console.log('end $.datagrid');
     //} else if ($('#easyui-sgsn').children().length > 0){
     //    } else if ($('#easyui-sgsn').length > 0){

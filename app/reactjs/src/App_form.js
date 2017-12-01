@@ -189,7 +189,7 @@ export default class App_form extends Component {
       //info = JSON.stringify(info);
       if (api_url) {
         console.log('handleQuery：',api_url);
-
+        //beginLoading();
         var headers = {
         //"x-csrf-Token":$.cookie('XSRF-TOKEN'),
         //"host": "192.168.1.126:3000",
@@ -218,6 +218,7 @@ export default class App_form extends Component {
             },
             complete: function(xhr,status){
                 console.log('completed');
+                //endLoading();
             },
             timeout: 600000
         });

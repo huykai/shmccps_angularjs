@@ -145,26 +145,28 @@ export default class RegionCenter extends Component {
 		var table_mmetrafficarecord_info = (
 			<div title="DataGrid_MME_Record_Info" data-options="" style={layoutCustomStyle}>
 				<table id="easyui-mme-info" className="easyui-datagrid" 
-					data-options="url:'./reactjs/data/ccd_fns.json',method:'get',singleSelect:true,fit:true, remoteSort:false,multiSort:true,fitColumns:true, rownumbers:true, pagination:true, pageSize:10">
+					data-options="url:'/api/getResultSubInfo?&resultFile=./reactjs/data/ccd_fns.json', method:'get', fit:true, rownumbers:true, pagination:true, pageSize:50,singleSelect:true">
 					<thead> 
 						<tr> 
-							<th key = "0"  data-options="field:'ParameterName', sortable:true"> Parameter Name </th>
-							<th key = "1"  data-options="field:'ParameterValue', sortable:true"> Parameter Value </th>
-							<th key = "2"  data-options="field:'ParameterDescription', sortable:true"> Parameter Description </th>
+							<th key = "0"  data-options="field:'ParameterName'"> Parameter Name </th>
+							<th key = "1"  data-options="field:'ParameterValueHEX'"> Parameter Value </th>
+							<th key = "2"  data-options="field:'ParameterValueDEC'"> Parameter Value DEC </th>
+							<th key = "3"  data-options="field:'ParameterDescription'"> Parameter Description </th>
 						</tr> 
 					</thead>)
 				</table>
 			</div>
 		)
 		var table_sgsntrafficarecord_info = (
-			<div title="DataGrid_SGSN_Record_Info" style={layoutCustomStyle}>
+			<div title="DataGrid_SGSN_Record_Info" data-options="" style={layoutCustomStyle}>
 				<table id="easyui-sgsn-info" className="easyui-datagrid" 
-					data-options="url:'./reactjs/data/ccd_sgsn.json',method:'get',singleSelect:true,fit:true,fitColumns:true, remoteSort:false,multiSort:true, rownumbers:true, pagination:true">
+					data-options="url:'/api/getResultSubInfo?&resultFile=./reactjs/data/ccd_sgsn.json', method:'get', fit:true, rownumbers:true, pagination:true, pageSize:50,singleSelect:true" >
 					<thead> 
 						<tr> 
-							<th key = "0"  data-options="field:'ParameterName', sortable:true"> Parameter Name </th>
-							<th key = "1"  data-options="field:'ParameterValue', sortable:true"> Parameter Value </th>
-							<th key = "2"  data-options="field:'ParameterDescription', sortable:true"> Parameter Description </th>
+							<th key = "0"  data-options="field:'ParameterName'"> Parameter Name </th>
+							<th key = "1"  data-options="field:'ParameterValueHEX'"> Parameter Value HEX </th>
+							<th key = "2"  data-options="field:'ParameterValueDEC'"> Parameter Value DEC </th>
+							<th key = "3"  data-options="field:'ParameterDescription'"> Parameter Description </th>
 						</tr> 
 					</thead>)
 				</table>
@@ -203,9 +205,10 @@ export default class RegionCenter extends Component {
 		//
 				//var table_data_options="url:'./reactjs/data/datagrid_data1.json',method:'get',singleSelect:true,fit:true,fitColumns:true";
 				//data-options = "url:'./reactjs/data/datagrid_data1.json',method:'get',singleSelect:true,fit:true,fitColumns:true">
-				var table_data_options = "url:'" + this.state.datagridinfo.filename + "',method:'get',singleSelect:true,fit:true,fitColumns:true, rownumbers:true, pagination:true, remoteSort:false,multiSort:true";
+				//var table_data_options = "url:'" + this.state.datagridinfo.filename + "',method:'get',singleSelect:true,fit:true,fitColumns:true, rownumbers:true, pagination:true, remoteSort:false,multiSort:true";
+				var table_data_options = "url:'/api/getResultSubInfo?&resultFile=" + this.state.datagridinfo.filename + "',method:'get',singleSelect:true,fit:true,fitColumns:true, rownumbers:true, pagination:true, remoteSort:false,multiSort:true";
 				console.log('render:',table_data_options);
-		
+				console.log('url:',"getResultSubInfo?&resultFile=" + this.state.datagridinfo.filename );
 				var table_node_mme = (
 					<table id="easyui-mme" className="easyui-datagrid" data-options={table_data_options}>
 						 
@@ -220,7 +223,7 @@ export default class RegionCenter extends Component {
 
 				return (			
 					<div data-options="region:'center',title:'Main Title',iconCls:'icon-ok'">
-						<div className="easyui-tabs" data-options="fit:true,border:false,plain:true">
+						<div className="easyui-tabs" data-options="fit:true,border:false,plain:true,rownumbers:true, pageSize:50, pagination:true,">
 							<div title="DataGrid_MME" data-options="" style={layoutCustomStyle}>
 								{table_node_mme}
 								

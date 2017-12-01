@@ -1,7 +1,15 @@
+<!--
 <template>
   <div id="app">
     <a href='#/'><img src="./assets/logo.png"></a>
     <a href='#/1'><img src="./assets/logo.png"></a>
+    <router-view></router-view>
+  </div>
+</template>
+-->
+
+<template>
+  <div id="app">
     <router-view></router-view>
   </div>
 </template>
