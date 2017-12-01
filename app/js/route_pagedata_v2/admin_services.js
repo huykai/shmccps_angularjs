@@ -97,6 +97,7 @@ appServices.factory('UserService', function ($http,$cookies) {
             //$http.defaults.headers.common['x-csrf-token']  = $cookies.get('XSRF-TOKEN');
             //alert('UserService begin : ' + username + password);
             //return $http.post(options.api.base_url + '/user/signin', {username: username, password: password});
+            console.log('signin url:',options.api.base_url + '/user/signin');
             return $http.post(options.api.base_url + '/user/signin', {username: username, password: password});
         },
 
