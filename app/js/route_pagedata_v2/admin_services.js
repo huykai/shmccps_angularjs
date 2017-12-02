@@ -103,11 +103,11 @@ appServices.factory('UserService', function ($http,$cookies) {
         },
 
         logOut: function() {
-            return $http.get(options.api.base_url + '/user/logout');
+            return $http.get('/user/logout');
         },
 
         register: function(username, password, passwordConfirmation) {
-            return $http.post(options.api.base_url + '/user/register', {username: username, password: password, passwordConfirmation: passwordConfirmation });
+            return $http.post('/user/register', {username: username, password: password, passwordConfirmation: passwordConfirmation });
         }
     }
 });
