@@ -52,6 +52,13 @@ const centerlayoutStyle = {
   height: '800px'
 };
 
+const displayBlockStyle = {
+  display: 'block'
+};
+const displayNoneStyle = {
+  display: 'none'
+};
+
 let widthdelta = 53;
 
 var delete_Datagrid =function(){
@@ -66,7 +73,7 @@ let state_count = 0;
 export default class App_form extends Component {
     constructor() {
       super();
-      this.state = { count:0, minwidth: defaultwidth_number, info : {}, renderDataGrid:false};
+      this.state = { loading:true, count:0, minwidth: defaultwidth_number, info : {}, renderDataGrid:false};
       this.changeStyleSize();
       //this.changeStyleSize = this.changeStyleSize.bind(this);
       this.handleQuery = this.handleQuery.bind(this);
@@ -79,8 +86,8 @@ export default class App_form extends Component {
         $('#socket').text(msg);
         state_count = msg;
         //object.setState({count:msg});
-
-      })
+      });
+      
       console.log('before setInterval: state=', this.state);
       //setInterval(()=>{this.setState({count:state_count})},1000);
       //initial ajax setup
@@ -130,6 +137,8 @@ export default class App_form extends Component {
       */  
     }
     
+    
+
     changeStyleSize() {
       //let ParentWidth = $('#root').outerWidth(false) - 100;
       let ParentWidth = $('#root').innerWidth() + widthdelta - 100;
@@ -161,9 +170,10 @@ export default class App_form extends Component {
     //  this.changeStyleSize();
     //}
 
-    //componentDidMount() {
-    //  window.addEventListener('resize', this.onWindowResize.bind(this))
-    //}
+    componentDidMount() {
+      //window.addEventListener('resize', this.onWindowResize.bind(this))
+      setTimeout(() => this.setState({ loading: false }), 1000);
+    }
     //componentWillUnmount() {
     //  window.removeEventListener('resize', this.onWindowResize.bind(this))
     //}
@@ -239,17 +249,31 @@ export default class App_form extends Component {
     //}
 
     render() {
+      //const loading = this.state.loading;
+      
+      //if(loading) { // if your component doesn't have to wait for an async action, remove this block 
+      //  return null; // render null when app is not ready
+      //}
+      console.log('APP_form rander  ');
+      const displayStyle = this.state.loading ?  displayNoneStyle : displayBlockStyle;
+      
+      console.log('displayStyle : ', displayStyle);
+      
+      
       return (
         <div className="App">
+            
             <h2>User Call Record Base on Traffica</h2>
-	          <p>Please input filter parameter as you want. {state_count}s</p>
+            <p>Please input filter parameter as you want. </p>
             <div style={layoutStyle} id="FrameAll" className="easyui-layout" >
               <RegionNorth width={this.state.northwidth} height={this.state.northheight} submitQuery = {this.handleQuery} />
               <RegionWest width={this.state.westwidth} height={this.state.westheight} />
               <RegionCenter width={this.state.centerwidth} height={this.state.centerheight} data = {this.state.info} />
             </div>
+            
         </div>
-      )
+      ) 
+      
     }
 }
 

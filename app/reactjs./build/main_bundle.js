@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "a542db20021d8915595f"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "23222712ee100c5374c4"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -26540,6 +26540,13 @@ var centerlayoutStyle = {
   height: '800px'
 };
 
+var displayBlockStyle = {
+  display: 'block'
+};
+var displayNoneStyle = {
+  display: 'none'
+};
+
 var widthdelta = 53;
 
 var delete_Datagrid = function delete_Datagrid() {
@@ -26559,7 +26566,7 @@ var App_form = function (_Component) {
 
     var _this = _possibleConstructorReturn(this, (App_form.__proto__ || Object.getPrototypeOf(App_form)).call(this));
 
-    _this.state = { count: 0, minwidth: defaultwidth_number, info: {}, renderDataGrid: false };
+    _this.state = { loading: true, count: 0, minwidth: defaultwidth_number, info: {}, renderDataGrid: false };
     _this.changeStyleSize();
     //this.changeStyleSize = this.changeStyleSize.bind(this);
     _this.handleQuery = _this.handleQuery.bind(_this);
@@ -26573,6 +26580,7 @@ var App_form = function (_Component) {
       state_count = msg;
       //object.setState({count:msg});
     });
+
     console.log('before setInterval: state=', _this.state);
     //setInterval(()=>{this.setState({count:state_count})},1000);
     //initial ajax setup
@@ -26656,9 +26664,16 @@ var App_form = function (_Component) {
     //  this.changeStyleSize();
     //}
 
-    //componentDidMount() {
-    //  window.addEventListener('resize', this.onWindowResize.bind(this))
-    //}
+  }, {
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      var _this2 = this;
+
+      //window.addEventListener('resize', this.onWindowResize.bind(this))
+      setTimeout(function () {
+        return _this2.setState({ loading: false });
+      }, 1000);
+    }
     //componentWillUnmount() {
     //  window.removeEventListener('resize', this.onWindowResize.bind(this))
     //}
@@ -26743,6 +26758,16 @@ var App_form = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
+      //const loading = this.state.loading;
+
+      //if(loading) { // if your component doesn't have to wait for an async action, remove this block 
+      //  return null; // render null when app is not ready
+      //}
+      console.log('APP_form rander  ');
+      var displayStyle = this.state.loading ? displayNoneStyle : displayBlockStyle;
+
+      console.log('displayStyle : ', displayStyle);
+
       return _react2.default.createElement(
         'div',
         { className: 'App' },
@@ -26754,9 +26779,7 @@ var App_form = function (_Component) {
         _react2.default.createElement(
           'p',
           null,
-          'Please input filter parameter as you want. ',
-          state_count,
-          's'
+          'Please input filter parameter as you want. '
         ),
         _react2.default.createElement(
           'div',

@@ -38,24 +38,30 @@
         <p align="center" ng-if="!isAuthenticated">
             <img src="./images/Title.jpg" alt="SHMCC诺西PS网元管理系统" >
         </p>
+        
+        <!--
         <div ng-controller="AdminUserCtrl" align="center">
-            <p id='greeting' ng-if="isAuthenticated">Welcome, {{currentUser}}!
-            <button   class="btn btn-default" ng-click="logOut()">
-                Logout
-            </button>
-            </p>
-            <p id='greeting' ng-if="!isAuthenticated">Hi, please login first. 
-            <button   class="btn btn-default" ng-click="logIn()">
-                LogIn
-            </button>
-            </p>
-            </p>
+                <p id='greeting' ng-if="isAuthenticated">Welcome, {{currentUser}}!
+                <button   class="btn btn-default" ng-click="logOut()">
+                    Logout
+                </button>
+                </p>
+                <p id='greeting' ng-if="!isAuthenticated">Hi, please login first. 
+                <button   class="btn btn-default" ng-click="logIn()">
+                    LogIn
+                </button>
+                </p>
+                </p>
         </div>
+        -->
         <!--<div class="container col-sm-12" >-->
         
         <div class="container col-lg-12" >
+                
             <div class="row">    
-                    <div class="col-lg-10 col-lg-offset-1" ng-view></div>
+                    <div class="col-lg-10 col-lg-offset-1" ng-view>
+                            
+                    </div>
             </div>
         </div>
         

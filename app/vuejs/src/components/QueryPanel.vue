@@ -101,14 +101,19 @@
                 </Row>
             </FormItem>
             
+            <!--
             <FormItem label="Slider">
                 <Slider v-model="formItem.slider" range></Slider>
             </FormItem>
             <FormItem label="Text">
                 <Input v-model="formItem.textarea" type="textarea" :autosize="{minRows: 2,maxRows: 5}" placeholder="Enter something..."></Input>
             </FormItem>
+            -->
             <FormItem>
-                <Button type="primary">Submit</Button>
+                <Button type="primary" :loading="loading" @click="submitClick">
+                    <span v-if="!loading">Submit!</span>
+                    <span v-else>Loading...</span>Submit
+                </Button>
                 <Button type="ghost" style="margin-left: 8px">Cancel</Button>
             </FormItem>
         </Form>
@@ -116,6 +121,10 @@
 </template>
 
 <script>
+import axios from 'axios'
+import Storages from 'js-storage'
+import $ from 'jquery'
+import cookie from 'jquery.cookie'
 export default {
   data () {
     return {
@@ -133,7 +142,8 @@ export default {
       },
       collapse: 'false',
       querypanelform_show: true,
-      message: '点击隐藏查询参数面板'
+      message: '点击隐藏查询参数面板',
+      loading: false
     }
   },
   computed: {
@@ -155,6 +165,48 @@ export default {
         this.collapse = 'false'
         this.message = '点击隐藏参数面板'
       }
+    },
+    submitClick () {
+      if (this.loading === false) {
+        this.loading = true
+      }
+      console.log('cookie: ', cookie, $.cookie('XSRF-TOKEN'))
+      console.log('token: ', 'Bearer ' + Storages.sessionStorage.get('token'))
+      axios.defaults.headers.common['Authorization'] = 'Bearer ' + Storages.sessionStorage.get('token')
+      // axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
+      axios.post('/api/getCgCdr', {
+        mmelist: ['shmme03bnk', 'shmme04bnk'],
+        saegwlist: ['shsaegw03bnk', 'shsaegw04bnk'],
+        cglist: ['shcg16bnk-1', 'shcg17bnk-1'],
+        cdrtype: 'scdr'
+      }, {
+        timeout: 1000,
+        headers: {
+          // 'xsrfCookieName': 'XSRF-TOKEN',
+          // 'xsrfHeaderName': 'x-xsrf-token'
+          // 'x-xsrf-token': $.cookie('XSRF-TOKEN')
+          // 'authorization': 'Bearer ' + Storages.sessionStorage.get('token')
+        },
+        transformRequest: [function (data) {
+          var str = []
+          for (var p in data) {
+            let pName = encodeURIComponent(p)
+            let pValue = encodeURIComponent(data[p])
+            str.push(pName + '=' + pValue)
+          }
+          // console.log('transformRequest: ' , str.join("&"));
+          return str.join('&')
+        }]
+      })
+      .then((response) => {
+        console.log('cgcdrquery response: ', response)
+        this.loading = false
+      })
+      .catch((error) => {
+        console.log('cgcdrquery error: ', error)
+        this.loading = false
+      })
+      console.log('Submit Clicked!')
     }
   }
 }
