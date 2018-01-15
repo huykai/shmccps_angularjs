@@ -213,9 +213,9 @@ export default {
         msisdn: this.formItem.msisdn,
         startdatetime: startdatetime,
         stopdatetime: stopdatetime,
-        mmelist: this.formItem.select_mme.split(','),
-        saegwlist: this.formItem.select_saegw.split(','),
-        cglist: this.formItem.select_cg.split(','),
+        mmelist: this.formItem.select_mme,
+        saegwlist: this.formItem.select_saegw,
+        cglist: this.formItem.select_cg,
         cdrtype: this.formItem.select_cdrtype
       }, {
         timeout: 1000,
