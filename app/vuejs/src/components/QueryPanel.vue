@@ -111,7 +111,7 @@
             <FormItem>
                 <Button type="primary" :loading="loading" @click="submitClick">
                     <span v-if="!loading">Submit!</span>
-                    <span v-else>Loading...</span>Submit
+                    <span v-else>Loading...</span>
                 </Button>
                 <Button type="ghost" style="margin-left: 8px">Cancel</Button>
             </FormItem>
@@ -171,6 +171,7 @@ export default {
       }
       console.log('cookie: ', cookie, $.cookie('XSRF-TOKEN'))
       console.log('token: ', 'Bearer ' + Storages.sessionStorage.get('token'))
+      console.log(`startdate: ${this.formItem.startdate} ; starttime: ${this.formItem.starttime}`)
       axios.defaults.headers.common['Authorization'] = 'Bearer ' + Storages.sessionStorage.get('token')
       // axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
       axios.post('/api/getCgCdr', {
@@ -178,9 +179,9 @@ export default {
         msisdn: this.formItem.msisdn,
         startdatetime: this.formItem.startdate + this.formItem.starttime,
         stopdatetime: this.formItem.stopdate + this.formItem.stoptime,
-        mmelist: this.formItem.select_mme,
-        saegwlist: this.formItem.select_saegw,
-        cglist: this.formItem.select_cg,
+        mmelist: this.formItem.select_mme.split(','),
+        saegwlist: this.formItem.select_saegw.split(','),
+        cglist: this.formItem.select_cg.split(','),
         cdrtype: this.formItem.select_cdrtype
       }, {
         timeout: 1000,

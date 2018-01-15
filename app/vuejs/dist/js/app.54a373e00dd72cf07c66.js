@@ -57533,6 +57533,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       }
       console.log('cookie: ', __WEBPACK_IMPORTED_MODULE_3_jquery_cookie___default.a, __WEBPACK_IMPORTED_MODULE_2_jquery___default.a.cookie('XSRF-TOKEN'));
       console.log('token: ', 'Bearer ' + __WEBPACK_IMPORTED_MODULE_1_js_storage___default.a.sessionStorage.get('token'));
+      console.log(`startdate: ${this.formItem.startdate} ; starttime: ${this.formItem.starttime}`);
       __WEBPACK_IMPORTED_MODULE_0_axios___default.a.defaults.headers.common['Authorization'] = 'Bearer ' + __WEBPACK_IMPORTED_MODULE_1_js_storage___default.a.sessionStorage.get('token');
       // axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
       __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('/api/getCgCdr', {
@@ -57540,9 +57541,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         msisdn: this.formItem.msisdn,
         startdatetime: this.formItem.startdate + this.formItem.starttime,
         stopdatetime: this.formItem.stopdate + this.formItem.stoptime,
-        mmelist: this.formItem.select_mme,
-        saegwlist: this.formItem.select_saegw,
-        cglist: this.formItem.select_cg,
+        mmelist: this.formItem.select_mme.split(','),
+        saegwlist: this.formItem.select_saegw.split(','),
+        cglist: this.formItem.select_cg.split(','),
         cdrtype: this.formItem.select_cdrtype
       }, {
         timeout: 1000,
@@ -59496,7 +59497,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "click": _vm.submitClick
     }
-  }, [(!_vm.loading) ? _c('span', [_vm._v("Submit!")]) : _c('span', [_vm._v("Loading...")]), _vm._v("Submit\n            ")]), _vm._v(" "), _c('Button', {
+  }, [(!_vm.loading) ? _c('span', [_vm._v("Submit!")]) : _c('span', [_vm._v("Loading...")])]), _vm._v(" "), _c('Button', {
     staticStyle: {
       "margin-left": "8px"
     },
@@ -62088,4 +62089,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.45337cba9da792d37145.js.map
+//# sourceMappingURL=app.54a373e00dd72cf07c66.js.map
