@@ -57536,14 +57536,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       __WEBPACK_IMPORTED_MODULE_0_axios___default.a.defaults.headers.common['Authorization'] = 'Bearer ' + __WEBPACK_IMPORTED_MODULE_1_js_storage___default.a.sessionStorage.get('token');
       // axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
       __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('/api/getCgCdr', {
-        imsi: formItem.imsi,
-        msisdn: formItem.msisdn,
-        startdatetime: formItem.startdate + formItem.starttime,
-        stopdatetime: formItem.stopdate + formItem.stoptime,
-        mmelist: formItem.select_mme,
-        saegwlist: formItem.select_saegw,
-        cglist: formItem.select_cg,
-        cdrtype: formItem.select_cdrtype
+        imsi: this.formItem.imsi,
+        msisdn: this.formItem.msisdn,
+        startdatetime: this.formItem.startdate + this.formItem.starttime,
+        stopdatetime: this.formItem.stopdate + this.formItem.stoptime,
+        mmelist: this.formItem.select_mme,
+        saegwlist: this.formItem.select_saegw,
+        cglist: this.formItem.select_cg,
+        cdrtype: this.formItem.select_cdrtype
       }, {
         timeout: 1000,
         headers: {
@@ -62088,4 +62088,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.d1e6cf0526673c05a5bb.js.map
+//# sourceMappingURL=app.45337cba9da792d37145.js.map
