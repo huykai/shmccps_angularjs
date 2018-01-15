@@ -57481,7 +57481,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 
@@ -57537,10 +57536,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       __WEBPACK_IMPORTED_MODULE_0_axios___default.a.defaults.headers.common['Authorization'] = 'Bearer ' + __WEBPACK_IMPORTED_MODULE_1_js_storage___default.a.sessionStorage.get('token');
       // axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
       __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('/api/getCgCdr', {
-        mmelist: ['shmme03bnk', 'shmme04bnk'],
-        saegwlist: ['shsaegw03bnk', 'shsaegw04bnk'],
-        cglist: ['shcg16bnk-1', 'shcg17bnk-1'],
-        cdrtype: 'scdr'
+        imsi: formItem.imsi,
+        msisdn: formItem.msisdn,
+        startdatetime: formItem.startdate + formItem.starttime,
+        stopdatetime: formItem.stopdate + formItem.stoptime,
+        mmelist: formItem.select_mme,
+        saegwlist: formItem.select_saegw,
+        cglist: formItem.select_cg,
+        cdrtype: formItem.select_cdrtype
       }, {
         timeout: 1000,
         headers: {
@@ -59169,14 +59172,14 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('Input', {
     attrs: {
-      "placeholder": "Enter IMSI..."
+      "placeholder": "Enter MSISDN..."
     },
     model: {
-      value: (_vm.formItem.imsi_input),
+      value: (_vm.formItem.msisdn_input),
       callback: function($$v) {
-        _vm.$set(_vm.formItem, "imsi_input", $$v)
+        _vm.$set(_vm.formItem, "msisdn_input", $$v)
       },
-      expression: "formItem.imsi_input"
+      expression: "formItem.msisdn_input"
     }
   })], 1), _vm._v(" "), _c('Col', {
     attrs: {
@@ -59317,35 +59320,35 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('Option', {
     attrs: {
-      "value": "SHMME03BNK"
+      "value": "shmme03bnk"
     }
   }, [_vm._v("SHMME03BNK")]), _vm._v(" "), _c('Option', {
     attrs: {
-      "value": "SHMME04BNK"
+      "value": "shmme04bnk"
     }
   }, [_vm._v("SHMME04BNK")]), _vm._v(" "), _c('Option', {
     attrs: {
-      "value": "SHMME05BNK"
+      "value": "shmme05bnk"
     }
   }, [_vm._v("SHMME05BNK")]), _vm._v(" "), _c('Option', {
     attrs: {
-      "value": "SHMME06BNK"
+      "value": "shmme06bnk"
     }
   }, [_vm._v("SHMME06BNK")]), _vm._v(" "), _c('Option', {
     attrs: {
-      "value": "SHMME07BNK"
+      "value": "shmme07bnk"
     }
   }, [_vm._v("SHMME07BNK")]), _vm._v(" "), _c('Option', {
     attrs: {
-      "value": "SHMME08BNK"
+      "value": "shmme08bnk"
     }
   }, [_vm._v("SHMME08BNK")]), _vm._v(" "), _c('Option', {
     attrs: {
-      "value": "SHMME09BNK"
+      "value": "shmme09bnk"
     }
   }, [_vm._v("SHMME09BNK")]), _vm._v(" "), _c('Option', {
     attrs: {
-      "value": "SHMME10BNK"
+      "value": "shmme10bnk"
     }
   }, [_vm._v("SHMME10BNK")])], 1)], 1), _vm._v(" "), _c('Col', {
     attrs: {
@@ -59368,43 +59371,43 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('Option', {
     attrs: {
-      "value": "SHSAEGW03BNK"
+      "value": "shsaegw03bnk"
     }
   }, [_vm._v("SHSAEGW03BNK")]), _vm._v(" "), _c('Option', {
     attrs: {
-      "value": "SHSAEGW04BNK"
+      "value": "shsaegw04bnk"
     }
   }, [_vm._v("SHSAEGW04BNK")]), _vm._v(" "), _c('Option', {
     attrs: {
-      "value": "SHSAEGW05BNK"
+      "value": "shsaegw05bnk"
     }
   }, [_vm._v("SHSAEGW05BNK")]), _vm._v(" "), _c('Option', {
     attrs: {
-      "value": "SHSAEGW06BNK"
+      "value": "shsaegw06bnk"
     }
   }, [_vm._v("SHSAEGW06BNK")]), _vm._v(" "), _c('Option', {
     attrs: {
-      "value": "SHSAEGW07BNK"
+      "value": "shsaegw07bnk"
     }
   }, [_vm._v("SHSAEGW07BNK")]), _vm._v(" "), _c('Option', {
     attrs: {
-      "value": "SHSAEGW08BNK"
+      "value": "shsaegw08bnk"
     }
   }, [_vm._v("SHSAEGW08BNK")]), _vm._v(" "), _c('Option', {
     attrs: {
-      "value": "SHSAEGW09BNK"
+      "value": "shsaegw09bnk"
     }
   }, [_vm._v("SHSAEGW09BNK")]), _vm._v(" "), _c('Option', {
     attrs: {
-      "value": "SHSAEGW10BNK"
+      "value": "shsaegw10bnk"
     }
   }, [_vm._v("SHSAEGW10BNK")]), _vm._v(" "), _c('Option', {
     attrs: {
-      "value": "SHSAEGW11BNK"
+      "value": "shsaegw11bnk"
     }
   }, [_vm._v("SHSAEGW11BNK")]), _vm._v(" "), _c('Option', {
     attrs: {
-      "value": "SHSAEGW12BNK"
+      "value": "shsaegw12bnk"
     }
   }, [_vm._v("SHSAEGW12BNK")])], 1)], 1), _vm._v(" "), _c('Col', {
     attrs: {
@@ -59427,69 +59430,65 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('Option', {
     attrs: {
-      "value": "SHCG15BNK"
+      "value": "shcg16bnk-1"
     }
-  }, [_vm._v("SHCG15BNK")]), _vm._v(" "), _c('Option', {
+  }, [_vm._v("SHCG16BNK-1")]), _vm._v(" "), _c('Option', {
     attrs: {
-      "value": "SHCG16BNK"
+      "value": "shcg17bnk-1"
     }
-  }, [_vm._v("SHCG16BNK")]), _vm._v(" "), _c('Option', {
+  }, [_vm._v("SHCG17BNK-1")]), _vm._v(" "), _c('Option', {
     attrs: {
-      "value": "SHCG17BNK"
+      "value": "shcg18bnk-1"
     }
-  }, [_vm._v("SHCG17BNK")]), _vm._v(" "), _c('Option', {
+  }, [_vm._v("SHCG18BNK-1")]), _vm._v(" "), _c('Option', {
     attrs: {
-      "value": "SHCG18BNK"
+      "value": "shcg19bnk-1"
     }
-  }, [_vm._v("SHCG18BNK")]), _vm._v(" "), _c('Option', {
+  }, [_vm._v("SHCG19BNK-1")]), _vm._v(" "), _c('Option', {
     attrs: {
-      "value": "SHCG19BNK"
+      "value": "shcg20bnk-1"
     }
-  }, [_vm._v("SHCG19BNK")]), _vm._v(" "), _c('Option', {
+  }, [_vm._v("SHCG20BNK-1")]), _vm._v(" "), _c('Option', {
     attrs: {
-      "value": "SHCG20BNK"
+      "value": "shcg21bnk-1"
     }
-  }, [_vm._v("SHCG20BNK")]), _vm._v(" "), _c('Option', {
+  }, [_vm._v("SHCG21BNK-1")]), _vm._v(" "), _c('Option', {
     attrs: {
-      "value": "SHCG21BNK"
+      "value": "shcg22bnk-1"
     }
-  }, [_vm._v("SHCG21BNK")]), _vm._v(" "), _c('Option', {
+  }, [_vm._v("SHCG22BNK-1")]), _vm._v(" "), _c('Option', {
     attrs: {
-      "value": "SHCG22BNK"
+      "value": "shcg23bnk-1"
     }
-  }, [_vm._v("SHCG22BNK")]), _vm._v(" "), _c('Option', {
+  }, [_vm._v("SHCG23BNK-1")]), _vm._v(" "), _c('Option', {
     attrs: {
-      "value": "SHCG23BNK"
+      "value": "shcg24bnk-1"
     }
-  }, [_vm._v("SHCG23BNK")]), _vm._v(" "), _c('Option', {
+  }, [_vm._v("SHCG24BNK-1")]), _vm._v(" "), _c('Option', {
     attrs: {
-      "value": "SHCG24BNK"
+      "value": "shcg25bnk-1"
     }
-  }, [_vm._v("SHCG24BNK")]), _vm._v(" "), _c('Option', {
+  }, [_vm._v("SHCG25BNK-1")]), _vm._v(" "), _c('Option', {
     attrs: {
-      "value": "SHCG25BNK"
+      "value": "shcg26bnk-1"
     }
-  }, [_vm._v("SHCG25BNK")]), _vm._v(" "), _c('Option', {
+  }, [_vm._v("SHCG26BNK-1")]), _vm._v(" "), _c('Option', {
     attrs: {
-      "value": "SHCG26BNK"
+      "value": "shcg27bnk-1"
     }
-  }, [_vm._v("SHCG26BNK")]), _vm._v(" "), _c('Option', {
+  }, [_vm._v("SHCG27BNK-1")]), _vm._v(" "), _c('Option', {
     attrs: {
-      "value": "SHCG27BNK"
+      "value": "shcg28bnk-1"
     }
-  }, [_vm._v("SHCG27BNK")]), _vm._v(" "), _c('Option', {
+  }, [_vm._v("SHCG28BNK-1")]), _vm._v(" "), _c('Option', {
     attrs: {
-      "value": "SHCG28BNK"
+      "value": "shcg29bnk-1"
     }
-  }, [_vm._v("SHCG28BNK")]), _vm._v(" "), _c('Option', {
+  }, [_vm._v("SHCG29BNK-1")]), _vm._v(" "), _c('Option', {
     attrs: {
-      "value": "SHCG29BNK"
+      "value": "shcg30bnk-1"
     }
-  }, [_vm._v("SHCG29BNK")]), _vm._v(" "), _c('Option', {
-    attrs: {
-      "value": "SHCG30BNK"
-    }
-  }, [_vm._v("SHCG30BNK")])], 1)], 1)], 1)], 1), _vm._v(" "), _c('FormItem', [_c('Button', {
+  }, [_vm._v("SHCG30BNK-1")])], 1)], 1)], 1)], 1), _vm._v(" "), _c('FormItem', [_c('Button', {
     attrs: {
       "type": "primary",
       "loading": _vm.loading
@@ -62089,4 +62088,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.7ceb878571c761bf6d04.js.map
+//# sourceMappingURL=app.d1e6cf0526673c05a5bb.js.map
