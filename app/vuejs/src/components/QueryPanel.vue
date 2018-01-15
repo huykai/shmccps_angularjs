@@ -15,7 +15,7 @@
                     </Col>
                     <Col span="2"> MSISDN: </Col>
                     <Col span="6">
-                        <Input v-model="formItem.imsi_input" placeholder="Enter IMSI..."></Input>
+                        <Input v-model="formItem.msisdn_input" placeholder="Enter MSISDN..."></Input>
                     </Col>
                     <Col span="2"> 话单类型: </Col>
                     <Col span="6">
@@ -52,50 +52,49 @@
                     <Col span="2"> MME: </Col>
                     <Col span="6">
                         <Select multiple v-model="formItem.select_mme">
-                            <Option value="SHMME03BNK">SHMME03BNK</Option>
-                            <Option value="SHMME04BNK">SHMME04BNK</Option>
-                            <Option value="SHMME05BNK">SHMME05BNK</Option>
-                            <Option value="SHMME06BNK">SHMME06BNK</Option>
-                            <Option value="SHMME07BNK">SHMME07BNK</Option>
-                            <Option value="SHMME08BNK">SHMME08BNK</Option>
-                            <Option value="SHMME09BNK">SHMME09BNK</Option>
-                            <Option value="SHMME10BNK">SHMME10BNK</Option>
+                            <Option value="shmme03bnk">SHMME03BNK</Option>
+                            <Option value="shmme04bnk">SHMME04BNK</Option>
+                            <Option value="shmme05bnk">SHMME05BNK</Option>
+                            <Option value="shmme06bnk">SHMME06BNK</Option>
+                            <Option value="shmme07bnk">SHMME07BNK</Option>
+                            <Option value="shmme08bnk">SHMME08BNK</Option>
+                            <Option value="shmme09bnk">SHMME09BNK</Option>
+                            <Option value="shmme10bnk">SHMME10BNK</Option>
                         </Select>
                     </Col>
                     <Col span="2"> SAEGW: </Col>
                     <Col span="6">
                         <Select multiple v-model="formItem.select_saegw">
-                            <Option value="SHSAEGW03BNK">SHSAEGW03BNK</Option>
-                            <Option value="SHSAEGW04BNK">SHSAEGW04BNK</Option>
-                            <Option value="SHSAEGW05BNK">SHSAEGW05BNK</Option>
-                            <Option value="SHSAEGW06BNK">SHSAEGW06BNK</Option>
-                            <Option value="SHSAEGW07BNK">SHSAEGW07BNK</Option>
-                            <Option value="SHSAEGW08BNK">SHSAEGW08BNK</Option>
-                            <Option value="SHSAEGW09BNK">SHSAEGW09BNK</Option>
-                            <Option value="SHSAEGW10BNK">SHSAEGW10BNK</Option>
-                            <Option value="SHSAEGW11BNK">SHSAEGW11BNK</Option>
-                            <Option value="SHSAEGW12BNK">SHSAEGW12BNK</Option>
+                            <Option value="shsaegw03bnk">SHSAEGW03BNK</Option>
+                            <Option value="shsaegw04bnk">SHSAEGW04BNK</Option>
+                            <Option value="shsaegw05bnk">SHSAEGW05BNK</Option>
+                            <Option value="shsaegw06bnk">SHSAEGW06BNK</Option>
+                            <Option value="shsaegw07bnk">SHSAEGW07BNK</Option>
+                            <Option value="shsaegw08bnk">SHSAEGW08BNK</Option>
+                            <Option value="shsaegw09bnk">SHSAEGW09BNK</Option>
+                            <Option value="shsaegw10bnk">SHSAEGW10BNK</Option>
+                            <Option value="shsaegw11bnk">SHSAEGW11BNK</Option>
+                            <Option value="shsaegw12bnk">SHSAEGW12BNK</Option>
                         </Select>
                     </Col>
                     <Col span="2"> CG: </Col>
                     <Col span="6">
                         <Select multiple v-model="formItem.select_cg">
-                            <Option value="SHCG15BNK">SHCG15BNK</Option>
-                            <Option value="SHCG16BNK">SHCG16BNK</Option>
-                            <Option value="SHCG17BNK">SHCG17BNK</Option>
-                            <Option value="SHCG18BNK">SHCG18BNK</Option>
-                            <Option value="SHCG19BNK">SHCG19BNK</Option>
-                            <Option value="SHCG20BNK">SHCG20BNK</Option>
-                            <Option value="SHCG21BNK">SHCG21BNK</Option>
-                            <Option value="SHCG22BNK">SHCG22BNK</Option>
-                            <Option value="SHCG23BNK">SHCG23BNK</Option>
-                            <Option value="SHCG24BNK">SHCG24BNK</Option>
-                            <Option value="SHCG25BNK">SHCG25BNK</Option>
-                            <Option value="SHCG26BNK">SHCG26BNK</Option>
-                            <Option value="SHCG27BNK">SHCG27BNK</Option>
-                            <Option value="SHCG28BNK">SHCG28BNK</Option>
-                            <Option value="SHCG29BNK">SHCG29BNK</Option>
-                            <Option value="SHCG30BNK">SHCG30BNK</Option>
+                            <Option value="shcg16bnk-1">SHCG16BNK-1</Option>
+                            <Option value="shcg17bnk-1">SHCG17BNK-1</Option>
+                            <Option value="shcg18bnk-1">SHCG18BNK-1</Option>
+                            <Option value="shcg19bnk-1">SHCG19BNK-1</Option>
+                            <Option value="shcg20bnk-1">SHCG20BNK-1</Option>
+                            <Option value="shcg21bnk-1">SHCG21BNK-1</Option>
+                            <Option value="shcg22bnk-1">SHCG22BNK-1</Option>
+                            <Option value="shcg23bnk-1">SHCG23BNK-1</Option>
+                            <Option value="shcg24bnk-1">SHCG24BNK-1</Option>
+                            <Option value="shcg25bnk-1">SHCG25BNK-1</Option>
+                            <Option value="shcg26bnk-1">SHCG26BNK-1</Option>
+                            <Option value="shcg27bnk-1">SHCG27BNK-1</Option>
+                            <Option value="shcg28bnk-1">SHCG28BNK-1</Option>
+                            <Option value="shcg29bnk-1">SHCG29BNK-1</Option>
+                            <Option value="shcg30bnk-1">SHCG30BNK-1</Option>
                         </Select>
                     </Col>
                 </Row>
@@ -175,10 +174,14 @@ export default {
       axios.defaults.headers.common['Authorization'] = 'Bearer ' + Storages.sessionStorage.get('token')
       // axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
       axios.post('/api/getCgCdr', {
-        mmelist: ['shmme03bnk', 'shmme04bnk'],
-        saegwlist: ['shsaegw03bnk', 'shsaegw04bnk'],
-        cglist: ['shcg16bnk-1', 'shcg17bnk-1'],
-        cdrtype: 'scdr'
+        imsi: formItem.imsi,
+        msisdn: formItem.msisdn,
+        startdatetime: formItem.startdate + formItem.starttime,
+        stopdatetime: formItem.stopdate + formItem.stoptime,
+        mmelist: formItem.select_mme,
+        saegwlist: formItem.select_saegw,
+        cglist: formItem.select_cg,
+        cdrtype: formItem.select_cdrtype
       }, {
         timeout: 1000,
         headers: {
