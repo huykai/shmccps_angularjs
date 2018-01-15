@@ -11,11 +11,11 @@
                 <Row>
                     <Col span="2"> IMSI: </Col>
                     <Col span="6">
-                        <Input v-model="formItem.imsi_input" placeholder="Enter IMSI..."></Input>
+                        <Input v-model="formItem.imsi" placeholder="Enter IMSI..."></Input>
                     </Col>
                     <Col span="2"> MSISDN: </Col>
                     <Col span="6">
-                        <Input v-model="formItem.msisdn_input" placeholder="Enter MSISDN..."></Input>
+                        <Input v-model="formItem.msisdn" placeholder="Enter MSISDN..."></Input>
                     </Col>
                     <Col span="2"> 话单类型: </Col>
                     <Col span="6">

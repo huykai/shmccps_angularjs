@@ -59191,11 +59191,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "placeholder": "Enter IMSI..."
     },
     model: {
-      value: (_vm.formItem.imsi_input),
+      value: (_vm.formItem.imsi),
       callback: function($$v) {
-        _vm.$set(_vm.formItem, "imsi_input", $$v)
+        _vm.$set(_vm.formItem, "imsi", $$v)
       },
-      expression: "formItem.imsi_input"
+      expression: "formItem.imsi"
     }
   })], 1), _vm._v(" "), _c('Col', {
     attrs: {
@@ -59210,11 +59210,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "placeholder": "Enter MSISDN..."
     },
     model: {
-      value: (_vm.formItem.msisdn_input),
+      value: (_vm.formItem.msisdn),
       callback: function($$v) {
-        _vm.$set(_vm.formItem, "msisdn_input", $$v)
+        _vm.$set(_vm.formItem, "msisdn", $$v)
       },
-      expression: "formItem.msisdn_input"
+      expression: "formItem.msisdn"
     }
   })], 1), _vm._v(" "), _c('Col', {
     attrs: {
@@ -62123,4 +62123,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.e8aaec97dcc779891d4f.js.map
+//# sourceMappingURL=app.4ab43b3c5790691c5113.js.map
