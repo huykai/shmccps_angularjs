@@ -174,11 +174,45 @@ export default {
       console.log(`startdate: ${this.formItem.startdate} ; starttime: ${this.formItem.starttime}`)
       axios.defaults.headers.common['Authorization'] = 'Bearer ' + Storages.sessionStorage.get('token')
       // axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
+      if (this.formItem.startdate === '') {
+        alert('Startdate 不能为空')
+        return
+      }
+      if (this.formItem.starttime === '') {
+        alert('Starttime 不能为空')
+        return
+      }
+      if (this.formItem.stopdate === '') {
+        alert('Stoptdate 不能为空')
+        return
+      }
+      if (this.formItem.stoptime === '') {
+        alert('Stoptime 不能为空')
+        return
+      }
+      let date = new Date(this.formItem.startdate)
+      let time = new Date(this.formItem.starttime)
+      let dateYear = date.getFullYear()
+      let dateMonth = date.getMonth() < 10 ? '0' + (date.getMonth() + 1) : (date.getMonth() + 1)
+      let dateDate = date.getDate() < 10 ? '0' + date.getDate() : date.getDate()
+      let timeHour = time.getHours() < 10 ? '0' + time.getHours() : time.getHours()
+      let timeMinute = time.getMinutes() < 10 ? '0' + time.getMinutes() : time.getMinutes()
+      let timeSecond = time.getSeconds() < 10 ? '0' + time.getSeconds() : time.getSeconds()
+      let startdatetime = dateYear + dateMonth + dateDate + timeHour + timeMinute + timeSecond
+      date = new Date(this.formItem.stopdate)
+      time = new Date(this.formItem.stoptime)
+      dateYear = date.getFullYear()
+      dateMonth = date.getMonth() < 10 ? '0' + (date.getMonth() + 1) : (date.getMonth() + 1)
+      dateDate = date.getDate() < 10 ? '0' + date.getDate() : date.getDate()
+      timeHour = time.getHours() < 10 ? '0' + time.getHours() : time.getHours()
+      timeMinute = time.getMinutes() < 10 ? '0' + time.getMinutes() : time.getMinutes()
+      timeSecond = time.getSeconds() < 10 ? '0' + time.getSeconds() : time.getSeconds()
+      let stopdatetime = dateYear + dateMonth + dateDate + timeHour + timeMinute + timeSecond
       axios.post('/api/getCgCdr', {
         imsi: this.formItem.imsi,
         msisdn: this.formItem.msisdn,
-        startdatetime: this.formItem.startdate + this.formItem.starttime,
-        stopdatetime: this.formItem.stopdate + this.formItem.stoptime,
+        startdatetime: startdatetime,
+        stopdatetime: stopdatetime,
         mmelist: this.formItem.select_mme.split(','),
         saegwlist: this.formItem.select_saegw.split(','),
         cglist: this.formItem.select_cg.split(','),
