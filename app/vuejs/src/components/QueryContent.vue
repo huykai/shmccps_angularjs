@@ -223,11 +223,12 @@ export default {
         this.spanLeft = 5
         this.spanRight = 19
       }
-    },
-    watch: {
-      cdrContent: function (val) {
-        this.cghosts = val
-      }
+    }
+  },
+  watch: {
+    cdrContent: function (val) {
+      console.log('watch cdrContent')
+      this.cghosts = val
     }
   }
 }

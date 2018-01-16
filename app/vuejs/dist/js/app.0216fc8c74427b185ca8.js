@@ -57345,11 +57345,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         this.spanLeft = 5;
         this.spanRight = 19;
       }
-    },
-    watch: {
-      cdrContent: function (val) {
-        this.cghosts = val;
-      }
+    }
+  },
+  watch: {
+    cdrContent: function (val) {
+      console.log('watch cdrContent');
+      this.cghosts = val;
     }
   }
 });
@@ -62162,4 +62163,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.300264feeab904474e46.js.map
+//# sourceMappingURL=app.0216fc8c74427b185ca8.js.map
