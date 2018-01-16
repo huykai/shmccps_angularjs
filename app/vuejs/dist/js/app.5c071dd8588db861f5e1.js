@@ -57164,7 +57164,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
-    cdrConent: {}
+    cdrContent: {}
   },
   data() {
     return {
@@ -62163,4 +62163,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.0216fc8c74427b185ca8.js.map
+//# sourceMappingURL=app.5c071dd8588db861f5e1.js.map
