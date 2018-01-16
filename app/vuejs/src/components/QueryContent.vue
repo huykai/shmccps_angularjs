@@ -23,7 +23,7 @@ export default {
   data () {
     this.vuebus.$on('change_cdrContent', function (value) {
       console.log('get change_cdrContent message in QueryContent, with data:', value)
-      this.set(this.cghosts, 'cdrinfo', value)
+      this.$set(this.cghosts, 'cdrinfo', value)
     })
     return {
       cdrContentBus: this.vuebus,

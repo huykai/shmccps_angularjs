@@ -57175,7 +57175,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   data() {
     this.vuebus.$on('change_cdrContent', function (value) {
       console.log('get change_cdrContent message in QueryContent, with data:', value);
-      this.set(this.cghosts, 'cdrinfo', value);
+      this.$set(this.cghosts, 'cdrinfo', value);
     });
     return {
       cdrContentBus: this.vuebus,
@@ -62186,4 +62186,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.d03e1d148693cd453f7c.js.map
+//# sourceMappingURL=app.ac0e54595fbabbe25bfe.js.map
