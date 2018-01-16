@@ -57175,172 +57175,173 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   data() {
     this.vuebus.$on('change_cdrContent', function (value) {
       console.log('get change_cdrContent message in QueryContent, with data:', value);
-      this.cghosts = value;
-      this.$forceUpdate();
+      this.set(this.cghosts, 'cdrinfo', value);
     });
     return {
       cdrContentBus: this.vuebus,
-      cghosts: [{
-        name: 'shcg16bnk-1',
-        columns: [{
-          title: 'Name',
-          key: 'name',
-          width: 100,
-          fixed: 'left'
-        }, {
-          title: 'Age',
-          key: 'age',
-          width: 100
-        }, {
-          title: 'Province',
-          key: 'province',
-          width: 100
-        }, {
-          title: 'City',
-          key: 'city',
-          width: 100
-        }, {
-          title: 'Address',
-          key: 'address',
-          width: 200
-        }, {
-          title: 'Postcode',
-          key: 'zip',
-          width: 100
-        }, {
-          title: 'Action',
-          key: 'action',
-          fixed: 'right',
-          width: 120,
-          render: (h, params) => {
-            return h('div', [h('Button', {
-              props: {
-                type: 'text',
-                size: 'small'
-              }
-            }, 'View'), h('Button', {
-              props: {
-                type: 'text',
-                size: 'small'
-              }
-            }, 'Edit')]);
-          }
-        }],
-        datas: [{
-          name: 'John Brown',
-          age: 18,
-          address: 'New York No. 1 Lake Park',
-          province: 'America',
-          city: 'New York',
-          zip: 100000
-        }, {
-          name: 'Jim Green',
-          age: 24,
-          address: 'Washington, D.C. No. 1 Lake Park',
-          province: 'America',
-          city: 'Washington, D.C.',
-          zip: 100000
-        }, {
-          name: 'Joe Black',
-          age: 30,
-          address: 'Sydney No. 1 Lake Park',
-          province: 'Australian',
-          city: 'Sydney',
-          zip: 100000
-        }, {
-          name: 'Jon Snow',
-          age: 26,
-          address: 'Ottawa No. 2 Lake Park',
-          province: 'Canada',
-          city: 'Ottawa',
-          zip: 100000
-        }, {
-          name: 'John Brown',
-          age: 18,
-          address: 'New York No. 1 Lake Park',
-          province: 'America',
-          city: 'New York',
-          zip: 100000
-        }, {
-          name: 'Jim Green',
-          age: 24,
-          address: 'Washington, D.C. No. 1 Lake Park',
-          province: 'America',
-          city: 'Washington, D.C.',
-          zip: 100000
-        }, {
-          name: 'Joe Black',
-          age: 30,
-          address: 'Sydney No. 1 Lake Park',
-          province: 'Australian',
-          city: 'Sydney',
-          zip: 100000
-        }, {
-          name: 'Jon Snow',
-          age: 26,
-          address: 'Ottawa No. 2 Lake Park',
-          province: 'Canada',
-          city: 'Ottawa',
-          zip: 100000
-        }, {
-          name: 'John Brown',
-          age: 18,
-          address: 'New York No. 1 Lake Park',
-          province: 'America',
-          city: 'New York',
-          zip: 100000
-        }, {
-          name: 'Jim Green',
-          age: 24,
-          address: 'Washington, D.C. No. 1 Lake Park',
-          province: 'America',
-          city: 'Washington, D.C.',
-          zip: 100000
-        }, {
-          name: 'Joe Black',
-          age: 30,
-          address: 'Sydney No. 1 Lake Park',
-          province: 'Australian',
-          city: 'Sydney',
-          zip: 100000
-        }, {
-          name: 'Jon Snow',
-          age: 26,
-          address: 'Ottawa No. 2 Lake Park',
-          province: 'Canada',
-          city: 'Ottawa',
-          zip: 100000
-        }, {
-          name: 'John Brown',
-          age: 18,
-          address: 'New York No. 1 Lake Park',
-          province: 'America',
-          city: 'New York',
-          zip: 100000
-        }, {
-          name: 'Jim Green',
-          age: 24,
-          address: 'Washington, D.C. No. 1 Lake Park',
-          province: 'America',
-          city: 'Washington, D.C.',
-          zip: 100000
-        }, {
-          name: 'Joe Black',
-          age: 30,
-          address: 'Sydney No. 1 Lake Park',
-          province: 'Australian',
-          city: 'Sydney',
-          zip: 100000
-        }, {
-          name: 'Jon Snow',
-          age: 26,
-          address: 'Ottawa No. 2 Lake Park',
-          province: 'Canada',
-          city: 'Ottawa',
-          zip: 100000
-        }],
-        cdrcount: 16
-      }],
+      cghosts: {
+        cdrinfo: [{
+          name: 'shcg16bnk-1',
+          columns: [{
+            title: 'Name',
+            key: 'name',
+            width: 100,
+            fixed: 'left'
+          }, {
+            title: 'Age',
+            key: 'age',
+            width: 100
+          }, {
+            title: 'Province',
+            key: 'province',
+            width: 100
+          }, {
+            title: 'City',
+            key: 'city',
+            width: 100
+          }, {
+            title: 'Address',
+            key: 'address',
+            width: 200
+          }, {
+            title: 'Postcode',
+            key: 'zip',
+            width: 100
+          }, {
+            title: 'Action',
+            key: 'action',
+            fixed: 'right',
+            width: 120,
+            render: (h, params) => {
+              return h('div', [h('Button', {
+                props: {
+                  type: 'text',
+                  size: 'small'
+                }
+              }, 'View'), h('Button', {
+                props: {
+                  type: 'text',
+                  size: 'small'
+                }
+              }, 'Edit')]);
+            }
+          }],
+          datas: [{
+            name: 'John Brown',
+            age: 18,
+            address: 'New York No. 1 Lake Park',
+            province: 'America',
+            city: 'New York',
+            zip: 100000
+          }, {
+            name: 'Jim Green',
+            age: 24,
+            address: 'Washington, D.C. No. 1 Lake Park',
+            province: 'America',
+            city: 'Washington, D.C.',
+            zip: 100000
+          }, {
+            name: 'Joe Black',
+            age: 30,
+            address: 'Sydney No. 1 Lake Park',
+            province: 'Australian',
+            city: 'Sydney',
+            zip: 100000
+          }, {
+            name: 'Jon Snow',
+            age: 26,
+            address: 'Ottawa No. 2 Lake Park',
+            province: 'Canada',
+            city: 'Ottawa',
+            zip: 100000
+          }, {
+            name: 'John Brown',
+            age: 18,
+            address: 'New York No. 1 Lake Park',
+            province: 'America',
+            city: 'New York',
+            zip: 100000
+          }, {
+            name: 'Jim Green',
+            age: 24,
+            address: 'Washington, D.C. No. 1 Lake Park',
+            province: 'America',
+            city: 'Washington, D.C.',
+            zip: 100000
+          }, {
+            name: 'Joe Black',
+            age: 30,
+            address: 'Sydney No. 1 Lake Park',
+            province: 'Australian',
+            city: 'Sydney',
+            zip: 100000
+          }, {
+            name: 'Jon Snow',
+            age: 26,
+            address: 'Ottawa No. 2 Lake Park',
+            province: 'Canada',
+            city: 'Ottawa',
+            zip: 100000
+          }, {
+            name: 'John Brown',
+            age: 18,
+            address: 'New York No. 1 Lake Park',
+            province: 'America',
+            city: 'New York',
+            zip: 100000
+          }, {
+            name: 'Jim Green',
+            age: 24,
+            address: 'Washington, D.C. No. 1 Lake Park',
+            province: 'America',
+            city: 'Washington, D.C.',
+            zip: 100000
+          }, {
+            name: 'Joe Black',
+            age: 30,
+            address: 'Sydney No. 1 Lake Park',
+            province: 'Australian',
+            city: 'Sydney',
+            zip: 100000
+          }, {
+            name: 'Jon Snow',
+            age: 26,
+            address: 'Ottawa No. 2 Lake Park',
+            province: 'Canada',
+            city: 'Ottawa',
+            zip: 100000
+          }, {
+            name: 'John Brown',
+            age: 18,
+            address: 'New York No. 1 Lake Park',
+            province: 'America',
+            city: 'New York',
+            zip: 100000
+          }, {
+            name: 'Jim Green',
+            age: 24,
+            address: 'Washington, D.C. No. 1 Lake Park',
+            province: 'America',
+            city: 'Washington, D.C.',
+            zip: 100000
+          }, {
+            name: 'Joe Black',
+            age: 30,
+            address: 'Sydney No. 1 Lake Park',
+            province: 'Australian',
+            city: 'Sydney',
+            zip: 100000
+          }, {
+            name: 'Jon Snow',
+            age: 26,
+            address: 'Ottawa No. 2 Lake Park',
+            province: 'Canada',
+            city: 'Ottawa',
+            zip: 100000
+          }],
+          cdrcount: 16
+        }]
+      },
       cdrContentInfo: this.cdrContent
     };
   },
@@ -57363,13 +57364,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         this.spanRight = 19;
       }
     }
-  },
-  watch: {
-    cdrContentInfo: function (val) {
-      console.log('watch cdrContentInfo');
-      this.cghosts = val;
-    }
   }
+  // watch: {
+  //   cdrContentInfo: function (val) {
+  //     console.log('watch cdrContentInfo')
+  //     this.cghosts = val
+  //   }
+  // }
 });
 
 /***/ }),
@@ -59646,7 +59647,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "value": ""
     }
-  }, _vm._l((_vm.cghosts), function(cghost) {
+  }, _vm._l((_vm.cghosts.cdrinfo), function(cghost) {
     return _c('TabPane', {
       attrs: {
         "label": cghost.name,
@@ -62185,4 +62186,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.9f9d70c8c59220bb8c20.js.map
+//# sourceMappingURL=app.d03e1d148693cd453f7c.js.map
