@@ -57175,7 +57175,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   data() {
     this.vuebus.$on('change_cdrContent', function (value) {
       console.log('get change_cdrContent message in QueryContent, with data:', value);
-      this.cdrContentInfo = value;
+      this.cghosts = value;
     });
     return {
       cdrContentBus: this.vuebus,
@@ -59645,7 +59645,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "value": ""
     }
-  }, _vm._l((_vm.cgHostsInfo), function(cghost) {
+  }, _vm._l((_vm.cghosts), function(cghost) {
     return _c('TabPane', {
       attrs: {
         "label": cghost.name,
@@ -62184,4 +62184,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.cc4afb0f2c88ecb86f53.js.map
+//# sourceMappingURL=app.cd073077b42ff6c51f46.js.map

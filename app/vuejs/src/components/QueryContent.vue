@@ -1,7 +1,7 @@
 <template>  
     <div class="layout-content">
       <Tabs value="">
-        <TabPane v-for="cghost in cgHostsInfo" :label="cghost.name" :name="cghost.name">
+        <TabPane v-for="cghost in cghosts" :label="cghost.name" :name="cghost.name">
           <Table border stripe height="600" :columns="cghost.columns" :data="cghost.datas"></Table>
           <Page :total="cghost.cdrcount" size="small" show-elevator show-sizer></Page>
         </TabPane>
@@ -23,7 +23,7 @@ export default {
   data () {
     this.vuebus.$on('change_cdrContent', function (value) {
       console.log('get change_cdrContent message in QueryContent, with data:', value)
-      this.cdrContentInfo = value
+      this.cghosts = value
     })
     return {
       cdrContentBus: this.vuebus,
