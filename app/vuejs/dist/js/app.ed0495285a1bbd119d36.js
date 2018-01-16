@@ -57175,7 +57175,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   data() {
     this.vuebus.$on('change_cdrContent', function (value) {
       console.log('get change_cdrContent message in QueryContent, with data:', value);
-      this.$set(this.cghosts, 'cdrinfo', value);
+      this.setCghosts(value);
     });
     return {
       cdrContentBus: this.vuebus,
@@ -57363,6 +57363,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         this.spanLeft = 5;
         this.spanRight = 19;
       }
+    },
+    setCghosts(value) {
+      this.$set(this.cghosts, 'cdrinfo', value);
     }
   }
   // watch: {
@@ -62186,4 +62189,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.ac0e54595fbabbe25bfe.js.map
+//# sourceMappingURL=app.ed0495285a1bbd119d36.js.map
