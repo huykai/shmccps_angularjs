@@ -57620,7 +57620,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         }]
       }).then(response => {
         console.log('cgcdrquery response: ', response);
-        this.cdrContentBus.emit('change_cdrContent', response);
+        this.cdrContentBus.$emit('change_cdrContent', response);
         this.loading = false;
       }).catch(error => {
         console.log('cgcdrquery error: ', error);
@@ -62162,4 +62162,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.535c53d9d6a16fceb877.js.map
+//# sourceMappingURL=app.300264feeab904474e46.js.map

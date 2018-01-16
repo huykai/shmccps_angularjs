@@ -251,7 +251,7 @@ export default {
       })
       .then((response) => {
         console.log('cgcdrquery response: ', response)
-        this.cdrContentBus.emit('change_cdrContent', response)
+        this.cdrContentBus.$emit('change_cdrContent', response)
         this.loading = false
       })
       .catch((error) => {
