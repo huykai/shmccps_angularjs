@@ -57508,15 +57508,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     }
   },
   data() {
+    let date = new Date();
     return {
       formItem: {
         imsi: '',
         msisdn: '',
-        select_cdrtype: '',
-        startdate: '',
-        starttime: '',
-        stopdate: '',
-        stoptime: '',
+        select_cdrtype: 'scdr',
+        startdate: date,
+        starttime: date,
+        stopdate: date,
+        stoptime: date,
         select_mme: [],
         select_saegw: [],
         select_cg: []
@@ -62166,4 +62167,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.9f31fefccbdbe83fde96.js.map
+//# sourceMappingURL=app.2921e34ef4ef42f8750b.js.map

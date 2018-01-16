@@ -134,15 +134,16 @@ export default {
     }
   },
   data () {
+    let date = new Date()
     return {
       formItem: {
         imsi: '',
         msisdn: '',
-        select_cdrtype: '',
-        startdate: '',
-        starttime: '',
-        stopdate: '',
-        stoptime: '',
+        select_cdrtype: 'scdr',
+        startdate: date,
+        starttime: date,
+        stopdate: date,
+        stoptime: date,
         select_mme: [],
         select_saegw: [],
         select_cg: []
