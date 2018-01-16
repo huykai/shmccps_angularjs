@@ -206,7 +206,8 @@ export default {
           ],
           cdrcount: 16
         }
-      ]
+      ],
+      cdrContentInfo: this.cdrContent
     }
   },
   computed: {
@@ -214,7 +215,8 @@ export default {
       return this.spanLeft === 5 ? 14 : 24
     },
     cgHostInfo: function () {
-      return this.cdrContent === {} ? this.cghosts : this.cdrContent
+      console.log('this.cdrContent: ', this.cdrContent)
+      return this.cdrContent.name ? this.cghosts : this.cdrContent
     }
   },
   methods: {
@@ -229,7 +231,7 @@ export default {
     }
   },
   watch: {
-    cdrContentInfo: function (val) {
+    cdrContent: function (val) {
       console.log('watch cdrContent')
       this.cghosts = val
     }

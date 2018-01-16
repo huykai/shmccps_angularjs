@@ -57326,7 +57326,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           zip: 100000
         }],
         cdrcount: 16
-      }]
+      }],
+      cdrContentInfo: this.cdrContent
     };
   },
   computed: {
@@ -57334,7 +57335,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       return this.spanLeft === 5 ? 14 : 24;
     },
     cgHostInfo: function () {
-      return this.cdrContent === {} ? this.cghosts : this.cdrContent;
+      console.log('this.cdrContent: ', this.cdrContent);
+      return this.cdrContent.name ? this.cghosts : this.cdrContent;
     }
   },
   methods: {
@@ -57349,7 +57351,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     }
   },
   watch: {
-    cdrContentInfo: function (val) {
+    cdrContent: function (val) {
       console.log('watch cdrContent');
       this.cghosts = val;
     }
@@ -62164,4 +62166,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.190a97f9bc98ab806095.js.map
+//# sourceMappingURL=app.9f31fefccbdbe83fde96.js.map
