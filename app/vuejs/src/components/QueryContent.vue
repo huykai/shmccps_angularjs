@@ -214,9 +214,9 @@ export default {
     iconSize () {
       return this.spanLeft === 5 ? 14 : 24
     },
-    cgHostInfo: function () {
+    cgHostsInfo: function () {
       console.log('this.cdrContent: ', this.cdrContent)
-      return this.cdrContent.name ? this.cghosts : this.cdrContent
+      return this.cdrContent.name ? this.cdrContent : this.cghosts
     }
   },
   methods: {

@@ -57334,9 +57334,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     iconSize() {
       return this.spanLeft === 5 ? 14 : 24;
     },
-    cgHostInfo: function () {
+    cgHostsInfo: function () {
       console.log('this.cdrContent: ', this.cdrContent);
-      return this.cdrContent.name ? this.cghosts : this.cdrContent;
+      return this.cdrContent.name ? this.cdrContent : this.cghosts;
     }
   },
   methods: {
@@ -62170,4 +62170,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.16e4c54222ebc5f37165.js.map
+//# sourceMappingURL=app.48f2add5f3148a2f30bf.js.map
