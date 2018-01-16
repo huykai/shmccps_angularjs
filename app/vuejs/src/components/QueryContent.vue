@@ -226,7 +226,7 @@ export default {
       return this.spanLeft === 5 ? 14 : 24
     },
     cgHostsInfo: function () {
-      console.log('this.cdrContent: ', this.cdrContentInfo)
+      console.log('this.cdrContentInfo: ', this.cdrContentInfo)
       return this.cdrContentInfo ? this.cdrContentInfo : this.cghosts
     }
   },
@@ -242,8 +242,8 @@ export default {
     }
   },
   watch: {
-    cdrContent: function (val) {
-      console.log('watch cdrContent')
+    cdrContentInfo: function (val) {
+      console.log('watch cdrContentInfo')
       this.cghosts = val
     }
   }

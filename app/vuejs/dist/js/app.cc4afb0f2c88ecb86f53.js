@@ -57348,7 +57348,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       return this.spanLeft === 5 ? 14 : 24;
     },
     cgHostsInfo: function () {
-      console.log('this.cdrContent: ', this.cdrContentInfo);
+      console.log('this.cdrContentInfo: ', this.cdrContentInfo);
       return this.cdrContentInfo ? this.cdrContentInfo : this.cghosts;
     }
   },
@@ -57364,8 +57364,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     }
   },
   watch: {
-    cdrContent: function (val) {
-      console.log('watch cdrContent');
+    cdrContentInfo: function (val) {
+      console.log('watch cdrContentInfo');
       this.cghosts = val;
     }
   }
@@ -62184,4 +62184,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.41ba7a2ac21d8f630759.js.map
+//# sourceMappingURL=app.cc4afb0f2c88ecb86f53.js.map
