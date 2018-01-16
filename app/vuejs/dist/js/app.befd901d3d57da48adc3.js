@@ -57328,7 +57328,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           zip: 100000
         }],
         cdrcount: 16
-      }]
+      }],
+      cdrContentInfo: this.cdrContent
     };
   },
   computed: {
@@ -57348,7 +57349,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     }
   },
   watch: {
-    cdrContent: function (val) {
+    cdrContentInfo: function (val) {
       console.log('watch cdrContent');
       this.cghosts = val;
     }
@@ -62163,4 +62164,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.5c071dd8588db861f5e1.js.map
+//# sourceMappingURL=app.befd901d3d57da48adc3.js.map

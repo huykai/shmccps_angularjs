@@ -206,7 +206,8 @@ export default {
           ],
           cdrcount: 16
         }
-      ]
+      ],
+      cdrContentInfo: this.cdrContent
     }
   },
   computed: {
@@ -226,7 +227,7 @@ export default {
     }
   },
   watch: {
-    cdrContent: function (val) {
+    cdrContentInfo: function (val) {
       console.log('watch cdrContent')
       this.cghosts = val
     }
