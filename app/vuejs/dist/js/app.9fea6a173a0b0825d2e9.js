@@ -57666,7 +57666,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   data() {
     var vuebus = new __WEBPACK_IMPORTED_MODULE_0_vue__["default"]();
     vuebus.$on('change_cdrContent', function (value) {
-      console.log('get change_cdrContent message');
+      console.log('get change_cdrContent message, with data:', value);
       this.cdrContent = value;
     });
     return {
@@ -57679,6 +57679,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   computed: {
     spanRight: function () {
       return this.span;
+    },
+    cdrContentInfo: function () {
+      return this.cdrContent;
     }
   },
   methods: {},
@@ -59031,7 +59034,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }), _vm._v(" "), _c('QueryContent', {
     attrs: {
-      "cdrContent": _vm.cdrContent
+      "cdrContent": _vm.cdrContentInfo
     }
   }), _vm._v(" "), _c('div', {
     staticClass: "layout-copy"
@@ -62167,4 +62170,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.2921e34ef4ef42f8750b.js.map
+//# sourceMappingURL=app.9fea6a173a0b0825d2e9.js.map

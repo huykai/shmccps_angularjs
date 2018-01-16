@@ -1,7 +1,7 @@
 <template>
     <i-col :span="spanRight" collapse="false">
         <QueryPanel :vuebus="vuebus"></QueryPanel>
-        <QueryContent :cdrContent="cdrContent"></QueryContent>
+        <QueryContent :cdrContent="cdrContentInfo"></QueryContent>
         <div class="layout-copy">
             2011-2018 &copy; Richard Hu
         </div>
@@ -17,7 +17,7 @@ export default {
   data () {
     var vuebus = new Vue()
     vuebus.$on('change_cdrContent', function (value) {
-      console.log('get change_cdrContent message')
+      console.log('get change_cdrContent message, with data:', value)
       this.cdrContent = value
     })
     return {
@@ -30,6 +30,9 @@ export default {
   computed: {
     spanRight: function () {
       return this.span
+    },
+    cdrContentInfo: function () {
+      return this.cdrContent
     }
   },
   methods: {
