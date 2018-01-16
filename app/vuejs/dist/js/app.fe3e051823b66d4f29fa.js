@@ -59034,7 +59034,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }), _vm._v(" "), _c('QueryContent', {
     attrs: {
-      "cdrContent": _vm.cdrContentInfo
+      "cdr-content": _vm.cdrContentInfo
     }
   }), _vm._v(" "), _c('div', {
     staticClass: "layout-copy"
@@ -62170,4 +62170,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.725fa9c0b16863acce30.js.map
+//# sourceMappingURL=app.fe3e051823b66d4f29fa.js.map

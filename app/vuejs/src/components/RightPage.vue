@@ -1,7 +1,7 @@
 <template>
     <i-col :span="spanRight" collapse="false">
         <QueryPanel :vuebus="vuebus"></QueryPanel>
-        <QueryContent :cdrContent="cdrContentInfo"></QueryContent>
+        <QueryContent :cdr-content="cdrContentInfo"></QueryContent>
         <div class="layout-copy">
             2011-2018 &copy; Richard Hu
         </div>
