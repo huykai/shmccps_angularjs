@@ -11,11 +11,22 @@
 
 <script>
 export default {
-  props: [
-    'cdrContent'
-  ],
+  props: {
+    vuebus: {
+      type: Object,
+      default: function () {
+        return {}
+      }
+    },
+    cdrContent: {}
+  },
   data () {
+    this.vuebus.$on('change_cdrContent', function (value) {
+      console.log('get change_cdrContent message in QueryContent, with data:', value)
+      this.cdrContentInfo = value
+    })
     return {
+      cdrContentBus: this.vuebus,
       cghosts: [
         {
           name: 'shcg16bnk-1',
@@ -215,8 +226,8 @@ export default {
       return this.spanLeft === 5 ? 14 : 24
     },
     cgHostsInfo: function () {
-      console.log('this.cdrContent: ', this.cdrContent)
-      return this.cdrContent ? this.cdrContent : this.cghosts
+      console.log('this.cdrContent: ', this.cdrContentInfo)
+      return this.cdrContentInfo ? this.cdrContentInfo : this.cghosts
     }
   },
   methods: {

@@ -57163,9 +57163,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['cdrContent'],
+  props: {
+    vuebus: {
+      type: Object,
+      default: function () {
+        return {};
+      }
+    },
+    cdrContent: {}
+  },
   data() {
+    this.vuebus.$on('change_cdrContent', function (value) {
+      console.log('get change_cdrContent message in QueryContent, with data:', value);
+      this.cdrContentInfo = value;
+    });
     return {
+      cdrContentBus: this.vuebus,
       cghosts: [{
         name: 'shcg16bnk-1',
         columns: [{
@@ -57335,8 +57348,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       return this.spanLeft === 5 ? 14 : 24;
     },
     cgHostsInfo: function () {
-      console.log('this.cdrContent: ', this.cdrContent);
-      return this.cdrContent ? this.cdrContent : this.cghosts;
+      console.log('this.cdrContent: ', this.cdrContentInfo);
+      return this.cdrContentInfo ? this.cdrContentInfo : this.cghosts;
     }
   },
   methods: {
@@ -59034,6 +59047,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }), _vm._v(" "), _c('QueryContent', {
     attrs: {
+      "vuebus": _vm.vuebus,
       "cdr-content": _vm.cdrContent
     }
   }), _vm._v(" "), _c('div', {
@@ -62170,4 +62184,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.e82b3168d118b2dc382c.js.map
+//# sourceMappingURL=app.41ba7a2ac21d8f630759.js.map
