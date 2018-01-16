@@ -57336,7 +57336,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     cgHostsInfo: function () {
       console.log('this.cdrContent: ', this.cdrContent);
-      return this.cdrContent.name ? this.cdrContent : this.cghosts;
+      return this.cdrContent ? this.cdrContent : this.cghosts;
     }
   },
   methods: {
@@ -62170,4 +62170,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.48f2add5f3148a2f30bf.js.map
+//# sourceMappingURL=app.725fa9c0b16863acce30.js.map

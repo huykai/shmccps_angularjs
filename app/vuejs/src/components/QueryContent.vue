@@ -216,7 +216,7 @@ export default {
     },
     cgHostsInfo: function () {
       console.log('this.cdrContent: ', this.cdrContent)
-      return this.cdrContent.name ? this.cdrContent : this.cghosts
+      return this.cdrContent ? this.cdrContent : this.cghosts
     }
   },
   methods: {
