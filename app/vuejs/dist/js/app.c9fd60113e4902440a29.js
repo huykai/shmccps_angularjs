@@ -57537,9 +57537,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         starttime: date,
         stopdate: date,
         stoptime: date,
-        select_mme: ['SHMME03BNK'],
+        select_mme: ['shmme03bnk'],
         select_saegw: [],
-        select_cg: ['SHCG19BNK-1']
+        select_cg: ['shcg19bnk-1']
       },
       collapse: 'false',
       querypanelform_show: true,
@@ -62192,4 +62192,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.7d16b40c7607f0c7f5a3.js.map
+//# sourceMappingURL=app.c9fd60113e4902440a29.js.map
