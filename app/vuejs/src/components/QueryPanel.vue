@@ -125,6 +125,14 @@ import Storages from 'js-storage'
 import $ from 'jquery'
 import cookie from 'jquery.cookie'
 export default {
+  props: {
+    vuebus: {
+      type: Object,
+      default: function () {
+        return {}
+      }
+    }
+  },
   data () {
     return {
       formItem: {
@@ -142,7 +150,8 @@ export default {
       collapse: 'false',
       querypanelform_show: true,
       message: '点击隐藏查询参数面板',
-      loading: false
+      loading: false,
+      cdrContentBus: this.vuebus
     }
   },
   computed: {
@@ -226,9 +235,9 @@ export default {
           // 'x-xsrf-token': $.cookie('XSRF-TOKEN')
           // 'authorization': 'Bearer ' + Storages.sessionStorage.get('token')
         },
-        transformResponse: [function (data) {
-          console.log(data)
-        }],
+        // transformResponse: [function (data) {
+        //   console.log(data)
+        // }],
         transformRequest: [function (data) {
           var str = []
           for (var p in data) {
@@ -242,6 +251,7 @@ export default {
       })
       .then((response) => {
         console.log('cgcdrquery response: ', response)
+        this.cdrContentBus.emit('change_cdrContent', response)
         this.loading = false
       })
       .catch((error) => {

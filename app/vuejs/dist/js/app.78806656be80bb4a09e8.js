@@ -57163,6 +57163,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    cdrConent: {}
+  },
   data() {
     return {
       cghosts: [{
@@ -57342,6 +57345,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         this.spanLeft = 5;
         this.spanRight = 19;
       }
+    },
+    watch: {
+      cdrContent: function (val) {
+        this.cghosts = val;
+      }
     }
   }
 });
@@ -57487,6 +57495,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    vuebus: {
+      type: Object,
+      default: function () {
+        return {};
+      }
+    }
+  },
   data() {
     return {
       formItem: {
@@ -57504,7 +57520,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       collapse: 'false',
       querypanelform_show: true,
       message: '点击隐藏查询参数面板',
-      loading: false
+      loading: false,
+      cdrContentBus: this.vuebus
     };
   },
   computed: {
@@ -57588,9 +57605,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           // 'x-xsrf-token': $.cookie('XSRF-TOKEN')
           // 'authorization': 'Bearer ' + Storages.sessionStorage.get('token')
         },
-        transformResponse: [function (data) {
-          console.log(data);
-        }],
+        // transformResponse: [function (data) {
+        //   console.log(data)
+        // }],
         transformRequest: [function (data) {
           var str = [];
           for (var p in data) {
@@ -57603,6 +57620,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         }]
       }).then(response => {
         console.log('cgcdrquery response: ', response);
+        this.cdrContentBus.emit('change_cdrContent', response);
         this.loading = false;
       }).catch(error => {
         console.log('cgcdrquery error: ', error);
@@ -57619,10 +57637,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_QueryPanel__ = __webpack_require__(58);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_QueryPanel___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_QueryPanel__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_QueryContent__ = __webpack_require__(57);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_QueryContent___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_QueryContent__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_QueryPanel__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_QueryPanel___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_QueryPanel__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_QueryContent__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_QueryContent___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_QueryContent__);
 //
 //
 //
@@ -57633,15 +57652,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['span'],
   data() {
+    var vuebus = new __WEBPACK_IMPORTED_MODULE_0_vue__["default"]();
+    vuebus.$on('change_cdrContent', function (value) {
+      console.log('get change_cdrContent message');
+      this.cdrContent = value;
+    });
     return {
       collapse: false,
-      querypanelform_show: true
+      querypanelform_show: true,
+      vuebus: vuebus,
+      cdrConent: {}
     };
   },
   computed: {
@@ -57651,8 +57678,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
   methods: {},
   components: {
-    'QueryPanel': __WEBPACK_IMPORTED_MODULE_0__components_QueryPanel___default.a,
-    'QueryContent': __WEBPACK_IMPORTED_MODULE_1__components_QueryContent___default.a
+    'QueryPanel': __WEBPACK_IMPORTED_MODULE_1__components_QueryPanel___default.a,
+    'QueryContent': __WEBPACK_IMPORTED_MODULE_2__components_QueryContent___default.a
   }
 });
 
@@ -58993,7 +59020,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "span": _vm.spanRight,
       "collapse": "false"
     }
-  }, [_c('QueryPanel'), _vm._v(" "), _c('QueryContent'), _vm._v(" "), _c('div', {
+  }, [_c('QueryPanel', {
+    attrs: {
+      "vuebus": _vm.vuebus
+    }
+  }), _vm._v(" "), _c('QueryContent', {
+    attrs: {
+      "cdrContent": _vm.cdrContent
+    }
+  }), _vm._v(" "), _c('div', {
     staticClass: "layout-copy"
   }, [_vm._v("\n        2011-2018 © Richard Hu\n    ")])], 1)
 },staticRenderFns: []}
@@ -62127,4 +62162,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.72813dbd5ec4140b5249.js.map
+//# sourceMappingURL=app.78806656be80bb4a09e8.js.map

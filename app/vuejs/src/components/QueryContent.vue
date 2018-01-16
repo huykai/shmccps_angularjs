@@ -11,6 +11,9 @@
 
 <script>
 export default {
+  props: {
+    cdrConent: {}
+  },
   data () {
     return {
       cghosts: [
@@ -219,6 +222,11 @@ export default {
       } else {
         this.spanLeft = 5
         this.spanRight = 19
+      }
+    },
+    watch: {
+      cdrContent: function (val) {
+        this.cghosts = val
       }
     }
   }
