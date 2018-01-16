@@ -57599,7 +57599,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       }, {
         timeout: 120000,
         headers: {
-          'Content-Type': 'applicaton/json'
+          // 'Content-Type': 'applicaton/json'
           // 'xsrfCookieName': 'XSRF-TOKEN',
           // 'xsrfHeaderName': 'x-xsrf-token'
           // 'x-xsrf-token': $.cookie('XSRF-TOKEN')
@@ -62162,4 +62162,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.78806656be80bb4a09e8.js.map
+//# sourceMappingURL=app.535c53d9d6a16fceb877.js.map

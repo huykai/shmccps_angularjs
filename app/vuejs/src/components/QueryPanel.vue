@@ -229,7 +229,7 @@ export default {
       }, {
         timeout: 120000,
         headers: {
-          'Content-Type': 'applicaton/json'
+          // 'Content-Type': 'applicaton/json'
           // 'xsrfCookieName': 'XSRF-TOKEN',
           // 'xsrfHeaderName': 'x-xsrf-token'
           // 'x-xsrf-token': $.cookie('XSRF-TOKEN')
