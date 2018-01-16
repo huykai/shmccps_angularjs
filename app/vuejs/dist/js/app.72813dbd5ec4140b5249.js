@@ -57582,11 +57582,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       }, {
         timeout: 120000,
         headers: {
+          'Content-Type': 'applicaton/json'
           // 'xsrfCookieName': 'XSRF-TOKEN',
           // 'xsrfHeaderName': 'x-xsrf-token'
           // 'x-xsrf-token': $.cookie('XSRF-TOKEN')
           // 'authorization': 'Bearer ' + Storages.sessionStorage.get('token')
         },
+        transformResponse: [function (data) {
+          console.log(data);
+        }],
         transformRequest: [function (data) {
           var str = [];
           for (var p in data) {
@@ -62123,4 +62127,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.d24bdfabb88499501e65.js.map
+//# sourceMappingURL=app.72813dbd5ec4140b5249.js.map

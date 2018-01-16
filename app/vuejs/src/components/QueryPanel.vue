@@ -220,11 +220,15 @@ export default {
       }, {
         timeout: 120000,
         headers: {
+          'Content-Type': 'applicaton/json'
           // 'xsrfCookieName': 'XSRF-TOKEN',
           // 'xsrfHeaderName': 'x-xsrf-token'
           // 'x-xsrf-token': $.cookie('XSRF-TOKEN')
           // 'authorization': 'Bearer ' + Storages.sessionStorage.get('token')
         },
+        transformResponse: [function (data) {
+          console.log(data)
+        }],
         transformRequest: [function (data) {
           var str = []
           for (var p in data) {
