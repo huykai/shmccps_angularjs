@@ -3,7 +3,7 @@
       <Tabs value="">
         <TabPane v-for="cghost in cghosts.cdrinfo" :label="cghost.name" :name="cghost.name">
           <Table border stripe height="600" :columns="cghost.columns" :data="cghost.datas"></Table>
-          <Page :total="cghost.cdrcount" size="small" show-elevator show-sizer></Page>
+          <Page :total="cghost.cdrcount" size="small" :page-size="pageSize" show-total show-elevator show-sizer></Page>
         </TabPane>
       </Tabs>
     </div>
@@ -26,6 +26,7 @@ export default {
       this.setCghosts(value)
     })
     return {
+      pageSize: 50,
       cdrContentBus: this.vuebus,
       cghosts: {
         cdrinfo: [

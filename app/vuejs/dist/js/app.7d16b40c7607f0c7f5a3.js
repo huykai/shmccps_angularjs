@@ -57178,6 +57178,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.setCghosts(value);
     });
     return {
+      pageSize: 50,
       cdrContentBus: this.vuebus,
       cghosts: {
         cdrinfo: [{
@@ -57536,9 +57537,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         starttime: date,
         stopdate: date,
         stoptime: date,
-        select_mme: [],
+        select_mme: ['SHMME03BNK'],
         select_saegw: [],
-        select_cg: []
+        select_cg: ['SHCG19BNK-1']
       },
       collapse: 'false',
       querypanelform_show: true,
@@ -59668,6 +59669,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       attrs: {
         "total": cghost.cdrcount,
         "size": "small",
+        "page-size": _vm.pageSize,
+        "show-total": "",
         "show-elevator": "",
         "show-sizer": ""
       }
@@ -62189,4 +62192,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.cc6904406ac4cee91015.js.map
+//# sourceMappingURL=app.7d16b40c7607f0c7f5a3.js.map
