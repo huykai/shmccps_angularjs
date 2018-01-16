@@ -57163,9 +57163,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: {
-    cdrContent: {}
-  },
+  props: ['cdrContent'],
   data() {
     return {
       cghosts: [{
@@ -57328,13 +57326,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           zip: 100000
         }],
         cdrcount: 16
-      }],
-      cdrContentInfo: this.cdrContent
+      }]
     };
   },
   computed: {
     iconSize() {
       return this.spanLeft === 5 ? 14 : 24;
+    },
+    cgHostInfo: function () {
+      return this.cdrContent === {} ? this.cghosts : this.cdrContent;
     }
   },
   methods: {
@@ -59625,7 +59625,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "value": ""
     }
-  }, _vm._l((_vm.cghosts), function(cghost) {
+  }, _vm._l((_vm.cgHostsInfo), function(cghost) {
     return _c('TabPane', {
       attrs: {
         "label": cghost.name,
@@ -62164,4 +62164,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.befd901d3d57da48adc3.js.map
+//# sourceMappingURL=app.190a97f9bc98ab806095.js.map

@@ -1,7 +1,7 @@
 <template>  
     <div class="layout-content">
       <Tabs value="">
-        <TabPane v-for="cghost in cghosts" :label="cghost.name" :name="cghost.name">
+        <TabPane v-for="cghost in cgHostsInfo" :label="cghost.name" :name="cghost.name">
           <Table border stripe height="600" :columns="cghost.columns" :data="cghost.datas"></Table>
           <Page :total="cghost.cdrcount" size="small" show-elevator show-sizer></Page>
         </TabPane>
@@ -11,9 +11,9 @@
 
 <script>
 export default {
-  props: {
-    cdrContent: {}
-  },
+  props: [
+    'cdrContent'
+  ],
   data () {
     return {
       cghosts: [
@@ -206,13 +206,15 @@ export default {
           ],
           cdrcount: 16
         }
-      ],
-      cdrContentInfo: this.cdrContent
+      ]
     }
   },
   computed: {
     iconSize () {
       return this.spanLeft === 5 ? 14 : 24
+    },
+    cgHostInfo: function () {
+      return this.cdrContent === {} ? this.cghosts : this.cdrContent
     }
   },
   methods: {
