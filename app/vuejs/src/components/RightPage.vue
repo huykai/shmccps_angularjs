@@ -18,7 +18,7 @@ export default {
     var vuebus = new Vue()
     vuebus.$on('change_cdrContent', function (value) {
       console.log('get change_cdrContent message, with data:', value)
-      this.$set('cdrContent', value)
+      // this.$set('cdrContent', value)
     })
     return {
       collapse: false,
