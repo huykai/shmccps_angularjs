@@ -146,7 +146,7 @@ export default {
         stoptime: date,
         select_mme: ['shmme03bnk'],
         select_saegw: [],
-        select_cg: ['shcg19bnk-1']
+        select_cg: ['shcg25 bnk-1']
       },
       collapse: 'false',
       querypanelform_show: true,

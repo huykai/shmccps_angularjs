@@ -57179,169 +57179,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     });
     return {
       pageSize: 50,
+      pageSizeOpts: [10, 20, 40, 50, 100],
       cdrContentBus: this.vuebus,
       cghosts: {
-        cdrinfo: [{
-          name: 'shcg16bnk-1',
-          columns: [{
-            title: 'Name',
-            key: 'name',
-            width: 100,
-            fixed: 'left'
-          }, {
-            title: 'Age',
-            key: 'age',
-            width: 100
-          }, {
-            title: 'Province',
-            key: 'province',
-            width: 100
-          }, {
-            title: 'City',
-            key: 'city',
-            width: 100
-          }, {
-            title: 'Address',
-            key: 'address',
-            width: 200
-          }, {
-            title: 'Postcode',
-            key: 'zip',
-            width: 100
-          }, {
-            title: 'Action',
-            key: 'action',
-            fixed: 'right',
-            width: 120,
-            render: (h, params) => {
-              return h('div', [h('Button', {
-                props: {
-                  type: 'text',
-                  size: 'small'
-                }
-              }, 'View'), h('Button', {
-                props: {
-                  type: 'text',
-                  size: 'small'
-                }
-              }, 'Edit')]);
-            }
-          }],
-          datas: [{
-            name: 'John Brown',
-            age: 18,
-            address: 'New York No. 1 Lake Park',
-            province: 'America',
-            city: 'New York',
-            zip: 100000
-          }, {
-            name: 'Jim Green',
-            age: 24,
-            address: 'Washington, D.C. No. 1 Lake Park',
-            province: 'America',
-            city: 'Washington, D.C.',
-            zip: 100000
-          }, {
-            name: 'Joe Black',
-            age: 30,
-            address: 'Sydney No. 1 Lake Park',
-            province: 'Australian',
-            city: 'Sydney',
-            zip: 100000
-          }, {
-            name: 'Jon Snow',
-            age: 26,
-            address: 'Ottawa No. 2 Lake Park',
-            province: 'Canada',
-            city: 'Ottawa',
-            zip: 100000
-          }, {
-            name: 'John Brown',
-            age: 18,
-            address: 'New York No. 1 Lake Park',
-            province: 'America',
-            city: 'New York',
-            zip: 100000
-          }, {
-            name: 'Jim Green',
-            age: 24,
-            address: 'Washington, D.C. No. 1 Lake Park',
-            province: 'America',
-            city: 'Washington, D.C.',
-            zip: 100000
-          }, {
-            name: 'Joe Black',
-            age: 30,
-            address: 'Sydney No. 1 Lake Park',
-            province: 'Australian',
-            city: 'Sydney',
-            zip: 100000
-          }, {
-            name: 'Jon Snow',
-            age: 26,
-            address: 'Ottawa No. 2 Lake Park',
-            province: 'Canada',
-            city: 'Ottawa',
-            zip: 100000
-          }, {
-            name: 'John Brown',
-            age: 18,
-            address: 'New York No. 1 Lake Park',
-            province: 'America',
-            city: 'New York',
-            zip: 100000
-          }, {
-            name: 'Jim Green',
-            age: 24,
-            address: 'Washington, D.C. No. 1 Lake Park',
-            province: 'America',
-            city: 'Washington, D.C.',
-            zip: 100000
-          }, {
-            name: 'Joe Black',
-            age: 30,
-            address: 'Sydney No. 1 Lake Park',
-            province: 'Australian',
-            city: 'Sydney',
-            zip: 100000
-          }, {
-            name: 'Jon Snow',
-            age: 26,
-            address: 'Ottawa No. 2 Lake Park',
-            province: 'Canada',
-            city: 'Ottawa',
-            zip: 100000
-          }, {
-            name: 'John Brown',
-            age: 18,
-            address: 'New York No. 1 Lake Park',
-            province: 'America',
-            city: 'New York',
-            zip: 100000
-          }, {
-            name: 'Jim Green',
-            age: 24,
-            address: 'Washington, D.C. No. 1 Lake Park',
-            province: 'America',
-            city: 'Washington, D.C.',
-            zip: 100000
-          }, {
-            name: 'Joe Black',
-            age: 30,
-            address: 'Sydney No. 1 Lake Park',
-            province: 'Australian',
-            city: 'Sydney',
-            zip: 100000
-          }, {
-            name: 'Jon Snow',
-            age: 26,
-            address: 'Ottawa No. 2 Lake Park',
-            province: 'Canada',
-            city: 'Ottawa',
-            zip: 100000
-          }],
-          cdrcount: 16
-        }]
+        cdrinfo: []
       },
       cdrContentInfo: this.cdrContent
     };
@@ -57539,7 +57380,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         stoptime: date,
         select_mme: ['shmme03bnk'],
         select_saegw: [],
-        select_cg: ['shcg19bnk-1']
+        select_cg: ['shcg25 bnk-1']
       },
       collapse: 'false',
       querypanelform_show: true,
@@ -59670,6 +59511,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "total": cghost.cdrcount,
         "size": "small",
         "page-size": _vm.pageSize,
+        "page-size-opts": _vm.pageSizeOpts,
         "show-total": "",
         "show-elevator": "",
         "show-sizer": ""
@@ -62192,4 +62034,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.c9fd60113e4902440a29.js.map
+//# sourceMappingURL=app.b1ad66ae784e8326ef42.js.map
