@@ -57571,6 +57571,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['tableinfo'],
@@ -59475,7 +59477,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('Table', {
+  return _c('div', [_c('Table', {
     attrs: {
       "border": "",
       "stripe": "",
@@ -59483,7 +59485,17 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "columns": _vm.cghost.columns,
       "data": _vm.cghost.datas
     }
-  })
+  }), _vm._v(" "), _c('Page', {
+    attrs: {
+      "total": _vm.cghost.cdrcount,
+      "size": "small",
+      "page-size": _vm.pageSize,
+      "page-size-opts": _vm.pageSizeOpts,
+      "show-total": "",
+      "show-elevator": "",
+      "show-sizer": ""
+    }
+  })], 1)
 },staticRenderFns: []}
 
 /***/ }),
@@ -62045,4 +62057,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.5053a87fc496c1adfc72.js.map
+//# sourceMappingURL=app.d3b950eb6b69cabbf1e4.js.map

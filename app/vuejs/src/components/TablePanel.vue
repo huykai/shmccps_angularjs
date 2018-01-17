@@ -1,6 +1,8 @@
 <template>
-    <Table border stripe height="600" :columns="cghost.columns" :data="cghost.datas"></Table>
-    <Page :total="cghost.cdrcount" size="small" :page-size="pageSize" :page-size-opts="pageSizeOpts" show-total show-elevator show-sizer></Page>
+    <div>
+      <Table border stripe height="600" :columns="cghost.columns" :data="cghost.datas"></Table>
+      <Page :total="cghost.cdrcount" size="small" :page-size="pageSize" :page-size-opts="pageSizeOpts" show-total show-elevator show-sizer></Page>
+    </div>
 </template>
      
 <script>
