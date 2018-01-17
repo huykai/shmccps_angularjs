@@ -57578,7 +57578,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   props: ['tableinfo'],
   data() {
     const pageInitSize = 50;
-    const pageInfo = this.tableinfo.datas.slice(0, pageInitSize);
+    const pageInfo = this.tableinfo.datas.slice(0, pageInitSize + 1);
     return {
       pageSize: pageInitSize,
       pageSizeOpts: [10, 20, 40, 50, 100],
@@ -57590,8 +57590,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   methods: {
     changePage(pageNo) {
       console.log('changePage:', pageNo);
-      const lastRecord = (pageNo - 1) * this.pageSize + this.pageSize >= this.cghost.cdrcount ? this.cghost.cdrcount - 1 : (pageNo - 1) * this.pageSize + this.pageSize - 1;
-      const pageInfo = this.tableinfo.datas.slice((pageNo - 1) * this.pageSize, lastRecord);
+      // const lastRecord = ((pageNo - 1) * this.pageSize + this.pageSize) >= this.cghost.cdrcount ? this.cghost.cdrcount - 1 : ((pageNo - 1) * this.pageSize + this.pageSize - 1)
+      const pageInfo = this.tableinfo.datas.slice((pageNo - 1) * this.pageSize, pageNo * this.pageSize);
       this.pageData = pageInfo;
     }
   },
@@ -62072,4 +62072,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.4ee227d73559450df763.js.map
+//# sourceMappingURL=app.2159a5bb54f2dddc1b60.js.map

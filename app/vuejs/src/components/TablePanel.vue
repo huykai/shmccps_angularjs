@@ -10,7 +10,7 @@ export default {
   props: [ 'tableinfo' ],
   data () {
     const pageInitSize = 50
-    const pageInfo = this.tableinfo.datas.slice(0, pageInitSize)
+    const pageInfo = this.tableinfo.datas.slice(0, pageInitSize + 1)
     return {
       pageSize: pageInitSize,
       pageSizeOpts: [
@@ -25,8 +25,8 @@ export default {
   methods: {
     changePage (pageNo) {
       console.log('changePage:', pageNo)
-      const lastRecord = ((pageNo - 1) * this.pageSize + this.pageSize) >= this.cghost.cdrcount ? this.cghost.cdrcount - 1 : ((pageNo - 1) * this.pageSize + this.pageSize - 1)
-      const pageInfo = this.tableinfo.datas.slice((pageNo - 1) * this.pageSize, lastRecord)
+      // const lastRecord = ((pageNo - 1) * this.pageSize + this.pageSize) >= this.cghost.cdrcount ? this.cghost.cdrcount - 1 : ((pageNo - 1) * this.pageSize + this.pageSize - 1)
+      const pageInfo = this.tableinfo.datas.slice((pageNo - 1) * this.pageSize, pageNo * this.pageSize)
       this.pageData = pageInfo
     }
   },
