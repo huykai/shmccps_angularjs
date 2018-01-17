@@ -57578,11 +57578,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   props: ['tableinfo'],
   data() {
     const pageInitSize = 50;
-    const pageInfo = this.tableinfo.slice(0, pageInitSize);
+    const pageInfo = this.tableinfo.datas.slice(0, pageInitSize);
     return {
       pageSize: pageInitSize,
       pageSizeOpts: [10, 20, 40, 50, 100],
-      cghost: pageInfo
+      cghost: this.tableinfo,
+      pageData: pageInfo
     };
   },
   computed: {},
@@ -59489,7 +59490,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "stripe": "",
       "height": "600",
       "columns": _vm.cghost.columns,
-      "data": _vm.cghost.datas
+      "data": _vm.pageData
     }
   }), _vm._v(" "), _c('Page', {
     attrs: {
@@ -62068,4 +62069,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.c08936c33e56eb8a7988.js.map
+//# sourceMappingURL=app.e6c1796f13cd0586d3d5.js.map
