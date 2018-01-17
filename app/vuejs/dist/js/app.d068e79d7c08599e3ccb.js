@@ -59531,7 +59531,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, _vm._l((_vm.cghosts.cdrinfo), function(cghost) {
     return _c('TabPane', {
-      key: cghost.name,
       attrs: {
         "label": cghost.name,
         "name": cghost.name
@@ -62059,4 +62058,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.84ea6d76467757b16b4a.js.map
+//# sourceMappingURL=app.d068e79d7c08599e3ccb.js.map
