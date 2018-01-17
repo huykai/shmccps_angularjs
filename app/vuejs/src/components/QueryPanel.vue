@@ -80,7 +80,8 @@
                     <Col span="2"> CG: </Col>
                     <Col span="6">
                         <Select multiple v-model="formItem.select_cg">
-                            <Option value="shcg16bnk-1">SHCG16BNK-1</Option>
+                            <Option v-for="cghostname in cghostnames" value="cghostname.name">{{cghostname.label}}}}</Option>
+                            <!--
                             <Option value="shcg17bnk-1">SHCG17BNK-1</Option>
                             <Option value="shcg18bnk-1">SHCG18BNK-1</Option>
                             <Option value="shcg19bnk-1">SHCG19BNK-1</Option>
@@ -95,6 +96,7 @@
                             <Option value="shcg28bnk-1">SHCG28BNK-1</Option>
                             <Option value="shcg29bnk-1">SHCG29BNK-1</Option>
                             <Option value="shcg30bnk-1">SHCG30BNK-1</Option>
+                            -->
                         </Select>
                     </Col>
                 </Row>
@@ -146,8 +148,25 @@ export default {
         stoptime: date,
         select_mme: ['shmme03bnk'],
         select_saegw: [],
-        select_cg: ['shcg25 bnk-1']
+        select_cg: ['shcg25bnk-1']
       },
+      cghostnames: [
+        {name: 'shcg16bnk-1', label: 'SHCG16BNK-1'},
+        {name: 'shcg17bnk-1', label: 'SHCG17BNK-1'},
+        {name: 'shcg18bnk-1', label: 'SHCG18BNK-1'},
+        {name: 'shcg19bnk-1', label: 'SHCG19BNK-1'},
+        {name: 'shcg20bnk-1', label: 'SHCG20BNK-1'},
+        {name: 'shcg21bnk-1', label: 'SHCG21BNK-1'},
+        {name: 'shcg22bnk-1', label: 'SHCG22BNK-1'},
+        {name: 'shcg23bnk-1', label: 'SHCG23BNK-1'},
+        {name: 'shcg24bnk-1', label: 'SHCG24BNK-1'},
+        {name: 'shcg25bnk-1', label: 'SHCG25BNK-1'},
+        {name: 'shcg26bnk-1', label: 'SHCG26BNK-1'},
+        {name: 'shcg27bnk-1', label: 'SHCG27BNK-1'},
+        {name: 'shcg28bnk-1', label: 'SHCG28BNK-1'},
+        {name: 'shcg29bnk-1', label: 'SHCG29BNK-1'},
+        {name: 'shcg30bnk-1', label: 'SHCG30BNK-1'}
+      ],
       collapse: 'false',
       querypanelform_show: true,
       message: '点击隐藏查询参数面板',
