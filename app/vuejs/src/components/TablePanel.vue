@@ -25,7 +25,8 @@ export default {
   methods: {
     changePage (pageNo) {
       console.log('changePage:', pageNo)
-      const pageInfo = this.tableinfo.datas.slice((pageNo - 1) * this.pageSize, this.pageSize)
+      const lastRecord = ((pageNo - 1) * this.pageSize + this.pageSize) >= this.cghost.cdrcount ? this.cghost.cdrcount - 1 : ((pageNo - 1) * this.pageSize + this.pageSize - 1)
+      const pageInfo = this.tableinfo.datas.slice((pageNo - 1) * this.pageSize, lastRecord)
       this.pageData = pageInfo
     }
   },

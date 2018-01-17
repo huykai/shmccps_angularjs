@@ -57590,7 +57590,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   methods: {
     changePage(pageNo) {
       console.log('changePage:', pageNo);
-      const pageInfo = this.tableinfo.datas.slice((pageNo - 1) * this.pageSize, this.pageSize);
+      const lastRecord = (pageNo - 1) * this.pageSize + this.pageSize >= this.cghost.cdrcount ? this.cghost.cdrcount - 1 : (pageNo - 1) * this.pageSize + this.pageSize - 1;
+      const pageInfo = this.tableinfo.datas.slice((pageNo - 1) * this.pageSize, lastRecord);
       this.pageData = pageInfo;
     }
   },
@@ -62071,4 +62072,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.2c2b809e6a6bf3b0dc27.js.map
+//# sourceMappingURL=app.4ee227d73559450df763.js.map
