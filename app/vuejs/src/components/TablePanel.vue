@@ -23,8 +23,10 @@ export default {
   computed: {
   },
   methods: {
-    changePage () {
-      console.log('changePage:', arguments)
+    changePage (pageNo) {
+      console.log('changePage:', pageNo)
+      const pageInfo = this.tableinfo.datas.slice((pageNo - 1) * this.pageSize, this.pageSize)
+      this.pageData = pageInfo
     }
   },
   components: {

@@ -57588,8 +57588,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
   computed: {},
   methods: {
-    changePage() {
-      console.log('changePage:', arguments);
+    changePage(pageNo) {
+      console.log('changePage:', pageNo);
+      const pageInfo = this.tableinfo.datas.slice((pageNo - 1) * this.pageSize, this.pageSize);
+      this.pageData = pageInfo;
     }
   },
   components: {}
@@ -62069,4 +62071,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.e6c1796f13cd0586d3d5.js.map
+//# sourceMappingURL=app.2c2b809e6a6bf3b0dc27.js.map
