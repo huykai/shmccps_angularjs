@@ -6,7 +6,7 @@
           <Table border stripe height="600" :columns="cghost.columns" :data="cghost.datas"></Table>
           <Page :total="cghost.cdrcount" size="small" :page-size="pageSize" :page-size-opts="pageSizeOpts" show-total show-elevator show-sizer></Page>
           -->
-          <TablePanel :tableinfo="cghost" />
+          <TablePanel :tableinfo="cghost" :key="cghost.name" />
         </TabPane>
       </Tabs>
     </div>

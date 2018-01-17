@@ -59537,6 +59537,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "name": cghost.name
       }
     }, [_c('TablePanel', {
+      key: cghost.name,
       attrs: {
         "tableinfo": cghost
       }
@@ -62058,4 +62059,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.45f9c1a0090d2656b5b4.js.map
+//# sourceMappingURL=app.84ea6d76467757b16b4a.js.map
