@@ -57381,7 +57381,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         stopdate: date,
         stoptime: date,
         select_mme: ['shmme03bnk'],
-        select_saegw: [],
+        select_saegw: ['shsaegw03bnk'],
         select_cg: ['shcg25bnk-1']
       },
       cghostnames: [{ name: 'shcg16bnk-1', label: 'SHCG16BNK-1' }, { name: 'shcg17bnk-1', label: 'SHCG17BNK-1' }, { name: 'shcg18bnk-1', label: 'SHCG18BNK-1' }, { name: 'shcg19bnk-1', label: 'SHCG19BNK-1' }, { name: 'shcg20bnk-1', label: 'SHCG20BNK-1' }, { name: 'shcg21bnk-1', label: 'SHCG21BNK-1' }, { name: 'shcg22bnk-1', label: 'SHCG22BNK-1' }, { name: 'shcg23bnk-1', label: 'SHCG23BNK-1' }, { name: 'shcg24bnk-1', label: 'SHCG24BNK-1' }, { name: 'shcg25bnk-1', label: 'SHCG25BNK-1' }, { name: 'shcg26bnk-1', label: 'SHCG26BNK-1' }, { name: 'shcg27bnk-1', label: 'SHCG27BNK-1' }, { name: 'shcg28bnk-1', label: 'SHCG28BNK-1' }, { name: 'shcg29bnk-1', label: 'SHCG29BNK-1' }, { name: 'shcg30bnk-1', label: 'SHCG30BNK-1' }],
@@ -59377,9 +59377,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, _vm._l((_vm.cghostnames), function(cghostname) {
     return _c('Option', {
       attrs: {
-        "value": "cghostname.name"
+        "value": cghostname.name
       }
-    }, [_vm._v(_vm._s(cghostname.label) + "}}")])
+    }, [_vm._v(_vm._s(cghostname.label))])
   }))], 1)], 1)], 1), _vm._v(" "), _c('FormItem', [_c('Button', {
     attrs: {
       "type": "primary",
@@ -61983,4 +61983,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.ffd7d420da286a4ae2b1.js.map
+//# sourceMappingURL=app.3926820434ccfb4d2c2c.js.map

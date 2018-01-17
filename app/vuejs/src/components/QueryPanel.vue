@@ -80,7 +80,7 @@
                     <Col span="2"> CG: </Col>
                     <Col span="6">
                         <Select multiple v-model="formItem.select_cg">
-                            <Option v-for="cghostname in cghostnames" value="cghostname.name">{{cghostname.label}}}}</Option>
+                            <Option v-for="cghostname in cghostnames" :value="cghostname.name">{{cghostname.label}}</Option>
                             <!--
                             <Option value="shcg17bnk-1">SHCG17BNK-1</Option>
                             <Option value="shcg18bnk-1">SHCG18BNK-1</Option>
@@ -147,7 +147,7 @@ export default {
         stopdate: date,
         stoptime: date,
         select_mme: ['shmme03bnk'],
-        select_saegw: [],
+        select_saegw: ['shsaegw03bnk'],
         select_cg: ['shcg25bnk-1']
       },
       cghostnames: [
