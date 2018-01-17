@@ -57577,14 +57577,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['tableinfo'],
   data() {
+    const pageInitSize = 50;
+    const pageInfo = this.tableinfo.slice(0, pageInitSize);
     return {
-      pageSize: 50,
+      pageSize: pageInitSize,
       pageSizeOpts: [10, 20, 40, 50, 100],
-      cghost: this.tableinfo
+      cghost: pageInfo
     };
   },
   computed: {},
-  methods: {},
+  methods: {
+    changePage() {
+      console.log('changePage:', arguments);
+    }
+  },
   components: {}
 });
 
@@ -59489,11 +59495,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "total": _vm.cghost.cdrcount,
       "size": "small",
+      "current": 1,
       "page-size": _vm.pageSize,
       "page-size-opts": _vm.pageSizeOpts,
       "show-total": "",
       "show-elevator": "",
       "show-sizer": ""
+    },
+    on: {
+      "on-change": _vm.changePage
     }
   })], 1)
 },staticRenderFns: []}
@@ -62058,4 +62068,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.50807d3fd3074efc80ee.js.map
+//# sourceMappingURL=app.c08936c33e56eb8a7988.js.map
