@@ -57471,7 +57471,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         cglist: this.formItem.select_cg,
         cdrtype: this.formItem.select_cdrtype
       }, {
-        timeout: 120000,
+        timeout: 300000,
         headers: {
           // 'Content-Type': 'applicaton/json'
           // 'xsrfCookieName': 'XSRF-TOKEN',
@@ -62072,4 +62072,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.2159a5bb54f2dddc1b60.js.map
+//# sourceMappingURL=app.5ae1fe61888950d3f863.js.map
