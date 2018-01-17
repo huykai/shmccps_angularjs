@@ -2,14 +2,18 @@
     <div class="layout-content">
       <Tabs value="">
         <TabPane v-for="cghost in cghosts.cdrinfo" :label="cghost.name" :name="cghost.name">
+          <!--
           <Table border stripe height="600" :columns="cghost.columns" :data="cghost.datas"></Table>
           <Page :total="cghost.cdrcount" size="small" :page-size="pageSize" :page-size-opts="pageSizeOpts" show-total show-elevator show-sizer></Page>
+          -->
+          <TablePanel :tableinfo="cghost" />
         </TabPane>
       </Tabs>
     </div>
 </template>
 
 <script>
+import TablePanel from '@/components/TablePanel'
 export default {
   props: {
     vuebus: {
@@ -26,10 +30,6 @@ export default {
       this.setCghosts(value)
     })
     return {
-      pageSize: 50,
-      pageSizeOpts: [
-        10, 20, 40, 50, 100
-      ],
       cdrContentBus: this.vuebus,
       cghosts: {
         cdrinfo: [
@@ -60,6 +60,9 @@ export default {
     setCghosts (value) {
       this.$set(this.cghosts, 'cdrinfo', value)
     }
+  },
+  components: {
+    'TablePanel': TablePanel
   }
   // watch: {
   //   cdrContentInfo: function (val) {
