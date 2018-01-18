@@ -57493,14 +57493,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           return str.join('&');
         }]
       }).then(response => {
-        console.log('cgcdrquery response: ', response);
+        console.log(new Date(), '  cgcdrquery response: ');
         this.cdrContentBus.$emit('change_cdrContent', response.data);
         this.loading = false;
       }).catch(error => {
         console.log('cgcdrquery error: ', error);
         this.loading = false;
       });
-      console.log('Submit Clicked!');
+      console.log(new Date(), ' Submit Clicked!');
     }
   }
 });
@@ -62072,4 +62072,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.0fe0ddf097d93d02a10a.js.map
+//# sourceMappingURL=app.7d7a6fbb61217bd80030.js.map

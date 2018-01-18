@@ -270,7 +270,7 @@ export default {
         }]
       })
       .then((response) => {
-        console.log('cgcdrquery response: ', response)
+        console.log(new Date(), '  cgcdrquery response: ')
         this.cdrContentBus.$emit('change_cdrContent', response.data)
         this.loading = false
       })
@@ -278,7 +278,7 @@ export default {
         console.log('cgcdrquery error: ', error)
         this.loading = false
       })
-      console.log('Submit Clicked!')
+      console.log(new Date(), ' Submit Clicked!')
     }
   }
 }
