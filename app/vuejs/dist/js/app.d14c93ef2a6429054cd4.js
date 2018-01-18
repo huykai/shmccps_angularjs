@@ -57426,6 +57426,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       console.log('token: ', 'Bearer ' + __WEBPACK_IMPORTED_MODULE_1_js_storage___default.a.sessionStorage.get('token'));
       console.log(`startdate: ${this.formItem.startdate} ; starttime: ${this.formItem.starttime}`);
       __WEBPACK_IMPORTED_MODULE_0_axios___default.a.defaults.headers.common['Authorization'] = 'Bearer ' + __WEBPACK_IMPORTED_MODULE_1_js_storage___default.a.sessionStorage.get('token');
+      __WEBPACK_IMPORTED_MODULE_0_axios___default.a.defaults.timeout = 600000;
       // axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
       if (this.formItem.startdate === '') {
         alert('Startdate 不能为空');
@@ -62072,4 +62073,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.7d7a6fbb61217bd80030.js.map
+//# sourceMappingURL=app.d14c93ef2a6429054cd4.js.map

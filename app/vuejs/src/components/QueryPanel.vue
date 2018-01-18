@@ -202,6 +202,7 @@ export default {
       console.log('token: ', 'Bearer ' + Storages.sessionStorage.get('token'))
       console.log(`startdate: ${this.formItem.startdate} ; starttime: ${this.formItem.starttime}`)
       axios.defaults.headers.common['Authorization'] = 'Bearer ' + Storages.sessionStorage.get('token')
+      axios.defaults.timeout = 600000
       // axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
       if (this.formItem.startdate === '') {
         alert('Startdate 不能为空')
