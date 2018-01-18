@@ -247,7 +247,7 @@ export default {
         cglist: this.formItem.select_cg,
         cdrtype: this.formItem.select_cdrtype
       }, {
-        timeout: 600000,
+        timeout: 1200000,
         headers: {
           // 'Content-Type': 'applicaton/json'
           // 'xsrfCookieName': 'XSRF-TOKEN',
