@@ -7,7 +7,7 @@
         </div>
         <i-menu active-name="1" theme="dark" width="auto">
             <div class="layout-logo-left"></div>
-            <menu-item name="1" @select="cdrQuery">
+            <menu-item name="1" @on-select="cdrQuery">
                 <icon type="ios-navigate" :size="iconSize"></icon>
                 <span class="layout-text">话单查询</span>
             </menu-item>
