@@ -59019,7 +59019,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "name": "1"
     },
     on: {
-      "seclect": _vm.cdrQuery
+      "select": _vm.cdrQuery
     }
   }, [_c('icon', {
     attrs: {
@@ -62080,4 +62080,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.991c9fd7e787f56b3d0f.js.map
+//# sourceMappingURL=app.9e766666da157c58499e.js.map
