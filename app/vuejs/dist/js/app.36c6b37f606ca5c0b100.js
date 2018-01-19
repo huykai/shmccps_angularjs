@@ -57127,7 +57127,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     }
   },
   methods: {
-    cdrQuery() {
+    cdrQuery(name) {
       console.log('cdrQuery begin');
       alert('cdrQuery begin');
     },
@@ -59011,15 +59011,15 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "active-name": "1",
       "theme": "dark",
       "width": "auto"
+    },
+    on: {
+      "on-select": _vm.cdrQuery
     }
   }, [_c('div', {
     staticClass: "layout-logo-left"
   }), _vm._v(" "), _c('menu-item', {
     attrs: {
       "name": "1"
-    },
-    on: {
-      "on-select": _vm.cdrQuery
     }
   }, [_c('icon', {
     attrs: {
@@ -62080,4 +62080,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.4908118f2f128bc88e37.js.map
+//# sourceMappingURL=app.36c6b37f606ca5c0b100.js.map

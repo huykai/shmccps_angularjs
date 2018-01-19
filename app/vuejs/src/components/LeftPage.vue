@@ -5,9 +5,9 @@
                 <icon type="navicon" size="32"></icon>
             </i-button>
         </div>
-        <i-menu active-name="1" theme="dark" width="auto">
+        <i-menu active-name="1" theme="dark" width="auto" @on-select="cdrQuery">
             <div class="layout-logo-left"></div>
-            <menu-item name="1" @on-select="cdrQuery">
+            <menu-item name="1">
                 <icon type="ios-navigate" :size="iconSize"></icon>
                 <span class="layout-text">话单查询</span>
             </menu-item>
@@ -46,7 +46,7 @@ export default {
     }
   },
   methods: {
-    cdrQuery () {
+    cdrQuery (name) {
       console.log('cdrQuery begin')
       alert('cdrQuery begin')
     },
