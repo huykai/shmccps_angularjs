@@ -101,6 +101,24 @@
                     </Col>
                 </Row>
             </FormItem>
+            <FormItem label="选择CDR统计选项" v-if="cdrForAnalysis">
+                <Row>
+                    <Col span="2"> 分析-分组选项: </Col>
+                    <Col span="10">
+                        <Select multiple v-model="formItem.select_group_items">
+                            <Option v-for="cdrgroupitem in cdrgroupitems" :value="cdrgroupitem.name">{{cdrgroupitem.label}}</Option>
+                        </Select>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col span="2"> 分析-观察选项: </Col>
+                    <Col span="10">
+                        <Select multiple v-model="formItem.select_monitor_items">
+                            <Option v-for="cdrmonitoritem in cdrmonitoritems" :value="cdrmonitoritem.name">{{cdrmonitoritem.label}}</Option>
+                        </Select>
+                    </Col>
+                </Row>
+            </FormItem>
             
             <!--
             <FormItem label="Slider">
@@ -137,6 +155,9 @@ export default {
   },
   data () {
     let date = new Date()
+    this.vuebus.on('cdrAnalysis', this.setForAnalysis)
+    this.vuebus.on('cdrQuery', this.cdrForQuery)
+    this.vuebus.on('cdrStatistics', this.cdrForStatistics)
     return {
       formItem: {
         imsi: '',
@@ -171,6 +192,10 @@ export default {
       querypanelform_show: true,
       message: '点击隐藏查询参数面板',
       loading: false,
+      postApiString: '/api/getCgCdr',
+      showAnalysisPanel: true,
+      showQueryPanel: false,
+      showStatisticsPanel: false,
       cdrContentBus: this.vuebus
     }
   },
@@ -193,6 +218,24 @@ export default {
         this.collapse = 'false'
         this.message = '点击隐藏参数面板'
       }
+    },
+    setForAnalysis () {
+      this.showAnalysisPanel = true
+      this.showQueryPanel = false
+      this.showStatisticsPanel = false
+      this.postApiString = '/api/getCgCdrAnalysis'
+    },
+    setForQuery () {
+      this.showAnalysisPanel = false
+      this.showQueryPanel = true
+      this.showStatisticsPanel = false
+      this.postApiString = '/api/getCgCdr'
+    },
+    cdrForStatistics () {
+      this.showAnalysisPanel = false
+      this.showQueryPanel = false
+      this.showStatisticsPanel = true
+      this.postApiString = '/api/getCgCdrStatistics'
     },
     submitClick () {
       if (this.loading === false) {
@@ -238,7 +281,8 @@ export default {
       timeMinute = time.getMinutes() < 10 ? '0' + time.getMinutes() : time.getMinutes()
       timeSecond = time.getSeconds() < 10 ? '0' + time.getSeconds() : time.getSeconds()
       let stopdatetime = dateYear + dateMonth + dateDate + timeHour + timeMinute + timeSecond
-      axios.post('/api/getCgCdr', {
+      // axios.post('/api/getCgCdr', {
+      axios.post(this.postApiString, {
         imsi: this.formItem.imsi,
         msisdn: this.formItem.msisdn,
         startdatetime: startdatetime,
@@ -246,7 +290,9 @@ export default {
         mmelist: this.formItem.select_mme,
         saegwlist: this.formItem.select_saegw,
         cglist: this.formItem.select_cg,
-        cdrtype: this.formItem.select_cdrtype
+        cdrtype: this.formItem.select_cdrtype,
+        cdrgroupitems: this.formItem.select_group_items,
+        cdrmonitoritems: this.formItem.select_monitor_items
       }, {
         timeout: 1200000,
         headers: {

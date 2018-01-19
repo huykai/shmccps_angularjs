@@ -5,17 +5,17 @@
                 <icon type="navicon" size="32"></icon>
             </i-button>
         </div>
-        <i-menu active-name="1" theme="dark" width="auto" @on-select="cdrQuery">
+        <i-menu active-name="1" theme="dark" width="auto" @on-select="cdrFunctionChoose">
             <div class="layout-logo-left"></div>
-            <menu-item name="1">
+            <menu-item name="cdrQuery">
                 <icon type="ios-navigate" :size="iconSize"></icon>
                 <span class="layout-text">话单查询</span>
             </menu-item>
-            <menu-item name="2">
+            <menu-item name="cdrStatistics">
                 <icon type="ios-keypad" :size="iconSize"></icon>
                 <span class="layout-text">话单统计</span>
             </menu-item>
-            <menu-item name="3">
+            <menu-item name="cdrAnalysis">
                 <icon type="ios-analytics" :size="iconSize"></icon>
                 <span class="layout-text">话单故障分析</span>
             </menu-item>
@@ -46,9 +46,22 @@ export default {
     }
   },
   methods: {
-    cdrQuery (name) {
-      console.log('cdrQuery begin')
-      alert('cdrQuery begin')
+    cdrFunctionChoose (name) {
+      console.log('cdrFunctionChoose begin')
+      switch (name) {
+        case 'cdrStatistics': {
+          this.vue.$emit('cdrStatistics')
+          break
+        }
+        case 'cdrQuery': {
+          this.vue.$emit('cdrQuery')
+          break
+        }
+        case 'cdrAnalysis': {
+          this.vue.$emit('cdrAnalysis')
+          break
+        }
+      }
     },
     toggleClick () {
       // console.log(typeof this.vue_instance)

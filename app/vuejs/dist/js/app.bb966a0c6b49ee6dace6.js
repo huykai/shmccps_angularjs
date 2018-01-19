@@ -57127,9 +57127,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     }
   },
   methods: {
-    cdrQuery(name) {
-      console.log('cdrQuery begin');
-      alert('cdrQuery begin');
+    cdrFunctionChoose(name) {
+      console.log('cdrFunctionChoose begin');
+      switch (name) {
+        case 'cdrStatistics':
+          {
+            this.vue.$emit('cdrStatistics');
+            break;
+          }
+        case 'cdrQuery':
+          {
+            this.vue.$emit('cdrQuery');
+            break;
+          }
+        case 'cdrAnalysis':
+          {
+            this.vue.$emit('cdrAnalysis');
+            break;
+          }
+      }
     },
     toggleClick() {
       // console.log(typeof this.vue_instance)
@@ -57365,6 +57381,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -57381,6 +57415,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
   data() {
     let date = new Date();
+    this.vuebus.on('cdrAnalysis', this.setForAnalysis);
+    this.vuebus.on('cdrQuery', this.cdrForQuery);
+    this.vuebus.on('cdrStatistics', this.cdrForStatistics);
     return {
       formItem: {
         imsi: '',
@@ -57399,6 +57436,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       querypanelform_show: true,
       message: '点击隐藏查询参数面板',
       loading: false,
+      postApiString: '/api/getCgCdr',
+      showAnalysisPanel: true,
+      showQueryPanel: false,
+      showStatisticsPanel: false,
       cdrContentBus: this.vuebus
     };
   },
@@ -57421,6 +57462,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         this.collapse = 'false';
         this.message = '点击隐藏参数面板';
       }
+    },
+    setForAnalysis() {
+      this.showAnalysisPanel = true;
+      this.showQueryPanel = false;
+      this.showStatisticsPanel = false;
+      this.postApiString = '/api/getCgCdrAnalysis';
+    },
+    setForQuery() {
+      this.showAnalysisPanel = false;
+      this.showQueryPanel = true;
+      this.showStatisticsPanel = false;
+      this.postApiString = '/api/getCgCdr';
+    },
+    cdrForStatistics() {
+      this.showAnalysisPanel = false;
+      this.showQueryPanel = false;
+      this.showStatisticsPanel = true;
+      this.postApiString = '/api/getCgCdrStatistics';
     },
     submitClick() {
       if (this.loading === false) {
@@ -57466,7 +57525,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       timeMinute = time.getMinutes() < 10 ? '0' + time.getMinutes() : time.getMinutes();
       timeSecond = time.getSeconds() < 10 ? '0' + time.getSeconds() : time.getSeconds();
       let stopdatetime = dateYear + dateMonth + dateDate + timeHour + timeMinute + timeSecond;
-      __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post('/api/getCgCdr', {
+      // axios.post('/api/getCgCdr', {
+      __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post(this.postApiString, {
         imsi: this.formItem.imsi,
         msisdn: this.formItem.msisdn,
         startdatetime: startdatetime,
@@ -57474,7 +57534,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         mmelist: this.formItem.select_mme,
         saegwlist: this.formItem.select_saegw,
         cglist: this.formItem.select_cg,
-        cdrtype: this.formItem.select_cdrtype
+        cdrtype: this.formItem.select_cdrtype,
+        cdrgroupitems: this.formItem.select_group_items,
+        cdrmonitoritems: this.formItem.select_monitor_items
       }, {
         timeout: 1200000,
         headers: {
@@ -59013,13 +59075,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "width": "auto"
     },
     on: {
-      "on-select": _vm.cdrQuery
+      "on-select": _vm.cdrFunctionChoose
     }
   }, [_c('div', {
     staticClass: "layout-logo-left"
   }), _vm._v(" "), _c('menu-item', {
     attrs: {
-      "name": "1"
+      "name": "cdrQuery"
     }
   }, [_c('icon', {
     attrs: {
@@ -59030,7 +59092,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "layout-text"
   }, [_vm._v("话单查询")])], 1), _vm._v(" "), _c('menu-item', {
     attrs: {
-      "name": "2"
+      "name": "cdrStatistics"
     }
   }, [_c('icon', {
     attrs: {
@@ -59041,7 +59103,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "layout-text"
   }, [_vm._v("话单统计")])], 1), _vm._v(" "), _c('menu-item', {
     attrs: {
-      "name": "3"
+      "name": "cdrAnalysis"
     }
   }, [_c('icon', {
     attrs: {
@@ -59460,7 +59522,61 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "value": cghostname.name
       }
     }, [_vm._v(_vm._s(cghostname.label))])
-  }))], 1)], 1)], 1), _vm._v(" "), _c('FormItem', [_c('Button', {
+  }))], 1)], 1)], 1), _vm._v(" "), (_vm.cdrForAnalysis) ? _c('FormItem', {
+    attrs: {
+      "label": "选择CDR统计选项"
+    }
+  }, [_c('Row', [_c('Col', {
+    attrs: {
+      "span": "2"
+    }
+  }, [_vm._v(" 分析-分组选项: ")]), _vm._v(" "), _c('Col', {
+    attrs: {
+      "span": "10"
+    }
+  }, [_c('Select', {
+    attrs: {
+      "multiple": ""
+    },
+    model: {
+      value: (_vm.formItem.select_group_items),
+      callback: function($$v) {
+        _vm.$set(_vm.formItem, "select_group_items", $$v)
+      },
+      expression: "formItem.select_group_items"
+    }
+  }, _vm._l((_vm.cdrgroupitems), function(cdrgroupitem) {
+    return _c('Option', {
+      attrs: {
+        "value": cdrgroupitem.name
+      }
+    }, [_vm._v(_vm._s(cdrgroupitem.label))])
+  }))], 1)], 1), _vm._v(" "), _c('Row', [_c('Col', {
+    attrs: {
+      "span": "2"
+    }
+  }, [_vm._v(" 分析-观察选项: ")]), _vm._v(" "), _c('Col', {
+    attrs: {
+      "span": "10"
+    }
+  }, [_c('Select', {
+    attrs: {
+      "multiple": ""
+    },
+    model: {
+      value: (_vm.formItem.select_monitor_items),
+      callback: function($$v) {
+        _vm.$set(_vm.formItem, "select_monitor_items", $$v)
+      },
+      expression: "formItem.select_monitor_items"
+    }
+  }, _vm._l((_vm.cdrmonitoritems), function(cdrmonitoritem) {
+    return _c('Option', {
+      attrs: {
+        "value": cdrmonitoritem.name
+      }
+    }, [_vm._v(_vm._s(cdrmonitoritem.label))])
+  }))], 1)], 1)], 1) : _vm._e(), _vm._v(" "), _c('FormItem', [_c('Button', {
     attrs: {
       "type": "primary",
       "loading": _vm.loading
@@ -62080,4 +62196,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.36c6b37f606ca5c0b100.js.map
+//# sourceMappingURL=app.bb966a0c6b49ee6dace6.js.map
