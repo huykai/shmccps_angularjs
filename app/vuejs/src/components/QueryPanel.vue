@@ -276,7 +276,7 @@ export default {
         this.loading = false
       })
       .catch((error) => {
-        console.log('cgcdrquery error: ', error)
+        console.log(new Date(), ' cgcdrquery error: ', error)
         this.loading = false
       })
       console.log(new Date(), ' Submit Clicked!')

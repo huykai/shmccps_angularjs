@@ -7,7 +7,7 @@
         </div>
         <i-menu active-name="1" theme="dark" width="auto">
             <div class="layout-logo-left"></div>
-            <menu-item name="1">
+            <menu-item name="1" @onSeclect="cdrQuery">
                 <icon type="ios-navigate" :size="iconSize"></icon>
                 <span class="layout-text">话单查询</span>
             </menu-item>
@@ -46,6 +46,10 @@ export default {
     }
   },
   methods: {
+    cdrQuery () {
+      console.log('cdrQuery begin')
+      alert('cdrQuery begin')
+    },
     toggleClick () {
       // console.log(typeof this.vue_instance)
       // console.log(this.vue_instance)

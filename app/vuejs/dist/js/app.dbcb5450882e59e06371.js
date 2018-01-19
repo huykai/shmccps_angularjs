@@ -57127,6 +57127,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     }
   },
   methods: {
+    cdrQuery() {
+      console.log('cdrQuery begin');
+      alert('cdrQuery begin');
+    },
     toggleClick() {
       // console.log(typeof this.vue_instance)
       // console.log(this.vue_instance)
@@ -57498,7 +57502,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         this.cdrContentBus.$emit('change_cdrContent', response.data);
         this.loading = false;
       }).catch(error => {
-        console.log('cgcdrquery error: ', error);
+        console.log(new Date(), ' cgcdrquery error: ', error);
         this.loading = false;
       });
       console.log(new Date(), ' Submit Clicked!');
@@ -59013,6 +59017,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }), _vm._v(" "), _c('menu-item', {
     attrs: {
       "name": "1"
+    },
+    on: {
+      "onSeclect": _vm.cdrQuery
     }
   }, [_c('icon', {
     attrs: {
@@ -62073,4 +62080,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.d14c93ef2a6429054cd4.js.map
+//# sourceMappingURL=app.dbcb5450882e59e06371.js.map
