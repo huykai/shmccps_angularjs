@@ -25,7 +25,6 @@ export default {
     vuetmp.$on('change_spanLeft', (value) => {
       console.log('change_spanLeft value: ', value)
       this.$set(this.vueprops, 'span', 24 - value)
-      this.setRightSpan(value)
     })
     const vueprops = {
       vueinstance: vuetmp,
@@ -40,9 +39,6 @@ export default {
   computed: {
   },
   methods: {
-    setRightSpan (value) {
-      // this.$set(this.vueprops, 'span', 24 - value)
-    }
   },
   components: {
     'leftpage': leftpage,

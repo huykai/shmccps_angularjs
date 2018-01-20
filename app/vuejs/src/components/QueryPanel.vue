@@ -6,7 +6,7 @@
                 {{message}}
             </i-button>
         </div>     
-        <Form v-if="querypanelform_show" :model="formItem" :label-width="80">
+        <Form v-if="querypanelform_show" v-if="!showAnalysisPanel" :model="formItem" :label-width="80">
             <FormItem label="号码信息">
                 <Row>
                     <Col span="2"> IMSI: </Col>
@@ -28,7 +28,7 @@
                 </Row>
             </FormItem>
             
-            <FormItem label="选择时间段">
+            <FormItem label="选择时间段" v-if="!showAnalysisPanel"> 
                 <Row>
                     <Col span="5">
                         <DatePicker type="date" placeholder="Select date" v-model="formItem.startdate"></DatePicker>
@@ -90,13 +90,13 @@
                     <Col span="2"> 分析-分组选项: </Col>
                     <Col span="10">
                         <Select multiple v-model="formItem.select_group_items">
-                            <Option v-for="cdrgroupitem in cdrgroupitems" :value="cdrgroupitem.name">{{cdrgroupitem.label}}</Option>
+                            <Option v-for="cdrgroupitem in cdrgroupitems[select_cdrtype]" :value="cdrgroupitem.name">{{cdrgroupitem.label}}</Option>
                         </Select>
                     </Col>
                     <Col span="2"> 分析-观察选项: </Col>
                     <Col span="10">
                         <Select multiple v-model="formItem.select_monitor_items">
-                            <Option v-for="cdrmonitoritem in cdrmonitoritems" :value="cdrmonitoritem.name">{{cdrmonitoritem.label}}</Option>
+                            <Option v-for="cdrmonitoritem in cdrmonitoritems[select_cdrtype]" :value="cdrmonitoritem.name">{{cdrmonitoritem.label}}</Option>
                         </Select>
                     </Col>
                 </Row>
@@ -151,7 +151,9 @@ export default {
         stoptime: date,
         select_mme: ['shmme03bnk'],
         select_saegw: ['shsaegw03bnk'],
-        select_cg: ['shcg25bnk-1']
+        select_cg: ['shcg25bnk-1'],
+        select_group_items: ['accessPointNameNI'],
+        select_monitor_items: ['chargingCharacteristics']
       },
       cghostnames: [
         {name: 'shcg16bnk-1', label: 'SHCG16BNK-1'},
@@ -170,6 +172,92 @@ export default {
         {name: 'shcg29bnk-1', label: 'SHCG29BNK-1'},
         {name: 'shcg30bnk-1', label: 'SHCG30BNK-1'}
       ],
+      cdrgroupitems: {
+        scdr: [
+          {name: 'duration', label: 'duration'},
+          {name: 'accessPointNameNI', label: 'accessPointNameNI'},
+          {name: 'causeForRecClosing', label: 'causeForRecClosing'},
+          {name: 'servedIMSI', label: 'servedIMSI'},
+          {name: 'sgsnAddress', label: 'sgsnAddress'},
+          {name: 'accessPointNameOI', label: 'accessPointNameOI'},
+          {name: 'servedMSISDN', label: 'servedMSISDN'},
+          {name: 'chargingCharacteristics', label: 'chargingCharacteristics'},
+          {name: 'systemType', label: 'systemType'},
+          {name: 'dataVolumeGPRSUplink', label: 'dataVolumeGPRSUplink'},
+          {name: 'dataVolumeGPRSDownlink', label: 'dataVolumeGPRSDownlink'}
+        ],
+        sgwcdr: [
+          {name: 'duration', label: 'duration'},
+          {name: 'accessPointNameNI', label: 'accessPointNameNI'},
+          {name: 'servedIMSI', label: 'servedIMSI'},
+          {name: 'sGWAddress', label: 'sGWAddress'},
+          {name: 'pGWAddressUsed', label: 'pGWAddressUsed'},
+          {name: 'nodeID', label: 'nodeID'},
+          {name: 'rATType', label: 'rATType'},
+          {name: 'servedMSISDN', label: 'servedMSISDN'},
+          {name: 'chargingCharacteristics', label: 'chargingCharacteristics'},
+          {name: 'dataVolumeGPRSUplink', label: 'dataVolumeGPRSUplink'},
+          {name: 'dataVolumeGPRSDownlink', label: 'dataVolumeGPRSDownlink'}
+        ],
+        pgwcdr: [
+          {name: 'duration', label: 'duration'},
+          {name: 'accessPointNameNI', label: 'accessPointNameNI'},
+          {name: 'causeForRecClosing', label: 'causeForRecClosing'},
+          {name: 'servedIMSI', label: 'servedIMSI'},
+          {name: 'pGWAddress', label: 'pGWAddress'},
+          {name: 'nodeID', label: 'nodeID'},
+          {name: 'ratingGroup', label: 'ratingGroup'},
+          {name: 'serviceIdentifier', label: 'serviceIdentifier'},
+          {name: 'rATType', label: 'rATType'},
+          {name: 'servedMSISDN', label: 'servedMSISDN'},
+          {name: 'chargingCharacteristics', label: 'chargingCharacteristics'},
+          {name: 'datavolumeFBCUplink', label: 'datavolumeFBCUplink'},
+          {name: 'datavolumeFBCDownlink', label: 'datavolumeFBCDownlink'}
+        ]
+      },
+      cdrmonitoritems: {
+        scdr: [
+          {name: 'duration', label: 'duration'},
+          {name: 'accessPointNameNI', label: 'accessPointNameNI'},
+          {name: 'causeForRecClosing', label: 'causeForRecClosing'},
+          {name: 'servedIMSI', label: 'servedIMSI'},
+          {name: 'sgsnAddress', label: 'sgsnAddress'},
+          {name: 'accessPointNameOI', label: 'accessPointNameOI'},
+          {name: 'servedMSISDN', label: 'servedMSISDN'},
+          {name: 'chargingCharacteristics', label: 'chargingCharacteristics'},
+          {name: 'systemType', label: 'systemType'},
+          {name: 'dataVolumeGPRSUplink', label: 'dataVolumeGPRSUplink'},
+          {name: 'dataVolumeGPRSDownlink', label: 'dataVolumeGPRSDownlink'}
+        ],
+        sgwcdr: [
+          {name: 'duration', label: 'duration'},
+          {name: 'accessPointNameNI', label: 'accessPointNameNI'},
+          {name: 'servedIMSI', label: 'servedIMSI'},
+          {name: 'sGWAddress', label: 'sGWAddress'},
+          {name: 'pGWAddressUsed', label: 'pGWAddressUsed'},
+          {name: 'nodeID', label: 'nodeID'},
+          {name: 'rATType', label: 'rATType'},
+          {name: 'servedMSISDN', label: 'servedMSISDN'},
+          {name: 'chargingCharacteristics', label: 'chargingCharacteristics'},
+          {name: 'dataVolumeGPRSUplink', label: 'dataVolumeGPRSUplink'},
+          {name: 'dataVolumeGPRSDownlink', label: 'dataVolumeGPRSDownlink'}
+        ],
+        pgwcdr: [
+          {name: 'duration', label: 'duration'},
+          {name: 'accessPointNameNI', label: 'accessPointNameNI'},
+          {name: 'causeForRecClosing', label: 'causeForRecClosing'},
+          {name: 'servedIMSI', label: 'servedIMSI'},
+          {name: 'pGWAddress', label: 'pGWAddress'},
+          {name: 'nodeID', label: 'nodeID'},
+          {name: 'ratingGroup', label: 'ratingGroup'},
+          {name: 'serviceIdentifier', label: 'serviceIdentifier'},
+          {name: 'rATType', label: 'rATType'},
+          {name: 'servedMSISDN', label: 'servedMSISDN'},
+          {name: 'chargingCharacteristics', label: 'chargingCharacteristics'},
+          {name: 'datavolumeFBCUplink', label: 'datavolumeFBCUplink'},
+          {name: 'datavolumeFBCDownlink', label: 'datavolumeFBCDownlink'}
+        ]
+      },
       collapse: 'false',
       querypanelform_show: true,
       message: '点击隐藏查询参数面板',

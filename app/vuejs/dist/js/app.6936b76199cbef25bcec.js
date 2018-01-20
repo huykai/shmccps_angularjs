@@ -57411,9 +57411,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         stoptime: date,
         select_mme: ['shmme03bnk'],
         select_saegw: ['shsaegw03bnk'],
-        select_cg: ['shcg25bnk-1']
+        select_cg: ['shcg25bnk-1'],
+        select_group_items: ['accessPointNameNI'],
+        select_monitor_items: ['chargingCharacteristics']
       },
       cghostnames: [{ name: 'shcg16bnk-1', label: 'SHCG16BNK-1' }, { name: 'shcg17bnk-1', label: 'SHCG17BNK-1' }, { name: 'shcg18bnk-1', label: 'SHCG18BNK-1' }, { name: 'shcg19bnk-1', label: 'SHCG19BNK-1' }, { name: 'shcg20bnk-1', label: 'SHCG20BNK-1' }, { name: 'shcg21bnk-1', label: 'SHCG21BNK-1' }, { name: 'shcg22bnk-1', label: 'SHCG22BNK-1' }, { name: 'shcg23bnk-1', label: 'SHCG23BNK-1' }, { name: 'shcg24bnk-1', label: 'SHCG24BNK-1' }, { name: 'shcg25bnk-1', label: 'SHCG25BNK-1' }, { name: 'shcg26bnk-1', label: 'SHCG26BNK-1' }, { name: 'shcg27bnk-1', label: 'SHCG27BNK-1' }, { name: 'shcg28bnk-1', label: 'SHCG28BNK-1' }, { name: 'shcg29bnk-1', label: 'SHCG29BNK-1' }, { name: 'shcg30bnk-1', label: 'SHCG30BNK-1' }],
+      cdrgroupitems: {
+        scdr: [{ name: 'duration', label: 'duration' }, { name: 'accessPointNameNI', label: 'accessPointNameNI' }, { name: 'causeForRecClosing', label: 'causeForRecClosing' }, { name: 'servedIMSI', label: 'servedIMSI' }, { name: 'sgsnAddress', label: 'sgsnAddress' }, { name: 'accessPointNameOI', label: 'accessPointNameOI' }, { name: 'servedMSISDN', label: 'servedMSISDN' }, { name: 'chargingCharacteristics', label: 'chargingCharacteristics' }, { name: 'systemType', label: 'systemType' }, { name: 'dataVolumeGPRSUplink', label: 'dataVolumeGPRSUplink' }, { name: 'dataVolumeGPRSDownlink', label: 'dataVolumeGPRSDownlink' }],
+        sgwcdr: [{ name: 'duration', label: 'duration' }, { name: 'accessPointNameNI', label: 'accessPointNameNI' }, { name: 'servedIMSI', label: 'servedIMSI' }, { name: 'sGWAddress', label: 'sGWAddress' }, { name: 'pGWAddressUsed', label: 'pGWAddressUsed' }, { name: 'nodeID', label: 'nodeID' }, { name: 'rATType', label: 'rATType' }, { name: 'servedMSISDN', label: 'servedMSISDN' }, { name: 'chargingCharacteristics', label: 'chargingCharacteristics' }, { name: 'dataVolumeGPRSUplink', label: 'dataVolumeGPRSUplink' }, { name: 'dataVolumeGPRSDownlink', label: 'dataVolumeGPRSDownlink' }],
+        pgwcdr: [{ name: 'duration', label: 'duration' }, { name: 'accessPointNameNI', label: 'accessPointNameNI' }, { name: 'causeForRecClosing', label: 'causeForRecClosing' }, { name: 'servedIMSI', label: 'servedIMSI' }, { name: 'pGWAddress', label: 'pGWAddress' }, { name: 'nodeID', label: 'nodeID' }, { name: 'ratingGroup', label: 'ratingGroup' }, { name: 'serviceIdentifier', label: 'serviceIdentifier' }, { name: 'rATType', label: 'rATType' }, { name: 'servedMSISDN', label: 'servedMSISDN' }, { name: 'chargingCharacteristics', label: 'chargingCharacteristics' }, { name: 'datavolumeFBCUplink', label: 'datavolumeFBCUplink' }, { name: 'datavolumeFBCDownlink', label: 'datavolumeFBCDownlink' }]
+      },
+      cdrmonitoritems: {
+        scdr: [{ name: 'duration', label: 'duration' }, { name: 'accessPointNameNI', label: 'accessPointNameNI' }, { name: 'causeForRecClosing', label: 'causeForRecClosing' }, { name: 'servedIMSI', label: 'servedIMSI' }, { name: 'sgsnAddress', label: 'sgsnAddress' }, { name: 'accessPointNameOI', label: 'accessPointNameOI' }, { name: 'servedMSISDN', label: 'servedMSISDN' }, { name: 'chargingCharacteristics', label: 'chargingCharacteristics' }, { name: 'systemType', label: 'systemType' }, { name: 'dataVolumeGPRSUplink', label: 'dataVolumeGPRSUplink' }, { name: 'dataVolumeGPRSDownlink', label: 'dataVolumeGPRSDownlink' }],
+        sgwcdr: [{ name: 'duration', label: 'duration' }, { name: 'accessPointNameNI', label: 'accessPointNameNI' }, { name: 'servedIMSI', label: 'servedIMSI' }, { name: 'sGWAddress', label: 'sGWAddress' }, { name: 'pGWAddressUsed', label: 'pGWAddressUsed' }, { name: 'nodeID', label: 'nodeID' }, { name: 'rATType', label: 'rATType' }, { name: 'servedMSISDN', label: 'servedMSISDN' }, { name: 'chargingCharacteristics', label: 'chargingCharacteristics' }, { name: 'dataVolumeGPRSUplink', label: 'dataVolumeGPRSUplink' }, { name: 'dataVolumeGPRSDownlink', label: 'dataVolumeGPRSDownlink' }],
+        pgwcdr: [{ name: 'duration', label: 'duration' }, { name: 'accessPointNameNI', label: 'accessPointNameNI' }, { name: 'causeForRecClosing', label: 'causeForRecClosing' }, { name: 'servedIMSI', label: 'servedIMSI' }, { name: 'pGWAddress', label: 'pGWAddress' }, { name: 'nodeID', label: 'nodeID' }, { name: 'ratingGroup', label: 'ratingGroup' }, { name: 'serviceIdentifier', label: 'serviceIdentifier' }, { name: 'rATType', label: 'rATType' }, { name: 'servedMSISDN', label: 'servedMSISDN' }, { name: 'chargingCharacteristics', label: 'chargingCharacteristics' }, { name: 'datavolumeFBCUplink', label: 'datavolumeFBCUplink' }, { name: 'datavolumeFBCDownlink', label: 'datavolumeFBCDownlink' }]
+      },
       collapse: 'false',
       querypanelform_show: true,
       message: '点击隐藏查询参数面板',
@@ -57697,7 +57709,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     vuetmp.$on('change_spanLeft', value => {
       console.log('change_spanLeft value: ', value);
       this.$set(this.vueprops, 'span', 24 - value);
-      this.setRightSpan(value);
     });
     const vueprops = {
       vueinstance: vuetmp,
@@ -57710,11 +57721,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     };
   },
   computed: {},
-  methods: {
-    setRightSpan(value) {
-      // this.$set(this.vueprops, 'span', 24 - value)
-    }
-  },
+  methods: {},
   components: {
     'leftpage': __WEBPACK_IMPORTED_MODULE_1__components_LeftPage___default.a,
     'rightpage': __WEBPACK_IMPORTED_MODULE_2__components_RightPage___default.a
@@ -59227,7 +59234,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "type": "navicon",
       "size": "16"
     }
-  }), _vm._v("\n            " + _vm._s(_vm.message) + "\n        ")], 1)], 1), _vm._v(" "), (_vm.querypanelform_show) ? _c('Form', {
+  }), _vm._v("\n            " + _vm._s(_vm.message) + "\n        ")], 1)], 1), _vm._v(" "), (!_vm.showAnalysisPanel) ? _c('Form', {
+    directives: [{
+      name: "if",
+      rawName: "v-if",
+      value: (!_vm.showAnalysisPanel),
+      expression: "!showAnalysisPanel"
+    }],
     attrs: {
       "model": _vm.formItem,
       "label-width": 80
@@ -59302,7 +59315,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "value": "pgwcdr"
     }
-  }, [_vm._v("PGW话单")])], 1)], 1)], 1)], 1), _vm._v(" "), _c('FormItem', {
+  }, [_vm._v("PGW话单")])], 1)], 1)], 1)], 1), _vm._v(" "), (!_vm.showAnalysisPanel) ? _c('FormItem', {
     attrs: {
       "label": "选择时间段"
     }
@@ -59388,7 +59401,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       },
       expression: "formItem.stoptime"
     }
-  })], 1)], 1)], 1), _vm._v(" "), _c('FormItem', {
+  })], 1)], 1)], 1) : _vm._e(), _vm._v(" "), _c('FormItem', {
     attrs: {
       "label": "网元信息"
     }
@@ -59550,7 +59563,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       },
       expression: "formItem.select_group_items"
     }
-  }, _vm._l((_vm.cdrgroupitems), function(cdrgroupitem) {
+  }, _vm._l((_vm.cdrgroupitems[_vm.select_cdrtype]), function(cdrgroupitem) {
     return _c('Option', {
       attrs: {
         "value": cdrgroupitem.name
@@ -59575,7 +59588,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       },
       expression: "formItem.select_monitor_items"
     }
-  }, _vm._l((_vm.cdrmonitoritems), function(cdrmonitoritem) {
+  }, _vm._l((_vm.cdrmonitoritems[_vm.select_cdrtype]), function(cdrmonitoritem) {
     return _c('Option', {
       attrs: {
         "value": cdrmonitoritem.name
@@ -62201,4 +62214,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.007ef1212a467b0a6e62.js.map
+//# sourceMappingURL=app.6936b76199cbef25bcec.js.map
