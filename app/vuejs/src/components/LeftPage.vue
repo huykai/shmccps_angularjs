@@ -7,7 +7,7 @@
         </div>
         <i-menu active-name="1" theme="dark" width="auto" @on-select="cdrFunctionChoose">
             <div class="layout-logo-left"></div>
-            <menu-item name="cdrQuery">
+            <menu-item name="cdrQuery" :class="haveText">
                 <icon type="ios-navigate" :size="iconSize"></icon>
                 <span class="layout-text">话单查询</span>
             </menu-item>
@@ -37,6 +37,7 @@ export default {
     return {
       spanLeft: 5,
       spanRight: 19,
+      haveText: true,
       vue_instance: this.vueinstance
     }
   },
@@ -70,10 +71,12 @@ export default {
       if (this.spanLeft === 5) {
         this.spanLeft = 2
         this.spanRight = 22
+        this.haveText = false
         bus.$emit('change_spanLeft', 2)
       } else {
         this.spanLeft = 5
         this.spanRight = 19
+        this.haveText = true
         bus.$emit('change_spanLeft', 5)
       }
     }

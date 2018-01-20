@@ -6,8 +6,8 @@
                 {{message}}
             </i-button>
         </div>     
-        <Form v-if="querypanelform_show" v-if="!showAnalysisPanel" :model="formItem" :label-width="80">
-            <FormItem label="号码信息">
+        <Form v-if="querypanelform_show" :model="formItem" :label-width="80">
+            <FormItem label="号码信息" v-if="!showAnalysisPanel">
                 <Row>
                     <Col span="2"> IMSI: </Col>
                     <Col span="6">

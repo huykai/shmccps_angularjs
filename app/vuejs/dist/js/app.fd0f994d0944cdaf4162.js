@@ -57118,6 +57118,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     return {
       spanLeft: 5,
       spanRight: 19,
+      haveText: true,
       vue_instance: this.vueinstance
     };
   },
@@ -57154,10 +57155,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       if (this.spanLeft === 5) {
         this.spanLeft = 2;
         this.spanRight = 22;
+        this.haveText = false;
         bus.$emit('change_spanLeft', 2);
       } else {
         this.spanLeft = 5;
         this.spanRight = 19;
+        this.haveText = true;
         bus.$emit('change_spanLeft', 5);
       }
     }
@@ -59092,6 +59095,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('div', {
     staticClass: "layout-logo-left"
   }), _vm._v(" "), _c('menu-item', {
+    class: _vm.haveText,
     attrs: {
       "name": "cdrQuery"
     }
@@ -59234,18 +59238,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "type": "navicon",
       "size": "16"
     }
-  }), _vm._v("\n            " + _vm._s(_vm.message) + "\n        ")], 1)], 1), _vm._v(" "), (!_vm.showAnalysisPanel) ? _c('Form', {
-    directives: [{
-      name: "if",
-      rawName: "v-if",
-      value: (!_vm.showAnalysisPanel),
-      expression: "!showAnalysisPanel"
-    }],
+  }), _vm._v("\n            " + _vm._s(_vm.message) + "\n        ")], 1)], 1), _vm._v(" "), (_vm.querypanelform_show) ? _c('Form', {
     attrs: {
       "model": _vm.formItem,
       "label-width": 80
     }
-  }, [_c('FormItem', {
+  }, [(!_vm.showAnalysisPanel) ? _c('FormItem', {
     attrs: {
       "label": "号码信息"
     }
@@ -59315,7 +59313,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "value": "pgwcdr"
     }
-  }, [_vm._v("PGW话单")])], 1)], 1)], 1)], 1), _vm._v(" "), (!_vm.showAnalysisPanel) ? _c('FormItem', {
+  }, [_vm._v("PGW话单")])], 1)], 1)], 1)], 1) : _vm._e(), _vm._v(" "), (!_vm.showAnalysisPanel) ? _c('FormItem', {
     attrs: {
       "label": "选择时间段"
     }
@@ -62214,4 +62212,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.6936b76199cbef25bcec.js.map
+//# sourceMappingURL=app.fd0f994d0944cdaf4162.js.map
