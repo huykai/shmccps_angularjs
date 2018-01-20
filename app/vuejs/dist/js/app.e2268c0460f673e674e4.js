@@ -57398,8 +57398,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   data() {
     let date = new Date();
     this.vuebus.$on('cdrAnalysis', () => this.setForAnalysis());
-    this.vuebus.$on('cdrQuery', () => this.cdrForQuery());
-    this.vuebus.$on('cdrStatistics', () => this.cdrForStatistics());
+    this.vuebus.$on('cdrQuery', () => this.setForQuery());
+    this.vuebus.$on('cdrStatistics', () => this.setForStatistics());
     return {
       formItem: {
         imsi: '',
@@ -57459,7 +57459,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.showStatisticsPanel = false;
       this.postApiString = '/api/getCgCdr';
     },
-    cdrForStatistics() {
+    setForStatistics() {
       console.log('cdrForStatistics');
       this.showAnalysisPanel = false;
       this.showQueryPanel = false;
@@ -59521,7 +59521,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "value": cghostname.name
       }
     }, [_vm._v(_vm._s(cghostname.label))])
-  }))], 1)], 1)], 1), _vm._v(" "), (_vm.showAnalysisPanel) ? _c('FormItem', {
+  }))], 1)], 1)], 1), _vm._v(" "), (_vm.showStatisticsPanel) ? _c('FormItem', {
     attrs: {
       "label": "选择CDR统计选项"
     }
@@ -62195,4 +62195,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.c8947073f83222e00446.js.map
+//# sourceMappingURL=app.e2268c0460f673e674e4.js.map

@@ -85,7 +85,7 @@
                     </Col>
                 </Row>
             </FormItem>
-            <FormItem label="选择CDR统计选项" v-if="showAnalysisPanel">
+            <FormItem label="选择CDR统计选项" v-if="showStatisticsPanel">
                 <Row>
                     <Col span="2"> 分析-分组选项: </Col>
                     <Col span="10">
@@ -138,8 +138,8 @@ export default {
   data () {
     let date = new Date()
     this.vuebus.$on('cdrAnalysis', () => this.setForAnalysis())
-    this.vuebus.$on('cdrQuery', () => this.cdrForQuery())
-    this.vuebus.$on('cdrStatistics', () => this.cdrForStatistics())
+    this.vuebus.$on('cdrQuery', () => this.setForQuery())
+    this.vuebus.$on('cdrStatistics', () => this.setForStatistics())
     return {
       formItem: {
         imsi: '',
@@ -215,7 +215,7 @@ export default {
       this.showStatisticsPanel = false
       this.postApiString = '/api/getCgCdr'
     },
-    cdrForStatistics () {
+    setForStatistics () {
       console.log('cdrForStatistics')
       this.showAnalysisPanel = false
       this.showQueryPanel = false
