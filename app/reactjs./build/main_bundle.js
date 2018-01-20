@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "23222712ee100c5374c4"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "b3329402d711ccb7f73d"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -26733,6 +26733,9 @@ var App_form = function (_Component) {
             console.log("error in post getTrafficaRecord: ", textStatus);
             console.log("error in post jqXHR: ", jqXHR.statusText);
             console.log("error in post errorThrown: ", errorThrown);
+            if (jqXHR.statusText === 'Unauthorized') {
+              window.location.href = '/';
+            }
           },
           complete: function complete(xhr, status) {
             console.log('completed');

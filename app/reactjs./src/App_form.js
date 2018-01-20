@@ -225,6 +225,9 @@ export default class App_form extends Component {
                 console.log("error in post getTrafficaRecord: ",textStatus);
                 console.log("error in post jqXHR: ",jqXHR.statusText);
                 console.log("error in post errorThrown: ",errorThrown);
+                if (jqXHR.statusText === 'Unauthorized') {
+                  window.location.href = '/';
+                }
             },
             complete: function(xhr,status){
                 console.log('completed');
