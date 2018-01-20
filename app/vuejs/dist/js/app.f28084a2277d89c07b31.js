@@ -57607,6 +57607,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
   computed: {
     spanRight: function () {
+      console.log('spanRight: ', this.span);
       return this.span;
     },
     cdrContentInfo: function () {
@@ -62195,4 +62196,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.e2268c0460f673e674e4.js.map
+//# sourceMappingURL=app.f28084a2277d89c07b31.js.map
