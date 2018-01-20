@@ -90,17 +90,17 @@
                     <Col span="2"> 分析-分组选项: </Col>
                     <Col span="10">
                         <Select multiple v-model="formItem.select_group_items">
-                            <Option v-for="cdrgroupitem in cdrgroupitems[select_cdrtype]" :value="cdrgroupitem.name">{{cdrgroupitem.label}}</Option>
+                            <Option v-for="cdrgroupitem in cdrgroupitems[formItem.select_cdrtype]" :value="cdrgroupitem.name">{{cdrgroupitem.label}}</Option>
                         </Select>
                     </Col>
                     <Col span="2"> 分析-观察选项: </Col>
                     <Col span="10">
                         <Select multiple v-model="formItem.select_monitor_items">
-                            <Option v-for="cdrmonitoritem in cdrmonitoritems[select_cdrtype]" :value="cdrmonitoritem.name">{{cdrmonitoritem.label}}</Option>
+                            <Option v-for="cdrmonitoritem in cdrmonitoritems[formItem.select_cdrtype]" :value="cdrmonitoritem.name">{{cdrmonitoritem.label}}</Option>
                         </Select>
                     </Col>
                 </Row>
-            </FormItem>
+            </FormItem> 
             
             <!--
             <FormItem label="Slider">
@@ -173,7 +173,7 @@ export default {
         {name: 'shcg30bnk-1', label: 'SHCG30BNK-1'}
       ],
       cdrgroupitems: {
-        scdr: [
+        'scdr': [
           {name: 'duration', label: 'duration'},
           {name: 'accessPointNameNI', label: 'accessPointNameNI'},
           {name: 'causeForRecClosing', label: 'causeForRecClosing'},
@@ -186,7 +186,7 @@ export default {
           {name: 'dataVolumeGPRSUplink', label: 'dataVolumeGPRSUplink'},
           {name: 'dataVolumeGPRSDownlink', label: 'dataVolumeGPRSDownlink'}
         ],
-        sgwcdr: [
+        'sgwcdr': [
           {name: 'duration', label: 'duration'},
           {name: 'accessPointNameNI', label: 'accessPointNameNI'},
           {name: 'servedIMSI', label: 'servedIMSI'},
@@ -199,7 +199,7 @@ export default {
           {name: 'dataVolumeGPRSUplink', label: 'dataVolumeGPRSUplink'},
           {name: 'dataVolumeGPRSDownlink', label: 'dataVolumeGPRSDownlink'}
         ],
-        pgwcdr: [
+        'pgwcdr': [
           {name: 'duration', label: 'duration'},
           {name: 'accessPointNameNI', label: 'accessPointNameNI'},
           {name: 'causeForRecClosing', label: 'causeForRecClosing'},
@@ -216,7 +216,7 @@ export default {
         ]
       },
       cdrmonitoritems: {
-        scdr: [
+        'scdr': [
           {name: 'duration', label: 'duration'},
           {name: 'accessPointNameNI', label: 'accessPointNameNI'},
           {name: 'causeForRecClosing', label: 'causeForRecClosing'},
@@ -229,7 +229,7 @@ export default {
           {name: 'dataVolumeGPRSUplink', label: 'dataVolumeGPRSUplink'},
           {name: 'dataVolumeGPRSDownlink', label: 'dataVolumeGPRSDownlink'}
         ],
-        sgwcdr: [
+        'sgwcdr': [
           {name: 'duration', label: 'duration'},
           {name: 'accessPointNameNI', label: 'accessPointNameNI'},
           {name: 'servedIMSI', label: 'servedIMSI'},
@@ -242,7 +242,7 @@ export default {
           {name: 'dataVolumeGPRSUplink', label: 'dataVolumeGPRSUplink'},
           {name: 'dataVolumeGPRSDownlink', label: 'dataVolumeGPRSDownlink'}
         ],
-        pgwcdr: [
+        'pgwcdr': [
           {name: 'duration', label: 'duration'},
           {name: 'accessPointNameNI', label: 'accessPointNameNI'},
           {name: 'causeForRecClosing', label: 'causeForRecClosing'},
