@@ -57155,12 +57155,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       if (this.spanLeft === 5) {
         this.spanLeft = 2;
         this.spanRight = 22;
-        this.haveText = false;
+        this.haveText = '';
         bus.$emit('change_spanLeft', 2);
       } else {
         this.spanLeft = 5;
         this.spanRight = 19;
-        this.haveText = true;
+        this.haveText = 'layout-hide-text';
         bus.$emit('change_spanLeft', 5);
       }
     }
@@ -59107,6 +59107,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }), _vm._v(" "), _c('span', {
     staticClass: "layout-text"
   }, [_vm._v("话单查询")])], 1), _vm._v(" "), _c('menu-item', {
+    class: _vm.haveText,
     attrs: {
       "name": "cdrStatistics"
     }
@@ -59118,6 +59119,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }), _vm._v(" "), _c('span', {
     staticClass: "layout-text"
   }, [_vm._v("话单统计")])], 1), _vm._v(" "), _c('menu-item', {
+    class: _vm.haveText,
     attrs: {
       "name": "cdrAnalysis"
     }
@@ -62212,4 +62214,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.fd0f994d0944cdaf4162.js.map
+//# sourceMappingURL=app.109a3ddd4384b865d224.js.map

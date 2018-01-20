@@ -11,11 +11,11 @@
                 <icon type="ios-navigate" :size="iconSize"></icon>
                 <span class="layout-text">话单查询</span>
             </menu-item>
-            <menu-item name="cdrStatistics">
+            <menu-item name="cdrStatistics" :class="haveText">
                 <icon type="ios-keypad" :size="iconSize"></icon>
                 <span class="layout-text">话单统计</span>
             </menu-item>
-            <menu-item name="cdrAnalysis">
+            <menu-item name="cdrAnalysis" :class="haveText">
                 <icon type="ios-analytics" :size="iconSize"></icon>
                 <span class="layout-text">话单故障分析</span>
             </menu-item>
@@ -71,12 +71,12 @@ export default {
       if (this.spanLeft === 5) {
         this.spanLeft = 2
         this.spanRight = 22
-        this.haveText = false
+        this.haveText = ''
         bus.$emit('change_spanLeft', 2)
       } else {
         this.spanLeft = 5
         this.spanRight = 19
-        this.haveText = true
+        this.haveText = 'layout-hide-text'
         bus.$emit('change_spanLeft', 5)
       }
     }
