@@ -124,8 +124,8 @@
 <script>
 import axios from 'axios'
 import Storages from 'js-storage'
-import $ from 'jquery'
-import cookie from 'jquery.cookie'
+// import $ from 'jquery'
+// import cookie from 'jquery.cookie'
 export default {
   props: {
     vuebus: {
@@ -314,9 +314,10 @@ export default {
       if (this.loading === false) {
         this.loading = true
       }
-      console.log('cookie: ', cookie, $.cookie('XSRF-TOKEN'))
-      console.log('token: ', 'Bearer ' + Storages.sessionStorage.get('token'))
-      console.log(`startdate: ${this.formItem.startdate} ; starttime: ${this.formItem.starttime}`)
+      // console.log('cookie: ', cookie, $.cookie('XSRF-TOKEN'))
+      // console.log('token: ', 'Bearer ' + Storages.sessionStorage.get('token'))
+      // console.log(`startdate: ${this.formItem.startdate} ; starttime: ${this.formItem.starttime}`)
+      console.log('submit Api String: ', this.postApiString)
       axios.defaults.headers.common['Authorization'] = 'Bearer ' + Storages.sessionStorage.get('token')
       axios.defaults.timeout = 600000
       // axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
