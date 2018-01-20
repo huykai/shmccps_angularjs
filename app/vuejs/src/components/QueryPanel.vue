@@ -139,9 +139,9 @@ export default {
   },
   data () {
     let date = new Date()
-    this.cdrContentBus.on('cdrAnalysis', this.setForAnalysis)
-    this.cdrContentBus.on('cdrQuery', this.cdrForQuery)
-    this.cdrContentBus.on('cdrStatistics', this.cdrForStatistics)
+    this.vuebus.$on('cdrAnalysis', this.setForAnalysis)
+    this.vuebus.$on('cdrQuery', this.cdrForQuery)
+    this.vuebus.$on('cdrStatistics', this.cdrForStatistics)
     return {
       formItem: {
         imsi: '',

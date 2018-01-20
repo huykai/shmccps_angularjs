@@ -57399,9 +57399,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
   data() {
     let date = new Date();
-    this.cdrContentBus.on('cdrAnalysis', this.setForAnalysis);
-    this.cdrContentBus.on('cdrQuery', this.cdrForQuery);
-    this.cdrContentBus.on('cdrStatistics', this.cdrForStatistics);
+    this.vuebus.$on('cdrAnalysis', this.setForAnalysis);
+    this.vuebus.$on('cdrQuery', this.cdrForQuery);
+    this.vuebus.$on('cdrStatistics', this.cdrForStatistics);
     return {
       formItem: {
         imsi: '',
@@ -62180,4 +62180,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.efe17107d27ae1a195c9.js.map
+//# sourceMappingURL=app.1f68f50b2fa067f4e553.js.map
