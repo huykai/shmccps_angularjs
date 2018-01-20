@@ -57694,9 +57694,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       spanLeft: 5,
       spanRight: 19
     };
-    vuetmp.$on('change_spanLeft', function (value) {
-      spanAssign.spanLeft = value;
-      spanAssign.spanRight = 24 - value;
+    vuetmp.$on('change_spanLeft', value => {
+      console.log('change_spanLeft value: ', value);
+      this.vueprops.span = 24 - value;
     });
     const vueprops = {
       vueinstance: vuetmp,
@@ -62196,4 +62196,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.f28084a2277d89c07b31.js.map
+//# sourceMappingURL=app.8070e5a04edbd655db8e.js.map

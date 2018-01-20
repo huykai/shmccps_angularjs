@@ -22,9 +22,9 @@ export default {
       spanLeft: 5,
       spanRight: 19
     }
-    vuetmp.$on('change_spanLeft', function (value) {
-      spanAssign.spanLeft = value
-      spanAssign.spanRight = 24 - value
+    vuetmp.$on('change_spanLeft', (value) => {
+      console.log('change_spanLeft value: ', value)
+      this.vueprops.span = 24 - value
     })
     const vueprops = {
       vueinstance: vuetmp,
