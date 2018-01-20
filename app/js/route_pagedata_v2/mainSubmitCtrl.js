@@ -453,7 +453,10 @@ var mainSubmitCtrl = ["getTreeData","$rootScope", "$interpolate", "$scope","$doc
 		//}).error(function(data, header, config, status){
 		// after it , should use then	
 		},function(data, header, config, status){
-			console.log(status);
+			console.log('status: ', status);
+			console.log('data: ', data);
+			console.log('header: ', header);
+			console.log('config: ', config);
 		}
 		);
 	};
