@@ -46942,10 +46942,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     cdrContent: {}
   },
   data() {
-    this.vuebus.$on('change_cdrContent', value => {
-      console.log('get change_cdrContent message in QueryContent, with data:', value);
-      this.setCghosts(value);
-    });
+    // this.vuebus.$on('change_cdrContent', (value) => {
+    //  console.log('get change_cdrContent message in QueryContent, with data:', value)
+    //  this.setCghosts(value)
+    // })
     return {
       cdrContentBus: this.vuebus,
       cghosts: {
@@ -51834,4 +51834,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[32]);
-//# sourceMappingURL=app.4cd799c057dfbb9e0722.js.map
+//# sourceMappingURL=app.b87b14f2d7f2cbf9341d.js.map
