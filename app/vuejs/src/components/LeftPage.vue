@@ -37,7 +37,7 @@ export default {
     return {
       spanLeft: 5,
       spanRight: 19,
-      haveText: true,
+      haveText: '',
       vue_instance: this.vueinstance
     }
   },
@@ -71,12 +71,12 @@ export default {
       if (this.spanLeft === 5) {
         this.spanLeft = 2
         this.spanRight = 22
-        this.haveText = ''
+        this.haveText = 'layout-hide-text'
         bus.$emit('change_spanLeft', 2)
       } else {
         this.spanLeft = 5
         this.spanRight = 19
-        this.haveText = 'layout-hide-text'
+        this.haveText = ''
         bus.$emit('change_spanLeft', 5)
       }
     }

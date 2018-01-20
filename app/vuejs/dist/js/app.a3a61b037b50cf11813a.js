@@ -57118,7 +57118,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     return {
       spanLeft: 5,
       spanRight: 19,
-      haveText: true,
+      haveText: '',
       vue_instance: this.vueinstance
     };
   },
@@ -57155,12 +57155,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       if (this.spanLeft === 5) {
         this.spanLeft = 2;
         this.spanRight = 22;
-        this.haveText = '';
+        this.haveText = 'layout-hide-text';
         bus.$emit('change_spanLeft', 2);
       } else {
         this.spanLeft = 5;
         this.spanRight = 19;
-        this.haveText = 'layout-hide-text';
+        this.haveText = '';
         bus.$emit('change_spanLeft', 5);
       }
     }
@@ -62214,4 +62214,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.109a3ddd4384b865d224.js.map
+//# sourceMappingURL=app.a3a61b037b50cf11813a.js.map
