@@ -46957,11 +46957,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   computed: {
     iconSize() {
       return this.spanLeft === 5 ? 14 : 24;
-    },
-    cgHostsInfo: function () {
-      console.log('this.cdrContentInfo: ', this.cdrContentInfo);
-      return this.cdrContentInfo ? this.cdrContentInfo : this.cghosts;
     }
+    // cgHostsInfo: function () {
+    //  console.log('this.cdrContentInfo: ', this.cdrContentInfo)
+    //  return this.cdrContentInfo ? this.cdrContentInfo : this.cghosts
+    // }
   },
   methods: {
     toggleClick() {
@@ -51834,4 +51834,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[32]);
-//# sourceMappingURL=app.5d4d8955a08a583cf29b.js.map
+//# sourceMappingURL=app.4cd799c057dfbb9e0722.js.map
