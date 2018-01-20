@@ -41,11 +41,11 @@ export default {
   computed: {
     iconSize () {
       return this.spanLeft === 5 ? 14 : 24
-    },
-    cgHostsInfo: function () {
-      console.log('this.cdrContentInfo: ', this.cdrContentInfo)
-      return this.cdrContentInfo ? this.cdrContentInfo : this.cghosts
     }
+    // cgHostsInfo: function () {
+    //  console.log('this.cdrContentInfo: ', this.cdrContentInfo)
+    //  return this.cdrContentInfo ? this.cdrContentInfo : this.cghosts
+    // }
   },
   methods: {
     toggleClick () {
