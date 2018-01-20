@@ -458,6 +458,7 @@ var mainSubmitCtrl = ["getTreeData","$rootScope", "$interpolate", "$scope","$doc
 			console.log('header: ', header);
 			console.log('config: ', config);
 			if (data.status === 401 || data.status === 403) {
+				console.log('用户状态已过期，需要重新登录！');
 				window.location.href = '/';
 			}
 		}

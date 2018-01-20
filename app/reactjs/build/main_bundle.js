@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "b3329402d711ccb7f73d"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "56a252f2c3c0863df964"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -26734,6 +26734,7 @@ var App_form = function (_Component) {
             console.log("error in post jqXHR: ", jqXHR.statusText);
             console.log("error in post errorThrown: ", errorThrown);
             if (jqXHR.statusText === 'Unauthorized') {
+              alert('用户状态已过期，需要重新登录！');
               window.location.href = '/';
             }
           },
@@ -27109,12 +27110,14 @@ var RegionCenter = function (_Component) {
 			// You don't have to do this check first, but it can help prevent an unneeded render
 			console.log('componentWillReceiveProps:', nextProps);
 			var propsFileName = nextProps.data.datagrid;
-			var propsFileColumnInfo = this.generateColumnInfo(propsFileName, nextProps.data);
-			if (propsFileName && propsFileColumnInfo) {
-				if (this.compareGridFileName(this.gridfilename, propsFileName)) {
-					console.log('RegionCenter updateGrid: ', propsFileName, propsFileColumnInfo);
-					updateGrid(propsFileName, propsFileColumnInfo);
-					this.gridfilename = propsFileName;
+			if (propsFileName) {
+				var propsFileColumnInfo = this.generateColumnInfo(propsFileName, nextProps.data);
+				if (propsFileColumnInfo) {
+					if (this.compareGridFileName(this.gridfilename, propsFileName)) {
+						console.log('RegionCenter updateGrid: ', propsFileName, propsFileColumnInfo);
+						updateGrid(propsFileName, propsFileColumnInfo);
+						this.gridfilename = propsFileName;
+					}
 				}
 			}
 		}

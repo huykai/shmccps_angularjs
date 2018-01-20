@@ -118,12 +118,14 @@ export default class RegionCenter extends Component {
 		// You don't have to do this check first, but it can help prevent an unneeded render
 		console.log('componentWillReceiveProps:', nextProps);
 		let propsFileName = nextProps.data.datagrid;
-		let propsFileColumnInfo = this.generateColumnInfo(propsFileName, nextProps.data); 
-		if (propsFileName && propsFileColumnInfo) {
-			if (this.compareGridFileName(this.gridfilename, propsFileName)) {
-				console.log('RegionCenter updateGrid: ', propsFileName, propsFileColumnInfo);
-				updateGrid(propsFileName, propsFileColumnInfo);
-				this.gridfilename = propsFileName;
+		if (propsFileName) {
+			let propsFileColumnInfo = this.generateColumnInfo(propsFileName, nextProps.data); 
+			if (propsFileColumnInfo) {
+				if (this.compareGridFileName(this.gridfilename, propsFileName)) {
+					console.log('RegionCenter updateGrid: ', propsFileName, propsFileColumnInfo);
+					updateGrid(propsFileName, propsFileColumnInfo);
+					this.gridfilename = propsFileName;
+				}
 			}
 		}
 	}

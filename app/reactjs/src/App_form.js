@@ -226,6 +226,7 @@ export default class App_form extends Component {
                 console.log("error in post jqXHR: ",jqXHR.statusText);
                 console.log("error in post errorThrown: ",errorThrown);
                 if (jqXHR.statusText === 'Unauthorized') {
+                  alert('用户状态已过期，需要重新登录！');
                   window.location.href = '/';
                 }
             },
