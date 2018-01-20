@@ -3,10 +3,11 @@
         <div class="layout" :class="{'layout-hide-text': spanassign.spanLeft < 5}">
             <row type="flex">
                 <leftpage :vueinstance="vueinstance"> </leftpage>
-                <rightpage :span="spanassign.spanRight" > </rightpage>
+                <rightpage :vueprops="vueprops" > </rightpage>
             </row>
         </div>
     </div>
+    <!-- :span="spanassign.spanRight" -->
 </template>
      
 <script>
@@ -25,9 +26,14 @@ export default {
       spanAssign.spanLeft = value
       spanAssign.spanRight = 24 - value
     })
+    const vueprops = {
+      vueinstance: vuetmp,
+      span: spanAssign.spanRight
+    }
     return {
       vueinstance: vuetmp,
-      spanassign: spanAssign
+      // spanassign: spanAssign,
+      vueprops: vueprops
     }
   },
   computed: {

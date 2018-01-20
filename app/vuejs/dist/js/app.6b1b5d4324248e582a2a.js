@@ -57397,9 +57397,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
   data() {
     let date = new Date();
-    this.vuebus.$on('cdrAnalysis', () => this.setForAnalysis);
-    this.vuebus.$on('cdrQuery', () => this.cdrForQuery);
-    this.vuebus.$on('cdrStatistics', () => this.cdrForStatistics);
+    this.vuebus.$on('cdrAnalysis', () => this.setForAnalysis());
+    this.vuebus.$on('cdrQuery', () => this.cdrForQuery());
+    this.vuebus.$on('cdrStatistics', () => this.cdrForStatistics());
     return {
       formItem: {
         imsi: '',
@@ -57563,11 +57563,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_QueryPanel__ = __webpack_require__(60);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_QueryPanel___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_QueryPanel__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_QueryContent__ = __webpack_require__(59);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_QueryContent___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_QueryContent__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_QueryPanel__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_QueryPanel___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_QueryPanel__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_QueryContent__ = __webpack_require__(59);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_QueryContent___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_QueryContent__);
 //
 //
 //
@@ -57579,21 +57578,30 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-
+// import Vue from 'vue'
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['span'],
+  props: {
+    // 'span',
+    vueprops: {
+      type: Object,
+      default: function () {
+        return {};
+      }
+    }
+  },
   data() {
-    var vuebus = new __WEBPACK_IMPORTED_MODULE_0_vue__["default"]();
-    vuebus.$on('change_cdrContent', function (value) {
-      console.log('get change_cdrContent message, with data:', value);
-      // this.$set('cdrContent', value)
-    });
+    // var vuebus = new Vue()
+    // this.vueinstance.$on('change_cdrContent', function (value) {
+    //  console.log('get change_cdrContent message, with data:', value)
+    // this.$set('cdrContent', value)
+    // })
     return {
       collapse: false,
       querypanelform_show: true,
-      vuebus: vuebus,
+      vuebus: this.vueprops.vueinstance,
+      span: this.vueprops.span,
       cdrConent: {}
     };
   },
@@ -57607,8 +57615,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
   methods: {},
   components: {
-    'QueryPanel': __WEBPACK_IMPORTED_MODULE_1__components_QueryPanel___default.a,
-    'QueryContent': __WEBPACK_IMPORTED_MODULE_2__components_QueryContent___default.a
+    'QueryPanel': __WEBPACK_IMPORTED_MODULE_0__components_QueryPanel___default.a,
+    'QueryContent': __WEBPACK_IMPORTED_MODULE_1__components_QueryContent___default.a
   }
 });
 
@@ -57672,6 +57680,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 // import leftpage from '@/components_module/leftpage'
 
@@ -57688,9 +57697,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       spanAssign.spanLeft = value;
       spanAssign.spanRight = 24 - value;
     });
+    const vueprops = {
+      vueinstance: vuetmp,
+      span: spanAssign.spanRight
+    };
     return {
       vueinstance: vuetmp,
-      spanassign: spanAssign
+      // spanassign: spanAssign,
+      vueprops: vueprops
     };
   },
   computed: {},
@@ -59183,7 +59197,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }), _vm._v(" "), _c('rightpage', {
     attrs: {
-      "span": _vm.spanassign.spanRight
+      "vueprops": _vm.vueprops
     }
   })], 1)], 1)])
 },staticRenderFns: []}
@@ -62181,4 +62195,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.bcbefb982d843098d2b3.js.map
+//# sourceMappingURL=app.6b1b5d4324248e582a2a.js.map
