@@ -397,6 +397,15 @@ export default {
       })
       .catch((error) => {
         console.log(new Date(), ' cgcdrquery error: ', error)
+        if (error.response) {
+          console.log(error.response.data)
+          console.log(error.response.status)
+          console.log(error.response.headers)
+          if (error.response.status === 401 || error.response.status === 403) {
+            alert('用户状态已过期，需要重新登录！')
+            window.location.href = '/'
+          }
+        }
         this.loading = false
       })
       console.log(new Date(), ' Submit Clicked!')
