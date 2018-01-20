@@ -57703,7 +57703,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     };
     return {
       vueinstance: vuetmp,
-      // spanassign: spanAssign,
+      spanassign: spanAssign,
       vueprops: vueprops
     };
   },
@@ -62195,4 +62195,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.6b1b5d4324248e582a2a.js.map
+//# sourceMappingURL=app.c8947073f83222e00446.js.map

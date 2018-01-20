@@ -32,7 +32,7 @@ export default {
     }
     return {
       vueinstance: vuetmp,
-      // spanassign: spanAssign,
+      spanassign: spanAssign,
       vueprops: vueprops
     }
   },
