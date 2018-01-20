@@ -39,7 +39,7 @@ export default {
   computed: {
     spanRight: function () {
       console.log('spanRight: ', this.span)
-      return this.span
+      return this.vueprops.span
     },
     cdrContentInfo: function () {
       return this.cdrContent
