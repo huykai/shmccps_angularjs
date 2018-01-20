@@ -24,7 +24,7 @@ export default {
     }
     vuetmp.$on('change_spanLeft', (value) => {
       console.log('change_spanLeft value: ', value)
-      this.vueprops.span = 24 - value
+      this.$set(this.vueprops, 'span', 24 - value)
     })
     const vueprops = {
       vueinstance: vuetmp,

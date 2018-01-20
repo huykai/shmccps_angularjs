@@ -57696,7 +57696,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     };
     vuetmp.$on('change_spanLeft', value => {
       console.log('change_spanLeft value: ', value);
-      this.vueprops.span = 24 - value;
+      this.$set(this.vueprops, 'span', 24 - value);
     });
     const vueprops = {
       vueinstance: vuetmp,
@@ -62196,4 +62196,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.8070e5a04edbd655db8e.js.map
+//# sourceMappingURL=app.2dd4d8e5d743659b6a3c.js.map
