@@ -57397,9 +57397,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
   data() {
     let date = new Date();
-    this.vuebus.$on('cdrAnalysis', this.setForAnalysis);
-    this.vuebus.$on('cdrQuery', this.cdrForQuery);
-    this.vuebus.$on('cdrStatistics', this.cdrForStatistics);
+    this.vuebus.$on('cdrAnalysis', () => this.setForAnalysis);
+    this.vuebus.$on('cdrQuery', () => this.cdrForQuery);
+    this.vuebus.$on('cdrStatistics', () => this.cdrForStatistics);
     return {
       formItem: {
         imsi: '',
@@ -62181,4 +62181,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.78341f58628f5c501e4e.js.map
+//# sourceMappingURL=app.bcbefb982d843098d2b3.js.map
