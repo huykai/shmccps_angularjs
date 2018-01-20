@@ -457,6 +457,9 @@ var mainSubmitCtrl = ["getTreeData","$rootScope", "$interpolate", "$scope","$doc
 			console.log('data: ', data);
 			console.log('header: ', header);
 			console.log('config: ', config);
+			if (data.status === 401 || data.status === 403) {
+				window.location.href = '/';
+			}
 		}
 		);
 	};
