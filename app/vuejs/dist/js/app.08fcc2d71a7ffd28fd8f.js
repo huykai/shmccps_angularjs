@@ -57448,18 +57448,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       }
     },
     setForAnalysis() {
+      console.log('setForAnalysis');
       this.showAnalysisPanel = true;
       this.showQueryPanel = false;
       this.showStatisticsPanel = false;
       this.postApiString = '/api/getCgCdrAnalysis';
     },
     setForQuery() {
+      console.log('setForQuery');
       this.showAnalysisPanel = false;
       this.showQueryPanel = true;
       this.showStatisticsPanel = false;
       this.postApiString = '/api/getCgCdr';
     },
     cdrForStatistics() {
+      console.log('cdrForStatistics');
       this.showAnalysisPanel = false;
       this.showQueryPanel = false;
       this.showStatisticsPanel = true;
@@ -59506,7 +59509,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "value": cghostname.name
       }
     }, [_vm._v(_vm._s(cghostname.label))])
-  }))], 1)], 1)], 1), _vm._v(" "), (_vm.cdrForAnalysis) ? _c('FormItem', {
+  }))], 1)], 1)], 1), _vm._v(" "), (_vm.showAnalysisPanel) ? _c('FormItem', {
     attrs: {
       "label": "选择CDR统计选项"
     }
@@ -62180,4 +62183,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.1f68f50b2fa067f4e553.js.map
+//# sourceMappingURL=app.08fcc2d71a7ffd28fd8f.js.map

@@ -85,7 +85,7 @@
                     </Col>
                 </Row>
             </FormItem>
-            <FormItem label="选择CDR统计选项" v-if="cdrForAnalysis">
+            <FormItem label="选择CDR统计选项" v-if="showAnalysisPanel">
                 <Row>
                     <Col span="2"> 分析-分组选项: </Col>
                     <Col span="10">
@@ -204,18 +204,21 @@ export default {
       }
     },
     setForAnalysis () {
+      console.log('setForAnalysis')
       this.showAnalysisPanel = true
       this.showQueryPanel = false
       this.showStatisticsPanel = false
       this.postApiString = '/api/getCgCdrAnalysis'
     },
     setForQuery () {
+      console.log('setForQuery')
       this.showAnalysisPanel = false
       this.showQueryPanel = true
       this.showStatisticsPanel = false
       this.postApiString = '/api/getCgCdr'
     },
     cdrForStatistics () {
+      console.log('cdrForStatistics')
       this.showAnalysisPanel = false
       this.showQueryPanel = false
       this.showStatisticsPanel = true
