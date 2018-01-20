@@ -57132,17 +57132,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       switch (name) {
         case 'cdrStatistics':
           {
-            this.vue.$emit('cdrStatistics');
+            this.vue_instance.$emit('cdrStatistics');
             break;
           }
         case 'cdrQuery':
           {
-            this.vue.$emit('cdrQuery');
+            this.vue_instance.$emit('cdrQuery');
             break;
           }
         case 'cdrAnalysis':
           {
-            this.vue.$emit('cdrAnalysis');
+            this.vue_instance.$emit('cdrAnalysis');
             break;
           }
       }
@@ -57383,22 +57383,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -57415,9 +57399,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
   data() {
     let date = new Date();
-    this.vuebus.on('cdrAnalysis', this.setForAnalysis);
-    this.vuebus.on('cdrQuery', this.cdrForQuery);
-    this.vuebus.on('cdrStatistics', this.cdrForStatistics);
+    this.cdrContentBus.on('cdrAnalysis', this.setForAnalysis);
+    this.cdrContentBus.on('cdrQuery', this.cdrForQuery);
+    this.cdrContentBus.on('cdrStatistics', this.cdrForStatistics);
     return {
       formItem: {
         imsi: '',
@@ -62196,4 +62180,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.bb966a0c6b49ee6dace6.js.map
+//# sourceMappingURL=app.efe17107d27ae1a195c9.js.map

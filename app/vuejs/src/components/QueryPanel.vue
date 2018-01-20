@@ -81,22 +81,6 @@
                     <Col span="6">
                         <Select multiple v-model="formItem.select_cg">
                             <Option v-for="cghostname in cghostnames" :value="cghostname.name">{{cghostname.label}}</Option>
-                            <!--
-                            <Option value="shcg17bnk-1">SHCG17BNK-1</Option>
-                            <Option value="shcg18bnk-1">SHCG18BNK-1</Option>
-                            <Option value="shcg19bnk-1">SHCG19BNK-1</Option>
-                            <Option value="shcg20bnk-1">SHCG20BNK-1</Option>
-                            <Option value="shcg21bnk-1">SHCG21BNK-1</Option>
-                            <Option value="shcg22bnk-1">SHCG22BNK-1</Option>
-                            <Option value="shcg23bnk-1">SHCG23BNK-1</Option>
-                            <Option value="shcg24bnk-1">SHCG24BNK-1</Option>
-                            <Option value="shcg25bnk-1">SHCG25BNK-1</Option>
-                            <Option value="shcg26bnk-1">SHCG26BNK-1</Option>
-                            <Option value="shcg27bnk-1">SHCG27BNK-1</Option>
-                            <Option value="shcg28bnk-1">SHCG28BNK-1</Option>
-                            <Option value="shcg29bnk-1">SHCG29BNK-1</Option>
-                            <Option value="shcg30bnk-1">SHCG30BNK-1</Option>
-                            -->
                         </Select>
                     </Col>
                 </Row>
@@ -155,9 +139,9 @@ export default {
   },
   data () {
     let date = new Date()
-    this.vuebus.on('cdrAnalysis', this.setForAnalysis)
-    this.vuebus.on('cdrQuery', this.cdrForQuery)
-    this.vuebus.on('cdrStatistics', this.cdrForStatistics)
+    this.cdrContentBus.on('cdrAnalysis', this.setForAnalysis)
+    this.cdrContentBus.on('cdrQuery', this.cdrForQuery)
+    this.cdrContentBus.on('cdrStatistics', this.cdrForStatistics)
     return {
       formItem: {
         imsi: '',

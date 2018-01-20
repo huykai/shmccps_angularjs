@@ -50,15 +50,15 @@ export default {
       console.log('cdrFunctionChoose begin')
       switch (name) {
         case 'cdrStatistics': {
-          this.vue.$emit('cdrStatistics')
+          this.vue_instance.$emit('cdrStatistics')
           break
         }
         case 'cdrQuery': {
-          this.vue.$emit('cdrQuery')
+          this.vue_instance.$emit('cdrQuery')
           break
         }
         case 'cdrAnalysis': {
-          this.vue.$emit('cdrAnalysis')
+          this.vue_instance.$emit('cdrAnalysis')
           break
         }
       }
