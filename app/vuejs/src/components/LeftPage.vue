@@ -47,7 +47,7 @@ export default {
   },
   methods: {
     cdrFunctionChoose (name) {
-      console.log('cdrFunctionChoose begin')
+      console.log('cdrFunctionChoose begin: ', name)
       switch (name) {
         case 'cdrStatistics': {
           this.vue_instance.$emit('cdrStatistics')

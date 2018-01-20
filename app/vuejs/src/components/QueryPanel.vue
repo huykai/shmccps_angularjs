@@ -93,8 +93,6 @@
                             <Option v-for="cdrgroupitem in cdrgroupitems" :value="cdrgroupitem.name">{{cdrgroupitem.label}}</Option>
                         </Select>
                     </Col>
-                </Row>
-                <Row>
                     <Col span="2"> 分析-观察选项: </Col>
                     <Col span="10">
                         <Select multiple v-model="formItem.select_monitor_items">
@@ -177,8 +175,8 @@ export default {
       message: '点击隐藏查询参数面板',
       loading: false,
       postApiString: '/api/getCgCdr',
-      showAnalysisPanel: true,
-      showQueryPanel: false,
+      showAnalysisPanel: false,
+      showQueryPanel: true,
       showStatisticsPanel: false,
       cdrContentBus: this.vuebus
     }

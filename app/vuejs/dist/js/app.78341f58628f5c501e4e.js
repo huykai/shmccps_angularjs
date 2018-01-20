@@ -57128,7 +57128,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
   methods: {
     cdrFunctionChoose(name) {
-      console.log('cdrFunctionChoose begin');
+      console.log('cdrFunctionChoose begin: ', name);
       switch (name) {
         case 'cdrStatistics':
           {
@@ -57381,8 +57381,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 
 
@@ -57421,8 +57419,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       message: '点击隐藏查询参数面板',
       loading: false,
       postApiString: '/api/getCgCdr',
-      showAnalysisPanel: true,
-      showQueryPanel: false,
+      showAnalysisPanel: false,
+      showQueryPanel: true,
       showStatisticsPanel: false,
       cdrContentBus: this.vuebus
     };
@@ -59538,7 +59536,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "value": cdrgroupitem.name
       }
     }, [_vm._v(_vm._s(cdrgroupitem.label))])
-  }))], 1)], 1), _vm._v(" "), _c('Row', [_c('Col', {
+  }))], 1), _vm._v(" "), _c('Col', {
     attrs: {
       "span": "2"
     }
@@ -62183,4 +62181,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[33]);
-//# sourceMappingURL=app.08fcc2d71a7ffd28fd8f.js.map
+//# sourceMappingURL=app.78341f58628f5c501e4e.js.map
