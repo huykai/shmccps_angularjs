@@ -49297,6 +49297,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "layout-content"
   }, [(_vm.cghosts.cdrinfo.length > 0) ? _c('Tabs', {
     attrs: {
+      "value": _vm.cghosts.cdrinfo[0].name,
       "type": "card"
     }
   }, _vm._l((_vm.cghosts.cdrinfo), function(cghost) {
@@ -51828,4 +51829,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[32]);
-//# sourceMappingURL=app.f6ff81b738e579a8a662.js.map
+//# sourceMappingURL=app.a56270251adb262c0c2b.js.map
