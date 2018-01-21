@@ -85,6 +85,7 @@
                     </Col>
                 </Row>
             </FormItem>
+            
             <FormItem label="选择CDR统计选项" v-if="showStatisticsPanel">
                 <Row>
                     <Col span="2"> 分析-分组选项: </Col>

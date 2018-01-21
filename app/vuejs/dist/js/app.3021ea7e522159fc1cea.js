@@ -47120,6 +47120,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -49293,14 +49294,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "value": ""
     }
-  }, _vm._l((_vm.cghosts.cdrinfo), function(cghost) {
-    return _c('TabPane', {
-      attrs: {
-        "label": cghost.name,
-        "name": cghost.name
-      }
-    })
-  }))], 1)
+  })], 1)
 },staticRenderFns: []}
 
 /***/ }),
@@ -51817,4 +51811,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[32]);
-//# sourceMappingURL=app.e600fefe214a75815246.js.map
+//# sourceMappingURL=app.3021ea7e522159fc1cea.js.map
