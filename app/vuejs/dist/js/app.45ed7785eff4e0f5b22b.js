@@ -49307,25 +49307,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "label": cghost.name,
         "name": cghost.name
       }
-    }, [_c('Table', {
-      attrs: {
-        "border": "",
-        "stripe": "",
-        "height": "600",
-        "columns": cghost.columns,
-        "data": cghost.datas
-      }
-    }), _vm._v(" "), _c('Page', {
-      attrs: {
-        "total": cghost.cdrcount,
-        "size": "small",
-        "page-size": _vm.pageSize,
-        "page-size-opts": _vm.pageSizeOpts,
-        "show-total": "",
-        "show-elevator": "",
-        "show-sizer": ""
-      }
-    }), _vm._v(" "), _c('TablePanel', {
+    }, [_c('TablePanel', {
       key: cghost.key,
       attrs: {
         "tableinfo": cghost
@@ -51848,4 +51830,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[32]);
-//# sourceMappingURL=app.83ee635275d553a94de1.js.map
+//# sourceMappingURL=app.45ed7785eff4e0f5b22b.js.map
