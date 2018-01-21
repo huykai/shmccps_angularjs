@@ -47340,7 +47340,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-// import Vue from 'vue'
+// import Vue from 'vue' :span="spanRight"
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -48665,7 +48665,6 @@ module.exports = Component.exports
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('i-col', {
     attrs: {
-      "span": _vm.spanRight,
       "collapse": "false"
     }
   }, [_c('QueryPanel', {
@@ -51811,4 +51810,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[32]);
-//# sourceMappingURL=app.3021ea7e522159fc1cea.js.map
+//# sourceMappingURL=app.1692de3b2f0398237fc8.js.map

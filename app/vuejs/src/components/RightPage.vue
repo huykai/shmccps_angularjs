@@ -1,5 +1,5 @@
 <template>
-    <i-col :span="spanRight" collapse="false">
+    <i-col  collapse="false">
         <QueryPanel :vuebus="vuebus"></QueryPanel>
         <QueryContent :vuebus="vuebus" :cdr-content="cdrContent"></QueryContent>
         <div class="layout-copy">
@@ -9,7 +9,7 @@
 </template>
 
 <script>
-// import Vue from 'vue'
+// import Vue from 'vue' :span="spanRight"
 import querypanel from '@/components/QueryPanel'
 import querycontent from '@/components/QueryContent'
 export default {
