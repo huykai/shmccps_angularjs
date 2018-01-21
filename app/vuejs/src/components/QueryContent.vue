@@ -1,15 +1,10 @@
 <template>  
     <div class="layout-content">
-      <Tabs >
+      <Tabs type="card">
         <TabPane v-for="cghost in cghosts.cdrinfo" :label="cghost.name" :name="cghost.name">
-          
-          <Table border stripe height="600" :columns="cghost.columns" :data="cghost.datas"></Table>
-          <Page :total="cghost.cdrcount" size="small" :page-size="pageSize" :page-size-opts="pageSizeOpts" show-total show-elevator show-sizer></Page>
-          
           <TablePanel :tableinfo="cghost" :key="cghost.key" />
-        
         </TabPane>
-      </Tabs>  -->
+      </Tabs>
     </div>
 </template>
 
