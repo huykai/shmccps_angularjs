@@ -49295,7 +49295,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "layout-content"
-  }, [_c('Tabs', {
+  }, [(_vm.cghosts.cdrinfo.length > 0) ? _c('Tabs', {
     attrs: {
       "type": "card"
     }
@@ -49311,7 +49311,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "tableinfo": cghost
       }
     })], 1)
-  }))], 1)
+  })) : _vm._e()], 1)
 },staticRenderFns: []}
 
 /***/ }),
@@ -51828,4 +51828,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[32]);
-//# sourceMappingURL=app.3a8cc365ccf88f338511.js.map
+//# sourceMappingURL=app.f6ff81b738e579a8a662.js.map
