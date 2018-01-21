@@ -1,6 +1,6 @@
 <template>
     <i-col :span="spanRight" collapse="false">
-        <!--<QueryPanel :vuebus="vuebus"></QueryPanel>-->
+        <QueryPanel :vuebus="vuebus"></QueryPanel>
         <QueryContent :vuebus="vuebus"></QueryContent>
         <div class="layout-copy">
             2011-2018 &copy; Richard Hu
