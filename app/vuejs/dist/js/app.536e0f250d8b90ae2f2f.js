@@ -49298,18 +49298,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "layout-content"
-  }, [_c('Tabs', {
-    attrs: {
-      "value": ""
-    }
-  }, _vm._l((_vm.cghosts.cdrinfo), function(cghost) {
-    return _c('TabPane', {
-      attrs: {
-        "label": cghost.name,
-        "name": cghost.name
-      }
-    })
-  }))], 1)
+  })
 },staticRenderFns: []}
 
 /***/ }),
@@ -51826,4 +51815,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[32]);
-//# sourceMappingURL=app.4ee1c10c0e6d0838722d.js.map
+//# sourceMappingURL=app.536e0f250d8b90ae2f2f.js.map
