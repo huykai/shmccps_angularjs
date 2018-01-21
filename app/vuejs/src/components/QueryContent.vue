@@ -37,24 +37,24 @@ export default {
     }
   },
   computed: {
-    iconSize () {
-      return this.spanLeft === 5 ? 14 : 24
-    }
+    // iconSize () {
+    //  return this.spanLeft === 5 ? 14 : 24
+    // }
     // cgHostsInfo: function () {
     //  console.log('this.cdrContentInfo: ', this.cdrContentInfo)
     //  return this.cdrContentInfo ? this.cdrContentInfo : this.cghosts
     // }
   },
   methods: {
-    toggleClick () {
-      if (this.spanLeft === 5) {
-        this.spanLeft = 2
-        this.spanRight = 22
-      } else {
-        this.spanLeft = 5
-        this.spanRight = 19
-      }
-    },
+    // toggleClick () {
+    //  if (this.spanLeft === 5) {
+    //    this.spanLeft = 2
+    //    this.spanRight = 22
+    //  } else {
+    //    this.spanLeft = 5
+    //    this.spanRight = 19
+    //  }
+    // },
     setCghosts (value) {
       this.$set(this.cghosts, 'cdrinfo', value)
     }

@@ -46953,24 +46953,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     };
   },
   computed: {
-    iconSize() {
-      return this.spanLeft === 5 ? 14 : 24;
-    }
+    // iconSize () {
+    //  return this.spanLeft === 5 ? 14 : 24
+    // }
     // cgHostsInfo: function () {
     //  console.log('this.cdrContentInfo: ', this.cdrContentInfo)
     //  return this.cdrContentInfo ? this.cdrContentInfo : this.cghosts
     // }
   },
   methods: {
-    toggleClick() {
-      if (this.spanLeft === 5) {
-        this.spanLeft = 2;
-        this.spanRight = 22;
-      } else {
-        this.spanLeft = 5;
-        this.spanRight = 19;
-      }
-    },
+    // toggleClick () {
+    //  if (this.spanLeft === 5) {
+    //    this.spanLeft = 2
+    //    this.spanRight = 22
+    //  } else {
+    //    this.spanLeft = 5
+    //    this.spanRight = 19
+    //  }
+    // },
     setCghosts(value) {
       this.$set(this.cghosts, 'cdrinfo', value);
     }
@@ -51804,4 +51804,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[32]);
-//# sourceMappingURL=app.08a9d7661b05daaedf25.js.map
+//# sourceMappingURL=app.8d1c6d0fd13c7b6e7588.js.map
