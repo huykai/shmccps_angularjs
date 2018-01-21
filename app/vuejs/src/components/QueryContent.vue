@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import TablePanel from '@/components/TablePanel'
+// import TablePanel from '@/components/TablePanel'
 export default {
   props: {
     vuebus: {
@@ -60,7 +60,7 @@ export default {
     }
   },
   components: {
-    'TablePanel': TablePanel
+    // 'TablePanel': TablePanel
   }
   // watch: {
   //   cdrContentInfo: function (val) {
