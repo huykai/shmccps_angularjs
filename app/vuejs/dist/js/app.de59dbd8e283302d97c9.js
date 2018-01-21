@@ -46948,6 +46948,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     });
     return {
       cdrContentBus: this.vuebus,
+      // title: '',
       cghosts: {
         cdrinfo: []
       }
@@ -46974,6 +46975,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     // },
     setCghosts(value) {
       this.$set(this.cghosts, 'cdrinfo', value);
+      // this.title = this.value[0].name
     }
   },
   components: {
@@ -49298,7 +49300,37 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "layout-content"
-  })
+  }, [_c('Tabs', _vm._l((_vm.cghosts.cdrinfo), function(cghost) {
+    return _c('TabPane', {
+      attrs: {
+        "label": cghost.name,
+        "name": cghost.name
+      }
+    }, [_c('Table', {
+      attrs: {
+        "border": "",
+        "stripe": "",
+        "height": "600",
+        "columns": cghost.columns,
+        "data": cghost.datas
+      }
+    }), _vm._v(" "), _c('Page', {
+      attrs: {
+        "total": cghost.cdrcount,
+        "size": "small",
+        "page-size": _vm.pageSize,
+        "page-size-opts": _vm.pageSizeOpts,
+        "show-total": "",
+        "show-elevator": "",
+        "show-sizer": ""
+      }
+    }), _vm._v(" "), _c('TablePanel', {
+      key: cghost.key,
+      attrs: {
+        "tableinfo": cghost
+      }
+    })], 1)
+  })), _vm._v("  -->\n")], 1)
 },staticRenderFns: []}
 
 /***/ }),
@@ -51815,4 +51847,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[32]);
-//# sourceMappingURL=app.536e0f250d8b90ae2f2f.js.map
+//# sourceMappingURL=app.de59dbd8e283302d97c9.js.map

@@ -1,6 +1,6 @@
 <template>  
     <div class="layout-content">
-      <!--<Tabs value="">
+      <Tabs >
         <TabPane v-for="cghost in cghosts.cdrinfo" :label="cghost.name" :name="cghost.name">
           
           <Table border stripe height="600" :columns="cghost.columns" :data="cghost.datas"></Table>
@@ -31,6 +31,7 @@ export default {
     })
     return {
       cdrContentBus: this.vuebus,
+      // title: '',
       cghosts: {
         cdrinfo: [
         ]
@@ -58,6 +59,7 @@ export default {
     // },
     setCghosts (value) {
       this.$set(this.cghosts, 'cdrinfo', value)
+      // this.title = this.value[0].name
     }
   },
   components: {
