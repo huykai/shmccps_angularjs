@@ -49299,12 +49299,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "label": cghost.name,
         "name": cghost.name
       }
-    }, [_c('TablePanel', {
-      key: cghost.key,
-      attrs: {
-        "tableinfo": cghost
-      }
-    })], 1)
+    })
   }))], 1)
 },staticRenderFns: []}
 
@@ -51822,4 +51817,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[32]);
-//# sourceMappingURL=app.57916d2d5464ade828b7.js.map
+//# sourceMappingURL=app.e600fefe214a75815246.js.map
