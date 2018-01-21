@@ -46929,6 +46929,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -49307,12 +49308,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "label": cghost.name,
         "name": cghost.name
       }
-    }, [_c('TablePanel', {
-      key: cghost.key,
-      attrs: {
-        "tableinfo": cghost
-      }
-    })], 1)
+    })
   }))], 1)
 },staticRenderFns: []}
 
@@ -51830,4 +51826,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[32]);
-//# sourceMappingURL=app.45ed7785eff4e0f5b22b.js.map
+//# sourceMappingURL=app.4ee1c10c0e6d0838722d.js.map
