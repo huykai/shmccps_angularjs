@@ -48593,11 +48593,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "span": _vm.spanRight,
       "collapse": "false"
     }
-  }, [_c('QueryPanel', {
-    attrs: {
-      "vuebus": _vm.vuebus
-    }
-  }), _vm._v(" "), _c('QueryContent', {
+  }, [_c('QueryContent', {
     attrs: {
       "vuebus": _vm.vuebus
     }
@@ -51719,4 +51715,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[32]);
-//# sourceMappingURL=app.9677ba143937cfecc77d.js.map
+//# sourceMappingURL=app.1b0eb3bd9f2ccd3a27fa.js.map
