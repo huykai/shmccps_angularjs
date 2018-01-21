@@ -47340,7 +47340,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
-// import Vue from 'vue' :span="spanRight"
+// import Vue from 'vue'
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -48665,16 +48665,12 @@ module.exports = Component.exports
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('i-col', {
     attrs: {
+      "span": _vm.spanRight,
       "collapse": "false"
     }
   }, [_c('QueryPanel', {
     attrs: {
       "vuebus": _vm.vuebus
-    }
-  }), _vm._v(" "), _c('QueryContent', {
-    attrs: {
-      "vuebus": _vm.vuebus,
-      "cdr-content": _vm.cdrContent
     }
   }), _vm._v(" "), _c('div', {
     staticClass: "layout-copy"
@@ -51810,4 +51806,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[32]);
-//# sourceMappingURL=app.1692de3b2f0398237fc8.js.map
+//# sourceMappingURL=app.d0b2306089416afcd8d1.js.map
