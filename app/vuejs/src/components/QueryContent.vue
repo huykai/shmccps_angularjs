@@ -1,19 +1,19 @@
 <template>  
     <div class="layout-content">
-      <Tabs value=""><!--
+      <Tabs value="">
         <TabPane v-for="cghost in cghosts.cdrinfo" :label="cghost.name" :name="cghost.name">
           
           <Table border stripe height="600" :columns="cghost.columns" :data="cghost.datas"></Table>
           <Page :total="cghost.cdrcount" size="small" :page-size="pageSize" :page-size-opts="pageSizeOpts" show-total show-elevator show-sizer></Page>
           
           <TablePanel :tableinfo="cghost" :key="cghost.key" />
-        </TabPane>-->
+        </TabPane>
       </Tabs>
     </div>
 </template>
 
 <script>
-// import TablePanel from '@/components/TablePanel'
+import TablePanel from '@/components/TablePanel'
 export default {
   props: {
     vuebus: {
@@ -24,10 +24,10 @@ export default {
     }
   },
   data () {
-    // this.vuebus.$on('change_cdrContent', (value) => {
-    //  console.log('get change_cdrContent message in QueryContent, with data:', value)
-    //  // this.setCghosts(value)
-    // })
+    this.vuebus.$on('change_cdrContent', (value) => {
+      console.log('get change_cdrContent message in QueryContent, with data:', value)
+      this.setCghosts(value)
+    })
     return {
       cdrContentBus: this.vuebus,
       cghosts: {
@@ -60,7 +60,7 @@ export default {
     }
   },
   components: {
-    // 'TablePanel': TablePanel
+    'TablePanel': TablePanel
   }
   // watch: {
   //   cdrContentInfo: function (val) {
