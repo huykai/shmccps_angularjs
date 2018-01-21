@@ -21,8 +21,7 @@ export default {
       default: function () {
         return {}
       }
-    },
-    cdrContent: {}
+    }
   },
   data () {
     this.vuebus.$on('change_cdrContent', (value) => {
@@ -34,8 +33,7 @@ export default {
       cghosts: {
         cdrinfo: [
         ]
-      },
-      cdrContentInfo: this.cdrContent
+      }
     }
   },
   computed: {

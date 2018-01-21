@@ -1,8 +1,8 @@
 <template>
     <i-col :span="spanRight" collapse="false">
         <QueryPanel :vuebus="vuebus"></QueryPanel>
-        <!--<QueryContent :vuebus="vuebus" :cdr-content="cdrContent"></QueryContent>
-        --><div class="layout-copy">
+        <QueryContent :vuebus="vuebus"></QueryContent>
+        <div class="layout-copy">
             2011-2018 &copy; Richard Hu
         </div>
     </i-col>
@@ -32,17 +32,13 @@ export default {
       collapse: false,
       querypanelform_show: true,
       vuebus: this.vueprops.vueinstance,
-      span: this.vueprops.span,
-      cdrConent: {}
+      span: this.vueprops.span
     }
   },
   computed: {
     spanRight: function () {
       console.log('spanRight: ', this.span)
       return this.vueprops.span
-    },
-    cdrContentInfo: function () {
-      return this.cdrContent
     }
   },
   methods: {

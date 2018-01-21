@@ -46938,8 +46938,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       default: function () {
         return {};
       }
-    },
-    cdrContent: {}
+    }
   },
   data() {
     this.vuebus.$on('change_cdrContent', value => {
@@ -46950,8 +46949,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       cdrContentBus: this.vuebus,
       cghosts: {
         cdrinfo: []
-      },
-      cdrContentInfo: this.cdrContent
+      }
     };
   },
   computed: {
@@ -47363,17 +47361,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       collapse: false,
       querypanelform_show: true,
       vuebus: this.vueprops.vueinstance,
-      span: this.vueprops.span,
-      cdrConent: {}
+      span: this.vueprops.span
     };
   },
   computed: {
     spanRight: function () {
       console.log('spanRight: ', this.span);
       return this.vueprops.span;
-    },
-    cdrContentInfo: function () {
-      return this.cdrContent;
     }
   },
   methods: {},
@@ -48669,6 +48663,10 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "collapse": "false"
     }
   }, [_c('QueryPanel', {
+    attrs: {
+      "vuebus": _vm.vuebus
+    }
+  }), _vm._v(" "), _c('QueryContent', {
     attrs: {
       "vuebus": _vm.vuebus
     }
@@ -51806,4 +51804,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[32]);
-//# sourceMappingURL=app.d0b2306089416afcd8d1.js.map
+//# sourceMappingURL=app.08a9d7661b05daaedf25.js.map
