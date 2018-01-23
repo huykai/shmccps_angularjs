@@ -46811,6 +46811,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         hostLogResult.jobResult = hostLogJobCmds[1];
         hostLogResults.push(hostLogResult);
       }
+      return hostLogResults;
     }
   },
   methods: {},
@@ -51950,4 +51951,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[32]);
-//# sourceMappingURL=app.bae07b849d3d8e6b6933.js.map
+//# sourceMappingURL=app.6c076941b2cfc2a34e26.js.map

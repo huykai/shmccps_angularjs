@@ -29,6 +29,7 @@ export default {
         hostLogResult.jobResult = hostLogJobCmds[1]
         hostLogResults.push(hostLogResult)
       }
+      return hostLogResults
     }
   },
   methods: {
