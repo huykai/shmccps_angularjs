@@ -1,10 +1,10 @@
 <template>
   <div>
     <Collapse>
-      <Panel v-for="hostLogInfo in hostLogInfos" name="hostLogInfo.jobName">
+      <Panel class="cmdresult" v-for="hostLogInfo in hostLogInfos" name="hostLogInfo.jobName">
         {{hostLogInfo.jobName}}
         <p slot="content">
-          <span class="cmdresult" v-for="jobcmdres in hostLogInfo.jobResult">{{jobcmdres}}<br></span>
+          <span v-for="jobcmdres in hostLogInfo.jobResult">{{jobcmdres}}<br></span>
         </p>
       </Panel>
     </Collapse>

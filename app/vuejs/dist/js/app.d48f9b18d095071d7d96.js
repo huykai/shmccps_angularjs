@@ -49403,6 +49403,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', [_c('Collapse', _vm._l((_vm.hostLogInfos), function(hostLogInfo) {
     return _c('Panel', {
+      staticClass: "cmdresult",
       attrs: {
         "name": "hostLogInfo.jobName"
       }
@@ -49412,9 +49413,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       },
       slot: "content"
     }, _vm._l((hostLogInfo.jobResult), function(jobcmdres) {
-      return _c('span', {
-        staticClass: "cmdresult"
-      }, [_vm._v(_vm._s(jobcmdres)), _c('br')])
+      return _c('span', [_vm._v(_vm._s(jobcmdres)), _c('br')])
     }))])
   }))], 1)
 },staticRenderFns: []}
@@ -51965,4 +51964,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[32]);
-//# sourceMappingURL=app.f9fedc01a8f5b79a1c68.js.map
+//# sourceMappingURL=app.d48f9b18d095071d7d96.js.map
