@@ -319,7 +319,11 @@ export default {
       // console.log('token: ', 'Bearer ' + Storages.sessionStorage.get('token'))
       // console.log(`startdate: ${this.formItem.startdate} ; starttime: ${this.formItem.starttime}`)
       console.log('submit Api String: ', this.postApiString)
-      this.vuebus.data['postApiString'] = this.postApiString
+      if (this.vuebus.data instanceof Object) {
+        this.vuebus.data['postApiString'] = this.postApiString
+      } else {
+        this.vuebus.data = {'postApiString': this.postApiString}
+      }
       axios.defaults.headers.common['Authorization'] = 'Bearer ' + Storages.sessionStorage.get('token')
       axios.defaults.timeout = 600000
       // axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'

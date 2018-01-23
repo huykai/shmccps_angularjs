@@ -47241,7 +47241,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       // console.log('token: ', 'Bearer ' + Storages.sessionStorage.get('token'))
       // console.log(`startdate: ${this.formItem.startdate} ; starttime: ${this.formItem.starttime}`)
       console.log('submit Api String: ', this.postApiString);
-      this.vuebus.data['postApiString'] = this.postApiString;
+      if (this.vuebus.data instanceof Object) {
+        this.vuebus.data['postApiString'] = this.postApiString;
+      } else {
+        this.vuebus.data = { 'postApiString': this.postApiString };
+      }
       __WEBPACK_IMPORTED_MODULE_0_axios___default.a.defaults.headers.common['Authorization'] = 'Bearer ' + __WEBPACK_IMPORTED_MODULE_1_js_storage___default.a.sessionStorage.get('token');
       __WEBPACK_IMPORTED_MODULE_0_axios___default.a.defaults.timeout = 600000;
       // axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
@@ -51853,4 +51857,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[32]);
-//# sourceMappingURL=app.16209cfb1d20476d71dc.js.map
+//# sourceMappingURL=app.3a6c0743ce95a0d7ef7e.js.map
