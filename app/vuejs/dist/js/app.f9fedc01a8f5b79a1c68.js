@@ -49412,7 +49412,9 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       },
       slot: "content"
     }, _vm._l((hostLogInfo.jobResult), function(jobcmdres) {
-      return _c('span', [_vm._v(_vm._s(jobcmdres)), _c('br')])
+      return _c('span', {
+        staticClass: "cmdresult"
+      }, [_vm._v(_vm._s(jobcmdres)), _c('br')])
     }))])
   }))], 1)
 },staticRenderFns: []}
@@ -51963,4 +51965,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[32]);
-//# sourceMappingURL=app.07a459e0599f18d31227.js.map
+//# sourceMappingURL=app.f9fedc01a8f5b79a1c68.js.map

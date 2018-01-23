@@ -4,7 +4,7 @@
       <Panel v-for="hostLogInfo in hostLogInfos" name="hostLogInfo.jobName">
         {{hostLogInfo.jobName}}
         <p slot="content">
-          <span v-for="jobcmdres in hostLogInfo.jobResult">{{jobcmdres}}<br></span>
+          <span class="cmdresult" v-for="jobcmdres in hostLogInfo.jobResult">{{jobcmdres}}<br></span>
         </p>
       </Panel>
     </Collapse>
@@ -50,5 +50,7 @@ export default {
 </script>
 
 <style scoped>
-
+.cmdresult{
+  text-align: left;  
+}
 </style>
