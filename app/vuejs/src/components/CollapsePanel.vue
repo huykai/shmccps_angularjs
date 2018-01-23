@@ -20,7 +20,7 @@ export default {
     hostLogInfos () {
       let hostLogInfo = this.datainfo
       let hostLogResults = []
-      let hostLogJobInfos = hostLogInfo.stdout;
+      let hostLogJobInfos = hostLogInfo.stdout
       let hostLogJobArrays = hostLogJobInfos.split('command:').slice(1)
       for (let hostLogJobArray of hostLogJobArrays) {
         let hostLogJobCmds = hostLogJobArray.split('result:')

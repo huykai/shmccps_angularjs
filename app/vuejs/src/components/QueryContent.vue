@@ -2,8 +2,8 @@
     <div class="layout-content">
       <Tabs v-if="cghosts.cdrinfo.length > 0" :value="cghosts.cdrinfo[0].name" type="card">
         <TabPane v-for="cghost in cghosts.cdrinfo" :label="cghost.name" :name="cghost.name">
-          <TablePanel v-if="!(vuebus.data.postpostApiString === '/api/getCgCdrAnalysis')" :tableinfo="cghost" :key="cghost.key" />
-          <CollapsePanel v-if="(vuebus.data.postpostApiString === '/api/getCgCdrAnalysis')" :datainfo="cghost" :key="cghost.key" />
+          <TablePanel v-if="!(vuebus.data.postApiString === '/api/getCgCdrAnalysis')" :tableinfo="cghost" :key="cghost.key" />
+          <CollapsePanel v-if="(vuebus.data.postApiString === '/api/getCgCdrAnalysis')" :datainfo="cghost" :key="cghost.key" />
         </TabPane>
       </Tabs>
     </div>
@@ -11,6 +11,7 @@
 
 <script>
 import TablePanel from '@/components/TablePanel'
+import CollapsePanel from '@/components/CollapsePanel'
 export default {
   props: {
     vuebus: {
@@ -59,7 +60,8 @@ export default {
     }
   },
   components: {
-    'TablePanel': TablePanel
+    'TablePanel': TablePanel,
+    'CollapsePanel': CollapsePanel
   }
   // watch: {
   //   cdrContentInfo: function (val) {
