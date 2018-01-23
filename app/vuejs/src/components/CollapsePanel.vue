@@ -4,7 +4,7 @@
       <Panel v-for="hostLogInfo in hostLogInfos" name="hostLogInfo.jobName">
         {{hostLogInfo.jobName}}
         <p slot="content">
-          <br v-for="jobcmdres in hostLogInfo.jobResult">{{jobcmdres}}</br>
+          <span v-for="jobcmdres in hostLogInfo.jobResult">{{jobcmdres}}<br></span>
         </p>
       </Panel>
     </Collapse>
