@@ -2,8 +2,10 @@
   <div>
     <Collapse>
       <Panel v-for="hostLogInfo in hostLogInfos" name="hostLogInfo.jobName">
-         {{hostLogInfo.jobName}}
-         <p slot="content"><br v-for="jobResult in hostLogInfo.jobResult">{{jobResult}}</br></p>
+        {{hostLogInfo.jobName}}
+        <p slot="content">
+          <br v-for="jobResult in hostLogInfo.jobResult">{{jobResult}}</br>
+        </p>
       </Panel>
     </Collapse>
   </div>
@@ -25,9 +27,9 @@ export default {
       for (let hostLogJobArray of hostLogJobArrays) {
         let hostLogJobCmds = hostLogJobArray.split('result:')
         let hostLogResult = {}
-        hostLogResult.jobName = `${hostLogJobCmds[0]}`
+        hostLogResult.jobName = hostLogJobCmds[0]
         if (hostLogJobCmds[1]) {
-          hostLogResult.jobResult = hostLogJobCmds[1].split('\r\n')
+          hostLogResult.jobResult = hostLogJobCmds[1].split('\n')
         } else {
           hostLogResult.jobResult = []
         }

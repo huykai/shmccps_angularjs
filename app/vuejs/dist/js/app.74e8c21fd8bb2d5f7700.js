@@ -46792,6 +46792,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['datainfo'],
@@ -46807,9 +46809,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       for (let hostLogJobArray of hostLogJobArrays) {
         let hostLogJobCmds = hostLogJobArray.split('result:');
         let hostLogResult = {};
-        hostLogResult.jobName = `${hostLogJobCmds[0]}`;
+        hostLogResult.jobName = hostLogJobCmds[0];
         if (hostLogJobCmds[1]) {
-          hostLogResult.jobResult = hostLogJobCmds[1].split('\r\n');
+          hostLogResult.jobResult = hostLogJobCmds[1].split('\n');
         } else {
           hostLogResult.jobResult = [];
         }
@@ -49402,7 +49404,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       attrs: {
         "name": "hostLogInfo.jobName"
       }
-    }, [_vm._v("\n       " + _vm._s(hostLogInfo.jobName) + "\n       "), _c('p', {
+    }, [_vm._v("\n      " + _vm._s(hostLogInfo.jobName) + "\n      "), _c('p', {
       attrs: {
         "slot": "content"
       },
@@ -51959,4 +51961,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[32]);
-//# sourceMappingURL=app.cd0419175c561eb96278.js.map
+//# sourceMappingURL=app.74e8c21fd8bb2d5f7700.js.map
