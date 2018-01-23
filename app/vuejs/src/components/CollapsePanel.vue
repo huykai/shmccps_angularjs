@@ -27,9 +27,9 @@ export default {
         let hostLogResult = {}
         hostLogResult.jobName = hostLogJobCmds[0]
         hostLogResult.jobResult = hostLogJobCmds[1]
-        console.log('hostLogResult: jobName = ', hostLogResult.jobName)
-        console.log('hostLogResult: jobResult = ', hostLogResult.jobResult)
-        hostLogResults.push(hostLogResult)
+        // console.log('hostLogResult: jobName = ', hostLogResult.jobName)
+        // console.log('hostLogResult: jobResult = ', hostLogResult.jobResult)
+        hostLogResults.push(`${hostLogResult}`)
       }
       return hostLogResults
     }
