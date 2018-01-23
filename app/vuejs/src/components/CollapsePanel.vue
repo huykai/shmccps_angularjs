@@ -28,8 +28,8 @@ export default {
         let hostLogJobCmds = hostLogJobArray.split('result:')
         let hostLogResult = {}
         hostLogResult.jobName = hostLogJobCmds[0]
-        console.log('hostLogJobCmds[0]: ', hostLogJobCmds[0])
-        console.log('hostLogJobCmds[1]: ', hostLogJobCmds[1])
+        // console.log('hostLogJobCmds[0]: ', hostLogJobCmds[0])
+        // console.log('hostLogJobCmds[1]: ', hostLogJobCmds[1])
         if (hostLogJobCmds[1]) {
           hostLogResult.jobResult = hostLogJobCmds[1].split('\n')
         } else {
