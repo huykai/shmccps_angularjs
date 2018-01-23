@@ -2,7 +2,8 @@
     <div class="layout-content">
       <Tabs v-if="cghosts.cdrinfo.length > 0" :value="cghosts.cdrinfo[0].name" type="card">
         <TabPane v-for="cghost in cghosts.cdrinfo" :label="cghost.name" :name="cghost.name">
-          <TablePanel :tableinfo="cghost" :key="cghost.key" />
+          <TablePanel v-if="!(vuebus.data.postpostApiString === '/api/getCgCdrAnalysis')" :tableinfo="cghost" :key="cghost.key" />
+          <CollapsePanel v-if="(vuebus.data.postpostApiString === '/api/getCgCdrAnalysis')" :datainfo="cghost" :key="cghost.key" />
         </TabPane>
       </Tabs>
     </div>

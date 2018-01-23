@@ -183,9 +183,9 @@ export default {
           {name: 'accessPointNameOI', label: 'accessPointNameOI'},
           {name: 'servedMSISDN', label: 'servedMSISDN'},
           {name: 'chargingCharacteristics', label: 'chargingCharacteristics'},
-          {name: 'systemType', label: 'systemType'},
-          {name: 'dataVolumeGPRSUplink', label: 'dataVolumeGPRSUplink'},
-          {name: 'dataVolumeGPRSDownlink', label: 'dataVolumeGPRSDownlink'}
+          {name: 'systemType', label: 'systemType'}
+          // {name: 'dataVolumeGPRSUplink', label: 'dataVolumeGPRSUplink'},
+          // {name: 'dataVolumeGPRSDownlink', label: 'dataVolumeGPRSDownlink'}
         ],
         'sgwcdr': [
           {name: 'duration', label: 'duration'},
@@ -196,9 +196,9 @@ export default {
           {name: 'nodeID', label: 'nodeID'},
           {name: 'rATType', label: 'rATType'},
           {name: 'servedMSISDN', label: 'servedMSISDN'},
-          {name: 'chargingCharacteristics', label: 'chargingCharacteristics'},
-          {name: 'dataVolumeGPRSUplink', label: 'dataVolumeGPRSUplink'},
-          {name: 'dataVolumeGPRSDownlink', label: 'dataVolumeGPRSDownlink'}
+          {name: 'chargingCharacteristics', label: 'chargingCharacteristics'}
+          // {name: 'dataVolumeGPRSUplink', label: 'dataVolumeGPRSUplink'},
+          // {name: 'dataVolumeGPRSDownlink', label: 'dataVolumeGPRSDownlink'}
         ],
         'pgwcdr': [
           {name: 'duration', label: 'duration'},
@@ -211,9 +211,9 @@ export default {
           {name: 'serviceIdentifier', label: 'serviceIdentifier'},
           {name: 'rATType', label: 'rATType'},
           {name: 'servedMSISDN', label: 'servedMSISDN'},
-          {name: 'chargingCharacteristics', label: 'chargingCharacteristics'},
-          {name: 'datavolumeFBCUplink', label: 'datavolumeFBCUplink'},
-          {name: 'datavolumeFBCDownlink', label: 'datavolumeFBCDownlink'}
+          {name: 'chargingCharacteristics', label: 'chargingCharacteristics'}
+          // {name: 'datavolumeFBCUplink', label: 'datavolumeFBCUplink'},
+          // {name: 'datavolumeFBCDownlink', label: 'datavolumeFBCDownlink'}
         ]
       },
       cdrmonitoritems: {
@@ -226,9 +226,9 @@ export default {
           {name: 'accessPointNameOI', label: 'accessPointNameOI'},
           {name: 'servedMSISDN', label: 'servedMSISDN'},
           {name: 'chargingCharacteristics', label: 'chargingCharacteristics'},
-          {name: 'systemType', label: 'systemType'},
-          {name: 'dataVolumeGPRSUplink', label: 'dataVolumeGPRSUplink'},
-          {name: 'dataVolumeGPRSDownlink', label: 'dataVolumeGPRSDownlink'}
+          {name: 'systemType', label: 'systemType'}
+          // {name: 'dataVolumeGPRSUplink', label: 'dataVolumeGPRSUplink'},
+          // {name: 'dataVolumeGPRSDownlink', label: 'dataVolumeGPRSDownlink'}
         ],
         'sgwcdr': [
           {name: 'duration', label: 'duration'},
@@ -239,9 +239,9 @@ export default {
           {name: 'nodeID', label: 'nodeID'},
           {name: 'rATType', label: 'rATType'},
           {name: 'servedMSISDN', label: 'servedMSISDN'},
-          {name: 'chargingCharacteristics', label: 'chargingCharacteristics'},
-          {name: 'dataVolumeGPRSUplink', label: 'dataVolumeGPRSUplink'},
-          {name: 'dataVolumeGPRSDownlink', label: 'dataVolumeGPRSDownlink'}
+          {name: 'chargingCharacteristics', label: 'chargingCharacteristics'}
+          // {name: 'dataVolumeGPRSUplink', label: 'dataVolumeGPRSUplink'},
+          // {name: 'dataVolumeGPRSDownlink', label: 'dataVolumeGPRSDownlink'}
         ],
         'pgwcdr': [
           {name: 'duration', label: 'duration'},
@@ -254,9 +254,9 @@ export default {
           {name: 'serviceIdentifier', label: 'serviceIdentifier'},
           {name: 'rATType', label: 'rATType'},
           {name: 'servedMSISDN', label: 'servedMSISDN'},
-          {name: 'chargingCharacteristics', label: 'chargingCharacteristics'},
-          {name: 'datavolumeFBCUplink', label: 'datavolumeFBCUplink'},
-          {name: 'datavolumeFBCDownlink', label: 'datavolumeFBCDownlink'}
+          {name: 'chargingCharacteristics', label: 'chargingCharacteristics'}
+          // {name: 'datavolumeFBCUplink', label: 'datavolumeFBCUplink'},
+          // {name: 'datavolumeFBCDownlink', label: 'datavolumeFBCDownlink'}
         ]
       },
       collapse: 'false',
@@ -319,6 +319,7 @@ export default {
       // console.log('token: ', 'Bearer ' + Storages.sessionStorage.get('token'))
       // console.log(`startdate: ${this.formItem.startdate} ; starttime: ${this.formItem.starttime}`)
       console.log('submit Api String: ', this.postApiString)
+      this.vuebus.data['postApiString'] = this.postApiString
       axios.defaults.headers.common['Authorization'] = 'Bearer ' + Storages.sessionStorage.get('token')
       axios.defaults.timeout = 600000
       // axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'

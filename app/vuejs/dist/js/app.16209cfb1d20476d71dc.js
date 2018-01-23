@@ -46925,6 +46925,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -47153,14 +47154,32 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       },
       cghostnames: [{ name: 'shcg16bnk-1', label: 'SHCG16BNK-1' }, { name: 'shcg17bnk-1', label: 'SHCG17BNK-1' }, { name: 'shcg18bnk-1', label: 'SHCG18BNK-1' }, { name: 'shcg19bnk-1', label: 'SHCG19BNK-1' }, { name: 'shcg20bnk-1', label: 'SHCG20BNK-1' }, { name: 'shcg21bnk-1', label: 'SHCG21BNK-1' }, { name: 'shcg22bnk-1', label: 'SHCG22BNK-1' }, { name: 'shcg23bnk-1', label: 'SHCG23BNK-1' }, { name: 'shcg24bnk-1', label: 'SHCG24BNK-1' }, { name: 'shcg25bnk-1', label: 'SHCG25BNK-1' }, { name: 'shcg26bnk-1', label: 'SHCG26BNK-1' }, { name: 'shcg27bnk-1', label: 'SHCG27BNK-1' }, { name: 'shcg28bnk-1', label: 'SHCG28BNK-1' }, { name: 'shcg29bnk-1', label: 'SHCG29BNK-1' }, { name: 'shcg30bnk-1', label: 'SHCG30BNK-1' }],
       cdrgroupitems: {
-        'scdr': [{ name: 'duration', label: 'duration' }, { name: 'accessPointNameNI', label: 'accessPointNameNI' }, { name: 'causeForRecClosing', label: 'causeForRecClosing' }, { name: 'servedIMSI', label: 'servedIMSI' }, { name: 'sgsnAddress', label: 'sgsnAddress' }, { name: 'accessPointNameOI', label: 'accessPointNameOI' }, { name: 'servedMSISDN', label: 'servedMSISDN' }, { name: 'chargingCharacteristics', label: 'chargingCharacteristics' }, { name: 'systemType', label: 'systemType' }, { name: 'dataVolumeGPRSUplink', label: 'dataVolumeGPRSUplink' }, { name: 'dataVolumeGPRSDownlink', label: 'dataVolumeGPRSDownlink' }],
-        'sgwcdr': [{ name: 'duration', label: 'duration' }, { name: 'accessPointNameNI', label: 'accessPointNameNI' }, { name: 'servedIMSI', label: 'servedIMSI' }, { name: 'sGWAddress', label: 'sGWAddress' }, { name: 'pGWAddressUsed', label: 'pGWAddressUsed' }, { name: 'nodeID', label: 'nodeID' }, { name: 'rATType', label: 'rATType' }, { name: 'servedMSISDN', label: 'servedMSISDN' }, { name: 'chargingCharacteristics', label: 'chargingCharacteristics' }, { name: 'dataVolumeGPRSUplink', label: 'dataVolumeGPRSUplink' }, { name: 'dataVolumeGPRSDownlink', label: 'dataVolumeGPRSDownlink' }],
-        'pgwcdr': [{ name: 'duration', label: 'duration' }, { name: 'accessPointNameNI', label: 'accessPointNameNI' }, { name: 'causeForRecClosing', label: 'causeForRecClosing' }, { name: 'servedIMSI', label: 'servedIMSI' }, { name: 'pGWAddress', label: 'pGWAddress' }, { name: 'nodeID', label: 'nodeID' }, { name: 'ratingGroup', label: 'ratingGroup' }, { name: 'serviceIdentifier', label: 'serviceIdentifier' }, { name: 'rATType', label: 'rATType' }, { name: 'servedMSISDN', label: 'servedMSISDN' }, { name: 'chargingCharacteristics', label: 'chargingCharacteristics' }, { name: 'datavolumeFBCUplink', label: 'datavolumeFBCUplink' }, { name: 'datavolumeFBCDownlink', label: 'datavolumeFBCDownlink' }]
+        'scdr': [{ name: 'duration', label: 'duration' }, { name: 'accessPointNameNI', label: 'accessPointNameNI' }, { name: 'causeForRecClosing', label: 'causeForRecClosing' }, { name: 'servedIMSI', label: 'servedIMSI' }, { name: 'sgsnAddress', label: 'sgsnAddress' }, { name: 'accessPointNameOI', label: 'accessPointNameOI' }, { name: 'servedMSISDN', label: 'servedMSISDN' }, { name: 'chargingCharacteristics', label: 'chargingCharacteristics' }, { name: 'systemType', label: 'systemType'
+          // {name: 'dataVolumeGPRSUplink', label: 'dataVolumeGPRSUplink'},
+          // {name: 'dataVolumeGPRSDownlink', label: 'dataVolumeGPRSDownlink'}
+        }],
+        'sgwcdr': [{ name: 'duration', label: 'duration' }, { name: 'accessPointNameNI', label: 'accessPointNameNI' }, { name: 'servedIMSI', label: 'servedIMSI' }, { name: 'sGWAddress', label: 'sGWAddress' }, { name: 'pGWAddressUsed', label: 'pGWAddressUsed' }, { name: 'nodeID', label: 'nodeID' }, { name: 'rATType', label: 'rATType' }, { name: 'servedMSISDN', label: 'servedMSISDN' }, { name: 'chargingCharacteristics', label: 'chargingCharacteristics'
+          // {name: 'dataVolumeGPRSUplink', label: 'dataVolumeGPRSUplink'},
+          // {name: 'dataVolumeGPRSDownlink', label: 'dataVolumeGPRSDownlink'}
+        }],
+        'pgwcdr': [{ name: 'duration', label: 'duration' }, { name: 'accessPointNameNI', label: 'accessPointNameNI' }, { name: 'causeForRecClosing', label: 'causeForRecClosing' }, { name: 'servedIMSI', label: 'servedIMSI' }, { name: 'pGWAddress', label: 'pGWAddress' }, { name: 'nodeID', label: 'nodeID' }, { name: 'ratingGroup', label: 'ratingGroup' }, { name: 'serviceIdentifier', label: 'serviceIdentifier' }, { name: 'rATType', label: 'rATType' }, { name: 'servedMSISDN', label: 'servedMSISDN' }, { name: 'chargingCharacteristics', label: 'chargingCharacteristics'
+          // {name: 'datavolumeFBCUplink', label: 'datavolumeFBCUplink'},
+          // {name: 'datavolumeFBCDownlink', label: 'datavolumeFBCDownlink'}
+        }]
       },
       cdrmonitoritems: {
-        'scdr': [{ name: 'duration', label: 'duration' }, { name: 'accessPointNameNI', label: 'accessPointNameNI' }, { name: 'causeForRecClosing', label: 'causeForRecClosing' }, { name: 'servedIMSI', label: 'servedIMSI' }, { name: 'sgsnAddress', label: 'sgsnAddress' }, { name: 'accessPointNameOI', label: 'accessPointNameOI' }, { name: 'servedMSISDN', label: 'servedMSISDN' }, { name: 'chargingCharacteristics', label: 'chargingCharacteristics' }, { name: 'systemType', label: 'systemType' }, { name: 'dataVolumeGPRSUplink', label: 'dataVolumeGPRSUplink' }, { name: 'dataVolumeGPRSDownlink', label: 'dataVolumeGPRSDownlink' }],
-        'sgwcdr': [{ name: 'duration', label: 'duration' }, { name: 'accessPointNameNI', label: 'accessPointNameNI' }, { name: 'servedIMSI', label: 'servedIMSI' }, { name: 'sGWAddress', label: 'sGWAddress' }, { name: 'pGWAddressUsed', label: 'pGWAddressUsed' }, { name: 'nodeID', label: 'nodeID' }, { name: 'rATType', label: 'rATType' }, { name: 'servedMSISDN', label: 'servedMSISDN' }, { name: 'chargingCharacteristics', label: 'chargingCharacteristics' }, { name: 'dataVolumeGPRSUplink', label: 'dataVolumeGPRSUplink' }, { name: 'dataVolumeGPRSDownlink', label: 'dataVolumeGPRSDownlink' }],
-        'pgwcdr': [{ name: 'duration', label: 'duration' }, { name: 'accessPointNameNI', label: 'accessPointNameNI' }, { name: 'causeForRecClosing', label: 'causeForRecClosing' }, { name: 'servedIMSI', label: 'servedIMSI' }, { name: 'pGWAddress', label: 'pGWAddress' }, { name: 'nodeID', label: 'nodeID' }, { name: 'ratingGroup', label: 'ratingGroup' }, { name: 'serviceIdentifier', label: 'serviceIdentifier' }, { name: 'rATType', label: 'rATType' }, { name: 'servedMSISDN', label: 'servedMSISDN' }, { name: 'chargingCharacteristics', label: 'chargingCharacteristics' }, { name: 'datavolumeFBCUplink', label: 'datavolumeFBCUplink' }, { name: 'datavolumeFBCDownlink', label: 'datavolumeFBCDownlink' }]
+        'scdr': [{ name: 'duration', label: 'duration' }, { name: 'accessPointNameNI', label: 'accessPointNameNI' }, { name: 'causeForRecClosing', label: 'causeForRecClosing' }, { name: 'servedIMSI', label: 'servedIMSI' }, { name: 'sgsnAddress', label: 'sgsnAddress' }, { name: 'accessPointNameOI', label: 'accessPointNameOI' }, { name: 'servedMSISDN', label: 'servedMSISDN' }, { name: 'chargingCharacteristics', label: 'chargingCharacteristics' }, { name: 'systemType', label: 'systemType'
+          // {name: 'dataVolumeGPRSUplink', label: 'dataVolumeGPRSUplink'},
+          // {name: 'dataVolumeGPRSDownlink', label: 'dataVolumeGPRSDownlink'}
+        }],
+        'sgwcdr': [{ name: 'duration', label: 'duration' }, { name: 'accessPointNameNI', label: 'accessPointNameNI' }, { name: 'servedIMSI', label: 'servedIMSI' }, { name: 'sGWAddress', label: 'sGWAddress' }, { name: 'pGWAddressUsed', label: 'pGWAddressUsed' }, { name: 'nodeID', label: 'nodeID' }, { name: 'rATType', label: 'rATType' }, { name: 'servedMSISDN', label: 'servedMSISDN' }, { name: 'chargingCharacteristics', label: 'chargingCharacteristics'
+          // {name: 'dataVolumeGPRSUplink', label: 'dataVolumeGPRSUplink'},
+          // {name: 'dataVolumeGPRSDownlink', label: 'dataVolumeGPRSDownlink'}
+        }],
+        'pgwcdr': [{ name: 'duration', label: 'duration' }, { name: 'accessPointNameNI', label: 'accessPointNameNI' }, { name: 'causeForRecClosing', label: 'causeForRecClosing' }, { name: 'servedIMSI', label: 'servedIMSI' }, { name: 'pGWAddress', label: 'pGWAddress' }, { name: 'nodeID', label: 'nodeID' }, { name: 'ratingGroup', label: 'ratingGroup' }, { name: 'serviceIdentifier', label: 'serviceIdentifier' }, { name: 'rATType', label: 'rATType' }, { name: 'servedMSISDN', label: 'servedMSISDN' }, { name: 'chargingCharacteristics', label: 'chargingCharacteristics'
+          // {name: 'datavolumeFBCUplink', label: 'datavolumeFBCUplink'},
+          // {name: 'datavolumeFBCDownlink', label: 'datavolumeFBCDownlink'}
+        }]
       },
       collapse: 'false',
       querypanelform_show: true,
@@ -47222,6 +47241,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       // console.log('token: ', 'Bearer ' + Storages.sessionStorage.get('token'))
       // console.log(`startdate: ${this.formItem.startdate} ; starttime: ${this.formItem.starttime}`)
       console.log('submit Api String: ', this.postApiString);
+      this.vuebus.data['postApiString'] = this.postApiString;
       __WEBPACK_IMPORTED_MODULE_0_axios___default.a.defaults.headers.common['Authorization'] = 'Bearer ' + __WEBPACK_IMPORTED_MODULE_1_js_storage___default.a.sessionStorage.get('token');
       __WEBPACK_IMPORTED_MODULE_0_axios___default.a.defaults.timeout = 600000;
       // axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
@@ -47388,8 +47408,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['tableinfo'],
@@ -47456,7 +47474,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     });
     const vueprops = {
       vueinstance: vuetmp,
-      span: spanAssign.spanRight
+      span: spanAssign.spanRight,
+      data: {}
     };
     return {
       vueinstance: vuetmp,
@@ -49306,12 +49325,17 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "label": cghost.name,
         "name": cghost.name
       }
-    }, [_c('TablePanel', {
+    }, [(!(_vm.vuebus.data.postpostApiString === '/api/getCgCdrAnalysis')) ? _c('TablePanel', {
       key: cghost.key,
       attrs: {
         "tableinfo": cghost
       }
-    })], 1)
+    }) : _vm._e(), _vm._v(" "), ((_vm.vuebus.data.postpostApiString === '/api/getCgCdrAnalysis')) ? _c('CollapsePanel', {
+      key: cghost.key,
+      attrs: {
+        "datainfo": cghost
+      }
+    }) : _vm._e()], 1)
   })) : _vm._e()], 1)
 },staticRenderFns: []}
 
@@ -51829,4 +51853,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[32]);
-//# sourceMappingURL=app.a56270251adb262c0c2b.js.map
+//# sourceMappingURL=app.16209cfb1d20476d71dc.js.map

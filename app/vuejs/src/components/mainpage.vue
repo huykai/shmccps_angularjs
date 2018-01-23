@@ -28,7 +28,8 @@ export default {
     })
     const vueprops = {
       vueinstance: vuetmp,
-      span: spanAssign.spanRight
+      span: spanAssign.spanRight,
+      data: {}
     }
     return {
       vueinstance: vuetmp,

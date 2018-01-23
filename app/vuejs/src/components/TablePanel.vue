@@ -1,9 +1,7 @@
 <template>
     <div>
       <Table border stripe height="600" :columns="cghost.columns" :data="pageData"></Table>
-      
       <Page :total="cghost.cdrcount" size="small" :current="1" :page-size="pageSize" :page-size-opts="pageSizeOpts" @on-change="changePage" show-total show-elevator show-sizer></Page>
-      
     </div>
 </template>
      
