@@ -46807,11 +46807,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       for (let hostLogJobArray of hostLogJobArrays) {
         let hostLogJobCmds = hostLogJobArray.split('result:');
         let hostLogResult = {};
-        hostLogResult.jobName = hostLogJobCmds[0];
-        hostLogResult.jobResult = hostLogJobCmds[1];
+        hostLogResult.jobName = `${hostLogJobCmds[0]}`;
+        hostLogResult.jobResult = `${hostLogJobCmds[1]}`;
         // console.log('hostLogResult: jobName = ', hostLogResult.jobName)
         // console.log('hostLogResult: jobResult = ', hostLogResult.jobResult)
-        hostLogResults.push(`${hostLogResult}`);
+        hostLogResults.push(hostLogResult);
       }
       return hostLogResults;
     }
@@ -51953,4 +51953,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[32]);
-//# sourceMappingURL=app.3bae470eebf1a339e791.js.map
+//# sourceMappingURL=app.df063634c2276efe2dec.js.map

@@ -25,11 +25,11 @@ export default {
       for (let hostLogJobArray of hostLogJobArrays) {
         let hostLogJobCmds = hostLogJobArray.split('result:')
         let hostLogResult = {}
-        hostLogResult.jobName = hostLogJobCmds[0]
-        hostLogResult.jobResult = hostLogJobCmds[1]
+        hostLogResult.jobName = `${hostLogJobCmds[0]}`
+        hostLogResult.jobResult = `${hostLogJobCmds[1]}`
         // console.log('hostLogResult: jobName = ', hostLogResult.jobName)
         // console.log('hostLogResult: jobResult = ', hostLogResult.jobResult)
-        hostLogResults.push(`${hostLogResult}`)
+        hostLogResults.push(hostLogResult)
       }
       return hostLogResults
     }
