@@ -3,7 +3,7 @@
     <Collapse>
       <Panel v-for="hostLogInfo in hostLogInfos" name="hostLogInfo.jobName">
          {{hostLogInfo.jobName}}
-         <p slot="content">{{hostLogInfo.jobResult}}</p>
+         <p slot="content"><br v-for="jobResult in hostLogInfo.jobResult">{{jobResult}}</br></p>
       </Panel>
     </Collapse>
   </div>
@@ -26,7 +26,7 @@ export default {
         let hostLogJobCmds = hostLogJobArray.split('result:')
         let hostLogResult = {}
         hostLogResult.jobName = `${hostLogJobCmds[0]}`
-        hostLogResult.jobResult = `${hostLogJobCmds[1]}`
+        hostLogResult.jobResult = hostLogJobCmds[1].split('\r\n')
         // console.log('hostLogResult: jobName = ', hostLogResult.jobName)
         // console.log('hostLogResult: jobResult = ', hostLogResult.jobResult)
         hostLogResults.push(hostLogResult)
