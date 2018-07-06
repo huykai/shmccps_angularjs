@@ -63,8 +63,14 @@ var TreeDemoSelectCtrl = ['$rootScope',function($rootScope) {
         {id:'216',text:'LTE-S1U-THROUGH',pid:'21'},
         {id:'217',text:'LTE-SESSION',pid:'21'},
         {id:'218',text:'LTE-SGI-THROUGH',pid:'21'},
-        {id:'219',text:'LTE-IPPOOL',pid:'21'}
-
+        {id:'219',text:'LTE-IPPOOL',pid:'21'},
+        {id:'220',text:'LTE-DOWNDATA-NOTICE',pid:'21'},
+        {id:'221',text:'LTE-DATAFORWARD-SUCC',pid:'21'},
+        {id:'222',text:'LTE-SBCPU',pid:'21'},
+        {id:'223',text:'LTE-SABCPU',pid:'21'},
+        {id:'224',text:'LTE-PDN',pid:'21'},
+        {id:'225',text:'LTE-CREATEBEARER',pid:'21'},
+        {id:'226',text:'LTE-S11CREATESESSION',pid:'21'}
     ];
 	
     vm.mul = true;

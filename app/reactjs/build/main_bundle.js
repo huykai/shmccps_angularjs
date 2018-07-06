@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "56a252f2c3c0863df964"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "8a9a19b0df92e39f4809"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -631,7 +631,9 @@
 /******/ 		}
 /******/ 	
 /******/ 		hotSetStatus("idle");
-/******/ 		return Promise.resolve(outdatedModules);
+/******/ 		return new Promise(function(resolve) {
+/******/ 			resolve(outdatedModules);
+/******/ 		});
 /******/ 	}
 /******/
 /******/ 	// The module cache
@@ -26513,7 +26515,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 //import '../lib/jquery-easyui-1.5.2/themes/default/easyui.css';
 //import '../lib/jquery-easyui-1.5.2/themes/icon.css';
 
-var defaultwidth_number = 1200;
+var defaultwidth_number = 1400;
 var defaultwidth = String(defaultwidth_number) + 'px';
 
 var layoutStyle = {
@@ -26572,11 +26574,11 @@ var App_form = function (_Component) {
     _this.handleQuery = _this.handleQuery.bind(_this);
     _this.returntostate = _this.returntostate.bind(_this);
 
-    _this.socket = (0, _socket2.default)();
+    _this.socket = (0, _socket2.default)(location.origin, { path: '/hyktty/socket.io' });
     _this.socket.on('message', function (msg) {
       //console.log('message: ', msg);
       //console.log('this：', this);
-      (0, _jquery2.default)('#socket').text(msg);
+      //$('#socket').text(msg);
       state_count = msg;
       //object.setState({count:msg});
     });

@@ -466,6 +466,7 @@ var mainSubmitCtrl = ["getTreeData","$rootScope", "$interpolate", "$scope","$doc
 	};
 
 	$scope.urlTo = function(path) {
+		console.log('urlTo: ', path);
 		$location.path(path);
 	};
 	$rootScope.addtab = function(name, datas, columns){
@@ -616,10 +617,15 @@ shmcc_app.config(['$locationProvider', '$routeProvider',
   function($location, $routeProvider) {
     $routeProvider.
         when('/', {
-            templateUrl: '/index_main_v2.html',
+            templateUrl: 'index_main_v2.html',
             controller: 'mainSubmitCtrl',
 			access: { requiredAuthentication: true }
-        }).
+		}).
+		when('/main', {
+            templateUrl: 'index_main_v2.html',
+            controller: 'mainSubmitCtrl',
+			access: { requiredAuthentication: true }
+		}).
 		when('/admin/register', {
             templateUrl: 'partials/admin.register.html',
             controller: 'AdminUserCtrl'
@@ -636,10 +642,11 @@ shmcc_app.config(['$locationProvider', '$routeProvider',
 		when('/alarm/query', { 
             templateUrl: 'partials/vueindex.html'
             //access: { requiredAuthentication: true }
-        }).
-        otherwise({
-            redirectTo: '/'
-        });
+		})
+		//.
+        //otherwise({
+        //    redirectTo: '/'
+        //});
 }]);
 
 shmcc_app.run(function($rootScope, $cookies, $http, $location, $window, AuthenticationService) {
@@ -647,6 +654,8 @@ shmcc_app.run(function($rootScope, $cookies, $http, $location, $window, Authenti
     $rootScope.$on("$routeChangeStart", function(event, nextRoute, currentRoute) {
 		//$rootScope.csrftoken = $cookies.get('XSRF-TOKEN');
 		//$http.defaults.headers.common['x-csrf-Token']  = $cookies.get('XSRF-TOKEN');
+		//alert('on routeChangeStart: ', event);
+		console.log('on routeChangeStart: ', event);
 		$rootScope.isAuthenticated = AuthenticationService.isAuthenticated;
 		$rootScope.currentUser = AuthenticationService.currentUser;
 		if (!$rootScope.isAuthenticated) {
@@ -656,16 +665,33 @@ shmcc_app.run(function($rootScope, $cookies, $http, $location, $window, Authenti
         //redirect only if both isAuthenticated is false and no token is set
         if (nextRoute != null && nextRoute.access != null && nextRoute.access.requiredAuthentication 
             && !AuthenticationService.isAuthenticated && !$window.sessionStorage.token) {
+				
+			$location.path("/admin/login");
+			if (windows.io_shmccps) {
+				windows.io_shmccps = undefined;
+			}
 
-            $location.path("/admin/login");
-        }
+		} else {
+			//console.log('nextRoute templateUrl:', nextRoute.$$route.templateUrl);
+			//console.log('currentRoute templateUrl:', currentRoute.$$route.templateUrl);
+			if (window.io_shmccps == undefined) {
+				console.log('window.io_shmccps undefined');
+				console.log(`window.io: ${window.io}`)
+				if (window.io && window.io instanceof Function) {
+					console.log('io have registed in window');
+					window.io_shmccps = window.io(location.origin, {path: '/hyktty/socket.io'});    
+				}
+			}
+			
+		}	
     });
 
 	$rootScope.$on("isAuthenticated", function(event, nextRoute, currentRoute) {
 		//$rootScope.isAuthenticated = AuthenticationService.isAuthenticated;
 		//$rootScope.currentUser = AuthenticationService.currentUser;
 
-        //redirect only if both isAuthenticated is false and no token is set
+		//redirect only if both isAuthenticated is false and no token is set
+		//alert('on isAuthenticated');
         if ($rootScope.isAuthenticated == false) {
 
             $location.path("/admin/login");

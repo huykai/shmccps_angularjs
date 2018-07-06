@@ -1,5 +1,6 @@
 logs/*
 app/result/*
+app/downloads/*
 !.gitkeep
 node_modules/
 bower_components/

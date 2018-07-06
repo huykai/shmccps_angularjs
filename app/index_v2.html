@@ -10,13 +10,17 @@
     <meta name="fragment" content="!">
 
     <title>上海移动PS业务查询系统</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="static/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!--<link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet" />-->
     <link href="css/style.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="lib/wysiwyg/css/bootstrap3-wysiwyg5.css" rel="stylesheet">
     <link href="js/WebUI4Angular/themes/default/wi-all.css" rel="stylesheet" >
 
+    <link rel="icon" 
+      href="images/favicon.ico">
     
   <style>
     div
@@ -30,11 +34,28 @@
         color:#404046;
         margin: 20px
     }
-  </style>
+    .float_layer { width: 300px; border: 1px solid #aaaaaa; display:none; background: #fff; }
+    .float_layer h2 { height: 25px; line-height: 25px; padding-left: 10px; font-size: 14px; color: #333; background: url(http://www.srcfans.com/jscode/img/201105/title_bg.gif) repeat-x; border-bottom: 1px solid #aaaaaa; position: relative; }
+    .float_layer .min { width: 21px; height: 20px; background: url(http://www.srcfans.com/jscode/img/201105/min.gif) no-repeat 0 bottom; position: absolute; top: 2px; right: 25px; }
+    .float_layer .min:hover { background: url(http://www.srcfans.com/jscode/img/201105/min.gif) no-repeat 0 0; }
+    .float_layer .max { width: 21px; height: 20px; background: url(http://www.srcfans.com/jscode/img/201105/max.gif) no-repeat 0 bottom; position: absolute; top: 2px; right: 25px; }
+    .float_layer .max:hover { background: url(http://www.srcfans.com/jscode/img/201105/max.gif) no-repeat 0 0; }
+    .float_layer .close { width: 21px; height: 20px; background: url(http://www.srcfans.com/jscode/img/201105/close.gif) no-repeat 0 bottom; position: absolute; top: 2px; right: 3px; }
+    .float_layer .close:hover { background: url(http://www.srcfans.com/jscode/img/201105/close.gif) no-repeat 0 0; }
+    .float_layer .content { height: 200px; overflow: hidden; font-size: 14px; line-height: 18px; color: #666; text-indent: 28px; }
+    .float_layer .wrap { padding: 10px; }
   
+    .scrollDiv{height:25px;font-size:10px;/* 必要元素 */line-height:25px;border:#ccc 1px solid;overflow:hidden;/* 必要元素 */}
+    .scrollDiv li{height:25px;font-size:10px;padding-left:2px;text-indent:5px;overflow:hidden;}
+    
+    #s3{height:170px;}
+  
+  </style>
+
   </head>
   
     <body ng-app="shmcc_app">
+            
         <p align="center" ng-if="!isAuthenticated">
         <!--<p align="center" >-->
             <img src="./images/Title.jpg" alt="SHMCC诺西PS网元管理系统" >
@@ -60,18 +81,35 @@
         <div class="container col-lg-12" >
                 
             <div class="row">    
-                    <div class="col-lg-10 col-lg-offset-1" ng-view>
+                    <div class="col-lg-12" ng-view>
                             
                     </div>
             </div>
+            
+            <div class="float_layer" id="miaov_float_layer">
+                    <h2>
+                        <strong>运维更新提示：</strong>
+                        <a id="btn_min" href="javascript:;" class="min"></a>
+                        <a id="btn_close" href="javascript:;" class="close"></a>
+                    </h2>
+                    <div class="content wrap" >
+                        <div class="scrollDiv" id="s3">
+                            <ul>
+                            </ul>
+                        </div>
+                        <span id="btn1" class="glyphicon glyphicon-chevron-up" aria-hidden="true">向上滚动</span>&nbsp;&nbsp;
+                        <span id="btn2" class="glyphicon glyphicon-chevron-down" aria-hidden="true">向下滚动</span>
+                    </div>
+            </div>   
         </div>
         
         <script src="bower_components/angular/angular.min.js"></script>
         <script src="bower_components/angular-route/angular-route.min.js"></script>
         <script src="bower_components/angular-cookies/angular-cookies.min.js"></script>
         <script src="lib/jquery/jquery-2.0.3.min.js"></script>
-        <script src="lib/bootstrap/bootstrap.min.js"></script>
-        <!--<script src="dist/js/blog.js"></script>-->
+        <script src="static/js/bootstrap.js"> </script>
+        <!--<script src="lib/bootstrap/bootstrap.min.js"></script>
+        <script src="dist/js/blog.js"></script>-->
         <script src="lib/wysiwyg/js/wysihtml5-0.3.0.min.js"></script>
         <script src="lib/wysiwyg/js/bootstrap3-wysihtml5.js"></script>
 
@@ -79,6 +117,9 @@
 
         <script src="js/My97DatePicker/WdatePicker.js"></script>
         <script src="js/scripts/xml2json.js"></script> 
+        <script src="js/scripts/socket.io.js"></script> 
+        <script src="js/scripts/floatwindows.js"></script>
+        <script src="js/scripts/scrollframe.js"></script>
 
         <script src="js/route_pagedata_v2/mainSubmitCtrl.js"></script>
         <script src="js/route_pagedata_v2/DataGridDemoExcelCtrl.js"></script>
@@ -106,5 +147,20 @@
             ga('send', 'pageview');
         </script>
         -->
+        <script>
+                //alert('begin script in index_main_v2');
+                $(function(){
+                    //alert('load index_main_v2.html');
+                    window.io = io;
+                    $("div#includemenu").load("index_menu.html"); 
+                    //$("#includecontent").load("index_main_content.html"); 
+                });
+                function redirect(url){
+                    console.log('redirect: ', url);
+                    $("iframe#content").attr("src",url);
+                }
+                
+                
+        </script>
     </body>
 </html>

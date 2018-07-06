@@ -1,0 +1,1 @@
+cd app/vuejs && node build/build.js

@@ -25,7 +25,7 @@ import './App.css'
 //import '../lib/jquery-easyui-1.5.2/themes/default/easyui.css';
 //import '../lib/jquery-easyui-1.5.2/themes/icon.css';
 
-const defaultwidth_number = 1200;
+const defaultwidth_number = 1400;
 const defaultwidth = String(defaultwidth_number) + 'px';
 
 const layoutStyle = {
@@ -79,11 +79,11 @@ export default class App_form extends Component {
       this.handleQuery = this.handleQuery.bind(this);
       this.returntostate = this.returntostate.bind(this);
       
-      this.socket = io();
+      this.socket = io(location.origin, {path: '/hyktty/socket.io'});
       this.socket.on('message',function(msg){
         //console.log('message: ', msg);
         //console.log('this：', this);
-        $('#socket').text(msg);
+        //$('#socket').text(msg);
         state_count = msg;
         //object.setState({count:msg});
       });

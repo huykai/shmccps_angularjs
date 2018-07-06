@@ -16,45 +16,11 @@
    
   
   <body>
-    <!--
-    <p align="center">
-            <img src="./images/Title.jpg" alt="SHMCC诺西PS网元管理系统" >
-    </p>
-    <a href="index_v2.html">首页</a>
-    <div id="socket"></div>
-    <div id="loading"></div>
-    -->
-    <div class="header-nav">
-				<nav class="navbar navbar-default">
-					<!-- Brand and toggle get grouped for better mobile display -->
-					<div class="navbar-header">
-					  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					  </button>
-						<div class="logo">
-							<a class="navbar-brand" href="index_main_v2.html" style="font-size:28px">SHMCC PS WEB <p style="font-size:14px">Nokia PS health</p></a>
-						</div>
-					</div>
-
-					<!-- Collect the nav links, forms, and other content for toggling -->
-					<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
-					 <ul class="nav navbar-nav">
-						<li><a id='kpi_page' href="index_kpi_v2.html">指标及告警查询</a></li>
-						<li><a id='traffica_page' href="index_traffica_v2.html">用户通话记录查询</a></li>
-						<li><a href="vuejs/dist/index.html">用户话单查询</a></li>
-						<li><a href="menu.html">故障报告</a></li>
-						<li><a href="contact.html">其他功能</a></li>
-					  </ul>
-					</div><!-- /.navbar-collapse -->
-				</nav>
-		</div>
-    <div id="root"  class="col-lg-10 col-lg-offset-1" style="display:block;">
+    <div id="includmenu"></div>
+    <div id="root"  class="col-lg-12" style="display:block;">
     </div><!-- /container -->
 
-    <script src="lib/jquery/jquery.js"></script>
+    <script src="lib/jquery/jquery-2.0.3.min.js"></script>
     <script src="lib/jquery-easyui-1.5.2/jquery.easyui.min.js"></script>
     <script src="lib/jquery/jquery.cookie.js"></script>
     <script src="lib/bootstrap/bootstrap.min.js"></script>
@@ -65,6 +31,12 @@
     <script src="lib/js-storage/js-storage.js"> </script>
     -->
     <script src="reactjs/lib/traffica_func.js"></script>
-    
+    <!--
+    <script>
+      $(function(){
+        $("#includmenu").load("index_menu.html"); 
+      });
+    </script>
+    -->
   </body>
 </html>

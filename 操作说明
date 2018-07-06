@@ -1,0 +1,25 @@
+指标查询：angularjs
+可直接修改运行
+
+traffica ： reactjs
+npm run build_react
+
+cmd: vue
+cd app/vuejs; node build/build.js
+
+angular2-4: E:\PersonalProject\Code_Projects\Javascripts\angular2\shmcc-operate
+npm run build (设置在package.json的scripts部分)
+
+在本地安装的module中的bin目录下的*.cmd,直接运行需要制定地址。
+但在packages.json中可以用scripts中制定执行脚本
+"build" : "ng build"
+表示执行npm run build就是执行ng build，也就是node_moudles/.bin/ng.cmd build
+
+智能巡检
+checkschedule = {
+    checkTitle: String,
+    InvokeType: String,
+    InvokePeriod: Integer,
+    InvokeTime: String,
+    InvokeContidition: String
+}
