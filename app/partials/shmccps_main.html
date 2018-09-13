@@ -50,7 +50,7 @@
 				<wi-hdividedbox-group collapsed="false">
 					<div style=" margin:2px; width:100%; height:100%; background-color: #fff;">
 						<wi-vdividedbox style="border: solid 1px #ccc;height:100%;">
-							<wi-vdividedbox-group collapsed="false" height="150px">
+							<wi-vdividedbox-group collapsed="false" height="100px">
 							  <div style="margin:5px;" ng-controller="mainSubmitCtrl as mc">
 								<span>统计时间区间：</span>
 								<wi-datepicker style="margin:5px;top:10px;" ng-model="begin_datetime" isShowClear="true" isShowToday="true" dateFmt="yyyy/MM/dd HH:mm:ss"
@@ -97,8 +97,10 @@
 								>
 								</wi-comboBox>
 								<br />
+								<button type="button" style="top:10px; width: 150px; margin: 4px" class="btn btn-default" ng-click="submitQuery();">Apply Query</button>
+								<button style="top:10px; width: 150px; margin: 4px" ng-show="!isAlarmQuery" type="button" class="btn btn-default" ng-click="$ctrl.open()">Generate Chart</button>
 								<div style="top:10px;display:inline">
-									<button type="button" style="top:10px;" class="btn btn-default" ng-click="submitQuery();">Apply Query</button>
+									
 									 
 									<div style="display:inline" ng-controller="ModalDemoCtrl as $ctrl" class="modal-demo">
 										<script type="text/ng-template" id="myModalContent.html">
@@ -164,26 +166,22 @@
 											  
 											</div>
 										</script>
-										<button ng-show="!isAlarmQuery" type="button" class="btn btn-default" ng-click="$ctrl.open()">Generate Chart</button>
+										
 										
 									</div>
 								</div>
 								<div class="modal-parent">
 								</div>
-								<textarea ng-show="!isAlarmQuery" style="display:inline" rows="5" cols="100" style="overflow:scroll;overflow-x:hidden;resize:none;">{{QueryDetailDesc}}</textarea>
-								
+								<!--<textarea ng-show="!isAlarmQuery" style="display:inline" rows="5" cols="100" style="overflow:scroll;overflow-x:hidden;resize:none;">{{QueryDetailDesc}}</textarea>-->
 							  </div>
-							
 							</wi-vdividedbox-group>
 							<wi-vdividedbox-group>
 								<div id="button_submit_p" ng-controller="DataGridDemoExcelCtrl" width="100%" height="100%">
-									
-									<div id="button_submit" un_fillcolumn="4" modecolumn="4"></div>
-									
+									<div id="button_submit" un_fillcolumn="4" modecolumn="4">
+
+									</div>
 								</div>
 							</wi-vdividedbox-group>
-							
-							
 						</wi-vdividedbox>
 					</div>
 				</wi-hdividedbox-group>

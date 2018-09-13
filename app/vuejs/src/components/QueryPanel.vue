@@ -408,8 +408,7 @@ export default {
           console.log(error.response.status)
           console.log(error.response.headers)
           if (error.response.status === 401 || error.response.status === 403) {
-            alert('用户状态已过期，需要重新登录！')
-            window.location.href = '/'
+            alert('用户状态已过期，请退出后再次登录！')
           }
         }
         this.loading = false

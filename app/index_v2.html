@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Blog about personal projects written mostly in JavaScript with AngularJS and Node.js. MongoDB is a guest too.">
-    <meta name="author" content="Kevin Delemme">
+    <meta name="description" content="Projects written mostly in JavaScript with AngularJS and Node.js. MongoDB is a guest too.">
+    <meta name="author" content="Richard Hu">
     <meta name="fragment" content="!">
 
     <title>上海移动PS业务查询系统</title>
@@ -58,7 +58,8 @@
             
         <p align="center" ng-if="!isAuthenticated">
         <!--<p align="center" >-->
-            <img src="./images/Title.jpg" alt="SHMCC诺西PS网元管理系统" >
+            <img src="./images/Title_3.jpg" alt="SHMCC诺西PS网元管理系统" 
+                style="height: 300px; width: 100%; align-content: center " >
         </p>
         
         <!--
@@ -149,12 +150,12 @@
         -->
         <script>
                 //alert('begin script in index_main_v2');
-                $(function(){
+                //$(function(){
                     //alert('load index_main_v2.html');
-                    window.io = io;
-                    $("div#includemenu").load("index_menu.html"); 
+                //    window.io = io;
+                //    $("div#includemenu").load("index_menu.html"); 
                     //$("#includecontent").load("index_main_content.html"); 
-                });
+                //});
                 function redirect(url){
                     console.log('redirect: ', url);
                     $("iframe#content").attr("src",url);

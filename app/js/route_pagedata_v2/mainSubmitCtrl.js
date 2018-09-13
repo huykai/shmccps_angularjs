@@ -458,8 +458,7 @@ var mainSubmitCtrl = ["getTreeData","$rootScope", "$interpolate", "$scope","$doc
 			console.log('header: ', header);
 			console.log('config: ', config);
 			if (data.status === 401 || data.status === 403) {
-				alert('用户状态已过期，需要重新登录！');
-				window.location.href = '/';
+				alert('用户状态已过期，请退出后再次登录！');
 			}
 		}
 		);
@@ -667,8 +666,8 @@ shmcc_app.run(function($rootScope, $cookies, $http, $location, $window, Authenti
             && !AuthenticationService.isAuthenticated && !$window.sessionStorage.token) {
 				
 			$location.path("/admin/login");
-			if (windows.io_shmccps) {
-				windows.io_shmccps = undefined;
+			if (window.io_shmccps) {
+				window.io_shmccps = undefined;
 			}
 
 		} else {

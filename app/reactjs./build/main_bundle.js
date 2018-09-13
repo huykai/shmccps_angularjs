@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "8a9a19b0df92e39f4809"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "7ecaa8f58d63dd8efe1f"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -17148,7 +17148,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
  * Project home:
  * https://github.com/julien-maurel/js-storage
  *
- * Version: 1.0.1
+ * Version: 1.0.4
  */
 (function (factory) {
     var registeredInModuleLoader = false;
@@ -17389,7 +17389,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
                     if (v.hasOwnProperty(i) && !(
                             (_isPlainObject(v[i]) && _isEmptyObject(v[i])) ||
                             (Array.isArray(v[i]) && !v[i].length) ||
-                            (!v[i])
+                            (typeof v[i] !== 'boolean' && !v[i])
                         )) {
                         return false;
                     }
@@ -17487,7 +17487,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
             localStorage: _extend({}, apis.localStorage, {_ns: name}),
             sessionStorage: _extend({}, apis.sessionStorage, {_ns: name})
         };
-        if (typeof Cookies !== 'undefined') {
+        if (cookies_available) {
             if (!window.cookieStorage.getItem(name)) {
                 window.cookieStorage.setItem(name, '{}');
             }
@@ -17559,8 +17559,9 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
         return result;
     }
 
-    // Check if storages are natively available on browser
+    // Check if storages are natively available on browser and check is js-cookie is present
     var storage_available = _testStorage('localStorage');
+    var cookies_available = typeof Cookies !== 'undefined';
 
     // Namespace object
     var storage = {
@@ -17569,7 +17570,6 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
         _callMethod: function (f, a) {
             a = Array.prototype.slice.call(a);
             var p = [], a0 = a[0];
-
             if (this._ns) {
                 p.push(this._ns);
             }
@@ -17584,6 +17584,9 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
         alwaysUseJson: false,
         // Get items. If no parameters and storage have a namespace, return all namespace
         get: function () {
+            if (!storage_available && !cookies_available){
+                return null;
+            }
             return this._callMethod(_get, arguments);
         },
         // Set items
@@ -17591,6 +17594,9 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
             var l = arguments.length, a = arguments, a0 = a[0];
             if (l < 1 || !_isPlainObject(a0) && l < 2) {
                 throw new Error('Minimum 2 arguments must be given or first parameter must be an object');
+            }
+            if (!storage_available && !cookies_available){
+                return null;
             }
             // If first argument is an object and storage is a namespace storage, set values individually
             if (_isPlainObject(a0) && this._ns) {
@@ -17614,10 +17620,16 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
             if (arguments.length < 1) {
                 throw new Error('Minimum 1 argument must be given');
             }
+            if (!storage_available && !cookies_available){
+                return null;
+            }
             return this._callMethod(_remove, arguments);
         },
         // Delete all items
         removeAll: function (reinit_ns) {
+            if (!storage_available && !cookies_available){
+                return null;
+            }
             if (this._ns) {
                 this._callMethod(_set, [{}]);
                 return true;
@@ -17627,6 +17639,9 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
         },
         // Items empty
         isEmpty: function () {
+            if (!storage_available && !cookies_available){
+                return null;
+            }
             return this._callMethod(_isEmpty, arguments);
         },
         // Items exists
@@ -17634,16 +17649,22 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
             if (arguments.length < 1) {
                 throw new Error('Minimum 1 argument must be given');
             }
+            if (!storage_available && !cookies_available){
+                return null;
+            }
             return this._callMethod(_isSet, arguments);
         },
         // Get keys of items
         keys: function () {
+            if (!storage_available && !cookies_available){
+                return null;
+            }
             return this._callMethod(_keys, arguments);
         }
     };
 
     // Use js-cookie for compatibility with old browsers and give access to cookieStorage
-    if (typeof Cookies !== 'undefined') {
+    if (cookies_available) {
         // sessionStorage is valid for one window/tab. To simulate that with cookie, we set a name for the window and use it for the name of the cookie
         if (!window.name) {
             window.name = Math.floor(Math.random() * 100000000);
@@ -17740,11 +17761,6 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
         return _createNamespace(ns);
     };
     if (storage_available) {
-        // About alwaysUseJson
-        // By default, all values are string on html storages and the plugin don't use json to store simple values (strings, int, float...)
-        // So by default, if you do storage.setItem('test',2), value in storage will be "2", not 2
-        // If you set this property to true, all values set with the plugin will be stored as json to have typed values in any cases
-
         // localStorage API
         apis.localStorage = _extend({}, storage, {_type: 'localStorage'});
         // sessionStorage API
@@ -17768,6 +17784,10 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
             apis.namespaceStorages = {};
         }
     };
+    // About alwaysUseJson
+    // By default, all values are string on html storages and the plugin don't use json to store simple values (strings, int, float...)
+    // So by default, if you do storage.setItem('test',2), value in storage will be "2", not 2
+    // If you set this property to true, all values set with the plugin will be stored as json to have typed values in any cases
     apis.alwaysUseJsonInStorage = function (value) {
         storage.alwaysUseJson = value;
         apis.localStorage.alwaysUseJson = value;
@@ -26736,8 +26756,7 @@ var App_form = function (_Component) {
             console.log("error in post jqXHR: ", jqXHR.statusText);
             console.log("error in post errorThrown: ", errorThrown);
             if (jqXHR.statusText === 'Unauthorized') {
-              alert('用户状态已过期，需要重新登录！');
-              window.location.href = '/';
+              alert('用户状态已过期，请退出后重新登录！');
             }
           },
           complete: function complete(xhr, status) {
