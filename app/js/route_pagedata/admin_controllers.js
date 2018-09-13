@@ -22,6 +22,13 @@ appControllers.controller('AdminUserCtrl', ['$rootScope', '$scope', '$location',
                     console.log("signIn return data:",data);
                     $location.path("/");
                 },function(status, data) {
+                    AuthenticationService.isAuthenticated = false;
+                    AuthenticationService.currentUser = username;
+                    //$scope.isAuthenticated = AuthenticationService.isAuthenticated;
+                    $window.sessionStorage.token = null;
+                    $window.sessionStorage.currentUser = username;
+                    $window.sessionStorage.isAuthenticated = false;
+                    $location.path("/");
                     console.log("signIn return status:",status);
                     console.log("signIn return data:",data);
                 });

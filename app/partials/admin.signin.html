@@ -24,5 +24,10 @@
 				<button type="submit" class="btn btn-default" ng-click="toRegister()">Register</button>
 			</div>
 		</div>
+		<div class="form-group" ng-if="!isAuthenticated && currentUser !== null">
+			<div class="col-sm-offset-4 col-sm-10">
+				<label for="inputUsername" class="col-sm-4 control-label">Username</label>	
+			</div>
+		</div>
 	</form>
 </section>
