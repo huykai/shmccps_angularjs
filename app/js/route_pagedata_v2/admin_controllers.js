@@ -55,15 +55,19 @@ appControllers.controller('AdminUserCtrl', ['$rootScope', '$scope', '$location',
                     delete $window.sessionStorage.currentUser;
                     delete $window.sessionStorage.isAuthenticated;
                     $rootScope.isAuthenticated = false;
+                    $rootScope.currentUser = null;
                     //$location.path("/admin/login");
                     $location.url("/");
                 },function(status, data) {
+                    $rootScope.isAuthenticated = false;
+                    $rootScope.currentUser = null;
                     console.log(status);
                     console.log(data);
                 });
             }
             else {
-                $location.path("/admin/login");
+                //$location.path("/admin/login");
+                $location.path("/");
             }
         }
 

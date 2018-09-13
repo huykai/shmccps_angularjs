@@ -24,10 +24,8 @@
 				<button type="submit" class="btn btn-default" ng-click="toRegister()">Register</button>
 			</div>
 		</div>
-		<div class="form-group" ng-if="!isAuthenticated && currentUser !== null">
-			<div class="col-sm-offset-2 col-sm-10">
-				<label for="inputUsername" class="col-sm-4 control-label">{{currentUser}}不存在或者密码错误</label>	
-			</div>
+		<div class="form-group" ng-if="!isAuthenticated && currentUser && !(currentUser == '')">
+			<label for="inputUsername" class="col-sm-offset-3 col-sm-10">用户{{currentUser}}不存在或者密码错误</label>
 		</div>
 	</form>
 </section>
