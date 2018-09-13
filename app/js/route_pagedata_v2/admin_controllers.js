@@ -20,6 +20,8 @@ appControllers.controller('AdminUserCtrl', ['$rootScope', '$scope', '$location',
                     $window.sessionStorage.token = status.data.token;
                     $window.sessionStorage.currentUser = username;
                     $window.sessionStorage.isAuthenticated = true;
+                    $rootScope.isAuthenticated = true;
+                    $rootScope.currentUser = username;
                     console.log("signIn return data:",data);
                     //$location.path("/");
                     //alert("signIn service return ok");
@@ -32,6 +34,8 @@ appControllers.controller('AdminUserCtrl', ['$rootScope', '$scope', '$location',
                     $window.sessionStorage.token = null;
                     $window.sessionStorage.currentUser = username;
                     $window.sessionStorage.isAuthenticated = false;
+                    $rootScope.isAuthenticated = false;
+                    $rootScope.currentUser = username;
                     console.log("signIn return status:",status);
                     console.log("signIn return data:",data);
                 });
