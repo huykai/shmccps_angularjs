@@ -55,7 +55,7 @@ export default {
     //  }
     // },
     setCghosts (value) {
-      console.log(`cghost data type: ${typrof(value)}`)
+      console.log(`cghost data type: ${typeof(value)}`)
       value = JSON.parse(value);
       this.$set(this.cghosts, 'cdrinfo', value)
       // this.title = this.value[0].name
