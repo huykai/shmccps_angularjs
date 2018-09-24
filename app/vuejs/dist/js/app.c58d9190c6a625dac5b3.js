@@ -47026,6 +47026,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     //  }
     // },
     setCghosts(value) {
+      console.log(`cghost data type: ${typrof(value)}`);
+      value = JSON.parse(value);
       this.$set(this.cghosts, 'cdrinfo', value);
       // this.title = this.value[0].name
     }
@@ -48990,11 +48992,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "label": "号码信息"
     }
-  }, [_c('Row', [_c('Col', {
+  }, [_c('Row', [_c('i-col', {
     attrs: {
       "span": "2"
     }
-  }, [_vm._v(" IMSI: ")]), _vm._v(" "), _c('Col', {
+  }, [_vm._v(" IMSI: ")]), _vm._v(" "), _c('i-col', {
     attrs: {
       "span": "6"
     }
@@ -49009,11 +49011,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       },
       expression: "formItem.imsi"
     }
-  })], 1), _vm._v(" "), _c('Col', {
+  })], 1), _vm._v(" "), _c('i-col', {
     attrs: {
       "span": "2"
     }
-  }, [_vm._v(" MSISDN: ")]), _vm._v(" "), _c('Col', {
+  }, [_vm._v(" MSISDN: ")]), _vm._v(" "), _c('i-col', {
     attrs: {
       "span": "6"
     }
@@ -49028,11 +49030,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       },
       expression: "formItem.msisdn"
     }
-  })], 1), _vm._v(" "), _c('Col', {
+  })], 1), _vm._v(" "), _c('i-col', {
     attrs: {
       "span": "2"
     }
-  }, [_vm._v(" 话单类型: ")]), _vm._v(" "), _c('Col', {
+  }, [_vm._v(" 话单类型: ")]), _vm._v(" "), _c('i-col', {
     attrs: {
       "span": "6"
     }
@@ -51983,4 +51985,4 @@ if (inBrowser && window.Vue) {
 
 /***/ })
 ],[32]);
-//# sourceMappingURL=app.d002b0ebc1fa74b6ef0b.js.map
+//# sourceMappingURL=app.c58d9190c6a625dac5b3.js.map

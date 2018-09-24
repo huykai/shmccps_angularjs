@@ -9,22 +9,22 @@
         <Form v-if="querypanelform_show" :model="formItem" :label-width="80">
             <FormItem label="号码信息" v-if="!showAnalysisPanel">
                 <Row>
-                    <Col span="2"> IMSI: </Col>
-                    <Col span="6">
+                    <i-col span="2"> IMSI: </i-col>
+                    <i-col span="6">
                         <Input v-model="formItem.imsi" placeholder="Enter IMSI..."></Input>
-                    </Col>
-                    <Col span="2"> MSISDN: </Col>
-                    <Col span="6">
+                    </i-col>
+                    <i-col span="2"> MSISDN: </i-col>
+                    <i-col span="6">
                         <Input v-model="formItem.msisdn" placeholder="Enter MSISDN..."></Input>
-                    </Col>
-                    <Col span="2"> 话单类型: </Col>
-                    <Col span="6">
+                    </i-col>
+                    <i-col span="2"> 话单类型: </i-col>
+                    <i-col span="6">
                         <Select v-model="formItem.select_cdrtype">
                             <Option value="scdr">S话单</Option>
                             <Option value="sgwcdr">SGW话单</Option>
                             <Option value="pgwcdr">PGW话单</Option>
                         </Select>
-                    </Col>
+                    </i-col>
                 </Row>
             </FormItem>
             

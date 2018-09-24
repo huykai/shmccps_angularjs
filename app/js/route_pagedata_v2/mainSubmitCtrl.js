@@ -431,23 +431,29 @@ var mainSubmitCtrl = ["getTreeData","$rootScope", "$interpolate", "$scope","$doc
 		// success can only be used in angular 1.5 and before, 
 		// $http.post(api_string, config.data ,config).success(function(data){
 		// after angular 1.5 we should use then
-		//console.log('postapi config',config);
+		console.log('postapi config',config);
 		$http.post(api_string, config.data ,config)
 		.then(function(data){
 			//console.log('post data return: ',angular.toJson(data));
-			var tabs = [];
-			for (var tableid in data.data.response){
-				var newcolumns = $rootScope.addcolumns(data.data.response[tableid].Title);
-				var newdatas = $rootScope.adddatas(data.data.response[tableid].Item);
-				var newtabname = data.data.response[tableid].TabName.name;
-				//console.log(newcolumns)
-				//console.log(newdatas)
-				//console.log(newtabname)
-				var newtab = $rootScope.addtab(newtabname, newdatas, newcolumns);
-				tabs.push(newtab);
-				//$rootScope.activetab = newtab;
+			let response = data.data.response;
+			if (response['Error'] !== undefined){
+				alert ('查询出错： ' + response['Error']['ErrorDetail'])
+			} else {
+				var tabs = [];
+				for (var tableid in data.data.response){
+					var newcolumns = $rootScope.addcolumns(data.data.response[tableid].Title);
+					var newdatas = $rootScope.adddatas(data.data.response[tableid].Item);
+					var newtabname = data.data.response[tableid].TabName.name;
+					//console.log(newcolumns)
+					//console.log(newdatas)
+					//console.log(newtabname)
+					var newtab = $rootScope.addtab(newtabname, newdatas, newcolumns);
+					tabs.push(newtab);
+					//$rootScope.activetab = newtab;
+				}
+				$rootScope.tabs = tabs;
 			}
-			$rootScope.tabs = tabs;
+			
 			//$rootScope.activetab = $rootScope.tabs[$rootScope.tabs.length];
 		// before angular 1.5 can use er ror()
 		//}).error(function(data, header, config, status){
@@ -677,8 +683,11 @@ shmcc_app.run(function($rootScope, $cookies, $http, $location, $window, Authenti
 				console.log('window.io_shmccps undefined');
 				console.log(`window.io: ${window.io}`)
 				if (window.io && window.io instanceof Function) {
-					console.log('io have registed in window');
+					console.log(`io have registed in window, location: ${location.origin}`);
 					window.io_shmccps = window.io(location.origin, {path: '/hyktty/socket.io'});    
+					console.log(`io have connected with path: /hyktty/socket.io`);
+					//window.io_shmccps = window.io('/hyktty/socket.io'); 
+					//window.io_shmccps.of('/hyktty/socket.io');  
 				}
 			}
 			
