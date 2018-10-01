@@ -24,7 +24,7 @@ window.onload = function()
     
     oDiv.style.display='block';
     iMaxHeight=oDivContent.offsetHeight;
-    
+    console.log('iMaxHeight = ', iMaxHeight)
     if(isIE6)
     {
         oDiv.style.position='absolute';
@@ -45,9 +45,10 @@ window.onload = function()
     {
         startMove
         (
-            oDivContent, (this.isMax=!this.isMax)?iMaxHeight:0,
+            oDivContent, (this.isMax=!this.isMax)?iMaxHeight:4,
             function ()
             {
+                //console.log('iMaxHeight = ', this.offsetHeight)
                 oBtnMin.className=oBtnMin.className=='min'?'max':'min';
             }
         );

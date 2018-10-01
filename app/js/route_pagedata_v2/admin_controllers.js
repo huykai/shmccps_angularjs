@@ -22,7 +22,8 @@ appControllers.controller('AdminUserCtrl', ['$rootScope', '$scope', '$location',
                     $window.sessionStorage.isAuthenticated = true;
                     $rootScope.isAuthenticated = true;
                     $rootScope.currentUser = username;
-                    console.log("signIn return data:",data);
+                    $rootScope.isUserAdmin = status.data.is_admin;
+                    console.log("signIn return status:", status);
                     //$location.path("/");
                     //alert("signIn service return ok");
                     $location.path("/main");
@@ -96,6 +97,7 @@ appControllers.controller('AdminUserCtrl', ['$rootScope', '$scope', '$location',
         //}
 
         $scope.register = function register(username, password, passwordConfirm) {
+            console.log(`register: username ${username}`)
             if (AuthenticationService.isAuthenticated) {
                 $location.path("/");
             }

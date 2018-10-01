@@ -94,7 +94,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <ul class="nav navbar-nav">
                         <li>
                             <a href="/index_main_v2.html#" class="dropdown-toggle" data-toggle="dropdown">
-                                运维数据查询
+                                数据查询
                                 <b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu">
@@ -107,28 +107,36 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 
                         <li>
                             <a href="/index_main_v2.html#" class="dropdown-toggle" data-toggle="dropdown">
-                                智能故障处理
+                                智能运维
                                 <b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="javascript:void(0);" onclick="redirect('/angular/index.html?page=faulthandle')">故障报告</a></li>
+                                <li><a href="javascript:void(0);" onclick="redirect('/angular/index.html?page=faulthandle')">智能巡检</a></li>
+                                <li><a href="javascript:void(0);" onclick="redirect('/angular/index.html?page=faulthandle')">智能流程</a></li>
                             </ul>
                         </li>
                         <li>
                             <a href="/index_main_v2.html#" class="dropdown-toggle" data-toggle="dropdown">
-                                运维操作
+                                辅助功能
                                 <b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="javascript:void(0);" onclick="window.open('/epc-ices/login')">MAC系统</a></li>
+                                <li>
+                                    <a href="javascript:void(0);" onclick="window.open('/epc-ices/login')">MAC系统</a>
+                                </li>
+                                <div class="divider"></div>
                                 <li><a href="javascript:void(0);" onclick="redirect('/angular/index.html?page=operation')">其他功能</a></li>
                             </ul>
+                        </li>
+                        <li ng-if="isUserAdmin" ng-controller="AdminUserCtrl">
+                            <a href="javascript:void(0);" onclick="redirect('/angular/index.html?page=admin')" class="dropdown-toggle" data-toggle="dropdown">
+                                配置管理
+                            </a>
                         </li>
                         <li ng-controller="AdminUserCtrl">
                             <a href="/index_main_v2.html#" ng-click="logOut()" class="dropdown-toggle" data-toggle="dropdown">
                                 退出
                             </a>
-                            
                         </li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
