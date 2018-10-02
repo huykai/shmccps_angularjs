@@ -1,0 +1,28 @@
+INFO:root:Config File ./scripts/config/rtm/api_options.json Can not be found
+ERROR:root:Params filter error detail: name 'Document_Config_str' is not defined
+INFO:root:./documents/
+INFO:root:.pdf
+ERROR:root:dir ./documents/ not exists
+INFO:root:[]
+INFO:root:Config File /root/huykai/node_webserver/nodejs_shmcc_website/scripts/scripts/config/rtm/api_options.json Can not be found
+ERROR:root:Params filter error detail: name 'Document_Config_str' is not defined
+INFO:root:./documents/
+INFO:root:.pdf
+ERROR:root:dir ./documents/ not exists
+INFO:root:[]
+INFO:root:Config File /root/huykai/node_webserver/nodejs_shmcc_website/scripts/scripts/config/rtm/api_options.json Can not be found
+ERROR:root:Params filter error detail: name 'Document_Config_str' is not defined
+INFO:root:./documents/
+INFO:root:.pdf
+ERROR:root:dir ./documents/ not exists
+INFO:root:[]
+ERROR:root:Params filter error detail: name 'Document_Config_str' is not defined
+INFO:root:/root/huykai/node_webserver/angularjs_shmccps/app/Documents/
+INFO:root:.pdf;
+INFO:root:dir /root/huykai/node_webserver/angularjs_shmccps/app/Documents/ exists
+INFO:root:file name: 浦东7613.pdf
+INFO:root:file name: 浦西火墙.pdf
+INFO:root:file name: 浦东火墙.pdf
+INFO:root:file name: 123.pdf
+INFO:root:file name: 浦西7613.pdf
+INFO:root:["\u6d66\u4e1c7613.pdf", "\u6d66\u897f\u706b\u5899.pdf", "\u6d66\u4e1c\u706b\u5899.pdf", "123.pdf", "\u6d66\u897f7613.pdf"]

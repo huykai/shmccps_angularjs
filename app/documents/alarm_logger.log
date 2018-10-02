@@ -1,0 +1,18 @@
+INFO:root:Config File ./scripts/config/rtm/api_options.json Can not be found
+ERROR:root:Params filter error detail: No JSON object could be decoded
+INFO:root:./documents/
+INFO:root:.pdf
+ERROR:root:dir ./documents/ not exists
+INFO:root:[]
+INFO:root:Config File ./scripts/config/rtm/api_options.json Can not be found
+ERROR:root:Params filter error detail: No JSON object could be decoded
+INFO:root:./documents/
+INFO:root:.pdf
+ERROR:root:dir ./documents/ not exists
+INFO:root:[]
+INFO:root:Config File ./scripts/config/rtm/api_options.json Can not be found
+ERROR:root:Params filter error detail: No JSON object could be decoded
+INFO:root:./documents/
+INFO:root:.pdf
+ERROR:root:dir ./documents/ not exists
+INFO:root:[]
