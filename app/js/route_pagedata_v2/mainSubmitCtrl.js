@@ -654,7 +654,7 @@ shmcc_app.config(['$locationProvider', '$routeProvider',
         //});
 }]);
 
-shmcc_app.run(function($rootScope, $cookies, $http, $location, $window, AuthenticationService) {
+shmcc_app.run(function($rootScope, $cookies, $http, $document, $location, $window, AuthenticationService) {
 	//$rootScope.csrftoken = $cookies.get('XSRF-TOKEN');
     $rootScope.$on("$routeChangeStart", function(event, nextRoute, currentRoute) {
 		//$rootScope.csrftoken = $cookies.get('XSRF-TOKEN');
@@ -667,15 +667,17 @@ shmcc_app.run(function($rootScope, $cookies, $http, $location, $window, Authenti
 			$rootScope.isAuthenticated = $window.sessionStorage.isAuthenticated;
 			$rootScope.currentUser = $window.sessionStorage.currentUser;
 		};
-        //redirect only if both isAuthenticated is false and no token is set
+		console.log(`try to add username: ${$rootScope.currentUser}`)
+		var elem = angular.element(document.querySelector('#currentUser'));
+		console.log('try to add elem: ', elem)
+		elem.text($rootScope.currentUser)
+		//redirect only if both isAuthenticated is false and no token is set
         if (nextRoute != null && nextRoute.access != null && nextRoute.access.requiredAuthentication 
-            && !AuthenticationService.isAuthenticated && !$window.sessionStorage.token) {
-				
+            && !AuthenticationService.isAuthenticated && !$window.sessionStorage.token) {	
 			$location.path("/admin/login");
 			if (window.io_shmccps) {
 				window.io_shmccps = undefined;
 			}
-
 		} else {
 			//console.log('nextRoute templateUrl:', nextRoute.$$route.templateUrl);
 			//console.log('currentRoute templateUrl:', currentRoute.$$route.templateUrl);
@@ -689,20 +691,18 @@ shmcc_app.run(function($rootScope, $cookies, $http, $location, $window, Authenti
 					//window.io_shmccps = window.io('/hyktty/socket.io'); 
 					//window.io_shmccps.of('/hyktty/socket.io');  
 				}
-			}
-			
+			}	
 		}	
     });
 
 	$rootScope.$on("isAuthenticated", function(event, nextRoute, currentRoute) {
 		//$rootScope.isAuthenticated = AuthenticationService.isAuthenticated;
-		//$rootScope.currentUser = AuthenticationService.currentUser;
-
+		$rootScope.currentUser = AuthenticationService.currentUser;
+		console.log(`isAuthenticated: ${AuthenticationService.currentUser}`)
 		//redirect only if both isAuthenticated is false and no token is set
 		//alert('on isAuthenticated');
-        if ($rootScope.isAuthenticated == false) {
-
-            $location.path("/admin/login");
+		if ($rootScope.isAuthenticated == false) {
+		    $location.path("/admin/login");
         }
     });
 	//$http.defaults.headers.common['x-csrf-Token']  = $cookies.get('XSRF-TOKEN');

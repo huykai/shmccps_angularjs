@@ -34,21 +34,21 @@
         color:#404046;
         margin: 20px
     }
-    .float_layer { width: 300px; border: 1px solid #aaaaaa; display:none; background: #fff; }
-    .float_layer h2 { height: 25px; line-height: 25px; padding-left: 10px; font-size: 14px; color: #333; background: url(http://www.srcfans.com/jscode/img/201105/title_bg.gif) repeat-x; border-bottom: 1px solid #aaaaaa; position: relative; }
-    .float_layer .min { width: 21px; height: 20px; background: url(http://www.srcfans.com/jscode/img/201105/min.gif) no-repeat 0 bottom; position: absolute; top: 2px; right: 25px; }
-    .float_layer .min:hover { background: url(http://www.srcfans.com/jscode/img/201105/min.gif) no-repeat 0 0; }
-    .float_layer .max { width: 21px; height: 20px; background: url(http://www.srcfans.com/jscode/img/201105/max.gif) no-repeat 0 bottom; position: absolute; top: 2px; right: 25px; }
-    .float_layer .max:hover { background: url(http://www.srcfans.com/jscode/img/201105/max.gif) no-repeat 0 0; }
-    .float_layer .close { width: 21px; height: 20px; background: url(http://www.srcfans.com/jscode/img/201105/close.gif) no-repeat 0 bottom; position: absolute; top: 2px; right: 3px; }
-    .float_layer .close:hover { background: url(http://www.srcfans.com/jscode/img/201105/close.gif) no-repeat 0 0; }
+    .float_layer { width: 600px; border: 1px solid #aaaaaa; display:none; background: #fff; }
+    .float_layer h2 { height: 26px; line-height: 25px; padding-left: 10px; font-size: 14px; color: #333; border-bottom: 1px solid #aaaaaa; position: relative; }
+    .float_layer .min { width: 25px; height: 24px; background: url(images/iconfinder_arrow-circle-down_1608514.png) no-repeat 0 bottom; position: absolute; top: 2px; right: 29px; }
+    .float_layer .min:hover { background: url(images/iconfinder_arrow-circle-down_1608514.png) no-repeat 0 0; }
+    .float_layer .max { width: 25px; height: 24px; background: url(images/iconfinder_arrow-circle-up_1608521.png) no-repeat 0 bottom; position: absolute; top: 2px; right: 29px; }
+    .float_layer .max:hover { background: url(images/iconfinder_arrow-circle-up_1608521.png) no-repeat 0 0; }
+    .float_layer .close { width: 25px; height: 24px; background: url(images/close.png) no-repeat 0 bottom; position: absolute; top: 2px; right: 3px; }
+    .float_layer .close:hover { background: url(images/close.png) no-repeat 0 0; }
     .float_layer .content { height: 200px; overflow: hidden; font-size: 14px; line-height: 18px; color: #666; text-indent: 28px; }
     .float_layer .wrap { padding: 2px; }
   
     .scrollDiv{height:25px;font-size:10px;/* 必要元素 */line-height:25px;border:#ccc 1px solid;overflow:hidden;/* 必要元素 */}
     .scrollDiv li{height:25px;font-size:10px;padding-left:2px;text-indent:5px;overflow:hidden;}
     
-    #s3{height:170px;}
+    #s3{height:164px;}
   
   </style>
 
@@ -63,27 +63,24 @@
         </p>
         
         <div class="container-fluid col-lg-12" >
-                
             <div class="row">    
-                    <div class="col-lg-12" ng-view>
-                            
-                    </div>
+                <div class="col-lg-12" ng-view>
+                </div>
             </div>
-            
             <div class="float_layer" id="miaov_float_layer">
-                    <h2>
-                        <strong>运维更新提示：</strong>
-                        <a id="btn_min" href="javascript:;" class="min"></a>
-                        <a id="btn_close" href="javascript:;" class="close"></a>
-                    </h2>
-                    <div class="content wrap" >
-                        <div class="scrollDiv" id="s3">
-                            <ul>
-                            </ul>
-                        </div>
-                        <span id="btn1" class="glyphicon glyphicon-chevron-up" aria-hidden="true">向上滚动</span>&nbsp;&nbsp;
-                        <span id="btn2" class="glyphicon glyphicon-chevron-down" aria-hidden="true">向下滚动</span>
+                <h2>
+                    <strong>运维更新提示：</strong>
+                    <a id="btn_min" href="javascript:;" class="min"></a>
+                    <a id="btn_close" href="javascript:;" class="close"></a>
+                </h2>
+                <div class="content wrap" >
+                    <div class="scrollDiv" id="s3">
+                        <ul>
+                        </ul>
                     </div>
+                    <span id="btn1" class="glyphicon glyphicon-chevron-up" aria-hidden="true">向上滚动</span>&nbsp;&nbsp;
+                    <span id="btn2" class="glyphicon glyphicon-chevron-down" aria-hidden="true">向下滚动</span>
+                </div>
             </div>   
         </div>
         
@@ -132,19 +129,10 @@
         </script>
         -->
         <script>
-                //alert('begin script in index_main_v2');
-                //$(function(){
-                    //alert('load index_main_v2.html');
-                //    window.io = io;
-                //    $("div#includemenu").load("index_menu.html"); 
-                    //$("#includecontent").load("index_main_content.html"); 
-                //});
-                function redirect(url){
-                    console.log('redirect: ', url);
-                    $("iframe#content").attr("src",url);
-                }
-                
-                
+            function redirect(url){
+                console.log('redirect: ', url);
+                $("iframe#content").attr("src",url);
+            }
         </script>
     </body>
 </html>

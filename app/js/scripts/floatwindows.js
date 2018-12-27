@@ -1,5 +1,7 @@
 'use strict';
 
+const ioServerPath = '/inspector/socket.io'
+
 function miaovAddEvent(oEle, sEventName, fnHandler)
 {
     if(oEle.attachEvent)
@@ -11,8 +13,47 @@ function miaovAddEvent(oEle, sEventName, fnHandler)
         oEle.addEventListener(sEventName, fnHandler, false);
     }
 }
+
+const showMessage = function(info){
+    let newinfo = ''
+    if(window.localStorage){
+      let originfo = window.localStorage.getItem('newInfoFromShmcc')
+      if(originfo){
+        newinfo = originfo + '$:$' + info 
+      } else {
+        newinfo = info
+      }
+      console.log(`showMessage: ${newinfo}`)
+      window.localStorage.setItem('newInfoFromShmcc', newinfo)
+    }
+}
 window.onload = function()
 {
+    console.log(`window.onload`)
+    var randomID = "front_" + Math.floor(Math.random() * 1000000) + ':' + new Date()
+    var socketio = io(window.location.origin, {
+            path: ioServerPath,
+            forceNode: true
+        })
+    socketio['randomID'] = randomID
+    window['socketio'] = socketio
+    socketio.on('connect', () => {
+        console.log(`window socketio on connect: ${window.location.origin} ${ioServerPath}`)
+        socketio.emit('register', {
+          id: randomID
+        })
+        socketio.on('disconnect', ()=>{
+          console.log('window socketio on disconnect')
+          //setTimeout(()=>{
+          //  socketio.connect()
+          //},10000)
+        })
+    }) 
+    socketio.on('message_runJobFinished', info=>{
+        console.log(`window socketio receive message: ${JSON.stringify(info)}`)
+        showMessage(JSON.stringify(info['message']))
+    })
+    
     var oDiv=document.getElementById('miaov_float_layer');
     var oBtnMin=document.getElementById('btn_min');
     var oBtnClose=document.getElementById('btn_close');
@@ -45,7 +86,7 @@ window.onload = function()
     {
         startMove
         (
-            oDivContent, (this.isMax=!this.isMax)?iMaxHeight:4,
+            oDivContent, (this.isMax=!this.isMax)?iMaxHeight:8,
             function ()
             {
                 //console.log('iMaxHeight = ', this.offsetHeight)
@@ -86,9 +127,11 @@ function startMove(obj, iTarget, fnCallBackEnd)
 }
 function doMove(obj, iTarget, fnCallBackEnd)
 {
-    var iSpeed=(iTarget-obj.offsetHeight)/8;
-    
-    if(obj.offsetHeight==iTarget)
+    var iSpeed=(iTarget-obj.offsetHeight)/7;
+    //console.log(`doMove obj.style.height:${obj.style.height} iSpeed: ${iSpeed} offsetHeight: ${obj.offsetHeight}`)
+    let fin = true
+    fin = (obj.offsetHeight==iTarget)
+    if(fin)
     {
         clearInterval(obj.timer);
         obj.timer=null;

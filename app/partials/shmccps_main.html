@@ -53,12 +53,12 @@
 							  <div style="margin:5px;" ng-controller="mainSubmitCtrl as mc">
 								<span>统计时间区间：</span>
 								<wi-datepicker style="margin:5px;top:10px;" ng-model="begin_datetime" isShowClear="true" isShowToday="true" dateFmt="yyyy/MM/dd HH:mm:ss"
-									id="d1"	maxDate="#F{$dp.$D(\'d2\')||\'%y-%M-%d\'}"
+									id="d1"	}"
 									onPicked="onStartPickedHandler" >
 								</wi-datepicker>
 								~
 								<wi-datepicker style="margin:5px;top:10px;"
-                                 ng-model="end_datetime" isShowClear="true" isShowToday="true" dateFmt="yyyy/MM/dd HH:mm:ss" id="d2" minDate="#F{$dp.$D(\'d1\')}" maxDate="%y-%M-%d"
+                                 ng-model="end_datetime" isShowClear="true" isShowToday="true" dateFmt="yyyy/MM/dd HH:mm:ss" id="d2" "
 								 onPicked="onStopPickedHandler" >
 								</wi-datepicker>
 								<span ng-show="!isAlarmQuery" >统计间隔：</span>
