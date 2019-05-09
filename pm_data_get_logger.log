@@ -1,0 +1,50 @@
+2019-03-01 14:13:39,921,921 INFO     [PM_get_data.py:433] PM_Data_GET time : 2019/03/01 14:13:39
+2019-03-01 14:13:39,922,922 INFO     [PM_get_data.py:370] 	 Run Mode : test
+2019-03-01 14:13:39,922,922 INFO     [PM_get_data.py:371] 	 Params : {"datasource":"reportsuitesql","duration":"-3600","netype":"mme","netelement":"${netelement}","sql_function":"${sql_function}","startdatetime":"${startdatetime}","stopdatetime":"${stopdatetime}","sql_template":"MMEUsers","SQLCUSTOMFILE":"E:\\Personal_Projects\\Code_Projects\\javascript\\NodeJS\\taskrunner\\scripts\\PM_Data\\SQLCustom.yml"}
+2019-03-01 14:13:39,986,986 INFO     [PM_get_data.py:372] 	 QueryConfig : {}
+2019-03-01 14:13:39,988,988 INFO     [PM_get_data.py:374] new param 
+startdate : 
+stopdate : 
+starttime : 
+stoptime : 
+selectperiod : 15
+selectperiodtype : continue
+selectmmesgsn : all
+selectmmeelement : MME
+selectsaegwelement : SAEGW
+selectcmgelement : CMG
+selectsaegwggsn : all
+selectcmg : all
+selectsession : 0
+localsave : 0
+kpilist : 
+isMME : 1
+extraparams : {}
+2019-03-01 14:13:39,989,989 INFO     [PM_get_data.py:352] formparams : {"datasource":"reportsuitesql","duration":"-3600","netype":"mme","netelement":"${netelement}","sql_function":"${sql_function}","startdatetime":"${startdatetime}","stopdatetime":"${stopdatetime}","sql_template":"MMEUsers","SQLCUSTOMFILE":"E:\\Personal_Projects\\Code_Projects\\javascript\\NodeJS\\taskrunner\\scripts\\PM_Data\\SQLCustom.yml"}
+2019-03-01 14:13:39,990,990 INFO     [PM_get_data.py:352] formparams : {}
+2019-03-01 14:13:39,990,990 INFO     [PM_get_data.py:379] 	params info : startdate : 
+stopdate : 
+starttime : 
+stoptime : 
+selectperiod : 60
+selectperiodtype : continue
+selectmmesgsn : all
+selectmmeelement : MME
+selectsaegwelement : SAEGW
+selectcmgelement : CMG
+selectsaegwggsn : all
+selectcmg : all
+selectsession : 0
+localsave : 0
+kpilist : 
+isMME : 1
+extraparams : {}
+datasource : reportsuitesql
+duration : -3600
+netype : mme
+netelement : ${netelement}
+sql_function : ${sql_function}
+startdatetime : ${startdatetime}
+stopdatetime : ${stopdatetime}
+sql_template : MMEUsers
+SQLCUSTOMFILE : E:\Personal_Projects\Code_Projects\javascript\NodeJS\taskrunner\scripts\PM_Data\SQLCustom.yml

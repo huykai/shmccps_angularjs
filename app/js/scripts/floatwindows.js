@@ -26,6 +26,7 @@ const showMessage = function(info){
       console.log(`showMessage: ${newinfo}`)
       window.localStorage.setItem('newInfoFromShmcc', newinfo)
     }
+    showFloatWindow(true)
 }
 window.onload = function()
 {
@@ -33,7 +34,8 @@ window.onload = function()
     var randomID = "front_" + Math.floor(Math.random() * 1000000) + ':' + new Date()
     var socketio = io(window.location.origin, {
             path: ioServerPath,
-            forceNode: true
+            forceNode: false,
+            timeout: 15000
         })
     socketio['randomID'] = randomID
     window['socketio'] = socketio
@@ -54,18 +56,36 @@ window.onload = function()
         showMessage(JSON.stringify(info['message']))
     })
     
+    
+    showFloatWindow(false)
+    console.log('begin handle io-shmccps');
+    if (window.io_shmccps) {
+        console.log('io have registered in window');
+        const socket = window.io_shmccps;
+        socket.emit('register', 'huykai_win10');
+        socket.on('message',function(msg){
+            console.log('message: ', msg);
+        }); 
+    }
+    
+};
+
+function showFloatWindow(showFloatWindow){
     var oDiv=document.getElementById('miaov_float_layer');
     var oBtnMin=document.getElementById('btn_min');
     var oBtnClose=document.getElementById('btn_close');
     var oDivContent=oDiv.getElementsByTagName('div')[0];
     
-    var iMaxHeight=0;
+    var iMaxHeight=oBtnMin['iMaxHeight'] || 0;
     
     var isIE6=window.navigator.userAgent.match(/MSIE 6/ig) && !window.navigator.userAgent.match(/MSIE 7|8/ig);
     
-    oDiv.style.display='block';
-    iMaxHeight=oDivContent.offsetHeight;
-    console.log('iMaxHeight = ', iMaxHeight)
+    oDiv.style.display=showFloatWindow?'block':'none';
+    if (iMaxHeight === 0) {
+        iMaxHeight =oDivContent.offsetHeight;
+        oBtnMin['iMaxHeight'] = iMaxHeight
+    }
+    
     if(isIE6)
     {
         oDiv.style.position='absolute';
@@ -79,38 +99,39 @@ window.onload = function()
         repositionFixed();
         miaovAddEvent(window, 'resize', repositionFixed);
     }
-    
+    console.log('iMaxHeight = ', iMaxHeight, ' oBtnMin.isMax = ', oBtnMin.isMax)
     oBtnMin.timer=null;
-    oBtnMin.isMax=true;
-    oBtnMin.onclick=function ()
-    {
-        startMove
-        (
-            oDivContent, (this.isMax=!this.isMax)?iMaxHeight:8,
-            function ()
-            {
-                //console.log('iMaxHeight = ', this.offsetHeight)
-                oBtnMin.className=oBtnMin.className=='min'?'max':'min';
-            }
-        );
-    };
-    
-    oBtnClose.onclick=function ()
-    {
-        oDiv.style.display='none';
-    };
-
-    console.log('begin handle io-shmccps');
-    if (window.io_shmccps) {
-        console.log('io have registered in window');
-        const socket = window.io_shmccps;
-        socket.emit('register', 'huykai_win10');
-        socket.on('message',function(msg){
-            console.log('message: ', msg);
-        }); 
+    if (oBtnMin.isMax === undefined || oBtnMin.isMax === null){
+        oBtnMin.isMax=true;
     }
-    
-};
+    if (!oBtnMin.onclick) {
+        oBtnMin.onclick =function ()
+        {
+            console.log(`this.isMax: ${this.isMax}`)
+            console.log(`iMaxHeight: ${this.iMaxHeight}`)
+            startMove
+            (
+                oDivContent, (this.isMax=!this.isMax)?this.iMaxHeight:8,
+                function ()
+                {
+                    //console.log('iMaxHeight = ', this.offsetHeight)
+                    oBtnMin.className=oBtnMin.className=='min'?'max':'min';
+                }
+            );
+        };
+    } 
+        
+    if (!oBtnClose.onclick){
+        oBtnClose.onclick=function ()
+        {
+            oDiv.style.display='none';
+        };
+    }
+
+    if (oBtnMin.isMax === false){
+        oBtnMin.click()
+    }
+}
 function startMove(obj, iTarget, fnCallBackEnd)
 {
     if(obj.timer)

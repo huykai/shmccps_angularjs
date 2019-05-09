@@ -26,10 +26,18 @@ module.exports = {
         //include: 'app/reactjs/',
         exclude: /node_modules/,  //加上这行，webpack就不会自行找需要编译的mudule了
         loader: 'babel-loader',//在webpack的module部分的loaders里进行配置即可
-        options: {
+        query: {
           //babelrc: false,
-          presets: ['es2015','react']
-        },
+          presets: ['react', 'es2015', 'stage-0'],
+          plugins: ["transform-react-jsx"]
+        }
+        //options: {
+          //babelrc: false,
+        //  presets: ['es2015','react','env'],
+        //  plugins: [
+        //    ["emotion"]
+        //  ]
+        //},
       },
       // JSON is not enabled by default in Webpack but both Node and Browserify
       // allow it implicitly so we also enable it.

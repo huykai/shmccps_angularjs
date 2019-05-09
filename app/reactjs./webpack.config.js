@@ -21,7 +21,8 @@ module.exports = {
         loader: 'babel-loader',//在webpack的module部分的loaders里进行配置即可
         query: {
           babelrc: false,
-          presets: ['es2015','react']
+          presets: ['es2015','react','env'],
+          plugins: ["emotion"]
         },
       },
       // JSON is not enabled by default in Webpack but both Node and Browserify
@@ -75,7 +76,7 @@ module.exports = {
   resolve: {
         //自动扩展文件后缀名
         extensions: ['.js', '.json', '.scss', '.ts'],
-        modules: ["/e/PersonalProject/Code_Projects/Javascripts/AngularJS_Demo/shmcc/node_modules"]
+        modules: ["/e/Personal_Projects/Code_Projects/javascript/AngularJS/shmccps_angularjs/node_modules"]
   },
   externals: {
     cheerio: 'window',

@@ -81,10 +81,10 @@ var updateGrid = function(filename, columninfo, page) {
             handler:function(){
                 var a = document.createElement('a');
                 //var url = window.URL.createObjectURL(blob);
-                var url = "loadResultSub?&resultFile=" + filename['MME_TRAFFICA'];
+                var url = "/api/downloadResultSub?&resultFile=" + filename['MME_TRAFFICA'];
                 //var filename = 'myfile.zip';
                 a.href = url;
-                a.download = filename['MME_TRAFFICA'];
+                //a.download = filename['MME_TRAFFICA'];
                 a.click();
                 //window.URL.revokeObjectURL(url);
             }

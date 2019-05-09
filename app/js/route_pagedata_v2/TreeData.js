@@ -72,7 +72,30 @@ var TreeDemoSelectCtrl = ['$rootScope',function($rootScope) {
         {id:'225',text:'LTE-CREATEBEARER',pid:'21'},
         {id:'226',text:'LTE-S11CREATESESSION',pid:'21'}
     ];
-	
+    
+    var cascadeData_cmg_element = [
+        {id:'1',text:'Element',pid:'root'},
+        {id:'11',text:'SHSAEGW34BNK',pid:'1'},
+        {id:'12',text:'SHSAEGW35BNK',pid:'1'},
+        {id:'13',text:'SHSAEGW36BNK',pid:'1'},
+        {id:'14',text:'SHSAEGW37BNK',pid:'1'}
+    ];
+
+    var cascadeData_cmg_kpi = [
+        {id:'2',text:'KPI',pid:'root'},
+        {id:'21',text:'LTE',pid:'2'},
+        {id:'211',text:'LTE-PGW',pid:'21'},
+        {id:'212',text:'LTE-SGW',pid:'21'},
+        {id:'213',text:'LTE-SGW-THROUGH',pid:'21'},
+        {id:'214',text:'LTE-S1U-THROUGH',pid:'21'},
+        {id:'215',text:'LTE-SGI-THROUGH',pid:'21'},
+        {id:'216',text:'LTE-SESSION',pid:'21'},
+        {id:'219',text:'LTE-IPPOOL',pid:'21'},
+        {id:'220',text:'LTE-DOWNDATA-NOTICE',pid:'21'},
+        {id:'222',text:'LTE-MDACPU',pid:'21'},
+        {id:'224',text:'LTE-PDN',pid:'21'}
+    ];
+
     vm.mul = true;
     vm.myFun=function(){
         vm.mul=!vm.mul;
@@ -82,11 +105,15 @@ var TreeDemoSelectCtrl = ['$rootScope',function($rootScope) {
     vm.cascadeData_mme_kpi = cascadeData_mme_kpi;
 	vm.cascadeData_saegw_element = cascadeData_saegw_element;
     vm.cascadeData_saegw_kpi = cascadeData_saegw_kpi;
+	vm.cascadeData_cmg_element = cascadeData_cmg_element;
+    vm.cascadeData_cmg_kpi = cascadeData_cmg_kpi;
 	$rootScope.isMME = true;
     $rootScope.treedata_mme_element = vm.cascadeData_mme_element;
     $rootScope.treedata_mme_kpi = vm.cascadeData_mme_kpi;
     $rootScope.treedata_saegw_element = vm.cascadeData_saegw_element;
     $rootScope.treedata_saegw_kpi = vm.cascadeData_saegw_kpi;
+    $rootScope.treedata_cmg_element = vm.cascadeData_cmg_element;
+    $rootScope.treedata_cmg_kpi = vm.cascadeData_cmg_kpi;
 
     vm.onselect =  function() {
         $rootScope.queryoptionchanged = !$rootScope.queryoptionchanged;

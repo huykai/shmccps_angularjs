@@ -11,7 +11,7 @@ import { modifyimsi, modifymsisdn, modifyelement } from './actions';
 import { createStore } from 'redux';
 import reducer from './reducers';
 import {Provider} from 'react-redux';
-
+import SpinnerComponent from './LoaderSpinner';
 
 import '../../css/bootstrap.min.css';
 import '../../css/bootstrap-theme.min.css';
@@ -41,7 +41,9 @@ const layoutItemStyle = {
   width: '200px' 
 };
 
-const parentWidthdelta = 0;
+// delta = parentWidth - slide width
+const parentWidthdelta = 5;
+const pageHightdelta = 5;
 const pageHeight = 200;
 
 var querystate = false;
@@ -183,8 +185,11 @@ export default class RegionNorth extends Component {
       //layoutStyle.width = ParentWidth + 'px';
       //layoutStyle.height = ParentHeight + 'px';
       this.state = {
-          parentwidth: ParentWidth, parentheight: ParentHeight,
-          pagewidth: ParentWidth - parentWidthdelta, pageheight: pageHeight,
+          parentwidth: ParentWidth, 
+          parentheight: ParentHeight,
+          pagewidth: ParentWidth - parentWidthdelta, 
+          pageheight: pageHeight - pageHightdelta,
+          queryStatus: props.querystatus,
           queryOptions : {
             'QUERYTYPE' : '',
             'IMSI' : '' ,
@@ -204,7 +209,8 @@ export default class RegionNorth extends Component {
       };
 
       layoutPanelStyle.width = this.state.pagewidth + 'px' ;
-      layoutPanelStyle.height = '200px' ;
+      //layoutPanelStyle.height = '200px' ;
+      layoutPanelStyle.height = this.state.pageheight + 'px' ;
       console.log('ReginNorth layoutPanelStyle = ',layoutPanelStyle)
       querystate = true;
       this.submitQuery = this.submitQuery.bind(this);
@@ -212,6 +218,7 @@ export default class RegionNorth extends Component {
       this.submitQuerySummary = this.submitQuerySummary.bind(this);
       this.handleIMSIchange =  this.handleIMSIchange.bind(this);
       this.handleMSISDNchange =  this.handleMSISDNchange.bind(this);
+      //this.state.queryStatus = "Finished";
       //this.handleCAUSEPROCchange =  this.handleCAUSEPROCchange.bind(this);
     }
     submitQueryDetail(){
@@ -249,7 +256,6 @@ export default class RegionNorth extends Component {
        // console.log('ajax complete!');
         // url "http://127.0.0.1:3000/api/getTrafficaRecord"
         this.state.handlequery('/api/getTrafficaRecord', data);
-
     }
 
     handleIMSIchange(event) {
@@ -279,73 +285,92 @@ export default class RegionNorth extends Component {
         //this.state.queryOptions.CAUSEPROC = event.target.value;
         store.dispatch({ type:'MODIFY_MME'});
     }
-    
+    shouldComponentUpdate(nextProps, nextState){
+        console.log(`RegionNorth shouldCOmponentUpdate props: `, this.props)
+        console.log(`RegionNorth shouldCOmponentUpdate nextProps: `, nextProps)
+        if (this.props.width !== nextProps.width){
+            this.state.parentwidth = nextProps.width;
+            this.state.pagewidth = nextProps.width - parentWidthdelta;
+            return true;
+        }
+        if (this.props.querystatus !== nextProps.querystatus){
+            //this.props.querystatus = nextProps.querystatus;
+            this.state.queryStatus = nextProps.querystatus;
+            return true;
+        }
+        return false;
+    }
 
     render() {
+      console.log(`RegionNorth render: `, this.state)
+      layoutStyle.width = this.state.parentwidth + 'px';
+      layoutPanelStyle.width = this.state.pagewidth + 'px' ;
+      //<div className="easyui-panel" title="Traffica Log Query Options" style={layoutPanelStyle}>
+      //</div>
       return (
-        <div data-options="region:'north'" style={layoutStyle} >
-            <div className="easyui-panel" title="Traffica Log Query Options" style={layoutPanelStyle}>
-                <div >
-                    <form id="ff" method="post">
-                        <table cellPadding="5">
-                          <tbody>
-                            <tr>
-                                <td>IMSI:</td>
-                                <td><input type="text" className="form-control" id="imsi" placeholder="请输入IMSI" onChange={this.handleIMSIchange} style={layoutInputTextStyle}/></td>
-                                <td>MSISDN:</td>
-                                <td><input type="text" className="form-control" id="MSISDN" placeholder="请输入MSISDN" onChange={this.handleMSISDNchange} style={layoutInputTextStyle}/></td>
-                                <td>MME:</td>
-                                <td><input id="MME_SELECT" className="easyui-combobox" name="mme_select" onChange={this.handleMMEchange} data-options="url:'./reactjs/data/combobox_causeproc.json', method:'get', valueField:'id', textField:'text',multiple:true,multiline:true,panelHeight:'auto'" style={{width:'400px',height:'25px'}}  /> </td>
-                            </tr>
-                            <tr>
-                                <td>起始时间:</td>
-                                <td><input id="STARTTIEM_SELECT" name="starttime_select" className="easyui-datetimebox" style={layoutItemStyle} data-options="required:true"></input></td>
-                                <td>截止时间:</td>
-                                <td><input id="STOPTIME_SELECT" name="stoptime_select" className="easyui-datetimebox" style={layoutItemStyle} data-options="required:true"></input></td>
-                                <td>GSM Cause Proc</td>
-                                <td>
-                                    <div className="easyui-panel" style={{width:'100%'}}>
-                                        <div >
-                                            <input id="cc2" name="gsm_causeproc_select" className="easyui-combotree" data-options="url:'./reactjs/data/gsm_causeproc.json',method:'get',multiple:true,value:[]" style={{width:'100%'}} />
-                                        </div>
-                                    </div>
-                                </td>       
-                            </tr>
-                            <tr>
-                                <td>业务类型:</td>
-                                <td>
-                                    <select id="NETTYPE_SELECT" className="easyui-combobox" name="nettype_select" data-options="multiple:true,multiline:true"  style={{width:'200px',height:"25px"}}>
-                                        <option defaultValue="MME_TRAFFICA">MME_TRAFFICA</option>
-                                        <option value="SGSN_TRAFFICA">SGSN_TRAFFICA</option>
-		                             </select>
-                                </td>
-                                <td>LTE Cause Proc</td>
-                                <td>
-                                    <div className="easyui-panel" style={{width:'100%'}}>
-                                        <div >
-                                            <input id="cc1" name="lte_causeproc_select" className="easyui-combotree" data-options="url:'./reactjs/data/lte_causeproc.json',method:'get',multiple:true,value:[]" style={{width:'100%'}} />
-                                        </div>
-                                    </div>
-                                </td>
-                                
-                            </tr>
-                            
-                          </tbody>
-                        </table>
-                    </form>
-                    <div>
-                        <button onClick={this.submitQueryDetail}  >Apply Detail Query</button>
-                        <button onClick={this.submitQuerySummary}  >Apply Summary Query</button>                        
-                    </div>
-                    <Provider store={store}>
-                        <FootDesc ></FootDesc>
-                    </Provider>
-                </div>
-                
+        <div data-options="region:'north',title:'Traffica Log Query Options',split:true" style={layoutStyle} >
+            <form id="ff" method="post">
+                <table cellPadding="5">
+                    <tbody>
+                    <tr>
+                        <td>IMSI:</td>
+                        <td><input type="text" className="form-control" id="imsi" placeholder="请输入IMSI" onChange={this.handleIMSIchange} style={layoutInputTextStyle}/></td>
+                        <td>MSISDN:</td>
+                        <td><input type="text" className="form-control" id="MSISDN" placeholder="请输入MSISDN" onChange={this.handleMSISDNchange} style={layoutInputTextStyle}/></td>
+                        <td>LTE Cause Proc</td>
+                        <td style={{width:'300px',height:"25px"}}>
+                            <div className="easyui-panel" style={{width:'100%'}}>
+                                <div >
+                                    <input id="cc1" name="lte_causeproc_select" className="easyui-combotree" data-options="url:'./reactjs/data/lte_causeproc.json',method:'get',multiple:true,value:[]" style={{width:'100%'}} />
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>起始时间:</td>
+                        <td><input id="STARTTIEM_SELECT" name="starttime_select" className="easyui-datetimebox" style={layoutItemStyle} data-options="required:true"></input></td>
+                        <td>截止时间:</td>
+                        <td><input id="STOPTIME_SELECT" name="stoptime_select" className="easyui-datetimebox" style={layoutItemStyle} data-options="required:true"></input></td>
+                        <td >GSM Cause Proc</td>
+                        <td style={{width:'300px',height:"25px"}}>
+                            <div className="easyui-panel" style={{width:'100%'}}>
+                                <div >
+                                    <input id="cc2" name="gsm_causeproc_select" className="easyui-combotree" data-options="url:'./reactjs/data/gsm_causeproc.json',method:'get',multiple:true,value:[]" style={{width:'100%'}} />
+                                </div>
+                            </div>
+                        </td>       
+                    </tr>
+                    <tr>
+                        <td>MME:</td>
+                        <td>
+                            <input id="MME_SELECT" className="easyui-combobox" name="mme_select" onChange={this.handleMMEchange} data-options="url:'./reactjs/data/combobox_causeproc.json', method:'get', valueField:'id', textField:'text',multiple:true,multiline:true,panelHeight:'auto'" style={{width:'200px',height:'25px'}}  /> 
+                        </td>
+                        <td>业务类型:</td>
+                        <td>
+                            <select id="NETTYPE_SELECT" className="easyui-combobox" name="nettype_select" data-options="multiple:true,multiline:true"  style={{width:'200px',height:"25px"}}>
+                                <option defaultValue="MME_TRAFFICA">MME_TRAFFICA</option>
+                                <option value="SGSN_TRAFFICA">SGSN_TRAFFICA</option>
+                            </select>
+                        </td>          
+                    </tr>
+                    </tbody>
+                </table>
+            </form>
+            <div style={{float:"left", marginTop:"10px"}}>
+                <button style={{marginLeft:"20px"}} onClick={this.submitQueryDetail}  >查询详细数据</button>
+                <button style={{marginLeft:"20px",marginRight:"40px"}} onClick={this.submitQuerySummary}  >查询汇总数据</button>
             </div>
+            <div style={{float:"right", width:"60%", align:"center", marginTop:"10px"}}>
+                { this.state.queryStatus === "Started" ? 
+                (<SpinnerComponent></SpinnerComponent>) : null
+                }
+            </div>   
 	    </div>
       )
     }
+    //<Provider store={store}>
+    //    <FootDesc ></FootDesc>
+    //</Provider>
 
 }
 

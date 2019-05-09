@@ -27,15 +27,29 @@
 								oncancelselect="sc.oncancelselect"
 								cascade="true"></wi-tree>
 							</div>
-							<div ng-show="!isMME" style="height:200px;overflow: auto;border: solid 1px #ccc;">
+							<div ng-show="isSAEGW" style="height:200px;overflow: auto;border: solid 1px #ccc;">
 								<wi-tree dataProvider="sc.cascadeData_saegw_element"
 								multiselect="true"
 								onselect="sc.onselect"
 								oncancelselect="sc.oncancelselect"
 								cascade="true"></wi-tree>
 							</div>
-							<div ng-show="!isMME" style="height:400px;overflow: auto;border: solid 1px #ccc;">
+							<div ng-show="isSAEGW" style="height:400px;overflow: auto;border: solid 1px #ccc;">
 								<wi-tree dataProvider="sc.cascadeData_saegw_kpi"
+								multiselect="true"
+								onselect="sc.onselect"
+								oncancelselect="sc.oncancelselect"
+								cascade="true"></wi-tree>
+							</div>
+							<div ng-show="isCMG" style="height:200px;overflow: auto;border: solid 1px #ccc;">
+								<wi-tree dataProvider="sc.cascadeData_cmg_element"
+								multiselect="true"
+								onselect="sc.onselect"
+								oncancelselect="sc.oncancelselect"
+								cascade="true"></wi-tree>
+							</div>
+							<div ng-show="isCMG" style="height:400px;overflow: auto;border: solid 1px #ccc;">
+								<wi-tree dataProvider="sc.cascadeData_cmg_kpi"
 								multiselect="true"
 								onselect="sc.onselect"
 								oncancelselect="sc.oncancelselect"
@@ -99,8 +113,6 @@
 								<button type="button" style="top:10px; width: 150px; margin: 4px" class="btn btn-default" ng-click="submitQuery();">Apply Query</button>
 								<button style="top:10px; width: 150px; margin: 4px" ng-show="!isAlarmQuery" type="button" class="btn btn-default" ng-click="$ctrl.open()">Generate Chart</button>
 								<div style="top:10px;display:inline">
-									
-									 
 									<div style="display:inline" ng-controller="ModalDemoCtrl as $ctrl" class="modal-demo">
 										<script type="text/ng-template" id="myModalContent.html">
 											<style>

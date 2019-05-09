@@ -7,8 +7,8 @@ import $ from 'jquery';
 //import traffica_func from ''
 import cookie from 'jquery.cookie';
 import Storages from 'js-storage';
+import  * as pako  from 'pako';
 //import { functions } from './lib/traffica_func'
-
 const layoutCustomStyle = {
   //align:
   padding: '10px'
@@ -21,6 +21,8 @@ export default class RegionCenter extends Component {
     constructor(props) {
     	super(props);
 		this.state = {
+			querystatus : this.props.querystatus,
+			renderDataGrid : this.props.renderDataGrid,
 			datagridinfo : this.props.data,
 		}
 		this.generateColumnInfo = this.generateColumnInfo.bind(this);
@@ -130,7 +132,21 @@ export default class RegionCenter extends Component {
 		}
 	}
 	
-
+	shouldComponentUpdate(nextProps, nextState){
+		console.log(`RegionCenter shouldCOmponentUpdate props: `, this.props)
+		console.log(`RegionCenter shouldCOmponentUpdate nextProps: `, nextProps)
+		if (this.props.width !== nextProps.width){
+				this.state.parentwidth = nextProps.width;
+				this.state.pagewidth = nextProps.width;
+				return true;
+		}
+		if (this.state.querystatus !== nextProps.querystatus){
+			this.state.querystatus = nextProps.querystatus;
+			if (this.state.querystatus === "Finished" && nextProps.renderDataGrid === true)
+				return true;
+		}
+		return false;
+	}
 	render() {
 		//var tableNode_str = '';		
 		//if (!this.state.datagridinfo.filename) {
@@ -144,6 +160,8 @@ export default class RegionCenter extends Component {
 		//				status: 'Status'
 		//			};
 		//}
+		layoutCustomStyle.width =  this.state.pagewidth;
+		console.log(`RegionCenter render layoutCustomerStyle: `, layoutCustomStyle)
 		var table_mmetrafficarecord_info = (
 			<div title="DataGrid_MME_Record_Info" data-options="" style={layoutCustomStyle}>
 				<table id="easyui-mme-info" className="easyui-datagrid" 
@@ -224,7 +242,7 @@ export default class RegionCenter extends Component {
 		
 
 				return (			
-					<div data-options="region:'center',title:'Main Title',iconCls:'icon-ok'">
+					<div data-options="region:'center',title:'数据表格',iconCls:'icon-ok'">
 						<div className="easyui-tabs" data-options="fit:true,border:false,plain:true,rownumbers:true, pageSize:50, pagination:true,">
 							<div title="DataGrid_MME" data-options="" style={layoutCustomStyle}>
 								{table_node_mme}
@@ -243,7 +261,7 @@ export default class RegionCenter extends Component {
 			} 
 		} else {
 			return (
-				<div data-options="region:'center',title:'Main Title',iconCls:'icon-ok'">
+				<div data-options="region:'center',title:'数据表格',iconCls:'icon-ok'">
 					<div className="easyui-tabs" data-options="fit:true,border:false,plain:true">
 							<div title="DataGrid_MME" data-options="" style={layoutCustomStyle}>
 								{table_node_mme}
@@ -262,7 +280,7 @@ export default class RegionCenter extends Component {
 			//console.log('tableNode_str:',tableNode_str);
 			//var table_data_options = "url:'" + this.state.datagridinfo.filename + "',method:'get',singleSelect:true,fit:true,fitColumns:true";
 			//return (			
-      //  <div data-options="region:'center',title:'Main Title',iconCls:'icon-ok'">
+      //  <div data-options="region:'center',title:'数据表格',iconCls:'icon-ok'">
 			//		<div className="easyui-tabs" data-options="fit:true,border:false,plain:true">
 			//			<div title="About" data-options="" style={layoutCustomStyle}></div>
 			//			<div title="DataGrid" style={layoutCustomStyle}>
@@ -300,7 +318,7 @@ export default class RegionCenter extends Component {
 			//var table_data_options = "url:'" + this.state.datagridinfo.filename + "',method:'get',singleSelect:true,fit:true,fitColumns:true";
 			//var table_data_options = "url:'./reactjs/data/datagrid_data1.json',method:'get',singleSelect:true,fit:true,fitColumns:true";
 			//return (
-			//	<div data-options="region:'center',title:'Main Title',iconCls:'icon-ok'">
+			//	<div data-options="region:'center',title:'数据表格',iconCls:'icon-ok'">
 			//		<div className="easyui-tabs" data-options="fit:true,border:false,plain:true">
 			//			<div title="About" data-options="" style={layoutCustomStyle}></div>
 			//			<div title="DataGrid" style={layoutCustomStyle}>

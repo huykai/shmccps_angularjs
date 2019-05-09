@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="lib/jquery-easyui-1.5.2/themes/default/easyui.css">
     <link rel="stylesheet" href="lib/jquery-easyui-1.5.2/themes/icon.css">
     <link rel="stylesheet" href="css/react_site.css">
+    <link rel="stylesheet" href="lib/spin.js/spin.css"/>
     <title>Traffica trace log</title>
     
   <link href="reactjs/build/css/app.css" rel="stylesheet"></head>
@@ -17,7 +18,8 @@
   
   <body>
     <div id="includmenu"></div>
-    <div id="root"  class="col-lg-12" style="display:block;">
+    <div id="root"  class="col-lg-12">
+      <div id="spin" style="height: 800px"></div>
     </div><!-- /container -->
 
     <script src="lib/jquery/jquery-2.0.3.min.js"></script>
@@ -25,7 +27,8 @@
     <script src="lib/jquery/jquery.cookie.js"></script>
     <script src="lib/bootstrap/bootstrap.min.js"></script>
     <script src="lib/jquery-easyui-1.5.2/jquery.easyui.min.js"></script>
-    
+
+    <script src="lib/spin.js/spin.js"></script>
     
     <!--<script src="lib/jquery.cookie/jquery.cookie.js"> </script>
     <script src="lib/js-storage/js-storage.js"> </script>
@@ -38,5 +41,29 @@
       });
     </script>
     -->
+    <script>
+      var opts = {
+        lines: 13, // The number of lines to draw
+        length: 8, // The length of each line
+        width: 2, // The line thickness
+        radius: 15, // The radius of the inner circle
+        scale: 1, // Scales overall size of the spinner
+        corners: 1, // Corner roundness (0..1)
+        color: '#0e0e0e', // CSS color or array of colors
+        fadeColor: 'transparent', // CSS color or array of colors
+        speed: 1, // Rounds per second
+        rotate: 0, // The rotation offset
+        animation: 'spinner-line-fade-quick', // The CSS animation name for the lines
+        direction: 1, // 1: clockwise, -1: counterclockwise
+        zIndex: 2e9, // The z-index (defaults to 2000000000)
+        className: 'spinner', // The CSS class to assign to the spinner
+        top: '50%', // Top position relative to parent
+        left: '50%', // Left position relative to parent
+        shadow: '0 0 1px transparent', // Box-shadow for the lines
+        position: 'absolute' // Element positioning
+      };
+      var target = document.getElementById('spin');
+      var spinner = new Spinner(opts).spin(target);
+    </script>
   <script type="text/javascript" src="reactjs/build/main_bundle.js"></script></body>
 </html>

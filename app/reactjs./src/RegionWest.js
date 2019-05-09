@@ -42,7 +42,7 @@ export default class RegionWest extends Component {
 
     render() {
       return (
-        <div data-options="region:'west',split:true" title="West" style={layoutStyle}>
+        <div data-options="region:'west',split:true" title="数据查询项" style={layoutStyle}>
 						<div className="easyui-accordion" data-options="fit:true,border:false">
 							<div title="LTE" style={layoutCustomStyle}>
 								<div className="easyui-panel" style={{width:"450px",padding:"5px"}}>

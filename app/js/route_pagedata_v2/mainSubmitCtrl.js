@@ -10,7 +10,8 @@ var appDirectives = angular.module('appDirectives', []);
 var options = {};
 options.api = {};
 //options.api.base_url = "http://192.168.1.126:3000";
-options.api.base_url = "http://127.0.0.1:3000";
+//options.api.base_url = "http://127.0.0.1:3000";
+options.api.base_url = window.location.origin;
 
 
 shmcc_app.config(['$qProvider', function ($qProvider) {
@@ -150,47 +151,48 @@ var mainSubmitCtrl = ["getTreeData","$rootScope", "$interpolate", "$scope","$doc
 		$rootScope.alarm_level = data;
 		//console.log(data);
 	}
+
+	$rootScope.getQueryDetail = function(treedata_element, treedata_kpi){
+		//getTreeData.getTreeData_elements($rootScope.treedata_mme_element)
+		getTreeData.getTreeData_elements(treedata_element)
+		.then(function(data){
+			$rootScope.select_element = data;
+			genQueryDetail();
+		}, function(data){
+			$rootScope.select_element = ['Error'];
+			genQueryDetail();
+		}, function( data ) {
+			$rootScope.select_element = ['All'];
+			genQueryDetail();
+		});
+		$rootScope.select_kpi = getTreeData.getTreeData_kpis(treedata_kpi);
+	}
+
 	$rootScope.$watch('queryoptionchanged', function(newVal,oldVal){
 		console.log('queryoptionchanged :', newVal, oldVal );
 		console.log('isMME :', $rootScope.isMME );
+		
 		if($rootScope.isMME == true) {
+			$rootScope.getQueryDetail($rootScope.treedata_mme_element, $rootScope.treedata_mme_kpi)
 			//var select_element = getTreeData.getTreeData_elements($rootScope.treedata_mme_element);
-			getTreeData.getTreeData_elements($rootScope.treedata_mme_element)
-			.then(function(data){
-				$rootScope.select_element = data;
-				//console.log('succ: ');
-				//console.log(data.toString());
-				//console.log(select_element);
-				genQueryDetail();
-			}, function(data){
-				$rootScope.select_element = ['Error'];
-				//console.log('err: ' + data.toString());
-				genQueryDetail();
-			}, function( data ) {
-				$rootScope.select_element = ['All'];
-				//console.log('notice: ' + data.toString());
-				genQueryDetail();
-			});
-			//console.log(select_element);
-			$rootScope.select_kpi = getTreeData.getTreeData_kpis($rootScope.treedata_mme_kpi);
 			//var select_element = $rootScope.getelement($rootScope.treedata_mme_element);
 			//var select_kpi = $rootScope.getkpi($rootScope.treedata_mme_kpi);
-		} else {
+		} 
+		if ($rootScope.isSAEGW == true) {
 			//var select_element = $rootScope.getelement($rootScope.treedata_saegw_element);
 			//var select_kpi = $rootScope.getkpi($rootScope.treedata_saegw_kpi);
 			//var select_element = getTreeData.getTreeData_elements($rootScope.treedata_saegw_element);
-			getTreeData.getTreeData_elements($rootScope.treedata_saegw_element)
-			.then(function(data){
-				$rootScope.select_element = data;
-				genQueryDetail();
-			}, function(data){
-				$rootScope.select_element = ['Error'];
-				genQueryDetail();
-			}, function( data ) {
-				$rootScope.select_element = ['All'];
-				genQueryDetail();
-			});
-			$rootScope.select_kpi = getTreeData.getTreeData_kpis($rootScope.treedata_saegw_kpi);
+			$rootScope.getQueryDetail($rootScope.treedata_saegw_element, $rootScope.treedata_saegw_kpi)
+			
+			//$rootScope.select_kpi = getTreeData.getTreeData_kpis($rootScope.treedata_saegw_kpi);
+		}
+		if ($rootScope.isCMG == true) {
+			//var select_element = $rootScope.getelement($rootScope.treedata_saegw_element);
+			//var select_kpi = $rootScope.getkpi($rootScope.treedata_saegw_kpi);
+			//var select_element = getTreeData.getTreeData_elements($rootScope.treedata_saegw_element);
+			$rootScope.getQueryDetail($rootScope.treedata_cmg_element, $rootScope.treedata_cmg_kpi)
+			
+			//$rootScope.select_kpi = getTreeData.getTreeData_kpis($rootScope.treedata_saegw_kpi);
 		}
 
 		var treedata_elementdemo = [];
@@ -229,9 +231,11 @@ var mainSubmitCtrl = ["getTreeData","$rootScope", "$interpolate", "$scope","$doc
 			//console.log('genQueryDetail: ',select_element);
 				
 			if ($rootScope.isMME) {
-					var queryunit_info = $rootScope.mme_statis_unit.name;
-			} else {
-					var queryunit_info = $rootScope.saegw_statis_unit.name;
+				var queryunit_info = $rootScope.mme_statis_unit.name;
+			} else if ($rootScope.isSAEGW) {
+				var queryunit_info = $rootScope.saegw_statis_unit.name;
+			} else if ($rootScope.isCMG) {
+				var queryunit_info = $rootScope.cmg_statis_unit.name;
 			}
 			console.log('queryunit_info: ' , queryunit_info);
 			$rootScope.QueryDetailDesc = $rootScope.QueryDetailtemplate(
@@ -243,8 +247,7 @@ var mainSubmitCtrl = ["getTreeData","$rootScope", "$interpolate", "$scope","$doc
 				queryperiod: $rootScope.statis_period.name,
 				queryunit: queryunit_info
 			});
-	};
-		
+		};
 	});
 
 	
@@ -272,14 +275,17 @@ var mainSubmitCtrl = ["getTreeData","$rootScope", "$interpolate", "$scope","$doc
 	vm.apistring = {
 		'MME_query'		:	'/api/mme_query',
 		'SAEGW_query'	:	'/api/saegw_query',
+		'CMG_query'	:	'/api/cmg_query',
 		'MME_query_alarm'		:	'/api/mme_query_alarm',
-		'SAEGW_query_alarm'	:	'/api/saegw_query_alarm'
+		'SAEGW_query_alarm'	:	'/api/saegw_query_alarm',
+		'CMG_query_alarm'	:	'/api/cmg_query_alarm'
 	}
 
 	$rootScope.statis_period = vm.mydata[0];
 
 	$rootScope.mme_statis_unit = vm.mydata_mme[0];
 	$rootScope.saegw_statis_unit = vm.mydata_saegw[0];
+	$rootScope.cmg_statis_unit = vm.mydata_saegw[0];
 	
 	$rootScope.alarm_level = vm.mydata_alarm_level[0];
 	$rootScope.alarm_number = vm.alarm_number;
@@ -289,8 +295,6 @@ var mainSubmitCtrl = ["getTreeData","$rootScope", "$interpolate", "$scope","$doc
         vm.mme_statis_period = data;
     };
 			
-	
-    
     vm.queryStatis = function(param_config) {
 		$rootScope.tabs = [];
 		var config = {
@@ -332,7 +336,7 @@ var mainSubmitCtrl = ["getTreeData","$rootScope", "$interpolate", "$scope","$doc
      			for(var p in data){  
        				str.push(encodeURIComponent(p) + "=" + encodeURIComponent(data[p]));  
      			}  
-     			//console.log('transformRequest: ' , str.join("&"));
+     			console.log('transformRequest: ' , str.join("&"));
 				return str.join("&");
 				
 				// console.log('postconfig:' + $.param(data));
@@ -441,6 +445,7 @@ var mainSubmitCtrl = ["getTreeData","$rootScope", "$interpolate", "$scope","$doc
 			} else {
 				var tabs = [];
 				for (var tableid in data.data.response){
+					if (data.data.response[tableid] == '') continue;
 					var newcolumns = $rootScope.addcolumns(data.data.response[tableid].Title);
 					var newdatas = $rootScope.adddatas(data.data.response[tableid].Item);
 					var newtabname = data.data.response[tableid].TabName.name;
@@ -588,8 +593,10 @@ var mainSubmitCtrl = ["getTreeData","$rootScope", "$interpolate", "$scope","$doc
 		var config = {};
 		if ($rootScope.isMME) {
 			config.selectmmesgsn = $rootScope.select_element;	
-		} else {
+		} else if ($rootScope.isSAEGW) {
 			config.selectsaegwggsn = $rootScope.select_element;
+		} else if ($rootScope.isCMG) {
+			config.selectcmg = $rootScope.select_element;
 		}
 		
 		config.startdate = queryParameter['startDate'];
@@ -607,6 +614,8 @@ var mainSubmitCtrl = ["getTreeData","$rootScope", "$interpolate", "$scope","$doc
 			config.isAlarmDetail = $rootScope.isAlarmDetail;	
 		}
 		config.isMME = $rootScope.isMME;
+		config.isSAEGW = $rootScope.isSAEGW;
+		config.isCMG =$rootScope.isCMG;
 		//console.log('config: ',config);
 		this.queryStatis(config);
 	};
@@ -666,6 +675,7 @@ shmcc_app.run(function($rootScope, $cookies, $http, $document, $location, $windo
 		if (!$rootScope.isAuthenticated) {
 			$rootScope.isAuthenticated = $window.sessionStorage.isAuthenticated;
 			$rootScope.currentUser = $window.sessionStorage.currentUser;
+			$rootScope.isUserAdmin = $window.sessionStorage.isUserAdmin;
 		};
 		console.log(`try to add username: ${$rootScope.currentUser}`)
 		var elem = angular.element(document.querySelector('#currentUser'));

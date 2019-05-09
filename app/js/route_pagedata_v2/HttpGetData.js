@@ -19,10 +19,10 @@ var getStatsMMECtrl = ['$scope', function($scope) {
 }];
 angular.module('ui.wisoft')
 .constant("GetMMEStats","scripts/PM_statis_report.py")
-.controller('getStatsMMECtrl',getStatsCtrl($scope,$http,GetMMEStats) {
+.controller('getStatsMMECtrl', function getStatsCtrl($scope,$http,GetMMEStats) {
 	$scope.queryStatis = function() {
 		var config = {
-			transformResponse: fucntion (data,headers) {
+			transformResponse: function (data,headers) {
 				if (headers("content-type") == "application/xml"
 					&& angular.isString(data)) {
 					StatsData = [];

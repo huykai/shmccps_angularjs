@@ -1,27 +1,31 @@
+<img src="./images/Title_1.jpg" alt="SHMCC诺西PS网元管理系统" 
+                style="width: 100%; align-content: center " >
 <section class="post" style="width: 600px" ng-app="shmcc_app">
 	<ol class="breadcrumb">
         <li><a href="#/">SHMCC_PS</a></li>
-        <li class="active">Sign In</li>
+        <li class="active">登录</li>
     </ol>
 
 	<form class="form-horizontal" role="form">
 		<div class="form-group">
-			<label for="inputUsername" class="col-sm-4 control-label">Username</label>
+			<label for="inputUsername" class="col-sm-4 control-label" style="padding-top: 2px">用户</label>
 			<div class="col-sm-4">
 				<input type="text" class="form-control" id="inputUsername" placeholder="Username" ng-model="user.username">
 				<input type="hidden" name="_csrf" value="{{csrftoken}}">
 			</div>
 		</div>
 		<div class="form-group">
-			<label for="inputPassword" class="col-sm-4 control-label">Password</label>
+			<label for="inputPassword" class="col-sm-4 control-label" style="padding-top: 2px">密码</label>
 			<div class="col-sm-4">
 				<input type="password" class="form-control" id="inputPassword" placeholder="Password" ng-model="user.password">
 			</div>
 		</div>
 		<div class="form-group">
 			<div class="col-sm-offset-4 col-sm-10">
-				<button type="submit" id='signin' class="btn btn-default" ng-click="signIn(user.username, user.password)">Sign In</button>
+				<button type="submit" id='signin' class="btn btn-default col-sm-4" ng-click="signIn(user.username, user.password)">登录</button>
+				<!--
 				<button type="submit" class="btn btn-default" ng-click="toRegister()">Register</button>
+				-->
 			</div>
 		</div>
 		<div class="form-group" ng-if="!isAuthenticated && currentUser && !(currentUser == '')">
