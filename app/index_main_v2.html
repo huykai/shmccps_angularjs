@@ -21,7 +21,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- FlexSlider -->
 <link rel="stylesheet" href="static/css/flexslider.css" type="text/css" media="screen" />
 <script defer src="static/js/jquery.flexslider.js"></script>
-<script type="static/text/javascript">
+<script>
     $(window).load(function(){
         $('.flexslider').flexslider({
         animation: "slide",
@@ -29,6 +29,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             $('body').removeClass('loading');
         }
         });
+        
+        
     });
 </script>
 <!-- //FlexSlider -->
@@ -126,15 +128,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 辅助功能
                                 <b class="caret"></b>
                             </a>
-                            <ul class="dropdown-menu">
+                            <ul id="externalpage" class="dropdown-menu">
                                 <li>
                                     <a href="javascript:void(0);" onclick="window.open('/epc-ices/login')">MAC系统</a>
                                 </li>
+                                <div class="divider"></div>
                                 <li>
-                                    <a href="javascript:void(0);" onclick="window.open('/shmcc_rtm')">RTM系统</a>
+                                    <a href="javascript:void(0);" onclick="openNewSite('RTM')">RTM系统</a>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0);" onclick="window.open('/shmcc_grafana')">实时监控(Grafana)系统</a>
+                                    <a href="javascript:void(0);" onclick="openNewSite('GRAFANA')">实时监控(Grafana)系统</a>
                                 </li>
                                 <div class="divider"></div>
                                 <li><a href="javascript:void(0);" onclick="redirect('/angular/index.html?page=operation')">其他功能</a></li>
@@ -174,18 +177,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </div>
 </div>	
     <script src="static/js/bootstrap.js"> </script>
-    <script>
-        //alert('begin script in index_main_v2');
-        //$(function(){
-            //alert('load index_main_v2.html');
-        //    $("div#includemenu").load("index_menu.html"); 
-            //$("#includecontent").load("index_main_content.html"); 
-        //});
-        function redirect(url){
-            console.log('redirect: ', url);
-            $("iframe#content").attr("src",url);
-        }
-    </script>
+    <script src="static/js/environment_config.js"> </script>
+    
     
 <!-- //for bootstrap working -->
 </body>
