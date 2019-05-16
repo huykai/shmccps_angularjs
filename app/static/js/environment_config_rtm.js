@@ -14,11 +14,11 @@ openNewSite = function(siteName, mode){
             Label: "实时监控(Grafana)系统"
         },
         'OldReportSuite': {
-            URL:"https:/10.221.255.60",
+            URL:"https://10.221.255.60",
             Label: "ReportSuite系统 (MME/SAEGW)"
         },
         'NewReportSuite': {
-            URL:"https:/10.222.36.242",
+            URL:"https://10.222.36.242",
             Label: "ReportSuite系统 (CMG)"
         }
     }
