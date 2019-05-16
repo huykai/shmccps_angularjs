@@ -6,7 +6,7 @@ openNewSite = function(siteName){
             Label: "RTM系统"
         },
         'GRAFANA': {
-            URL:"http://10.222.5.38/",
+            URL:"http://10.222.5.38:3001/",
             Label: "实时监控(Grafana)系统"
         },
         'MAC': {
