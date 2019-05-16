@@ -13,7 +13,7 @@ openNewSite = function(siteName){
     console.log("try to add new external page")
     let menuConfigs = window.environment_shmcc
     if (menuConfigs[siteName]){
-        window.open(menuConfigs[siteName].URL, "_blank");
+        document.getElementById("content").setAttribute("src", menuConfigs[siteName].URL);
     }
 }
 
