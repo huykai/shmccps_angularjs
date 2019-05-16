@@ -1,4 +1,4 @@
-openNewSite = function(siteName){
+openNewSite = function(siteName, mode){
     console.log("try to add new external page")
     window['environment_shmcc'] = {
         'RTM': {
@@ -17,8 +17,11 @@ openNewSite = function(siteName){
     console.log("try to add new external page")
     let menuConfigs = window.environment_shmcc
     if (menuConfigs[siteName]){
-        //window.open(menuConfigs[siteName].URL, "_blank");
-        document.getElementById("content").setAttribute("src", menuConfigs[siteName].URL);
+        if (mode === "window") {
+            window.open(menuConfigs[siteName].URL, "_blank");
+        } else if (mode === "ifame") {
+            document.getElementById("content").setAttribute("src", menuConfigs[siteName].URL);
+        }
     }
 }
 
