@@ -12,6 +12,14 @@ openNewSite = function(siteName, mode){
         'MAC': {
             URL:"http://127.0.0.1:51150/epc-ices",
             Label: "智能运维(MAX)系统"
+        },
+        'OldReportSuite': {
+            URL:"https:/127.0.0.1:51071",
+            Label: "ReportSuite系统 (MME/SAEGW)"
+        },
+        'NewReportSuite': {
+            URL:"https:/127.0.0.1:51072",
+            Label: "ReportSuite系统 (CMG)"
         }
     }
     console.log("try to add new external page")

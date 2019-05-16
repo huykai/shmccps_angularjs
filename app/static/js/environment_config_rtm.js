@@ -12,6 +12,14 @@ openNewSite = function(siteName, mode){
         'MAC': {
             URL:"http://10.222.5.35:8888/epc-ices",
             Label: "实时监控(Grafana)系统"
+        },
+        'OldReportSuite': {
+            URL:"https:/10.221.255.60",
+            Label: "ReportSuite系统 (MME/SAEGW)"
+        },
+        'NewReportSuite': {
+            URL:"https:/10.222.36.242",
+            Label: "ReportSuite系统 (CMG)"
         }
     }
     console.log("try to add new external page")
