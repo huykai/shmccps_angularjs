@@ -8,6 +8,10 @@ openNewSite = function(siteName){
         'GRAFANA': {
             URL:"http://10.222.5.38/",
             Label: "实时监控(Grafana)系统"
+        },
+        'MAC': {
+            URL:"http://10.222.5.35:8888/epc-ices",
+            Label: "实时监控(Grafana)系统"
         }
     }
     console.log("try to add new external page")
