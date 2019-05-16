@@ -27,7 +27,7 @@ openNewSite = function(siteName, mode){
     if (menuConfigs[siteName]){
         if (mode === "window") {
             window.open(menuConfigs[siteName].URL, "_blank");
-        } else if (mode === "ifame") {
+        } else if (mode === "iframe") {
             document.getElementById("content").setAttribute("src", menuConfigs[siteName].URL);
         }
     }
