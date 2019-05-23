@@ -13,6 +13,10 @@ openNewSite = function(siteName, mode){
             URL:"http://10.222.5.35:8888/epc-ices",
             Label: "实时监控(Grafana)系统"
         },
+        'INSPECTION': {
+            URL:"http://10.221.30.101/inspectionMgmt/#/inspectionTask/inspection_item_management",
+            Label: "自动巡检系统"
+        },
         'OldReportSuite': {
             URL:"https://10.221.255.60",
             Label: "ReportSuite系统 (MME/SAEGW)"

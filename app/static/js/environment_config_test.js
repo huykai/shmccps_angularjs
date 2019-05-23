@@ -13,6 +13,10 @@ openNewSite = function(siteName, mode){
             URL:"http://127.0.0.1:51150/epc-ices",
             Label: "智能运维(MAX)系统"
         },
+        'INSPECTION': {
+            URL:"http://10.221.30.101/inspectionMgmt/#/inspectionTask/inspection_item_management",
+            Label: "自动巡检系统"
+        },
         'OldReportSuite': {
             URL:"https://127.0.0.1:51071",
             Label: "ReportSuite系统 (MME/SAEGW)"
