@@ -1,3 +1,10 @@
+openURL = function(URL, mode){
+    if (mode === "window") {
+        window.open(URL, "_blank");
+    } else if (mode === "iframe") {
+        window.parent.document.getElementById("content").setAttribute("src", URL);
+    }
+}
 openNewSite = function(siteName, mode){
     console.log("try to add new external page")
     window['environment_shmcc'] = {
@@ -32,7 +39,7 @@ openNewSite = function(siteName, mode){
         if (mode === "window") {
             window.open(menuConfigs[siteName].URL, "_blank");
         } else if (mode === "iframe") {
-            document.getElementById("content").setAttribute("src", menuConfigs[siteName].URL);
+            window.parent.document.getElementById("content").setAttribute("src", menuConfigs[siteName].URL);
         }
     }
 }
