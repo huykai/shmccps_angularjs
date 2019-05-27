@@ -33,6 +33,25 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					  </script>
 <!-- //FlexSlider -->
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<style>
+    .welcome-bottom {
+        margin-top: 3em
+    }
+    .carousel_ext {
+        font-size: 1.5em;
+        color:darkmagenta;
+        padding-bottom: 10px;
+    }
+    .carousel_int {
+        font-size: 1.0em;
+        color: black;
+        padding-bottom: 10px;
+    }
+    li[role="presentation"] {
+        background-color: rgba(196, 196, 218, 0.8);
+        color: white
+    }
+</style>
 </head>
 	
 <body>
@@ -42,7 +61,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			
 			<div class="welcome-bottom">
                 <div class="container">
-                    <div class="col-md-7">
+                    <div class="col-md-7" width="100%" height="70%">
                         <img src="static/images/20.jpg" width="100%" height="100%" alt="First slide">
                     </div>
                     <div class="col-md-5">
@@ -57,15 +76,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <div class="carousel-inner">
                                 <div class="item active">
                                     <img src="static/images/22.jpg" width="100%" height="100%" />
-                                    <div class="carousel-caption">实时指标和告警查询</div>
+                                    <div class="carousel-caption carousel_int">
+                                        <a href="javascript:void(0);" onclick="openURL('/index_kpi_v2.html', 'iframe')">
+                                            实时指标和告警查询
+                                        </a>
+                                    </div>
                                 </div>
                                 <div class="item">
                                     <img src="static/images/23.jpg" width="100%" height="100%" />
-                                    <div class="carousel-caption">实时用户跟踪数据查询</div>
+                                    <div class="carousel-caption carousel_int">
+                                        <a href="javascript:void(0);" onclick="openURL('/index_traffica_v2.html', 'iframe')">
+                                            实时用户跟踪数据查询
+                                        </a>
+                                    </div>
                                 </div>
                                 <div class="item">
                                     <img src="static/images/24.jpg" width="100%" height="100%" />
-                                    <div class="carousel-caption">实时用户话单数据查询</div>
+                                    <div class="carousel-caption carousel_int">
+                                        <a href="javascript:void(0);" onclick="openURL('/vuejs/dist/index.html', 'iframe')">
+                                            实时用户话单数据查询
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                             <!-- 轮播（Carousel）导航 -->
@@ -74,7 +105,81 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <a class="carousel-control right" href="#myCarousel" 
                             data-slide="next" >&rsaquo;</a>
                         </div> 
-
+                    </div>
+                    <div class="col-md-3" style="margin-top:2em" >
+                        <ul class="nav nav-pills nav-stacked">
+                            <li role="presentation" class="active"><a href="#">连接其他系统</a></li>
+                            <li role="presentation">
+                                <a href="javascript:void(0);" onclick="openNewSite('GRAFANA', 'iframe')">
+                                    实时监控(Grafana)系统
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="javascript:void(0);" onclick="openNewSite('RTM', 'iframe')">
+                                    RTM实时监控系统
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a href="javascript:void(0);" onclick="openNewSite('MAC', 'window')">
+                                    MAC智能运维系统
+                                </a>
+                            </li>  
+                            <li role="presentation">
+                                <a href="javascript:void(0);" onclick="openNewSite('INSPECTION', 'iframe')">
+                                    自动巡检系统
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-9" style="margin-top:2em" >
+                        
+                        <div id="externalProjectCarousel" class="carousel slide" data-ride="carousel">
+                            <!-- 轮播（Carousel）指标 -->
+                            <ol class="carousel-indicators">
+                                <li data-target="#externalProjectCarousel" data-slide-to="0" class="active"></li>
+                                <li data-target="#externalProjectCarousel" data-slide-to="1"></li>
+                                <li data-target="#externalProjectCarousel" data-slide-to="2"></li>
+                            </ol>   
+                            <!-- 轮播（Carousel）项目 -->
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <img src="static/images/RTMsystem.png" width="100%" height="30%" />
+                                    <div class="carousel-caption carousel_ext">
+                                        <a href="javascript:void(0);" onclick="openNewSite('RTM', 'iframe')">
+                                            RTM实时监控系统
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <img src="static/images/MACsystem.png" width="100%" height="30%" />
+                                    <div class="carousel-caption carousel_ext">
+                                        <a href="javascript:void(0);" onclick="openNewSite('MAC', 'window')">
+                                            MAC智能运维系统
+                                        </a></div>
+                                </div>
+                                <div class="item">
+                                    <img src="static/images/inspectionsystem.png" width="100%" height="30%" />
+                                    <div class="carousel-caption carousel_ext">
+                                        <a href="javascript:void(0);" onclick="openNewSite('INSPECTION', 'iframe')">
+                                            自动巡检系统
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <img src="static/images/GRAFANAsystem.png" width="100%" height="30%" />
+                                    <div class="carousel-caption carousel_ext">
+                                        <a href="javascript:void(0);" onclick="openNewSite('GRAFANA', 'iframe')">
+                                            实时监控(Grafana)系统
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 轮播（Carousel）导航 -->
+                            <a class="carousel-control left" href="#externalProjectCarousel" 
+                            data-slide="prev" >&lsaquo;</a>
+                            <a class="carousel-control right" href="#externalProjectCarousel" 
+                            data-slide="next" >&rsaquo;</a>
+                        </div> 
                     </div>
                 </div>
             </div>
@@ -83,7 +188,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	
 <!--//footer-->	
 <!-- for bootstrap working -->
-		<script src="static/js/bootstrap.js"> </script>
+        <script src="static/js/bootstrap.js"> </script>
+        
+    <script src="static/js/environment_config.js"> </script>
 <!-- //for bootstrap working -->
 </body>
 </html>
