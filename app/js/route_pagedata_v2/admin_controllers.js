@@ -41,8 +41,8 @@ appControllers.controller('AdminUserCtrl', ['$rootScope', '$scope', '$location',
                     $rootScope.currentUser = username;
                     console.log("signIn return status:",status);
                     console.log("signIn return data:",data);
-                    if (status.data === "EBADCSRDTOKEN"){
-                        console.log('status: EBADCSRDTOKEN, remove cookie')
+                    if (status.data === "EBADCSRFTOKEN"){
+                        console.log('status: EBADCSRFTOKEN, remove cookie')
                         document.cookie = "XSRF-TOKEN" +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
                         document.cookie = "_csrf" +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
                         $location.path("/admin/login");
