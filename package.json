@@ -123,7 +123,7 @@
     "eventsource-polyfill": "^0.9.6",
     "extract-text-webpack-plugin": "^2.1.0",
     "iview": "^2.7.3",
-    "jquery": "^3.2.1",
+    "jquery": "^3.5.0",
     "jquery.cookie": "^1.4.1",
     "js-storage": "^1.0.4",
     "pako": "^1.0.10",
