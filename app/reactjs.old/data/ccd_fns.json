@@ -1,0 +1,1192 @@
+{
+"total":246,
+"rows":[{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"default",
+"ParameterValueDEC":"",
+"ParameterDescription":"Undefined"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0x1",
+"ParameterValueDEC":"1",
+"ParameterDescription":"Attach"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0x2",
+"ParameterValueDEC":"2",
+"ParameterDescription":"Normal detach"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0x3",
+"ParameterValueDEC":"3",
+"ParameterDescription":"Switch-off detach"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0x4",
+"ParameterValueDEC":"4",
+"ParameterDescription":"UE context release"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0x5",
+"ParameterValueDEC":"5",
+"ParameterDescription":"Service request"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0x6",
+"ParameterValueDEC":"6",
+"ParameterDescription":"Paging"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0x7",
+"ParameterValueDEC":"7",
+"ParameterDescription":"eNodeB initiated S1 reset"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0x8",
+"ParameterValueDEC":"8",
+"ParameterDescription":"MME initiated S1 reset"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0x9",
+"ParameterValueDEC":"9",
+"ParameterDescription":"MML detach"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0xA",
+"ParameterValueDEC":"10",
+"ParameterDescription":"X2 handover no gateway change"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0xB",
+"ParameterValueDEC":"11",
+"ParameterDescription":"S1C sync add"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0xD",
+"ParameterValueDEC":"13",
+"ParameterDescription":"S1C sync delete"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0xE",
+"ParameterValueDEC":"14",
+"ParameterDescription":"eNodeB disconnection"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0xF",
+"ParameterValueDEC":"15",
+"ParameterDescription":"Tracking area update"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0x10",
+"ParameterValueDEC":"16",
+"ParameterDescription":"S1 setup"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0x11",
+"ParameterValueDEC":"17",
+"ParameterDescription":"Network initiated detach"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0x12",
+"ParameterValueDEC":"18",
+"ParameterDescription":"Delete bearer request"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0x13",
+"ParameterValueDEC":"19",
+"ParameterDescription":"S1 handler reset"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0x14",
+"ParameterValueDEC":"20",
+"ParameterDescription":"S1 remove eNodeB"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0x15",
+"ParameterValueDEC":"21",
+"ParameterDescription":"Service request by network detach"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0x16",
+"ParameterValueDEC":"22",
+"ParameterDescription":"HSS initiated detach"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0x17",
+"ParameterValueDEC":"23",
+"ParameterDescription":"Double attach"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0x18",
+"ParameterValueDEC":"24",
+"ParameterDescription":"IDT detach"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0x19",
+"ParameterValueDEC":"25",
+"ParameterDescription":"Inter system RAU"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0x1A",
+"ParameterValueDEC":"26",
+"ParameterDescription":"Dedicated bearer creation"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0x1B",
+"ParameterValueDEC":"27",
+"ParameterDescription":"Dedicated bearer deletion"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0x1C",
+"ParameterValueDEC":"28",
+"ParameterDescription":"Dedicated bearer modification without bearer QoS update"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0x1D",
+"ParameterValueDEC":"29",
+"ParameterDescription":"Dedicated bearer modification with bearer QoS update"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0X1E",
+"ParameterValueDEC":"",
+"ParameterDescription":"UE initiated dedicated bearer activation"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0x1F",
+"ParameterValueDEC":"31",
+"ParameterDescription":"Default bearer modification with QoS update"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0x20",
+"ParameterValueDEC":"32",
+"ParameterDescription":"Default bearer modification without QoS update"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0x21",
+"ParameterValueDEC":"33",
+"ParameterDescription":"Default bearer modification with only UE-AMBR update"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0x22",
+"ParameterValueDEC":"34",
+"ParameterDescription":"Inter system TAU"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0x23",
+"ParameterValueDEC":"35",
+"ParameterDescription":"Mobile terminating SMS delivery"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0x24",
+"ParameterValueDEC":"36",
+"ParameterDescription":"Attach to 3G Gn SGSN when UE was previously registered to MME"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0x25",
+"ParameterValueDEC":"37",
+"ParameterDescription":"Non EPS alert"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0x26",
+"ParameterValueDEC":"38",
+"ParameterDescription":"S1 handover"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0x27",
+"ParameterValueDEC":"39",
+"ParameterDescription":"Attach to MME when UE was previously registered 3G Gn SGSN"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0x28",
+"ParameterValueDEC":"40",
+"ParameterDescription":"Mobile originating SMS delivery"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0x29",
+"ParameterValueDEC":"41",
+"ParameterDescription":"SMS uplink transaction"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0x2A",
+"ParameterValueDEC":"42",
+"ParameterDescription":"PDN Connectivity"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0x2B",
+"ParameterValueDEC":"43",
+"ParameterDescription":"UE initiated PDN disconnection"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0x2C",
+"ParameterValueDEC":"44",
+"ParameterDescription":"S6A notify"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0x2D",
+"ParameterValueDEC":"45",
+"ParameterDescription":"Gateway initiated PDN disconnection"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0x30",
+"ParameterValueDEC":"48",
+"ParameterDescription":"SMS downlink transaction"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0x31",
+"ParameterValueDEC":"49",
+"ParameterDescription":"Gateway initiated default bearer modification"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0x32",
+"ParameterValueDEC":"50",
+"ParameterDescription":"Gateway initiated default bearer modification with QoS update"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0x33",
+"ParameterValueDEC":"51",
+"ParameterDescription":"Gateway initiated default bearer modification without QoS update"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0x34",
+"ParameterValueDEC":"52",
+"ParameterDescription":"IMSI only detach"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0x35",
+"ParameterValueDEC":"53",
+"ParameterDescription":"Gateway initiated default bearer modification with ARP update"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0x36",
+"ParameterValueDEC":"54",
+"ParameterDescription":"UE initiated dedicated bearer deactivation"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0x37",
+"ParameterValueDEC":"55",
+"ParameterDescription":"Delete subscriber data"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0x38",
+"ParameterValueDEC":"56",
+"ParameterDescription":"Insert subscriber data"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0x39",
+"ParameterValueDEC":"57",
+"ParameterDescription":"Mobile originating call(circuit-switched fallback)"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0x40",
+"ParameterValueDEC":"64",
+"ParameterDescription":"Delete dedicated bearer command"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0x41",
+"ParameterValueDEC":"65",
+"ParameterDescription":"Intersys 3G handover"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0x42",
+"ParameterValueDEC":"66",
+"ParameterDescription":"Intersys LTE handover"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0x43",
+"ParameterValueDEC":"67",
+"ParameterDescription":"UE initiated dedicated bearer modification"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0x44",
+"ParameterValueDEC":"68",
+"ParameterDescription":"EnodeB initiated dedicated bearer deactivation"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0x45",
+"ParameterValueDEC":"69",
+"ParameterDescription":"S10 handover"},
+{
+"ParameterName":"Flexi NS Cause Proc",
+"ParameterValueHEX":"0x46",
+"ParameterValueDEC":"70",
+"ParameterDescription":"S10 handover in target side"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"default",
+"ParameterValueDEC":"",
+"ParameterDescription":"Undefined"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x0",
+"ParameterValueDEC":"0",
+"ParameterDescription":"Success"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x1",
+"ParameterValueDEC":"1",
+"ParameterDescription":"Subscriber not found"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x2",
+"ParameterValueDEC":"2",
+"ParameterDescription":"Bearer setup failed"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x3",
+"ParameterValueDEC":"3",
+"ParameterDescription":"Authentication failed"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x4",
+"ParameterValueDEC":"4",
+"ParameterDescription":"Wrong ECM state"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x5",
+"ParameterValueDEC":"5",
+"ParameterDescription":"Subscriber in cache"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x6",
+"ParameterValueDEC":"6",
+"ParameterDescription":"eNodeB not found"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x7",
+"ParameterValueDEC":"7",
+"ParameterDescription":"Bearer modification fail"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x8",
+"ParameterValueDEC":"8",
+"ParameterDescription":"Bearer release fail"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x9",
+"ParameterValueDEC":"9",
+"ParameterDescription":"No response"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0xA",
+"ParameterValueDEC":"10",
+"ParameterDescription":"Requested packet data network not allowed"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x10",
+"ParameterValueDEC":"16",
+"ParameterDescription":"S1C sync fail"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x11",
+"ParameterValueDEC":"17",
+"ParameterDescription":"No response from Serving Gateway"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x12",
+"ParameterValueDEC":"18",
+"ParameterDescription":"No response from eNodeB"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x13",
+"ParameterValueDEC":"19",
+"ParameterDescription":"No response from UE"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x14",
+"ParameterValueDEC":"20",
+"ParameterDescription":"No response from HSS"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x15",
+"ParameterValueDEC":"21",
+"ParameterDescription":"IMSI unknown in HSS"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x16",
+"ParameterValueDEC":"22",
+"ParameterDescription":"EPS service not allowed"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x17",
+"ParameterValueDEC":"23",
+"ParameterDescription":"Collision"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x18",
+"ParameterValueDEC":"24",
+"ParameterDescription":"SMC failed"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x19",
+"ParameterValueDEC":"25",
+"ParameterDescription":"Unexpected data value"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x20",
+"ParameterValueDEC":"32",
+"ParameterDescription":"UE secondary capability not supported"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x21",
+"ParameterValueDEC":"33",
+"ParameterDescription":"SMMU restart"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x22",
+"ParameterValueDEC":"34",
+"ParameterDescription":"Security failure"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x23",
+"ParameterValueDEC":"35",
+"ParameterDescription":"UE ID not derived"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x24",
+"ParameterValueDEC":"36",
+"ParameterDescription":"Implicit detach timer is ON, paging proceed flag cleared"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x25",
+"ParameterValueDEC":"37",
+"ParameterDescription":"Bearer not found"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x26",
+"ParameterValueDEC":"38",
+"ParameterDescription":"Multiple bearers"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x27",
+"ParameterValueDEC":"39",
+"ParameterDescription":"EMM de-registered"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x28",
+"ParameterValueDEC":"40",
+"ParameterDescription":"Context setup failure"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x29",
+"ParameterValueDEC":"41",
+"ParameterDescription":"Double attach"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x30",
+"ParameterValueDEC":"48",
+"ParameterDescription":"Old S1 connection"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x31",
+"ParameterValueDEC":"49",
+"ParameterDescription":"Invalid TAI"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x32",
+"ParameterValueDEC":"50",
+"ParameterDescription":"Unknown PLMN"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x33",
+"ParameterValueDEC":"51",
+"ParameterDescription":"Hardware failure"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x34",
+"ParameterValueDEC":"52",
+"ParameterDescription":"Paging retry"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x35",
+"ParameterValueDEC":"53",
+"ParameterDescription":"CPPU won't make modify bearer request to Serving Gateway"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x36",
+"ParameterValueDEC":"54",
+"ParameterDescription":"3G inter system mobility request accepted"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x37",
+"ParameterValueDEC":"55",
+"ParameterDescription":"3G inter system mobility IMSI not known"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x38",
+"ParameterValueDEC":"56",
+"ParameterDescription":"3G inter system mobility PTMSI signature mismatch"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x39",
+"ParameterValueDEC":"57",
+"ParameterDescription":"3G inter system mobility authentication failure"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x40",
+"ParameterValueDEC":"64",
+"ParameterDescription":"3G inter system mobility invalid message format"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x41",
+"ParameterValueDEC":"65",
+"ParameterDescription":"3G inter system mobility mandatory IE incorrect"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x42",
+"ParameterValueDEC":"66",
+"ParameterDescription":"3G inter system mobility mandatory IE missing"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x43",
+"ParameterValueDEC":"67",
+"ParameterDescription":"3G inter system mobility optional IE incorrect"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x44",
+"ParameterValueDEC":"68",
+"ParameterDescription":"3G inter system mobility no resources available"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x45",
+"ParameterValueDEC":"69",
+"ParameterDescription":"3G inter system mobility system failure"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x46",
+"ParameterValueDEC":"70",
+"ParameterDescription":"New EPS attach incoming message after EPS attach complete message"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x47",
+"ParameterValueDEC":"71",
+"ParameterDescription":"Attach request received from UE through S1 connection"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x48",
+"ParameterValueDEC":"72",
+"ParameterDescription":"Re-Authentication triggered after EPS identity request "},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x49",
+"ParameterValueDEC":"73",
+"ParameterDescription":"Syntax error indication message"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x50",
+"ParameterValueDEC":"80",
+"ParameterDescription":"S1 access point ID error indication message"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x51",
+"ParameterValueDEC":"81",
+"ParameterDescription":"Service request fails because of security failure after paging due to context setup failure"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x52",
+"ParameterValueDEC":"82",
+"ParameterDescription":"IMSI detached for Non-EPS services"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x53",
+"ParameterValueDEC":"83",
+"ParameterDescription":"Mobile terminating CS fallback call rejected by the user"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x54",
+"ParameterValueDEC":"84",
+"ParameterDescription":"Collision ongoing service request incoming paging"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x55",
+"ParameterValueDEC":"85",
+"ParameterDescription":"Target enodeb release connection after HO"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x56",
+"ParameterValueDEC":"86",
+"ParameterDescription":"Unknown target id"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x57",
+"ParameterValueDEC":"87",
+"ParameterDescription":"HO target not allowed"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x58",
+"ParameterValueDEC":"88",
+"ParameterDescription":"Cell not available"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x59",
+"ParameterValueDEC":"89",
+"ParameterDescription":"No radio in target cell"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x60",
+"ParameterValueDEC":"96",
+"ParameterDescription":"Encryption integrated agorithm not supported"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x61",
+"ParameterValueDEC":"97",
+"ParameterDescription":"Ho fail"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x62",
+"ParameterValueDEC":"98",
+"ParameterDescription":"Unspecified S1AP cause"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x63",
+"ParameterValueDEC":"99",
+"ParameterDescription":"No response from EIR"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x64",
+"ParameterValueDEC":"100",
+"ParameterDescription":"Illegal equipment"},
+{
+"ParameterName":"Flexi NS Internal Cause",
+"ParameterValueHEX":"0x65",
+"ParameterValueDEC":"101",
+"ParameterDescription":"S1 handover with SGW relocation is successful"},
+{
+"ParameterName":"Flexi NS EMM Cause",
+"ParameterValueHEX":"default",
+"ParameterDescription":"unassigned"},
+{
+"ParameterName":"Flexi NS EMM Cause",
+"ParameterValueHEX":"0x0",
+"ParameterDescription":"Success",
+"ParameterValueDEC":"0"},
+{
+"ParameterName":"Flexi NS EMM Cause",
+"ParameterValueHEX":"0x2",
+"ParameterDescription":"IMSI unknown in HSS",
+"ParameterValueDEC":"2"},
+{
+"ParameterName":"Flexi NS EMM Cause",
+"ParameterValueHEX":"0x3",
+"ParameterDescription":"Illegal UE",
+"ParameterValueDEC":"3"},
+{
+"ParameterName":"Flexi NS EMM Cause",
+"ParameterValueHEX":"0x6",
+"ParameterDescription":"Illegal ME",
+"ParameterValueDEC":"6"},
+{
+"ParameterName":"Flexi NS EMM Cause",
+"ParameterValueHEX":"0x7",
+"ParameterDescription":"EPS service not allowed",
+"ParameterValueDEC":"7"},
+{
+"ParameterName":"Flexi NS EMM Cause",
+"ParameterValueHEX":"0x8",
+"ParameterDescription":"EPS service and Non-EPS services not allowed",
+"ParameterValueDEC":"8"},
+{
+"ParameterName":"Flexi NS EMM Cause",
+"ParameterValueHEX":"0x9",
+"ParameterDescription":"UE identity cannot be derived by the network",
+"ParameterValueDEC":"9"},
+{
+"ParameterName":"Flexi NS EMM Cause",
+"ParameterValueHEX":"0xA",
+"ParameterDescription":"Implicitly detached",
+"ParameterValueDEC":"10"},
+{
+"ParameterName":"Flexi NS EMM Cause",
+"ParameterValueHEX":"0xB",
+"ParameterDescription":"PLMN not allowed",
+"ParameterValueDEC":"11"},
+{
+"ParameterName":"Flexi NS EMM Cause",
+"ParameterValueHEX":"0xC",
+"ParameterDescription":"Tracking area not allowed",
+"ParameterValueDEC":"12"},
+{
+"ParameterName":"Flexi NS EMM Cause",
+"ParameterValueHEX":"0xD",
+"ParameterDescription":"Roaming not allowed in this tracking area",
+"ParameterValueDEC":"13"},
+{
+"ParameterName":"Flexi NS EMM Cause",
+"ParameterValueHEX":"0xE",
+"ParameterDescription":"EPS services not allowed in this PLMN",
+"ParameterValueDEC":"14"},
+{
+"ParameterName":"Flexi NS EMM Cause",
+"ParameterValueHEX":"0xF",
+"ParameterDescription":"No suitable cells in tracking area",
+"ParameterValueDEC":"15"},
+{
+"ParameterName":"Flexi NS EMM Cause",
+"ParameterValueHEX":"0x10",
+"ParameterDescription":"MSC temporarily not reachable",
+"ParameterValueDEC":"16"},
+{
+"ParameterName":"Flexi NS EMM Cause",
+"ParameterValueHEX":"0x11",
+"ParameterDescription":"Network failure",
+"ParameterValueDEC":"17"},
+{
+"ParameterName":"Flexi NS EMM Cause",
+"ParameterValueHEX":"0x12",
+"ParameterDescription":"CS domain not available",
+"ParameterValueDEC":"18"},
+{
+"ParameterName":"Flexi NS EMM Cause",
+"ParameterValueHEX":"0x13",
+"ParameterDescription":"ESM failure",
+"ParameterValueDEC":"19"},
+{
+"ParameterName":"Flexi NS EMM Cause",
+"ParameterValueHEX":"0x14",
+"ParameterDescription":"MAC failure",
+"ParameterValueDEC":"20"},
+{
+"ParameterName":"Flexi NS EMM Cause",
+"ParameterValueHEX":"0x15",
+"ParameterDescription":"Synchronization failure",
+"ParameterValueDEC":"21"},
+{
+"ParameterName":"Flexi NS EMM Cause",
+"ParameterValueHEX":"0x16",
+"ParameterDescription":"Congestion",
+"ParameterValueDEC":"22"},
+{
+"ParameterName":"Flexi NS EMM Cause",
+"ParameterValueHEX":"0x17",
+"ParameterDescription":"UE security capabilities mismatch",
+"ParameterValueDEC":"23"},
+{
+"ParameterName":"Flexi NS EMM Cause",
+"ParameterValueHEX":"0x18",
+"ParameterDescription":"Security mode rejected (unspecified)",
+"ParameterValueDEC":"24"},
+{
+"ParameterName":"Flexi NS EMM Cause",
+"ParameterValueHEX":"0x19",
+"ParameterDescription":"Not authorized for this CSG",
+"ParameterValueDEC":"25"},
+{
+"ParameterName":"Flexi NS EMM Cause",
+"ParameterValueHEX":"0x1A",
+"ParameterDescription":"Non-EPS authentication unacceptable",
+"ParameterValueDEC":"26"},
+{
+"ParameterName":"Flexi NS EMM Cause",
+"ParameterValueHEX":"0x26",
+"ParameterDescription":"CS fallback call establishment not allowed",
+"ParameterValueDEC":"38"},
+{
+"ParameterName":"Flexi NS EMM Cause",
+"ParameterValueHEX":"0x27",
+"ParameterDescription":"CS domain temporarily not available",
+"ParameterValueDEC":"39"},
+{
+"ParameterName":"Flexi NS EMM Cause",
+"ParameterValueHEX":"0x28",
+"ParameterDescription":"No EPS bearer context activated",
+"ParameterValueDEC":"40"},
+{
+"ParameterName":"Flexi NS EMM Cause",
+"ParameterValueHEX":"0x5F",
+"ParameterDescription":"Semantically incorrect message",
+"ParameterValueDEC":"95"},
+{
+"ParameterName":"Flexi NS EMM Cause",
+"ParameterValueHEX":"0x60",
+"ParameterDescription":"Invalid mandatory information",
+"ParameterValueDEC":"96"},
+{
+"ParameterName":"Flexi NS EMM Cause",
+"ParameterValueHEX":"0x61",
+"ParameterDescription":"Message type non-existent or not implemented",
+"ParameterValueDEC":"97"},
+{
+"ParameterName":"Flexi NS EMM Cause",
+"ParameterValueHEX":"0x62",
+"ParameterDescription":"Message type not compatible with the protocol state",
+"ParameterValueDEC":"98"},
+{
+"ParameterName":"Flexi NS EMM Cause",
+"ParameterValueHEX":"0x63",
+"ParameterDescription":"Information element non-existent or not implemented",
+"ParameterValueDEC":"99"},
+{
+"ParameterName":"Flexi NS EMM Cause",
+"ParameterValueHEX":"0x64",
+"ParameterDescription":"Conditional IE error",
+"ParameterValueDEC":"100"},
+{
+"ParameterName":"Flexi NS EMM Cause",
+"ParameterValueHEX":"0x65",
+"ParameterDescription":"Message not Compatible with the protocol state",
+"ParameterValueDEC":"101"},
+{
+"ParameterName":"Flexi NS EMM Cause",
+"ParameterValueHEX":"0x6F",
+"ParameterDescription":"Protocol error (unspecified)",
+"ParameterValueDEC":"111"},
+{
+"ParameterName":"Flexi NS ESM Cause",
+"ParameterValueHEX":"default",
+"ParameterDescription":"unassigned"},
+{
+"ParameterName":"Flexi NS ESM Cause",
+"ParameterValueHEX":"0x0",
+"ParameterDescription":"Success",
+"ParameterValueDEC":"0"},
+{
+"ParameterName":"Flexi NS ESM Cause",
+"ParameterValueHEX":"0x8",
+"ParameterDescription":"Operator determined barring",
+"ParameterValueDEC":"8"},
+{
+"ParameterName":"Flexi NS ESM Cause",
+"ParameterValueHEX":"0x1A",
+"ParameterDescription":"Insufficient resources",
+"ParameterValueDEC":"26"},
+{
+"ParameterName":"Flexi NS ESM Cause",
+"ParameterValueHEX":"0x1B",
+"ParameterDescription":"APN not included or could not be resolved",
+"ParameterValueDEC":"27"},
+{
+"ParameterName":"Flexi NS ESM Cause",
+"ParameterValueHEX":"0x1C",
+"ParameterDescription":"PDN type could not be recognised",
+"ParameterValueDEC":"28"},
+{
+"ParameterName":"Flexi NS ESM Cause",
+"ParameterValueHEX":"0x1D",
+"ParameterDescription":"User authentication failed",
+"ParameterValueDEC":"29"},
+{
+"ParameterName":"Flexi NS ESM Cause",
+"ParameterValueHEX":"0x1E",
+"ParameterDescription":"Resource rejected by the Serving GW or PDN GW",
+"ParameterValueDEC":"30"},
+{
+"ParameterName":"Flexi NS ESM Cause",
+"ParameterValueHEX":"0x1F",
+"ParameterDescription":"Unspecified reasons",
+"ParameterValueDEC":"31"},
+{
+"ParameterName":"Flexi NS ESM Cause",
+"ParameterValueHEX":"0x20",
+"ParameterDescription":"Service is not supported by the PLMN",
+"ParameterValueDEC":"32"},
+{
+"ParameterName":"Flexi NS ESM Cause",
+"ParameterValueHEX":"0x21",
+"ParameterDescription":"Service has no subscription",
+"ParameterValueDEC":"33"},
+{
+"ParameterName":"Flexi NS ESM Cause",
+"ParameterValueHEX":"0x22",
+"ParameterDescription":"Temporary outage of one or more functions",
+"ParameterValueDEC":"34"},
+{
+"ParameterName":"Flexi NS ESM Cause",
+"ParameterValueHEX":"0x23",
+"ParameterDescription":"PTI is already in use by another active UE",
+"ParameterValueDEC":"35"},
+{
+"ParameterName":"Flexi NS ESM Cause",
+"ParameterValueHEX":"0x24",
+"ParameterDescription":"UE or network initiated release of EPS bearer resources",
+"ParameterValueDEC":"36"},
+{
+"ParameterName":"Flexi NS ESM Cause",
+"ParameterValueHEX":"0x25",
+"ParameterDescription":"New EPS QoS cannot be accepted",
+"ParameterValueDEC":"37"},
+{
+"ParameterName":"Flexi NS ESM Cause",
+"ParameterValueHEX":"0x26",
+"ParameterDescription":"Service rejected due to an error situation in the network",
+"ParameterValueDEC":"38"},
+{
+"ParameterName":"Flexi NS ESM Cause",
+"ParameterValueHEX":"0x29",
+"ParameterDescription":"Semantic error in the TFT",
+"ParameterValueDEC":"41"},
+{
+"ParameterName":"Flexi NS ESM Cause",
+"ParameterValueHEX":"0x2A",
+"ParameterDescription":"Syntactical error in the TFT",
+"ParameterValueDEC":"42"},
+{
+"ParameterName":"Flexi NS ESM Cause",
+"ParameterValueHEX":"0x2B",
+"ParameterDescription":"Invalid bearer identity",
+"ParameterValueDEC":"43"},
+{
+"ParameterName":"Flexi NS ESM Cause",
+"ParameterValueHEX":"0x2C",
+"ParameterDescription":"One or more semantic errors in packet filter(s) of the TFT",
+"ParameterValueDEC":"44"},
+{
+"ParameterName":"Flexi NS ESM Cause",
+"ParameterValueHEX":"0x2D",
+"ParameterDescription":"One or more syntactical errors in packet filter(s) of the TFT",
+"ParameterValueDEC":"45"},
+{
+"ParameterName":"Flexi NS ESM Cause",
+"ParameterValueHEX":"0x2E",
+"ParameterDescription":"EPS bearer context without TFT already activated",
+"ParameterValueDEC":"46"},
+{
+"ParameterName":"Flexi NS ESM Cause",
+"ParameterValueHEX":"0x2F",
+"ParameterDescription":"PTI mismatch",
+"ParameterValueDEC":"47"},
+{
+"ParameterName":"Flexi NS ESM Cause",
+"ParameterValueHEX":"0x31",
+"ParameterDescription":"PDN disconnection procedure is not allowed",
+"ParameterValueDEC":"49"},
+{
+"ParameterName":"Flexi NS ESM Cause",
+"ParameterValueHEX":"0x32",
+"ParameterDescription":"Only PDN type IPv4 is allowed",
+"ParameterValueDEC":"50"},
+{
+"ParameterName":"Flexi NS ESM Cause",
+"ParameterValueHEX":"0x33",
+"ParameterDescription":"Only PDN type IPv6 is allowed",
+"ParameterValueDEC":"51"},
+{
+"ParameterName":"Flexi NS ESM Cause",
+"ParameterValueHEX":"0x34",
+"ParameterDescription":"Only single IP version bearers are allowed",
+"ParameterValueDEC":"52"},
+{
+"ParameterName":"Flexi NS ESM Cause",
+"ParameterValueHEX":"0x35",
+"ParameterDescription":"ESM information not received",
+"ParameterValueDEC":"53"},
+{
+"ParameterName":"Flexi NS ESM Cause",
+"ParameterValueHEX":"0x36",
+"ParameterDescription":"PDN not exist",
+"ParameterValueDEC":"54"},
+{
+"ParameterName":"Flexi NS ESM Cause",
+"ParameterValueHEX":"0x37",
+"ParameterDescription":"Multiple PDN connections for a given APN are not allowed",
+"ParameterValueDEC":"55"},
+{
+"ParameterName":"Flexi NS ESM Cause",
+"ParameterValueHEX":"0x38",
+"ParameterDescription":"Network has already initiated the activation service",
+"ParameterValueDEC":"56"},
+{
+"ParameterName":"Flexi NS ESM Cause",
+"ParameterValueHEX":"0x3B",
+"ParameterDescription":"Unsupported QCI",
+"ParameterValueDEC":"59"},
+{
+"ParameterName":"Flexi NS ESM Cause",
+"ParameterValueHEX":"0x51",
+"ParameterDescription":"Invalid PTI",
+"ParameterValueDEC":"81"},
+{
+"ParameterName":"Flexi NS ESM Cause",
+"ParameterValueHEX":"0x5F",
+"ParameterDescription":"Message with semantically incorrect contents",
+"ParameterValueDEC":"95"},
+{
+"ParameterName":"Flexi NS ESM Cause",
+"ParameterValueHEX":"0x60",
+"ParameterDescription":"Message with non-semantical mandatory IE error",
+"ParameterValueDEC":"96"},
+{
+"ParameterName":"Flexi NS ESM Cause",
+"ParameterValueHEX":"0x61",
+"ParameterDescription":"Message type is not defined",
+"ParameterValueDEC":"97"},
+{
+"ParameterName":"Flexi NS ESM Cause",
+"ParameterValueHEX":"0x62",
+"ParameterDescription":"Incompatible with the protocol state",
+"ParameterValueDEC":"98"},
+{
+"ParameterName":"Flexi NS ESM Cause",
+"ParameterValueHEX":"0x63",
+"ParameterDescription":"Element identifier is not defined or not implemented",
+"ParameterValueDEC":"99"},
+{
+"ParameterName":"Flexi NS ESM Cause",
+"ParameterValueHEX":"0x64",
+"ParameterDescription":"Message with conditional IE errors",
+"ParameterValueDEC":"100"},
+{
+"ParameterName":"Flexi NS ESM Cause",
+"ParameterValueHEX":"0x65",
+"ParameterDescription":"Incompatible message",
+"ParameterValueDEC":"101"},
+{
+"ParameterName":"Flexi NS ESM Cause",
+"ParameterValueHEX":"0x6F",
+"ParameterDescription":"Protocol error event",
+"ParameterValueDEC":"111"},
+{
+"ParameterName":"Flexi NS ESM Cause",
+"ParameterValueHEX":"0x70",
+"ParameterDescription":"EPS bearer context(s) have an APN restriction value",
+"ParameterValueDEC":"112"},
+{
+"ParameterName":"Flexi NS ECM State",
+"ParameterValueHEX":"0",
+"ParameterDescription":"Idle"},
+{
+"ParameterName":"Flexi NS ECM State",
+"ParameterValueHEX":"1",
+"ParameterDescription":"Connected"},
+{
+"ParameterName":"Flexi NS EMM State",
+"ParameterValueHEX":"0",
+"ParameterDescription":"Registered"},
+{
+"ParameterName":"Flexi NS EMM State",
+"ParameterValueHEX":"1",
+"ParameterDescription":"De-registered"},
+{
+"ParameterName":"Flexi NS IMEI Check Info",
+"ParameterValueHEX":"0",
+"ParameterDescription":"Not done"},
+{
+"ParameterName":"Flexi NS IMEI Check Info",
+"ParameterValueHEX":"1",
+"ParameterDescription":"Unknown"},
+{
+"ParameterName":"Flexi NS IMEI Check Info",
+"ParameterValueHEX":"2",
+"ParameterDescription":"White listed mobile station"},
+{
+"ParameterName":"Flexi NS IMEI Check Info",
+"ParameterValueHEX":"3",
+"ParameterDescription":"Black listed mobile station"},
+{
+"ParameterName":"Flexi NS IMEI Check Info",
+"ParameterValueHEX":"4",
+"ParameterDescription":"Grey listed mobile station"},
+{
+"ParameterName":"Flexi NS Integrity or Confidentiality Protection Algorithm",
+"ParameterValueHEX":"default",
+"ParameterDescription":"Undefined"},
+{
+"ParameterName":"Flexi NS Integrity or Confidentiality Protection Algorithm",
+"ParameterValueHEX":"1",
+"ParameterDescription":"Null algorithm"},
+{
+"ParameterName":"Flexi NS Integrity or Confidentiality Protection Algorithm",
+"ParameterValueHEX":"2",
+"ParameterDescription":"Advanced Encryption Algorithm (AES)"},
+{
+"ParameterName":"Flexi NS Integrity or Confidentiality Protection Algorithm",
+"ParameterValueHEX":"3",
+"ParameterDescription":"Native EPS security context"},
+{
+"ParameterName":"Flexi NS PDN Type",
+"ParameterValueHEX":"0",
+"ParameterDescription":"IPv4"},
+{
+"ParameterName":"Flexi NS PDN Type",
+"ParameterValueHEX":"1",
+"ParameterDescription":"IPv6"},
+{
+"ParameterName":"Flexi NS PDN Type",
+"ParameterValueHEX":"2",
+"ParameterDescription":"IPv4v6"},
+{
+"ParameterName":"Flexi NS PDN Type",
+"ParameterValueHEX":"3",
+"ParameterDescription":"IPv4 or IPv6"},
+{
+"ParameterName":"Flexi NS 3GPP Charging Characteristics",
+"ParameterValueHEX":"0",
+"ParameterDescription":"Not defined"},
+{
+"ParameterName":"Flexi NS 3GPP Charging Characteristics",
+"ParameterValueHEX":"1",
+"ParameterDescription":"Hot billing"},
+{
+"ParameterName":"Flexi NS 3GPP Charging Characteristics",
+"ParameterValueHEX":"2",
+"ParameterDescription":"Flat rate billing"},
+{
+"ParameterName":"Flexi NS 3GPP Charging Characteristics",
+"ParameterValueHEX":"4",
+"ParameterDescription":"Prepaid"},
+{
+"ParameterName":"Flexi NS 3GPP Charging Characteristics",
+"ParameterValueHEX":"8",
+"ParameterDescription":"Normal"},
+{
+"ParameterName":"Flexi NS 3GPP Charging Characteristics",
+"ParameterValueHEX":"16",
+"ParameterDescription":"Cell update"},
+{
+"ParameterName":"Flexi NS 3GPP Charging Characteristics",
+"ParameterValueHEX":"32",
+"ParameterDescription":"IN prepaid"},
+{
+"ParameterName":"Flexi NS Roaming Status",
+"ParameterValueHEX":"0",
+"ParameterDescription":"Home subscriber"},
+{
+"ParameterName":"Flexi NS Roaming Status",
+"ParameterValueHEX":"1",
+"ParameterDescription":"Roaming subscriber"},
+{
+"ParameterName":"Flexi NS IP Address Version",
+"ParameterValueHEX":"0",
+"ParameterDescription":"IPv4"},
+{
+"ParameterName":"Flexi NS IP Address Version",
+"ParameterValueHEX":"1",
+"ParameterDescription":"IPv6"},
+{
+"ParameterName":"Flexi NS Authentication Procedure",
+"ParameterValueHEX":"default",
+"ParameterDescription":"Authentication performed"},
+{
+"ParameterName":"Flexi NS Authentication Procedure",
+"ParameterValueHEX":"0",
+"ParameterDescription":"Authentication not performed"},
+{
+"ParameterName":"Flexi NS MME Report Type",
+"ParameterValueHEX":"default",
+"ParameterDescription":"Undefined Report Type"},
+{
+"ParameterName":"Flexi NS MME Report Type",
+"ParameterValueHEX":"33",
+"ParameterDescription":"Mobility Management Report"},
+{
+"ParameterName":"Flexi NS MME Report Type",
+"ParameterValueHEX":"35",
+"ParameterDescription":"Session Management Report"},
+{
+"ParameterName":"Flexi NS ARP Priority Level",
+"ParameterValueHEX":"0",
+"ParameterDescription":"Error"},
+{
+"ParameterName":"Flexi NS ARP Priority Level",
+"ParameterValueHEX":"1",
+"ParameterDescription":"High Priority"},
+{
+"ParameterName":"Flexi NS ARP Priority Level",
+"ParameterValueHEX":"15",
+"ParameterDescription":"No Priority"},
+{
+"ParameterName":"Flexi NS Pre ARP Emption Vulnerability or Capability",
+"ParameterValueHEX":"0",
+"ParameterDescription":"Enabled"},
+{
+"ParameterName":"Flexi NS Pre ARP Emption Vulnerability or Capability",
+"ParameterValueHEX":"1",
+"ParameterDescription":"Disabled"}]}
